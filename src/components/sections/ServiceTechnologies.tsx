@@ -127,10 +127,10 @@ export default function ServiceTechnologies({
                     {activeCategory.outcomes.map((outcome) => (
                       <li
                         key={outcome}
-                        className="flex items-start gap-2.5 rounded-lg border border-slate-200 bg-slate-50 px-3.5 py-2.5"
+                        className="flex items-center gap-2.5 rounded-lg border border-slate-200 bg-slate-50 px-3.5 py-2.5"
                       >
                         <CheckCircle2
-                          className={`mt-0.5 h-4 w-4 shrink-0 ${theme.accentText}`}
+                          className={`h-4 w-4 shrink-0 ${theme.accentText}`}
                           aria-hidden
                         />
                         <span className="text-[0.8125rem] leading-snug text-slate-700">

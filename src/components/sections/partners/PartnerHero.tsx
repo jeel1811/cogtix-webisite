@@ -112,8 +112,8 @@ export default function PartnerHero({
               className="mt-8 grid max-w-2xl grid-cols-1 gap-3 sm:grid-cols-2"
             >
               {highlights.map((item) => (
-                <li key={item} className="flex items-start gap-2.5">
-                  <CheckCircle2 className={`mt-0.5 h-5 w-5 shrink-0 ${theme.accentText}`} />
+                <li key={item} className="flex items-center gap-3">
+                  <CheckCircle2 className={`h-5 w-5 shrink-0 ${theme.accentText}`} />
                   <span className="text-sm font-medium text-gray-700">{item}</span>
                 </li>
               ))}
