@@ -36,7 +36,7 @@ export default function ServiceTechnologies({
   const activeCategory = categories[activeIndex] ?? categories[0];
 
   return (
-    <section className="relative overflow-hidden bg-white py-12 md:py-16">
+    <section className="relative overflow-hidden bg-white py-10 md:py-14">
       <div
         className={`absolute inset-0 bg-gradient-to-br ${theme.ctaBgFrom} ${theme.ctaBgTo}`}
       />

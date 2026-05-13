@@ -116,7 +116,7 @@ export default function AboutUs() {
 
   return (
     <section ref={sectionRef} className="relative bg-white">
-      <div className="sticky top-0 h-screen w-full flex flex-col justify-center overflow-hidden">
+      <div className="sticky top-0 h-[88vh] md:h-[85vh] w-full flex flex-col justify-center overflow-hidden">
         {/* Central Content Layer */}
         <motion.div
           style={{ opacity: contentOpacity, scale: contentScale }}

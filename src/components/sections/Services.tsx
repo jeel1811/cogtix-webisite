@@ -49,7 +49,7 @@ export default function Services() {
   const { m } = useI18n();
 
   return (
-    <section id="services" className="py-12 md:py-16 bg-gray-50">
+    <section id="services" className="py-10 md:py-14 bg-gray-50">
       <Container>
         <SectionHeading
           badge={m.services.badge}

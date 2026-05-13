@@ -89,11 +89,11 @@ export default function ServiceHero({
               </div>
             )}
 
-            <h1 className="mt-5 text-3xl font-bold leading-[1.1] tracking-tight md:text-5xl 2xl:text-6xl">
+            <h1 className="mt-5 text-3xl font-bold leading-[1.1] tracking-tight md:text-5xl">
               {renderTitle()}
             </h1>
 
-            <p className="mt-5 max-w-2xl text-sm leading-relaxed text-gray-600 md:text-base 2xl:text-lg 2xl:max-w-3xl">
+            <p className="mt-5 max-w-2xl text-sm leading-relaxed text-gray-600 md:text-base">
               {description}
             </p>
 

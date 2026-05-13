@@ -29,7 +29,7 @@ export default function ServiceCTA({
   const theme = serviceThemes[variant]
 
   return (
-    <section className="relative bg-white py-12 md:py-16">
+    <section className="relative bg-white py-10 md:py-14">
       <Container>
         <div
           className={`relative overflow-hidden rounded-2xl bg-gradient-to-br ${theme.ctaBgFrom} ${theme.ctaBgTo} px-6 py-12 text-white shadow-[0_30px_80px_-30px_rgba(15,23,42,0.5)] md:px-12 md:py-16`}

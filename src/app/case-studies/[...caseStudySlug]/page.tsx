@@ -226,7 +226,7 @@ export default async function CaseStudyDetailPage({
         </div>
       </section>
 
-      <section className="bg-white py-16">
+      <section className="bg-white py-10 md:py-14">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           {renderSection('Project Overview', caseStudy.projectOverview)}
           {renderSection('Client Background', caseStudy.clientBackground)}
@@ -237,7 +237,7 @@ export default async function CaseStudyDetailPage({
         </div>
       </section>
 
-      <section className="border-t border-slate-200 bg-slate-50 py-16">
+      <section className="border-t border-slate-200 bg-slate-50 py-10 md:py-14">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="rounded-[1.75rem] border border-slate-200 bg-white p-8 shadow-sm">
             <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500">

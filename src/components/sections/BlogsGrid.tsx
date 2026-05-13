@@ -58,7 +58,7 @@ export default function BlogsGrid({ blogs }: BlogsGridProps) {
 
   if (!filteredBlogs.length) {
     return (
-      <section className="relative overflow-hidden bg-slate-50 py-14 md:py-16">
+      <section className="relative overflow-hidden bg-slate-50 py-10 md:py-14">
         <Container className="relative z-10">
           <div className="rounded-[1.5rem] border border-slate-200 bg-white p-10 text-center shadow-sm">
             <Layers3 className="mx-auto h-10 w-10 text-blue-500" />
@@ -89,7 +89,7 @@ export default function BlogsGrid({ blogs }: BlogsGridProps) {
   }
 
   return (
-    <section className="relative overflow-hidden bg-slate-50 py-14 md:py-16">
+    <section className="relative overflow-hidden bg-slate-50 py-10 md:py-14">
       <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>

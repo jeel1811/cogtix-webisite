@@ -84,7 +84,7 @@ export default function PartnersLandingView() {
       </section>
 
       {/* Partner Cards */}
-      <section className="relative bg-white py-14 md:py-16">
+      <section className="relative bg-white py-10 md:py-14">
         <Container>
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             {variantOrder.map((variant, idx) => {
@@ -181,7 +181,7 @@ export default function PartnersLandingView() {
       </section>
 
       {/* Why partner with us */}
-      <section className="relative overflow-hidden bg-slate-50 py-14 md:py-16">
+      <section className="relative overflow-hidden bg-slate-50 py-10 md:py-14">
         <Container>
           <div className="mx-auto max-w-3xl text-center">
             <span

@@ -18,7 +18,7 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="py-14 md:py-20 bg-white overflow-hidden relative">
+    <section className="py-10 md:py-14 bg-white overflow-hidden relative">
       {/* Background patterns */}
       <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
            style={{ backgroundImage: 'radial-gradient(#1e293b 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }} />

@@ -40,7 +40,7 @@ export default function ClutchWidget() {
   }, [])
 
   return (
-    <section className="py-16 md:py-20 bg-white">
+    <section className="py-10 md:py-14 bg-white">
       <Container>
         <div className="flex justify-center items-center w-full px-4">
           <div className="max-w-[1000px] w-full min-h-[400px]">

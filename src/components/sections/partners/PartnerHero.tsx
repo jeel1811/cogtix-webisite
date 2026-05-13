@@ -83,7 +83,7 @@ export default function PartnerHero({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.1 }}
-              className="mt-7 text-4xl font-bold leading-[1.08] tracking-tight text-navy-900 md:text-5xl lg:text-6xl 2xl:text-7xl"
+              className="mt-7 text-4xl font-bold leading-[1.08] tracking-tight text-navy-900 md:text-5xl lg:text-6xl"
             >
               {highlight ? (
                 <>
@@ -100,7 +100,7 @@ export default function PartnerHero({
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.18 }}
-              className="mt-7 max-w-2xl 2xl:max-w-3xl text-lg leading-relaxed text-gray-600 md:text-xl 2xl:text-2xl"
+              className="mt-7 max-w-2xl text-lg leading-relaxed text-gray-600 md:text-xl"
             >
               {description}
             </motion.p>

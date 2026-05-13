@@ -45,7 +45,7 @@ export default function ServiceFeatures({
       : defaultHighlights
 
   return (
-    <section id="capabilities" className="relative bg-gray-50/60 py-12 md:py-16 overflow-hidden">
+    <section id="capabilities" className="relative bg-gray-50/60 py-10 md:py-14 overflow-hidden">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
 
       {/* ── Decorative geometrical shapes ──────────────────────────────────── */}

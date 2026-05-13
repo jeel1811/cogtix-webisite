@@ -328,13 +328,33 @@
   background: #94A3B8;
 }
 
-/* Smooth scrolling */
+/* Smooth scrolling + proportional root font-size scaling.
+   Because every Tailwind utility is rem-based (text-*, p-*, gap-*, w-*, etc.),
+   scaling the root font-size on large viewports gives us uniform, proportional
+   typography and spacing across the entire site without sprinkling 2xl: variants
+   on every component. */
 html {
   scroll-behavior: smooth;
   /* Block any rogue overflow from producing a horizontal page scroll on
      mobile. Decorative blurs, marquees and animated visuals can otherwise
      push the body wider than the viewport on phones. */
   overflow-x: hidden;
+  font-size: 16px;
+}
+
+/* Large desktops (≥1536px / 2xl) */
+@media (min-width: 1536px) {
+  html { font-size: 17px; }
+}
+
+/* Wide desktops / common 2K monitors (≥1800px) */
+@media (min-width: 1800px) {
+  html { font-size: 18px; }
+}
+
+/* 4K and ultrawide (≥2200px) */
+@media (min-width: 2200px) {
+  html { font-size: 19px; }
 }
 
 body {

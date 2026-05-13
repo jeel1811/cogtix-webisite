@@ -47,7 +47,7 @@ export default function HappyClients() {
   const repeatedLogos = [...CLIENT_LOGOS, ...CLIENT_LOGOS];
 
   return (
-    <section className="py-14 bg-gray-50/50 border-y border-gray-100 overflow-hidden">
+    <section className="py-10 bg-gray-50/50 border-y border-gray-100 overflow-hidden">
       <Container className="mb-10">
         <p className="text-center text-sm font-bold text-gray-400 uppercase tracking-[0.3rem]">
           {m.clients.trustedBy}

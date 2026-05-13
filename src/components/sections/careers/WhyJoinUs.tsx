@@ -57,7 +57,7 @@ const REASONS = [
 
 export default function WhyJoinUs() {
   return (
-    <section id="why-join" className="relative overflow-hidden bg-white py-14 md:py-20">
+    <section id="why-join" className="relative overflow-hidden bg-white py-10 md:py-14">
       {/* Decorative background shapes */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-50/30 to-white" />
       <div className="absolute inset-0 [background-image:radial-gradient(circle_at_1px_1px,rgba(15,23,42,0.03)_1px,transparent_0)] [background-size:32px_32px]" />

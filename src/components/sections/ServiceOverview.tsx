@@ -19,7 +19,7 @@ export default function ServiceOverview({
   compact = false,
 }: ServiceOverviewProps) {
   return (
-    <section className={`${compact ? 'py-8 md:py-10' : 'py-16 md:py-20'} bg-white`}>
+    <section className={`${compact ? 'py-8 md:py-10' : 'py-10 md:py-14'} bg-white`}>
       <Container>
         <div className={`grid grid-cols-1 lg:grid-cols-2 ${compact ? 'gap-6' : 'gap-10'} items-center`}>
           <div className={layout === 'right' ? 'lg:col-start-2' : ''}>

@@ -12,7 +12,7 @@ export default function JobDetails({ data }: JobDetailsProps) {
   const description = data?.careers?.jobDescription ?? ''
 
   return (
-    <section className="relative bg-white py-16 md:py-20">
+    <section className="relative bg-white py-10 md:py-14">
       <Container>
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
           <div className="lg:col-span-8">

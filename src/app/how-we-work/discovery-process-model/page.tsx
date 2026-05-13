@@ -16,7 +16,7 @@ export default function DiscoveryProcessModelPage() {
       <HowWeWorkHero title="Discovery Process Model" subtitle="Refine your vision with research, architecture and prototyping before development to reduce risk and increase confidence." />
 
       <main className="relative overflow-hidden bg-[radial-gradient(circle_at_top_left,rgba(56,189,248,0.12),transparent_28%),linear-gradient(to_bottom,#ffffff,#f8fbff_42%,#ffffff)]">
-        <Container className="py-16 md:py-20">
+        <Container className="py-10 md:py-14">
           <div className="mx-auto max-w-6xl space-y-16">
             <AnimatedSection>
               <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">

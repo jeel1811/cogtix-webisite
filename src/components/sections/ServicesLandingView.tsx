@@ -21,7 +21,7 @@ export default function ServicesLandingView() {
 
   return (
     <main className="bg-white text-slate-900">
-      <section className="relative overflow-hidden border-b border-slate-200 bg-[radial-gradient(circle_at_top,_rgba(14,165,233,0.18),_transparent_42%),linear-gradient(180deg,_#f8fafc_0%,_#ffffff_100%)] py-14 md:py-20">
+      <section className="relative overflow-hidden border-b border-slate-200 bg-[radial-gradient(circle_at_top,_rgba(14,165,233,0.18),_transparent_42%),linear-gradient(180deg,_#f8fafc_0%,_#ffffff_100%)] py-10 md:py-14">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(15,23,42,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,23,42,0.04)_1px,transparent_1px)] bg-[size:72px_72px] opacity-60" />
         <Container className="relative">
           <div className="mx-auto max-w-3xl text-center">
@@ -62,7 +62,7 @@ export default function ServicesLandingView() {
         </Container>
       </section>
 
-      <section id="services-grid" className="py-12 md:py-16">
+      <section id="services-grid" className="py-10 md:py-14">
         <Container>
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div className="max-w-2xl">

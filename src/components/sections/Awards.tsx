@@ -14,7 +14,7 @@ export default function Awards() {
   const duplicatedAwards = [...AWARDS, ...AWARDS, ...AWARDS]
 
   return (
-    <section className="py-10 md:py-16 bg-white overflow-hidden">
+    <section className="py-8 md:py-12 bg-white overflow-hidden">
       <Container>
         <SectionHeading
           badge={m.awards.badge}

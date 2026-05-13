@@ -18,7 +18,7 @@ export default function FixedCostModelPage() {
       <HowWeWorkHero title="Fixed Cost Model" subtitle="When scope is clear, choose a fixed-price engagement for predictability and transparent delivery." />
 
       <main className="relative overflow-hidden bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.10),transparent_32%),linear-gradient(to_bottom,#ffffff,#f8fbff_45%,#ffffff)]">
-        <Container className="py-16 md:py-20">
+        <Container className="py-10 md:py-14">
           <div className="mx-auto max-w-6xl space-y-16">
             <AnimatedSection>
               <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">

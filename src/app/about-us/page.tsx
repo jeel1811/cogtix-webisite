@@ -128,7 +128,7 @@ export default function AboutUsPage() {
         </Container>
       </section>
 
-      <section id="leadership" className="relative py-16 sm:py-20">
+      <section id="leadership" className="relative py-10 sm:py-14">
         <Container>
           <motion.div
             {...fadeUp}
@@ -177,7 +177,7 @@ export default function AboutUsPage() {
         </Container>
       </section>
 
-      <section className="relative py-16 sm:py-20">
+      <section className="relative py-10 sm:py-14">
         <Container>
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <motion.div
@@ -241,7 +241,7 @@ export default function AboutUsPage() {
         </Container>
       </section>
 
-      <section className="relative py-16 sm:py-20">
+      <section className="relative py-10 sm:py-14">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent" />
         <Container>
           <div className="grid gap-6 lg:grid-cols-2">
@@ -275,7 +275,7 @@ export default function AboutUsPage() {
         </Container>
       </section>
 
-      <section className="relative py-16 sm:py-20">
+      <section className="relative py-10 sm:py-14">
         <Container>
           <div className="mx-auto max-w-2xl text-center">
             <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.22em] text-blue-600">

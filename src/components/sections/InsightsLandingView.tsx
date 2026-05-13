@@ -85,7 +85,7 @@ export default function InsightsLandingView() {
         <ScrollIndicator targetId="insights-grid" />
       </section>
 
-      <section id="insights-grid" className="py-12 md:py-16">
+      <section id="insights-grid" className="py-10 md:py-14">
         <Container>
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div className="max-w-2xl">

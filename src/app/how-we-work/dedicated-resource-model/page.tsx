@@ -60,7 +60,7 @@ export default function DedicatedResourceModelPage() {
       <HowWeWorkHero title="Dedicated Resource Model" subtitle="Hire dedicated professionals to plug directly into your team and accelerate delivery with full control and transparency." />
 
       <main className="relative overflow-hidden bg-[radial-gradient(circle_at_top_right,rgba(56,189,248,0.10),transparent_32%),linear-gradient(to_bottom,#ffffff,#f8fbff_45%,#ffffff)]">
-        <Container className="py-16 md:py-20">
+        <Container className="py-10 md:py-14">
           <div className="mx-auto max-w-6xl space-y-16">
             <AnimatedSection id="overview">
               <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">

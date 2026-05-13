@@ -181,7 +181,7 @@ export default async function BlogDetailPage(props: BlogDetailPageProps) {
         </Container>
       </section>
 
-      <section className="bg-white py-12 md:py-16">
+      <section className="bg-white py-10 md:py-14">
         <Container className="max-w-4xl">
           <article
             id="article-body"

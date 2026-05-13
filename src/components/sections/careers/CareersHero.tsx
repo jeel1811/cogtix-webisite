@@ -26,12 +26,12 @@ export default function CareersHero({
       <Container>
         <div className="relative z-10 grid items-center gap-12 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <h1 className="mt-6 text-4xl font-bold leading-[1.06] tracking-tight md:text-6xl 2xl:text-7xl">
+            <h1 className="mt-6 text-4xl font-bold leading-[1.06] tracking-tight md:text-6xl">
               <span className="text-navy-900">{title}</span>{' '}
               <span className="text-blue-600">Together.</span>
             </h1>
 
-            <p className="mt-6 max-w-2xl 2xl:max-w-3xl text-base leading-relaxed text-gray-600 md:text-lg 2xl:text-xl">
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-gray-600 md:text-lg">
               {description}
             </p>
 
