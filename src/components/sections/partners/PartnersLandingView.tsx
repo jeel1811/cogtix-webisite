@@ -59,7 +59,7 @@ export default function PartnersLandingView() {
               className={`inline-flex items-center gap-2 rounded-full px-4 py-2 ${theme.badgeBg} ${theme.badgeText} border border-gray-100`}
             >
               <Handshake className="h-3.5 w-3.5" />
-              <span className="text-[11px] font-bold uppercase tracking-[0.18em]">
+              <span className="text-[0.6875rem] font-bold uppercase tracking-[0.18em]">
                 {copy.hero.eyebrow}
               </span>
             </span>
@@ -119,7 +119,7 @@ export default function PartnersLandingView() {
                           />
                         </div>
                         <span
-                          className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-wider ${accent.badge}`}
+                          className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[0.625rem] font-bold uppercase tracking-wider ${accent.badge}`}
                         >
                           {card.tier.split(' ').slice(-2).join(' ')}
                         </span>
@@ -158,7 +158,7 @@ export default function PartnersLandingView() {
                             <div className="text-lg font-bold text-navy-900">
                               {s.value}
                             </div>
-                            <div className="mt-0.5 text-[9px] font-semibold uppercase tracking-wider text-gray-500">
+                            <div className="mt-0.5 text-[0.5625rem] font-semibold uppercase tracking-wider text-gray-500">
                               {s.label}
                             </div>
                           </div>
@@ -187,7 +187,7 @@ export default function PartnersLandingView() {
             <span
               className={`inline-flex items-center gap-2 rounded-full px-4 py-2 ${theme.badgeBg} ${theme.badgeText} border border-gray-100`}
             >
-              <span className="text-[11px] font-bold uppercase tracking-[0.18em]">
+              <span className="text-[0.6875rem] font-bold uppercase tracking-[0.18em]">
                 {copy.whyUs.eyebrow}
               </span>
             </span>

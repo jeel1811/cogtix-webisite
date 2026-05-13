@@ -58,10 +58,10 @@ export default function Awards() {
               </div>
 
               <div className="space-y-1">
-                <p className="text-[9px] font-bold text-blue-600 uppercase tracking-widest leading-tight">
+                <p className="text-[0.5625rem] font-bold text-blue-600 uppercase tracking-widest leading-tight">
                   Official Award
                 </p>
-                <h4 className="text-[11px] md:text-xs font-bold text-navy-900 leading-snug">
+                <h4 className="text-[0.6875rem] md:text-xs font-bold text-navy-900 leading-snug">
                   {award.name}
                 </h4>
               </div>

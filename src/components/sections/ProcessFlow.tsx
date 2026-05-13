@@ -290,7 +290,7 @@ function StepCard({ item, Icon, dark, side, index }: StepCardProps) {
 
       <p
         className={[
-          "mb-1 text-[10px] font-semibold uppercase tracking-widest",
+          "mb-1 text-[0.625rem] font-semibold uppercase tracking-widest",
           dark ? "text-white/40" : "text-sky-500",
         ].join(" ")}
       >

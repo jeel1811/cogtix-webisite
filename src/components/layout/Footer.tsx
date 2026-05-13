@@ -178,7 +178,7 @@ export default function Footer() {
                       <Phone className="w-4 h-4" />
                     </span>
                     <div className="flex flex-col justify-center">
-                      <span className="text-gray-500 text-[10px] font-bold uppercase tracking-wider leading-none mb-1">
+                      <span className="text-gray-500 text-[0.625rem] font-bold uppercase tracking-wider leading-none mb-1">
                         {phone.label}
                       </span>
                       <span className="text-sm font-medium leading-none">

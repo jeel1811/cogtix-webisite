@@ -116,7 +116,7 @@ export default function Offices() {
                       <h4 className="text-xl font-bold text-navy-900 tracking-tight leading-none mb-1">
                         {office.country}
                       </h4>
-                      <p className="text-blue-500 font-bold uppercase tracking-widest text-[10px]">
+                      <p className="text-blue-500 font-bold uppercase tracking-widest text-[0.625rem]">
                         {office.city}
                       </p>
                     </div>
@@ -132,7 +132,7 @@ export default function Offices() {
                     <div className="w-8 h-8 rounded-full bg-white border border-gray-100 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-50 transition-colors">
                       <MapPin className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors" />
                     </div>
-                    <p className="text-gray-500 text-[11px] leading-relaxed font-medium">
+                    <p className="text-gray-500 text-[0.6875rem] leading-relaxed font-medium">
                       {office.address}
                     </p>
                   </div>

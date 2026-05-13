@@ -48,7 +48,7 @@ export default function InsightsLandingView() {
 
         <Container className="relative z-10 w-full">
           <div className="mx-auto max-w-4xl pt-6 text-center md:pt-10">
-            <div className="inline-flex items-center gap-2 rounded-full border border-blue-200/80 bg-white/90 px-4 py-2 text-[10px] font-extrabold uppercase tracking-[0.24em] text-blue-600 shadow-sm backdrop-blur-sm">
+            <div className="inline-flex items-center gap-2 rounded-full border border-blue-200/80 bg-white/90 px-4 py-2 text-[0.625rem] font-extrabold uppercase tracking-[0.24em] text-blue-600 shadow-sm backdrop-blur-sm">
               {copy.hero.badge}
             </div>
 

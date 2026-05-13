@@ -16,7 +16,7 @@ export default function JobDetails({ data }: JobDetailsProps) {
       <Container>
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-14">
           <div className="lg:col-span-8">
-            <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-blue-700">
+            <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-[0.6875rem] font-bold uppercase tracking-[0.2em] text-blue-700">
               <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
               Role Overview
             </div>

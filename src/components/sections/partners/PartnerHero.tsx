@@ -76,7 +76,7 @@ export default function PartnerHero({
               transition={{ duration: 0.5 }}
               className={`inline-flex items-center gap-2 rounded-full px-4 py-2 ${theme.badgeBg} ${theme.badgeText} border border-gray-100`}
             >
-              <span className="text-[11px] font-bold uppercase tracking-[0.18em]">{eyebrow}</span>
+              <span className="text-[0.6875rem] font-bold uppercase tracking-[0.18em]">{eyebrow}</span>
             </motion.div>
 
             <motion.h1
@@ -150,7 +150,7 @@ export default function PartnerHero({
                 {stats.map((s) => (
                   <div key={s.label}>
                     <div className={`text-2xl font-bold md:text-3xl ${theme.accentText}`}>{s.value}</div>
-                    <div className="mt-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-gray-500">
+                    <div className="mt-1 text-[0.625rem] font-semibold uppercase tracking-[0.14em] text-gray-500">
                       {s.label}
                     </div>
                   </div>
@@ -178,7 +178,7 @@ export default function PartnerHero({
                     <PartnerBrandMark variant={variant} className="h-9 w-9" />
                   </div>
                   <span
-                    className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-wider ${accent.badge}`}
+                    className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[0.6875rem] font-bold uppercase tracking-wider ${accent.badge}`}
                   >
                     <span className="h-1.5 w-1.5 rounded-full bg-current" />
                     {activePartnerLabel}
@@ -192,7 +192,7 @@ export default function PartnerHero({
                   {stats.slice(0, 3).map((s) => (
                     <div key={`card-${s.label}`} className="rounded-xl bg-slate-50 px-3 py-3 text-center">
                       <div className="text-lg font-bold text-navy-900">{s.value}</div>
-                      <div className="mt-0.5 text-[9px] font-semibold uppercase tracking-wider text-gray-500">
+                      <div className="mt-0.5 text-[0.5625rem] font-semibold uppercase tracking-wider text-gray-500">
                         {s.label}
                       </div>
                     </div>
@@ -202,7 +202,7 @@ export default function PartnerHero({
                 {/* Brand color accent line */}
                 <div className="mt-7 flex items-center gap-2">
                   <div className="h-1 flex-1 rounded-full bg-slate-100" />
-                  <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-gray-400">
+                  <span className="text-[0.625rem] font-semibold uppercase tracking-[0.18em] text-gray-400">
                     Cogtix × {variant === 'google-cloud' ? 'Google Cloud' : variant === 'aws' ? 'AWS' : 'Microsoft'}
                   </span>
                   <div className="h-1 flex-1 rounded-full bg-slate-100" />

@@ -53,7 +53,7 @@ export default function ServiceTechnologies({
       <Container>
         <div className="relative mx-auto max-w-6xl">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/12 px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-white/88 ring-1 ring-white/14">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/12 px-3.5 py-1.5 text-[0.625rem] font-bold uppercase tracking-[0.2em] text-white/88 ring-1 ring-white/14">
               <span className="h-1 w-1 rounded-full bg-white/70" />
               {subtitle}
             </div>
@@ -61,7 +61,7 @@ export default function ServiceTechnologies({
               {title}
             </h2>
             {description && (
-              <p className="mt-4 max-w-5xl text-base leading-relaxed text-white/88 md:text-[15px]">
+              <p className="mt-4 max-w-5xl text-base leading-relaxed text-white/88 md:text-[0.9375rem]">
                 {description}
               </p>
             )}
@@ -84,7 +84,7 @@ export default function ServiceTechnologies({
                     }`}
                   >
                     <div>
-                      <div className="text-[13px] font-semibold leading-snug md:text-[14px]">
+                      <div className="text-[0.8125rem] font-semibold leading-snug md:text-[0.875rem]">
                         {category.name}
                       </div>
                     </div>
@@ -114,13 +114,13 @@ export default function ServiceTechnologies({
                 </div>
               </div>
 
-              <p className="mt-3 max-w-3xl text-[13px] leading-6 text-slate-600 md:text-[15px]">
+              <p className="mt-3 max-w-3xl text-[0.8125rem] leading-6 text-slate-600 md:text-[0.9375rem]">
                 {activeCategory.overview}
               </p>
 
               {activeCategory.outcomes.length > 0 && (
                 <div className="mt-5">
-                  <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500">
+                  <div className="text-[0.6875rem] font-bold uppercase tracking-[0.2em] text-slate-500">
                     {panelOutcomesTitle}
                   </div>
                   <ul className="mt-3 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
@@ -133,7 +133,7 @@ export default function ServiceTechnologies({
                           className={`mt-0.5 h-4 w-4 shrink-0 ${theme.accentText}`}
                           aria-hidden
                         />
-                        <span className="text-[13px] leading-snug text-slate-700">
+                        <span className="text-[0.8125rem] leading-snug text-slate-700">
                           {outcome}
                         </span>
                       </li>
@@ -160,14 +160,14 @@ export default function ServiceTechnologies({
                             >
                               {React.cloneElement(logoData.icon as React.ReactElement<Record<string, unknown>>, { size: 16 })}
                             </span>
-                            <span className="text-[11px] font-medium text-slate-700 whitespace-nowrap">
+                            <span className="text-[0.6875rem] font-medium text-slate-700 whitespace-nowrap">
                               {item}
                             </span>
                           </div>
                         ) : (
                           <div className="inline-flex items-center gap-2">
                             <span className="h-1.5 w-1.5 rounded-full bg-slate-400" />
-                            <span className="text-[11px] font-medium text-slate-700 whitespace-nowrap">{item}</span>
+                            <span className="text-[0.6875rem] font-medium text-slate-700 whitespace-nowrap">{item}</span>
                           </div>
                         )}
                       </div>

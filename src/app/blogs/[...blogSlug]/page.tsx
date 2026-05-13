@@ -145,7 +145,7 @@ export default async function BlogDetailPage(props: BlogDetailPageProps) {
 
                 {category ? (
                   <div className="mt-4 flex flex-wrap items-center gap-3">
-                    <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-blue-700 ring-1 ring-blue-100">
+                    <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1 text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-blue-700 ring-1 ring-blue-100">
                       {category}
                     </span>
                   </div>

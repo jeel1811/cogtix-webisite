@@ -12,7 +12,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Cogtix: Custom Software, Mobile & Cloud Solutions - USA & India",
+  title: "Cogtix: Product Development & Cloud Transformation Solutions",
   description:
     "Expert software development for businesses in the USA and India. Cogtix Solutions offers custom software, mobile, and cloud development services. Get a free quote today!",
   keywords: [
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     apple: "/favicon.svg",
   },
   openGraph: {
-    title: "Cogtix: Custom Software, Mobile & Cloud Solutions",
+    title: "Cogtix: Product Development & Cloud Transformation Solutions",
     description:
       "Expert software development for businesses in the USA and India. Get a free quote from Cogtix Solutions.",
     url: "https://www.cogtix.com",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cogtix: Custom Software, Mobile & Cloud Solutions",
+    title: "Cogtix: Product Development & Cloud Transformation Solutions",
     description:
       "Expert software development for businesses in the USA and India.",
   },

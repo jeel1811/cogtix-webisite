@@ -198,10 +198,10 @@ export default function Hero() {
                     {f.icon}
                   </span>
                   <span className="flex flex-col text-left min-w-0 flex-1">
-                    <strong className="text-[13px] font-bold text-navy-900 leading-tight break-words">
+                    <strong className="text-[0.8125rem] font-bold text-navy-900 leading-tight break-words">
                       {f.title}
                     </strong>
-                    <span className="text-[11px] text-gray-500 leading-tight mt-0.5 break-words">
+                    <span className="text-[0.6875rem] text-gray-500 leading-tight mt-0.5 break-words">
                       {f.desc}
                     </span>
                   </span>

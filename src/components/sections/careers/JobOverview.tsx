@@ -57,7 +57,7 @@ export default function JobOverview({ data }: JobOverviewProps) {
       >
         <div className="flex items-center justify-between border-b border-blue-100 pb-4">
           <h3 className="text-lg font-bold text-navy-900">Job Overview</h3>
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-emerald-700">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-1 text-[0.625rem] font-bold uppercase tracking-wider text-emerald-700">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
             Open
           </span>
@@ -98,7 +98,7 @@ export default function JobOverview({ data }: JobOverviewProps) {
           Apply Now
         </button>
 
-        <p className="mt-4 text-center text-[11px] text-gray-500">
+        <p className="mt-4 text-center text-[0.6875rem] text-gray-500">
           Or email{' '}
           <a
             href="mailto:hr@cogtix.com"
@@ -139,7 +139,7 @@ function OverviewRow({
         <Icon className="h-4 w-4" />
       </span>
       <div className="min-w-0 flex-1">
-        <p className="text-[11px] font-bold uppercase tracking-wider text-gray-500">
+        <p className="text-[0.6875rem] font-bold uppercase tracking-wider text-gray-500">
           {label}
         </p>
         <p className="text-sm font-semibold text-navy-900 break-words">
@@ -297,7 +297,7 @@ function ApplyModal({
       >
         <div className="flex items-start justify-between gap-4 border-b border-gray-200 bg-gradient-to-r from-blue-50 to-teal-50 px-6 py-5">
           <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-blue-700">
+            <p className="text-[0.6875rem] font-bold uppercase tracking-[0.18em] text-blue-700">
               Apply for the role
             </p>
             <h2 id="apply-modal-title" className="mt-1 text-xl font-bold text-navy-900">
@@ -399,7 +399,7 @@ function ApplyModal({
           <div>
             <label
               htmlFor="UploadResume"
-              className="mb-1.5 block text-[12px] font-semibold text-gray-700"
+              className="mb-1.5 block text-[0.75rem] font-semibold text-gray-700"
             >
               Upload CV / Resume <span className="text-red-500">*</span>
             </label>
@@ -480,7 +480,7 @@ function Field({
     <div>
       <label
         htmlFor={id}
-        className="mb-1.5 block text-[12px] font-semibold text-gray-700"
+        className="mb-1.5 block text-[0.75rem] font-semibold text-gray-700"
       >
         {label} {required ? <span className="text-red-500">*</span> : null}
       </label>

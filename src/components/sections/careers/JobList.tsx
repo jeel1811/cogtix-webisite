@@ -73,7 +73,7 @@ export default function JobList({ careers }: JobListProps) {
 
           <div className="lg:col-span-4">
             <div className="rounded-2xl border border-slate-100 bg-slate-50/50 p-6 shadow-sm backdrop-blur-sm">
-              <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-gray-500">
+              <p className="text-[0.6875rem] font-bold uppercase tracking-[0.18em] text-gray-500">
                 Hiring Snapshot
               </p>
               <div className="mt-3 flex items-baseline gap-3">
@@ -134,12 +134,12 @@ function JobCard({ node }: { node: CareerEdge['node'] }) {
 
       <div className="relative z-10 flex items-start justify-between gap-3">
         <div className="flex flex-wrap items-center gap-2">
-          <div className="inline-flex items-center gap-1.5 rounded-full bg-blue-50/80 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-blue-700 border border-blue-100">
+          <div className="inline-flex items-center gap-1.5 rounded-full bg-blue-50/80 px-3 py-1 text-[0.625rem] font-bold uppercase tracking-wider text-blue-700 border border-blue-100">
             <Briefcase className="h-3 w-3" />
             {career.jobType ?? 'Full-time'}
           </div>
           {career.jobTime ? (
-            <div className="inline-flex items-center gap-1.5 rounded-full bg-blue-50/80 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-blue-700 border border-blue-100">
+            <div className="inline-flex items-center gap-1.5 rounded-full bg-blue-50/80 px-3 py-1 text-[0.625rem] font-bold uppercase tracking-wider text-blue-700 border border-blue-100">
               <span className="h-1 w-1 rounded-full bg-blue-400" />
               {career.jobTime}
             </div>
@@ -147,7 +147,7 @@ function JobCard({ node }: { node: CareerEdge['node'] }) {
         </div>
 
         {career.designation ? (
-          <span className="rounded-full bg-navy-900/5 px-3 py-1 text-[9px] font-bold uppercase tracking-wider text-navy-900 border border-navy-900/10">
+          <span className="rounded-full bg-navy-900/5 px-3 py-1 text-[0.5625rem] font-bold uppercase tracking-wider text-navy-900 border border-navy-900/10">
             {career.designation}
           </span>
         ) : null}
@@ -173,7 +173,7 @@ function JobCard({ node }: { node: CareerEdge['node'] }) {
       </div>
 
       <div className="relative z-10 mt-8 flex items-center justify-between border-t border-slate-100 pt-6">
-        <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wide text-blue-600 bg-blue-50 px-2 py-0.5 rounded">
+        <span className="inline-flex items-center gap-1.5 text-[0.625rem] font-bold uppercase tracking-wide text-blue-600 bg-blue-50 px-2 py-0.5 rounded">
           <BadgeCheck className="h-3 w-3" />
           Actively Hiring
         </span>

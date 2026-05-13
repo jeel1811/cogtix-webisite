@@ -50,7 +50,7 @@ export default function CareersHero({
                 <div className="text-2xl font-bold text-blue-600 md:text-3xl">
                   {openCount}
                 </div>
-                <div className="mt-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-gray-500">
+                <div className="mt-1 text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-gray-500">
                   Open Roles
                 </div>
               </div>
@@ -58,7 +58,7 @@ export default function CareersHero({
                 <div className="text-2xl font-bold text-blue-500 md:text-3xl">
                   3
                 </div>
-                <div className="mt-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-gray-500">
+                <div className="mt-1 text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-gray-500">
                   Global Offices
                 </div>
               </div>
@@ -66,7 +66,7 @@ export default function CareersHero({
                 <div className="text-2xl font-bold text-blue-600 md:text-3xl">
                   150+
                 </div>
-                <div className="mt-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-gray-500">
+                <div className="mt-1 text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-gray-500">
                   Engineers
                 </div>
               </div>
@@ -104,12 +104,12 @@ function CareersVisual() {
         </div>
 
         {/* Small floating elements to add more life */}
-        <div className="absolute -right-6 top-8 inline-flex items-center gap-2 rounded-full bg-blue-600 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-white shadow-lg animate-[float-y-soft_6s_ease-in-out_infinite] z-20">
+        <div className="absolute -right-6 top-8 inline-flex items-center gap-2 rounded-full bg-blue-600 px-3 py-1.5 text-[0.625rem] font-bold uppercase tracking-wider text-white shadow-lg animate-[float-y-soft_6s_ease-in-out_infinite] z-20">
           <Briefcase className="h-3 w-3" />
           Hiring Now
         </div>
 
-        <div className="absolute -bottom-4 -left-6 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-4 py-2 text-[11px] font-bold text-blue-700 shadow-md animate-[float-y-soft_7s_ease-in-out_infinite] z-20">
+        <div className="absolute -bottom-4 -left-6 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-4 py-2 text-[0.6875rem] font-bold text-blue-700 shadow-md animate-[float-y-soft_7s_ease-in-out_infinite] z-20">
           <MapPin className="h-3 w-3" />
           Ahmedabad, India
         </div>

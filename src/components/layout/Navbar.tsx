@@ -222,7 +222,7 @@ function MegaMenuPanel({
             <div
               className={`${leftColSpanClass} ${hoveredChildObj?.children ? "flex flex-col justify-center" : ""} ${!hoveredChildObj?.children && (isTinyMenu ? "p-6" : "p-8")}`}
             >
-              <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-400 mb-5">
+              <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.15em] text-gray-400 mb-5">
                 {item.label}
               </p>
               <div
@@ -247,13 +247,13 @@ function MegaMenuPanel({
                               <Link
                                 href={child.href}
                                 onClick={onClose}
-                                className="group flex items-center justify-between gap-3 rounded-xl px-3 py-2.5 -mx-3 text-[15px] font-semibold text-gray-700 hover:text-navy-900 hover:bg-blue-50/60 transition-all duration-200"
+                                className="group flex items-center justify-between gap-3 rounded-xl px-3 py-2.5 -mx-3 text-[0.9375rem] font-semibold text-gray-700 hover:text-navy-900 hover:bg-blue-50/60 transition-all duration-200"
                               >
                                 <span>{child.label}</span>
                                 <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors" />
                               </Link>
                             ) : (
-                              <div className="flex items-center justify-between gap-3 rounded-xl px-3 py-2.5 -mx-3 text-[15px] font-semibold text-gray-700 hover:text-navy-900 hover:bg-blue-50/60 transition-all duration-200 cursor-pointer">
+                              <div className="flex items-center justify-between gap-3 rounded-xl px-3 py-2.5 -mx-3 text-[0.9375rem] font-semibold text-gray-700 hover:text-navy-900 hover:bg-blue-50/60 transition-all duration-200 cursor-pointer">
                                 <span>{child.label}</span>
                                 <ChevronRight className="w-4 h-4 text-gray-400 group-hover/parent:text-blue-500 transition-colors" />
                               </div>
@@ -265,7 +265,7 @@ function MegaMenuPanel({
                           <Link
                             href={child.href ?? "#"}
                             onClick={onClose}
-                            className="group flex items-center gap-2 px-3 py-2.5 -mx-3 rounded-xl text-[15px] text-gray-600 hover:text-navy-900 hover:bg-blue-50/60 transition-all duration-200"
+                            className="group flex items-center gap-2 px-3 py-2.5 -mx-3 rounded-xl text-[0.9375rem] text-gray-600 hover:text-navy-900 hover:bg-blue-50/60 transition-all duration-200"
                           >
                             <span>{child.label}</span>
                             <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 text-blue-500" />
@@ -294,7 +294,7 @@ function MegaMenuPanel({
                   }`}
                 >
                   <div className="w-full min-w-0">
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-400 mb-4">
+                    <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.15em] text-gray-400 mb-4">
                       {hoveredChildObj.label}
                     </p>
                     <div className="space-y-1">
@@ -303,7 +303,7 @@ function MegaMenuPanel({
                           key={sub.label}
                           href={sub.href ?? "#"}
                           onClick={onClose}
-                          className="group flex items-center justify-between gap-2 px-3 py-2.5 -mx-3 rounded-xl text-[15px] text-gray-600 hover:text-navy-900 hover:bg-blue-50/60 transition-all duration-200"
+                          className="group flex items-center justify-between gap-2 px-3 py-2.5 -mx-3 rounded-xl text-[0.9375rem] text-gray-600 hover:text-navy-900 hover:bg-blue-50/60 transition-all duration-200"
                         >
                           <span className="whitespace-nowrap">{sub.label}</span>
                           <ArrowRight className="w-4 h-4 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 text-blue-500" />
@@ -313,13 +313,13 @@ function MegaMenuPanel({
                   </div>
 
                   <div className="flex flex-col justify-center">
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-400 mb-3">
+                    <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.15em] text-gray-400 mb-3">
                       {localeText.common.getStarted}
                     </p>
-                    <h4 className="text-[15px] font-bold text-navy-900 leading-snug mb-2">
+                    <h4 className="text-[0.9375rem] font-bold text-navy-900 leading-snug mb-2">
                       Let&apos;s build your next project together
                     </h4>
-                    <p className="text-[13px] text-gray-500 leading-relaxed mb-5">
+                    <p className="text-[0.8125rem] text-gray-500 leading-relaxed mb-5">
                       Schedule a free 30-minute consultation with our experts to
                       discuss your requirements.
                     </p>
@@ -336,7 +336,7 @@ function MegaMenuPanel({
               ) : (
                 <div className="w-full flex flex-col justify-between">
                   <div>
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-gray-400 mb-4">
+                    <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.15em] text-gray-400 mb-4">
                       {localeText.common.getStarted}
                     </p>
                     <h4 className="text-lg font-bold text-navy-900 leading-snug mb-2">
@@ -705,7 +705,7 @@ export default function Navbar() {
                               mobileDropdown === item.id ? null : item.id,
                             )
                           }
-                          className="flex items-center justify-between w-full px-4 py-3.5 text-[15px] font-semibold text-navy-900 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer"
+                          className="flex items-center justify-between w-full px-4 py-3.5 text-[0.9375rem] font-semibold text-navy-900 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer"
                         >
                           <span>{item.label}</span>
                           <ChevronDown
@@ -809,7 +809,7 @@ export default function Navbar() {
                     ) : (
                       <Link
                         href={item.href}
-                        className="block px-4 py-3.5 text-[15px] font-semibold text-navy-900 rounded-xl hover:bg-gray-50 transition-colors"
+                        className="block px-4 py-3.5 text-[0.9375rem] font-semibold text-navy-900 rounded-xl hover:bg-gray-50 transition-colors"
                         onClick={() => setIsMobileOpen(false)}
                       >
                         {item.label}
@@ -872,7 +872,7 @@ export default function Navbar() {
 
               {/* Quick Contact */}
               <div className="space-y-3 px-2">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-gray-400 px-2">
+                <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.12em] text-gray-400 px-2">
                   {m.common.quickContact}
                 </p>
                 <a

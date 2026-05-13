@@ -123,7 +123,7 @@ export default function AboutUs() {
           className="relative z-20 container mx-auto px-6 text-center"
         >
           <div className="max-w-2xl mx-auto space-y-6">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-[10px] font-extrabold uppercase tracking-[0.2em]">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-[0.625rem] font-extrabold uppercase tracking-[0.2em]">
               {m.awards.badge}
             </span>
 

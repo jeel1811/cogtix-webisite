@@ -30,7 +30,7 @@ function TestimonialCard({ item }: { item: TestimonialItem }) {
           <h5 className="font-bold text-[#001D54] text-base leading-tight">
             {item.name}
           </h5>
-          <p className="text-[10px] text-blue-600 font-extrabold uppercase tracking-[0.2em] mt-2">
+          <p className="text-[0.625rem] text-blue-600 font-extrabold uppercase tracking-[0.2em] mt-2">
             {item.title}
           </p>
         </div>
@@ -104,7 +104,7 @@ export default function Testimonials() {
           
           {/* Left: Content Area */}
           <div className="lg:col-span-5 space-y-7">
-             <span className="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-[10px] font-extrabold uppercase tracking-[0.2em]">
+             <span className="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-[0.625rem] font-extrabold uppercase tracking-[0.2em]">
                {testimonials.badge}
             </span>
             
@@ -122,7 +122,7 @@ export default function Testimonials() {
                 <span className="text-5xl font-black text-[#001D54] tracking-tighter">
                   {stats.implementations}
                 </span>
-                <span className="text-[12px] font-bold text-slate-400 max-w-[100px] leading-snug">
+                <span className="text-[0.75rem] font-bold text-slate-400 max-w-[100px] leading-snug">
                   {stats.implementationsLabel}
                 </span>
               </div>
@@ -131,7 +131,7 @@ export default function Testimonials() {
                 <span className="text-5xl font-black text-[#001D54] tracking-tighter">
                   {stats.minds}
                 </span>
-                <span className="text-[12px] font-bold text-slate-400 max-w-[100px] leading-snug">
+                <span className="text-[0.75rem] font-bold text-slate-400 max-w-[100px] leading-snug">
                   {stats.mindsLabel}
                 </span>
               </div>

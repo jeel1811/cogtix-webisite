@@ -53,7 +53,7 @@ export default function PartnerCredentials({
       <Container className="relative z-10">
         <div className="mx-auto max-w-3xl text-center">
           <span className={`inline-flex items-center gap-2 rounded-full px-4 py-2 ${theme.badgeBg} ${theme.badgeText} border border-gray-100`}>
-            <span className="text-[11px] font-bold uppercase tracking-[0.18em]">{badge}</span>
+            <span className="text-[0.6875rem] font-bold uppercase tracking-[0.18em]">{badge}</span>
           </span>
           <h2 className="mt-6 text-3xl font-bold text-navy-900 md:text-4xl">{title}</h2>
           <p className="mt-4 text-base leading-relaxed text-gray-600 md:text-lg">{description}</p>
@@ -103,7 +103,7 @@ export default function PartnerCredentials({
                     key={cert.name}
                     className={`rounded-xl bg-white p-4 ring-1 ${accent.ring} transition-all hover:-translate-y-0.5 hover:shadow-md`}
                   >
-                    <div className={`text-[10px] font-bold uppercase tracking-wider ${accent.chipText}`}>
+                    <div className={`text-[0.625rem] font-bold uppercase tracking-wider ${accent.chipText}`}>
                       {cert.level}
                     </div>
                     <div className="mt-1.5 text-sm font-semibold text-navy-900 leading-snug">{cert.name}</div>

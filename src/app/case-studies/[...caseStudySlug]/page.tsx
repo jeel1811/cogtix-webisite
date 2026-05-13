@@ -160,7 +160,7 @@ export default async function CaseStudyDetailPage({
         <div className="absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-cyan-300/20 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-1.5 text-[12px] font-semibold text-slate-500">
+          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-1.5 text-[0.75rem] font-semibold text-slate-500">
             <Link href="/" className="inline-flex items-center gap-1 hover:text-blue-600">
               <Home className="h-3.5 w-3.5" />
               Home
@@ -175,7 +175,7 @@ export default async function CaseStudyDetailPage({
 
           <div className="mt-8 grid gap-10 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-blue-700 ring-1 ring-blue-100">
+              <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-[0.6875rem] font-bold uppercase tracking-[0.2em] text-blue-700 ring-1 ring-blue-100">
                 <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
                 Client Success Story
               </div>
@@ -240,7 +240,7 @@ export default async function CaseStudyDetailPage({
       <section className="border-t border-slate-200 bg-slate-50 py-10 md:py-14">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="rounded-[1.75rem] border border-slate-200 bg-white p-8 shadow-sm">
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500">
+            <p className="text-[0.6875rem] font-bold uppercase tracking-[0.2em] text-slate-500">
               Technologies
             </p>
             <div className="mt-4 flex flex-wrap gap-2">

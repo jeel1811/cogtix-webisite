@@ -71,7 +71,7 @@ export default function AboutUsPage() {
         <Container>
           <div className="grid items-center gap-10 py-8 lg:grid-cols-[1.1fr_0.9fr] lg:py-12">
             <motion.div {...fadeUp}>
-              <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-blue-200/80 bg-white/90 px-4 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.24em] text-blue-600 shadow-sm backdrop-blur-sm">
+              <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-blue-200/80 bg-white/90 px-4 py-1.5 text-[0.625rem] font-extrabold uppercase tracking-[0.24em] text-blue-600 shadow-sm backdrop-blur-sm">
                 Our Story
               </span>
               <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-navy-900 sm:text-5xl lg:text-5xl lg:leading-[1.1]">
@@ -99,7 +99,7 @@ export default function AboutUsPage() {
                 ].map((item) => (
                   <div key={item.label} className="rounded-2xl border border-gray-100 bg-white/90 p-4 shadow-sm backdrop-blur-sm">
                     <div className="text-2xl font-bold tracking-tight text-navy-900">{item.value}</div>
-                    <div className="mt-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-gray-500">{item.label}</div>
+                    <div className="mt-1 text-[0.6875rem] font-semibold uppercase tracking-[0.18em] text-gray-500">{item.label}</div>
                   </div>
                 ))}
               </div>
@@ -135,7 +135,7 @@ export default function AboutUsPage() {
             className="grid gap-8 overflow-hidden rounded-[2rem] border border-gray-100 bg-white p-8 shadow-[0_24px_80px_rgba(10,22,40,0.06)] lg:grid-cols-[1.1fr_0.9fr] lg:items-center sm:p-10"
           >
             <div className="relative">
-              <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.22em] text-blue-600">
+              <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-1.5 text-[0.625rem] font-extrabold uppercase tracking-[0.22em] text-blue-600">
                 Leadership
               </span>
               <h2 className="mt-5 text-3xl font-bold tracking-tight text-navy-900 sm:text-4xl">
@@ -166,7 +166,7 @@ export default function AboutUsPage() {
                   />
                 </div>
                 <div className="border-t border-gray-100 p-5">
-                  <div className="text-[10px] font-extrabold uppercase tracking-[0.24em] text-blue-600">
+                  <div className="text-[0.625rem] font-extrabold uppercase tracking-[0.24em] text-blue-600">
                     {founder.title}
                   </div>
                   <div className="mt-2 text-lg font-bold text-navy-900">{founder.name}</div>
@@ -212,7 +212,7 @@ export default function AboutUsPage() {
             </motion.div>
 
             <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.08 }}>
-              <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.22em] text-blue-600">
+              <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-1.5 text-[0.625rem] font-extrabold uppercase tracking-[0.22em] text-blue-600">
                 <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
                 Who we are
               </span>
@@ -278,7 +278,7 @@ export default function AboutUsPage() {
       <section className="relative py-10 sm:py-14">
         <Container>
           <div className="mx-auto max-w-2xl text-center">
-            <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.22em] text-blue-600">
+            <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-1.5 text-[0.625rem] font-extrabold uppercase tracking-[0.22em] text-blue-600">
               <span className="h-1.5 w-1.5 rounded-full bg-teal-500" />
               Core values
             </span>

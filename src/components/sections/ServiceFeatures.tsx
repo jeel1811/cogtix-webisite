@@ -95,7 +95,7 @@ export default function ServiceFeatures({
         {/* Section header */}
         <div className="relative mx-auto max-w-3xl text-center mb-14">
           <div
-            className={`inline-flex items-center gap-2 rounded-full ${theme.badgeBg} px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] ${theme.badgeText}`}
+            className={`inline-flex items-center gap-2 rounded-full ${theme.badgeBg} px-4 py-2 text-[0.625rem] font-bold uppercase tracking-[0.2em] ${theme.badgeText}`}
           >
             <span className={`h-1.5 w-1.5 rounded-full ${theme.badgeDot}`} />
             {subtitle}
@@ -128,7 +128,7 @@ export default function ServiceFeatures({
                   }`}
                 >
                   <span
-                    className={`text-[14px] font-semibold leading-snug ${
+                    className={`text-[0.875rem] font-semibold leading-snug ${
                       isActive ? 'text-blue-700' : 'text-navy-900'
                     }`}
                   >
@@ -152,14 +152,14 @@ export default function ServiceFeatures({
               <h3 className="text-2xl font-bold text-navy-900 md:text-3xl">
                 {active.title}
               </h3>
-              <p className="mt-4 text-[15px] leading-relaxed text-gray-600">
+              <p className="mt-4 text-[0.9375rem] leading-relaxed text-gray-600">
                 {active.description}
               </p>
 
               {/* Extended description box - no tick icon */}
               {active.details && (
                 <div className="mt-5 rounded-xl bg-gradient-to-br from-blue-50/80 to-indigo-50/60 border border-blue-100/60 p-5">
-                  <p className="text-[13px] leading-relaxed text-gray-700">
+                  <p className="text-[0.8125rem] leading-relaxed text-gray-700">
                     {active.details}
                   </p>
                 </div>
@@ -168,7 +168,7 @@ export default function ServiceFeatures({
               {/* Concrete outcomes / deliverables */}
               {active.outcomes && active.outcomes.length > 0 && (
                 <div className="mt-6">
-                  <div className="text-[11px] font-bold uppercase tracking-[0.2em] text-gray-500">
+                  <div className="text-[0.6875rem] font-bold uppercase tracking-[0.2em] text-gray-500">
                     {active.outcomesTitle ?? 'What we deliver'}
                   </div>
                   <ul className="mt-3 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
@@ -178,7 +178,7 @@ export default function ServiceFeatures({
                         className="flex items-start gap-2.5 rounded-lg bg-gray-50/80 px-3.5 py-2.5 ring-1 ring-gray-100"
                       >
                         <CheckCircle2 className={`mt-0.5 h-4 w-4 shrink-0 ${theme.accentText}`} />
-                        <span className="text-[13px] leading-snug text-gray-700">{outcome}</span>
+                        <span className="text-[0.8125rem] leading-snug text-gray-700">{outcome}</span>
                       </li>
                     ))}
                   </ul>
@@ -192,7 +192,7 @@ export default function ServiceFeatures({
                 {highlights.map((h) => (
                   <span
                     key={h}
-                    className={`rounded-md border ${theme.badgeBg} border-blue-100 px-4 py-2 text-[13px] font-semibold ${theme.badgeText}`}
+                    className={`rounded-md border ${theme.badgeBg} border-blue-100 px-4 py-2 text-[0.8125rem] font-semibold ${theme.badgeText}`}
                   >
                     {h}
                   </span>

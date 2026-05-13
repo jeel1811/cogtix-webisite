@@ -104,7 +104,7 @@ export default function ServiceHero({
                     <div className={`text-xl font-bold md:text-2xl ${theme.accentText}`}>
                       {s.value}
                     </div>
-                    <div className="mt-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-gray-500">
+                    <div className="mt-1 text-[0.625rem] font-semibold uppercase tracking-[0.14em] text-gray-500">
                       {s.label}
                     </div>
                   </div>

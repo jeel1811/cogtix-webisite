@@ -112,7 +112,7 @@ export default function ServiceUseCases({
         {/* Section header */}
         <div className="relative mx-auto max-w-3xl text-center">
           <div
-            className={`inline-flex items-center gap-2 rounded-full ${theme.badgeBg} px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] ${theme.badgeText}`}
+            className={`inline-flex items-center gap-2 rounded-full ${theme.badgeBg} px-4 py-2 text-[0.625rem] font-bold uppercase tracking-[0.2em] ${theme.badgeText}`}
           >
             <span className={`h-1.5 w-1.5 rounded-full ${theme.badgeDot}`} />
             {subtitle}
@@ -168,7 +168,7 @@ export default function ServiceUseCases({
                 <h3 className="text-lg font-bold leading-snug text-white md:text-xl">
                   {uc.title}
                 </h3>
-                <p className="mt-4 text-[14px] leading-relaxed text-white/85 flex-1">
+                <p className="mt-4 text-[0.875rem] leading-relaxed text-white/85 flex-1">
                   {uc.description}
                 </p>
               </div>

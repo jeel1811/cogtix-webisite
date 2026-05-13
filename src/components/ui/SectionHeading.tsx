@@ -26,7 +26,7 @@ export default function SectionHeading({
   return (
     <div className={`${compact ? "max-w-2xl mb-8 md:mb-10" : "max-w-3xl mb-12 md:mb-16"} ${alignmentClasses[align]} ${className}`}>
       {badge && (
-        <span className={`inline-block mb-4 px-4 py-1.5 rounded-full bg-blue-500/10 text-blue-500 ${compact ? "text-[10px]" : "text-xs"} font-semibold uppercase tracking-widest`}>
+        <span className={`inline-block mb-4 px-4 py-1.5 rounded-full bg-blue-500/10 text-blue-500 ${compact ? "text-[0.625rem]" : "text-xs"} font-semibold uppercase tracking-widest`}>
           {badge}
         </span>
       )}

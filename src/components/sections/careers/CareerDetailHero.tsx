@@ -30,7 +30,7 @@ export default function CareerDetailHero({ data }: CareerDetailHeroProps) {
       <Container>
         <nav
           aria-label="Breadcrumb"
-          className="relative z-10 flex flex-wrap items-center gap-1.5 text-[12px] font-semibold text-gray-500"
+          className="relative z-10 flex flex-wrap items-center gap-1.5 text-[0.75rem] font-semibold text-gray-500"
         >
           <Link
             href="/"
@@ -50,7 +50,7 @@ export default function CareerDetailHero({ data }: CareerDetailHeroProps) {
         <div className="relative z-10 mt-8 grid items-end gap-8 lg:grid-cols-12">
           <div className="lg:col-span-9">
             {career.designation ? (
-              <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-blue-700">
+              <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-[0.6875rem] font-bold uppercase tracking-[0.2em] text-blue-700">
                 <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
                 {career.designation}
               </div>
@@ -87,7 +87,7 @@ export default function CareerDetailHero({ data }: CareerDetailHeroProps) {
               ) : null}
               {career.jobExperience ? (
                 <li className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 ring-1 ring-gray-200">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-gray-500">
+                  <span className="text-[0.6875rem] font-bold uppercase tracking-wider text-gray-500">
                     Experience
                   </span>
                   <span className="font-semibold text-navy-900">

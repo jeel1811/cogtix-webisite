@@ -56,7 +56,7 @@ export default function ServiceCTA({
 
           <div className="relative z-10 grid items-center gap-8 lg:grid-cols-12">
             <div className="lg:col-span-8">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-white backdrop-blur">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-[0.625rem] font-bold uppercase tracking-[0.2em] text-white backdrop-blur">
                 <span className="h-1.5 w-1.5 rounded-full bg-white" />
                 Let&apos;s build together
               </div>

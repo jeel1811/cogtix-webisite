@@ -140,7 +140,7 @@ export default function CaseStudiesGrid({ studies }: CaseStudiesGridProps) {
                       <div className="mb-5 flex items-start justify-between gap-4">
                         <div>
                           {sector ? (
-                            <span className="inline-flex items-center rounded-full bg-blue-50 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.18em] text-blue-700 ring-1 ring-blue-100">
+                            <span className="inline-flex items-center rounded-full bg-blue-50 px-3 py-1 text-[0.6875rem] font-bold uppercase tracking-[0.18em] text-blue-700 ring-1 ring-blue-100">
                               {sector}
                             </span>
                           ) : null}

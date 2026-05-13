@@ -126,7 +126,7 @@ export default function ServiceExpertise({
         {/* Section header */}
         <div className="relative mx-auto max-w-3xl text-center">
           <div
-            className={`inline-flex items-center gap-2 rounded-full ${theme.badgeBg} px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] ${theme.badgeText}`}
+            className={`inline-flex items-center gap-2 rounded-full ${theme.badgeBg} px-4 py-2 text-[0.625rem] font-bold uppercase tracking-[0.2em] ${theme.badgeText}`}
           >
             <span className={`h-1.5 w-1.5 rounded-full ${theme.badgeDot}`} />
             {subtitle}
@@ -149,12 +149,12 @@ export default function ServiceExpertise({
               className="group relative flex flex-col gap-3 cursor-default overflow-hidden rounded-2xl border border-blue-100 p-7 transition-all duration-300 bg-white hover:bg-blue-600 hover:border-blue-600 hover:shadow-xl hover:-translate-y-1"
             >
               {/* Title */}
-              <h3 className="text-[16px] font-bold leading-snug text-blue-700 transition-colors duration-300 group-hover:text-white">
+              <h3 className="text-[1rem] font-bold leading-snug text-blue-700 transition-colors duration-300 group-hover:text-white">
                 {pillar.title}
               </h3>
 
               {/* Description */}
-              <p className="text-[13px] leading-relaxed text-gray-600 transition-colors duration-300 group-hover:text-white/85 flex-1">
+              <p className="text-[0.8125rem] leading-relaxed text-gray-600 transition-colors duration-300 group-hover:text-white/85 flex-1">
                 {pillar.description}
               </p>
 
@@ -164,7 +164,7 @@ export default function ServiceExpertise({
                   {pillar.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full bg-blue-50 px-2.5 py-1 text-[10px] font-semibold text-blue-700 transition-all duration-300 group-hover:bg-white/20 group-hover:text-white"
+                      className="rounded-full bg-blue-50 px-2.5 py-1 text-[0.625rem] font-semibold text-blue-700 transition-all duration-300 group-hover:bg-white/20 group-hover:text-white"
                     >
                       {tag}
                     </span>
