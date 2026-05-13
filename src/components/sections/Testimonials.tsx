@@ -83,7 +83,7 @@ export default function Testimonials() {
       {/* Background Decorative Layer */}
       <div className="absolute inset-0 pointer-events-none -z-10">
         {/* Solid White Base */}
-        <div className="absolute inset-0 bg-white -z-20" />
+        <div className="absolute inset-0 bg-blue-50/60 -z-20" />
         
         {/* Soft Background Orbs */}
         <div className="absolute top-[20%] right-[15%] w-[400px] h-[400px] bg-[#cdddf2]/30 rounded-full blur-[100px]" />

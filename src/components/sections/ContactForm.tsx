@@ -158,7 +158,7 @@ export default function ContactForm() {
   return (
     <section
       id="contact"
-      className="relative py-10 md:py-10 bg-gradient-to-b from-blue-50/40 via-white to-blue-50/30 overflow-hidden"
+      className="relative py-10 md:py-10 bg-blue-50/60 overflow-hidden"
     >
       <div className="absolute -top-32 left-1/4 w-[450px] h-[450px] bg-blue-100/40 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute -bottom-32 right-0 w-[400px] h-[400px] bg-teal-100/30 rounded-full blur-[120px] pointer-events-none" />

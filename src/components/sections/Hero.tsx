@@ -28,7 +28,7 @@ import {
 } from '@icons-pack/react-simple-icons'
 import Container from '@/components/ui/Container'
 import Button from '@/components/ui/Button'
-import ScrollIndicator from '@/components/ui/ScrollIndicator'
+// import ScrollIndicator from '@/components/ui/ScrollIndicator'
 import { CONTACT_INFO } from '@/lib/constants'
 import { useI18n } from '@/i18n/provider'
 
@@ -397,7 +397,7 @@ export default function Hero() {
         </div>
       </Container>
 
-      <ScrollIndicator />
+      {/* <ScrollIndicator /> */}
     </section>
   )
 }
