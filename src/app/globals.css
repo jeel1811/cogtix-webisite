@@ -342,19 +342,30 @@ html {
   font-size: 16px;
 }
 
-/* Large desktops (≥1536px / 2xl) */
-@media (min-width: 1536px) {
+/* Wide laptops (≥1440px) — small bump so content feels balanced. */
+@media (min-width: 1440px) {
   html { font-size: 17px; }
+}
+
+/* Larger-than-normal displays (≥1536px / 2xl) — meaningful bump so body /
+   description text and gaps grow proportionally with the screen. */
+@media (min-width: 1536px) {
+  html { font-size: 18.5px; }
 }
 
 /* Wide desktops / common 2K monitors (≥1800px) */
 @media (min-width: 1800px) {
-  html { font-size: 18px; }
+  html { font-size: 20px; }
 }
 
 /* 4K and ultrawide (≥2200px) */
 @media (min-width: 2200px) {
-  html { font-size: 19px; }
+  html { font-size: 21px; }
+}
+
+/* Very wide / 5K (≥2800px) */
+@media (min-width: 2800px) {
+  html { font-size: 22px; }
 }
 
 body {
