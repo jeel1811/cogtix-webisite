@@ -115,7 +115,7 @@ export default function AboutUs() {
   }, [titleChars])
 
   return (
-    <section ref={sectionRef} className="relative h-[200vh] bg-white">
+    <section ref={sectionRef} className="relative bg-white">
       <div className="sticky top-0 h-screen w-full flex flex-col justify-center overflow-hidden">
         {/* Central Content Layer */}
         <motion.div
