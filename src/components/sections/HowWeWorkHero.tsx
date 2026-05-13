@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Container from '@/components/ui/Container'
+import ScrollIndicator from '@/components/ui/ScrollIndicator'
 
 const titleGradient = 'bg-clip-text text-transparent bg-gradient-to-r from-slate-950 via-sky-950 to-sky-600'
 
@@ -65,6 +66,8 @@ export default function HowWeWorkHero({ title, subtitle }: { title: string; subt
           )}
         </div>
       </Container>
+
+      <ScrollIndicator />
     </section>
   )
 }

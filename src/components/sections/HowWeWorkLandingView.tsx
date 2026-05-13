@@ -22,7 +22,7 @@ export default function HowWeWorkLandingView() {
 
   return (
     <main className="bg-white text-slate-900">
-      <section className="relative overflow-hidden border-b border-slate-200 bg-[radial-gradient(circle_at_top,_rgba(14,165,233,0.18),_transparent_42%),linear-gradient(180deg,_#f8fafc_0%,_#ffffff_100%)] py-20 md:py-28">
+      <section className="relative overflow-hidden border-b border-slate-200 bg-[radial-gradient(circle_at_top,_rgba(14,165,233,0.18),_transparent_42%),linear-gradient(180deg,_#f8fafc_0%,_#ffffff_100%)] py-14 md:py-20">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(15,23,42,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,23,42,0.04)_1px,transparent_1px)] bg-[size:72px_72px] opacity-60" />
         <Container className="relative">
           <div className="mx-auto max-w-3xl text-center">
@@ -57,7 +57,7 @@ export default function HowWeWorkLandingView() {
         </Container>
       </section>
 
-      <section id="process-grid" className="py-16 md:py-24">
+      <section id="process-grid" className="py-12 md:py-16">
         <Container>
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div className="max-w-2xl">

@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 // import { ArrowRight } from 'lucide-react';
 import Container from '@/components/ui/Container';
+import ScrollIndicator from '@/components/ui/ScrollIndicator';
 // import Button from '@/components/ui/Button';
 import { ServiceVariant, serviceThemes } from './service-themes';
 import Image from 'next/image';
@@ -84,7 +85,7 @@ export default function IndustryHero({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy-900 leading-[1.1] tracking-tight mb-8"
+              className="text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl font-bold text-navy-900 leading-[1.1] tracking-tight mb-8"
             >
               {highlight ? (
                 <>
@@ -103,7 +104,7 @@ export default function IndustryHero({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl mb-10"
+              className="text-lg md:text-xl 2xl:text-2xl text-gray-600 leading-relaxed max-w-2xl 2xl:max-w-3xl mb-10"
             >
               {description}
             </motion.p>
@@ -172,6 +173,8 @@ export default function IndustryHero({
           </div>
         </div>
       </Container>
+
+      <ScrollIndicator />
     </section>
   );
 }

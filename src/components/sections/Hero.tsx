@@ -28,6 +28,7 @@ import {
 } from '@icons-pack/react-simple-icons'
 import Container from '@/components/ui/Container'
 import Button from '@/components/ui/Button'
+import ScrollIndicator from '@/components/ui/ScrollIndicator'
 import { CONTACT_INFO } from '@/lib/constants'
 import { useI18n } from '@/i18n/provider'
 
@@ -135,11 +136,11 @@ export default function Hero() {
         />
       </div>
 
-      <Container className="relative z-10 pt-20 pb-16 lg:pt-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <Container className="relative z-10 pt-20 pb-12 lg:pt-24 lg:pb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 2xl:gap-20 items-center">
           {/* ───────── Left: Copy ───────── */}
           <div className="text-center lg:text-left">
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-navy-900 leading-[1.05] tracking-tight mb-6">
+            <h3 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-navy-900 leading-[1.05] tracking-tight mb-6 2xl:mb-8">
               <span className="block animate-fade-in-up">
                 {m.hero.title}
               </span>
@@ -152,7 +153,7 @@ export default function Hero() {
             </h3>
 
             <p
-              className="text-lg text-gray-500 max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed animate-fade-in-up"
+              className="text-lg 2xl:text-xl text-gray-500 max-w-xl 2xl:max-w-2xl mx-auto lg:mx-0 mb-10 2xl:mb-12 leading-relaxed animate-fade-in-up"
               style={{ animationDelay: '0.45s' }}
             >
               {m.hero.subtitle}
@@ -210,7 +211,7 @@ export default function Hero() {
           </div>
 
           {/* ───────── Right: Animated Tech Ecosystem ───────── */}
-          <div className="relative mx-auto w-full max-w-[360px] sm:max-w-[480px] lg:max-w-[560px] aspect-square animate-fade-in">
+          <div className="relative mx-auto w-full max-w-[360px] sm:max-w-[480px] lg:max-w-[560px] xl:max-w-[600px] 2xl:max-w-[680px] aspect-square animate-fade-in">
             {/* Animated grid backdrop (panning) */}
             <div
               className="absolute inset-6 rounded-[2rem] opacity-60 animate-grid-pan"
@@ -395,6 +396,8 @@ export default function Hero() {
           </div>
         </div>
       </Container>
+
+      <ScrollIndicator />
     </section>
   )
 }

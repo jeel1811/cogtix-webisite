@@ -27,7 +27,7 @@ export default function ServiceExpertise({
   const theme = serviceThemes[variant]
 
   return (
-    <section className="relative bg-slate-50 py-16 md:py-24 overflow-hidden">
+    <section className="relative bg-slate-50 py-12 md:py-16 overflow-hidden">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
 
       {/* ── Background vertical lines - matching Technology section ─────── */}

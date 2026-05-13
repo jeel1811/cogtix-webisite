@@ -518,7 +518,9 @@ export default function Navbar() {
           <nav
             className="mx-auto will-change-[max-width,background-color,border-radius,box-shadow] transition-[max-width,background-color,border-radius,box-shadow,border-color] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
             style={{
-              maxWidth: isScrolled ? "1210px" : "1280px",
+              maxWidth: isScrolled
+                ? "min(92vw, 1400px)"
+                : "min(95vw, 1600px)",
               backgroundColor: isScrolled
                 ? "rgba(255,255,255,0.92)"
                 : "rgba(255,255,255,0)",

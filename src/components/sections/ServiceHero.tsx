@@ -2,6 +2,7 @@
 
 import Container from '@/components/ui/Container'
 // import Button from '@/components/ui/Button'
+import ScrollIndicator from '@/components/ui/ScrollIndicator'
 import Image from 'next/image'
 // import { ArrowRight, Sparkles } from 'lucide-react'
 import {
@@ -88,11 +89,11 @@ export default function ServiceHero({
               </div>
             )}
 
-            <h1 className="mt-5 text-3xl font-bold leading-[1.1] tracking-tight md:text-5xl">
+            <h1 className="mt-5 text-3xl font-bold leading-[1.1] tracking-tight md:text-5xl 2xl:text-6xl">
               {renderTitle()}
             </h1>
 
-            <p className="mt-5 max-w-2xl text-sm leading-relaxed text-gray-600 md:text-base">
+            <p className="mt-5 max-w-2xl text-sm leading-relaxed text-gray-600 md:text-base 2xl:text-lg 2xl:max-w-3xl">
               {description}
             </p>
 
@@ -129,6 +130,8 @@ export default function ServiceHero({
           </div>
         </div>
       </Container>
+
+      <ScrollIndicator targetId="capabilities" />
     </section>
   )
 }

@@ -34,7 +34,7 @@ export default function IndustryChallenges({
   const theme = serviceThemes[variant];
 
   return (
-    <section className="relative py-24 bg-slate-50 overflow-hidden">
+    <section className="relative py-14 md:py-16 bg-slate-50 overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Subtle grid pattern */}

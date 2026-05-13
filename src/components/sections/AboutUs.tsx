@@ -25,8 +25,8 @@ export default function AboutUs() {
   const yImage3 = useTransform(scrollYProgress, [0, 1], [0, -120])
   const contentOpacity = useTransform(
     scrollYProgress,
-    [0, 0.2, 0.8, 1],
-    [0, 1, 1, 0]
+    [0, 0.15, 1],
+    [0, 1, 1]
   )
   const contentScale = useTransform(scrollYProgress, [0, 0.2], [0.95, 1])
 

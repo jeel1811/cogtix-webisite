@@ -28,7 +28,7 @@ export default function IndustryImpact({
   const theme = serviceThemes[variant];
 
   return (
-    <section className="relative py-24 bg-navy-900 overflow-hidden">
+    <section className="relative py-14 md:py-16 bg-navy-900 overflow-hidden">
       {/* Abstract geometric background elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Subtle grid */}

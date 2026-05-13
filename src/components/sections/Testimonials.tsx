@@ -76,7 +76,7 @@ export default function Testimonials() {
   return (
     <section 
       id="testimonials" 
-      className="py-20 lg:py-28 relative overflow-hidden"
+      className="py-14 lg:py-20 relative overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >

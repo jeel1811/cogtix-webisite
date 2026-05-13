@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import Container from '@/components/ui/Container'
 import Card from '@/components/ui/Card'
+import ScrollIndicator from '@/components/ui/ScrollIndicator'
 import { useI18n } from '@/i18n/provider'
 import { insightsLanding, insightCardHrefs } from '@/i18n/insightsContent'
 
@@ -80,9 +81,11 @@ export default function InsightsLandingView() {
             </div>
           </div>
         </Container>
+
+        <ScrollIndicator targetId="insights-grid" />
       </section>
 
-      <section id="insights-grid" className="py-16 md:py-24">
+      <section id="insights-grid" className="py-12 md:py-16">
         <Container>
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div className="max-w-2xl">

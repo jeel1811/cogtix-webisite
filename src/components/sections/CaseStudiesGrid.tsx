@@ -52,7 +52,7 @@ export default function CaseStudiesGrid({ studies }: CaseStudiesGridProps) {
 
   if (!studies.length) {
     return (
-      <section className="relative overflow-hidden bg-slate-50 py-24">
+      <section className="relative overflow-hidden bg-slate-50 py-14 md:py-16">
         <Container className="relative z-10">
           <div className="rounded-[1.5rem] border border-slate-200 bg-white p-10 text-center shadow-sm">
             <Layers3 className="mx-auto h-10 w-10 text-blue-500" />
@@ -83,7 +83,7 @@ export default function CaseStudiesGrid({ studies }: CaseStudiesGridProps) {
   };
 
   return (
-    <section className="relative overflow-hidden bg-slate-50 py-24">
+    <section className="relative overflow-hidden bg-slate-50 py-14 md:py-16">
       <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -117,13 +117,13 @@ export default function CaseStudiesGrid({ studies }: CaseStudiesGridProps) {
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-cyan-50/50 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
                   <Link href={`/case-studies/${slug}`} className="relative z-10 flex h-full flex-col">
-                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-100">
+                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-gradient-to-br from-slate-50 via-white to-slate-100 p-4">
                       {image ? (
                         <Image
                           src={image}
                           alt={title}
                           fill
-                          className="object-cover transition-transform duration-700 group-hover:scale-105"
+                          className="object-contain p-2 transition-transform duration-700 group-hover:scale-[1.03]"
                           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                           unoptimized={image.startsWith('http')}
                         />

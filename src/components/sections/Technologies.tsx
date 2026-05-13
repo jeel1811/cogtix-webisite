@@ -94,7 +94,7 @@ export default function Technologies() {
   const [activeTab, setActiveTab] = useState(TABS[0]);
 
   return (
-    <section id="technologies" className="py-20 md:py-28 bg-gray-50">
+    <section id="technologies" className="py-14 md:py-20 bg-gray-50">
       <Container>
         <SectionHeading
           badge={m.technologies.badge}

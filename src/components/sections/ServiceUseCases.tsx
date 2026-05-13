@@ -42,7 +42,7 @@ export default function ServiceUseCases({
   const visible = useCases.slice(startIdx, startIdx + CARDS_PER_PAGE)
 
   return (
-    <section className="relative bg-white py-16 md:py-24 overflow-hidden">
+    <section className="relative bg-white py-12 md:py-16 overflow-hidden">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
 

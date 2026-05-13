@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import Link from 'next/link'
 import Container from '@/components/ui/Container'
+import ScrollIndicator from '@/components/ui/ScrollIndicator'
 import { serviceThemes } from '../service-themes'
 import PartnerBrandMark from './PartnerBrandMark'
 import { partnerAccents, type PartnerVariant } from './partner-types'
@@ -82,7 +83,7 @@ export default function PartnerHero({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.1 }}
-              className="mt-7 text-4xl font-bold leading-[1.08] tracking-tight text-navy-900 md:text-5xl lg:text-6xl"
+              className="mt-7 text-4xl font-bold leading-[1.08] tracking-tight text-navy-900 md:text-5xl lg:text-6xl 2xl:text-7xl"
             >
               {highlight ? (
                 <>
@@ -99,7 +100,7 @@ export default function PartnerHero({
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.18 }}
-              className="mt-7 max-w-2xl text-lg leading-relaxed text-gray-600 md:text-xl"
+              className="mt-7 max-w-2xl 2xl:max-w-3xl text-lg leading-relaxed text-gray-600 md:text-xl 2xl:text-2xl"
             >
               {description}
             </motion.p>
@@ -211,6 +212,8 @@ export default function PartnerHero({
           </div>
         </div>
       </Container>
+
+      <ScrollIndicator targetId="capabilities" />
     </section>
   )
 }

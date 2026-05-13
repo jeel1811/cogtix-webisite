@@ -40,7 +40,7 @@ export default function PartnerCredentials({
   const accent = partnerAccents[variant]
 
   return (
-    <section className="relative overflow-hidden bg-white py-20 md:py-24">
+    <section className="relative overflow-hidden bg-white py-14 md:py-16">
       {/* Background dots */}
       <div
         className="absolute inset-0 opacity-[0.04] pointer-events-none"

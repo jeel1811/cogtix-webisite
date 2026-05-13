@@ -50,7 +50,7 @@ export default function Industries() {
   const { m } = useI18n();
 
   return (
-    <section id="industries" className="py-20 md:py-28 bg-white">
+    <section id="industries" className="py-14 md:py-20 bg-white">
       <Container>
         <SectionHeading
           badge={m.industries.badge}

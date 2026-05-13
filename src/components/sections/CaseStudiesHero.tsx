@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Container from '@/components/ui/Container';
+import ScrollIndicator from '@/components/ui/ScrollIndicator';
 
 export default function CaseStudiesHero() {
   return (
@@ -63,16 +64,10 @@ export default function CaseStudiesHero() {
             Explore how we&apos;ve partnered with ambitious startups and global enterprises to engineer platforms that drive revenue, scale effortlessly, and dominate markets.
           </motion.p>
           
-          {/* Decorative scroll indicator */}
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.8 }}
-            className="flex flex-col items-center justify-center gap-3"
-          >
-          </motion.div>
         </div>
       </Container>
+
+      <ScrollIndicator />
     </section>
   );
 }

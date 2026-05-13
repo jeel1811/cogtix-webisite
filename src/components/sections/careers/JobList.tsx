@@ -18,7 +18,7 @@ interface JobListProps {
 export default function JobList({ careers }: JobListProps) {
   if (!careers || careers.length === 0) {
     return (
-      <section id="open-positions" className="relative bg-white py-20 md:py-28 overflow-hidden">
+      <section id="open-positions" className="relative bg-white py-14 md:py-20 overflow-hidden">
         <Container>
           <div className="mx-auto max-w-2xl text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100/80 text-blue-800 font-bold border border-gray-100 mb-8">
@@ -48,7 +48,7 @@ export default function JobList({ careers }: JobListProps) {
   const onSiteJobs = careers.filter(c => !c.node.careers?.jobType?.toLowerCase().includes('home') && !c.node.careers?.jobType?.toLowerCase().includes('remote'))
 
   return (
-    <section id="open-positions" className="relative bg-white py-20 md:py-28 overflow-hidden">
+    <section id="open-positions" className="relative bg-white py-14 md:py-20 overflow-hidden">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
 
       {/* Decorative geometrical shapes */}
