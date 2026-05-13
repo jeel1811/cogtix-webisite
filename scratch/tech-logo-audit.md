@@ -1,0 +1,158 @@
+# Tech Logo Audit
+
+Source: src/i18n/serviceData.ts vs src/lib/techIcons.tsx
+
+Total tech items in service stack: 144
+Logo mapping present: 144
+Logo mapping missing: 0
+
+## Missing Logos
+
+None.
+
+## Present Logos
+
+- .NET 8 / .NET Core
+- .NET Core
+- Adobe XD
+- AI Builder
+- Alibaba Cloud
+- Amplitude
+- Ansible
+- Ant Design
+- Apache Airflow
+- Apache Flink
+- Apache Hudi
+- Apache Iceberg
+- Apache Kafka
+- Apache Spark
+- Application Insights
+- ASP.NET Core MVC
+- Automation Anywhere
+- AWS
+- AWS Lambda
+- AWS S3
+- AWS SageMaker
+- Axure
+- Azure Active Directory
+- Azure App Service
+- Azure Blob Storage
+- Azure Cosmos DB
+- Azure DevOps
+- Azure Functions
+- Azure Key Vault
+- Azure Kubernetes (AKS)
+- Azure ML
+- Azure Service Bus
+- Azure Synapse
+- Bicep / ARM Templates
+- BigQuery
+- Blazor / WebAssembly
+- Blue Prism
+- Bootstrap
+- Cassandra
+- CDN Services
+- CircleCI
+- Claude API
+- CloudFormation
+- Confluence
+- Dask
+- Data Factory
+- Datadog
+- dbt
+- Delta Lake
+- Docker
+- Docker Swarm
+- Dynamics 365
+- ECS/EKS
+- ELK Stack
+- Entity Framework Core
+- FastAPI
+- Figma
+- Framer
+- GitHub Actions
+- GitLab CI
+- Google Cloud
+- Google Vertex AI
+- GPT-4
+- Great Expectations
+- Hadoop
+- Hotjar
+- HTML/CSS
+- Hugging Face
+- Hugging Face Hub
+- Informatica
+- InVision
+- Java Enterprise
+- JavaScript
+- Jenkins
+- Jira
+- Jupyter
+- Kafka Streams
+- Keras
+- Kubernetes
+- Lambda/Functions
+- LangChain
+- LlamaIndex
+- Marvel
+- Material UI
+- MAUI (Mobile & Desktop)
+- Maze
+- Microsoft Azure
+- Microsoft Dataverse
+- Microsoft Graph API
+- Microsoft Teams SDK
+- Miro
+- MLflow
+- MongoDB
+- MuleSoft
+- Next.js
+- Node.js
+- NuGet / MSBuild
+- NumPy
+- Oracle
+- Oracle DB
+- Outlook Add-ins
+- Pandas
+- PostgreSQL
+- Power Apps (Canvas & Model)
+- Power Automate
+- Power BI
+- Power Pages
+- Prometheus
+- Protopie
+- Puppet
+- Python
+- PyTorch
+- RDS/Databases
+- React
+- Redis
+- Redis Cache
+- Redshift
+- S3/Storage
+- Salesforce
+- SAP
+- Scikit-learn
+- ServiceNow
+- SharePoint Online
+- Sketch
+- Slack
+- Snowflake
+- Spark Streaming
+- SPFx Development
+- Splunk
+- Spring Cloud
+- SQL Server
+- SQL Server / Azure SQL
+- Synapse Analytics
+- Tailwind CSS
+- Talend
+- TensorFlow
+- Terraform
+- UiPath
+- UserTesting
+- Vector DBs
+- Visual Studio / VS Code
+- WorkflowAI
+- WPF / WinForms
+- XGBoost
