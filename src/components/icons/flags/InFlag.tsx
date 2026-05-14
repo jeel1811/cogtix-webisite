@@ -1,8 +1,8 @@
-export default function InFlag() {
+export default function InFlag({ className = "" }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 24 24"
-      className="w-8 h-8 rounded-full border border-gray-100 overflow-hidden"
+      className={`w-8 h-8 rounded-full overflow-hidden ${className}`}
       aria-hidden="true"
     >
       {/* Tricolor */}

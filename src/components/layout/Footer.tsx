@@ -49,6 +49,8 @@ const socialIcons = [
   },
 ];
 
+import { InFlag, UsFlag, UkFlag } from "@/components/icons/flags";
+
 export default function Footer() {
   const { m } = useI18n();
 
@@ -168,39 +170,37 @@ export default function Footer() {
                   <span className="font-medium">{CONTACT_INFO.email}</span>
                 </a>
               </li>
-              {CONTACT_INFO.phones.map((phone) => (
-                <li key={phone.label}>
-                  <a
-                    href={`tel:${phone.number}`}
-                    className="flex items-center gap-4 text-gray-400 text-sm hover:text-white transition-colors group"
-                  >
-                    <span className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-blue-500/20 transition-colors shrink-0">
-                      <Phone className="w-4 h-4" />
-                    </span>
-                    <div className="flex flex-col justify-center">
-                      <span className="text-gray-500 text-[0.625rem] font-bold uppercase tracking-wider leading-none mb-1">
-                        {phone.label}
+              {CONTACT_INFO.phones.map((phone) => {
+                const Flag = phone.label === "India" ? InFlag : 
+                             phone.label === "USA" ? UsFlag : 
+                             phone.label === "UK" ? UkFlag : null;
+                return (
+                  <li key={phone.label}>
+                    <a
+                      href={`tel:${phone.number}`}
+                      className="flex items-center gap-4 text-gray-400 text-sm hover:text-white transition-colors group"
+                    >
+                      <span className="w-9 h-9 rounded-full flex items-center justify-center shrink-0 overflow-hidden">
+                        {Flag ? (
+                          <div className="scale-[0.6]">
+                            <Flag />
+                          </div>
+                        ) : (
+                          <Phone className="w-4 h-4" />
+                        )}
                       </span>
-                      <span className="text-sm font-medium leading-none">
-                        {phone.number}
-                      </span>
-                    </div>
-                  </a>
-                </li>
-              ))}
-              {/* <li>
-                <a
-                  href={CONTACT_INFO.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-gray-400 text-sm hover:text-white transition-colors group"
-                >
-                  <span className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-green-500/20 transition-colors">
-                    <MessageCircle className="w-3.5 h-3.5" />
-                  </span>
-                  Chat with us
-                  </a>
-              </li> */}
+                      <div className="flex flex-col justify-center">
+                        <span className="text-gray-500 text-[0.625rem] font-bold uppercase tracking-wider leading-none mb-1">
+                          {phone.label}
+                        </span>
+                        <span className="text-sm font-medium leading-none">
+                          {phone.number}
+                        </span>
+                      </div>
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>
