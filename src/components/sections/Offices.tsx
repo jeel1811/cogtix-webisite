@@ -132,7 +132,7 @@ export default function Offices() {
                     <div className="w-8 h-8 rounded-full bg-white border border-gray-100 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-50 transition-colors">
                       <MapPin className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors" />
                     </div>
-                    <p className="text-gray-500 text-[0.6875rem] leading-relaxed font-medium">
+                    <p className="text-gray-500 text-sm leading-relaxed font-medium">
                       {office.address}
                     </p>
                   </div>
