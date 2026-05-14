@@ -34,25 +34,6 @@ export default function DedicatedResourceModelPage() {
     },
   ]
 
-  const processSteps = [
-    {
-      title: 'Onboarding',
-      description: 'Ramp-up with knowledge transfer and alignment workshops so the team can start productively.',
-    },
-    {
-      title: 'Execution',
-      description: 'Sprint-based delivery with regular demos, shared prioritisation, and clear progress tracking.',
-    },
-    {
-      title: 'Governance',
-      description: 'Weekly reviews, issue logs, and KPI reporting that make management simple.',
-    },
-    {
-      title: 'Scaling',
-      description: 'Add or replace resources as priorities evolve without restarting the engagement.',
-    },
-  ]
-
   const roles = ['Project Managers', 'Business Analysts', 'UI/UX Designers', 'Frontend / Backend Developers', 'Data Engineers / Scientists', 'QA Engineers']
 
   return (

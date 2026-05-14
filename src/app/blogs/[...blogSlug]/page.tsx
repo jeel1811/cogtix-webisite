@@ -69,7 +69,7 @@ export async function generateMetadata(
       siteName: "Cogtix Solutions",
       publishedTime: blog.date,
       modifiedTime: blog.modified,
-      authors: ["Cogtix Solutions"],
+      authors: ["Akash Limbani"],
       images: [image],
     },
     twitter: {
@@ -164,13 +164,13 @@ export default async function BlogDetailPage(props: BlogDetailPageProps) {
               </div>
 
               {image ? (
-                <div className="flex justify-center lg:justify-center lg:self-start lg:justify-self-center lg:pt-1">
+                <div className="mx-auto lg:mx-0 w-fit overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_25px_80px_-35px_rgba(15,23,42,0.35)] p-2">
                   <Image
                     src={image}
                     alt={title}
-                    width={640}
-                    height={800}
-                    className="h-auto w-full max-w-[500px] object-contain lg:max-w-[560px]"
+                    width={600}
+                    height={450}
+                    className="h-auto w-auto max-w-full max-h-[500px] object-contain"
                     priority
                     unoptimized={image.startsWith('http')}
                   />

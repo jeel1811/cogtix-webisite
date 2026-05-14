@@ -31,60 +31,86 @@ function resolveImageUrl(node: CaseStudyNode, key: 'firstImage' | 'secondImage' 
   return node.caseStudy?.projectImages?.[key]?.mediaItemUrl ?? null
 }
 
+function formatContent(content: string | null | undefined) {
+  if (!content) return ''
+  // If it already looks like HTML, return as is
+  if (content.includes('<p>') || content.includes('<br')) return content
+  
+  // Otherwise split by double newlines or single newlines and wrap in paragraphs
+  return content
+    .split(/\n\n+/)
+    .map(p => `<p>${p.trim()}</p>`)
+    .join('')
+}
+
 function renderSection(title: string, content?: string | null) {
   if (!content) return null
 
   return (
-    <section className="border-t border-slate-200 py-12 first:border-t-0 first:pt-0">
-      <div className="grid gap-8 lg:grid-cols-[260px_minmax(0,1fr)] lg:items-start">
-        <h2 className="text-2xl font-bold tracking-tight text-slate-950">
-          {title}
-        </h2>
+    <section className="border-t border-slate-100 py-8 first:border-t-0 first:pt-0">
+      <h2 className="mb-10 text-center text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
+        {title}
+      </h2>
+      <div className="mx-auto max-w-4xl text-center">
         <div
-          className="prose prose-slate max-w-none prose-headings:font-bold prose-a:text-blue-600"
-          dangerouslySetInnerHTML={{ __html: content }}
+          className="text-slate-700 leading-relaxed [&_h2]:mt-10 [&_h2]:mb-4 [&_h2]:text-3xl [&_h2]:font-bold [&_h2]:text-blue-700 [&_h3]:mt-8 [&_h3]:mb-3 [&_h3]:text-2xl [&_h3]:font-bold [&_h3]:text-slate-900 [&_h4]:mt-6 [&_h4]:mb-2 [&_h4]:text-xl [&_h4]:font-bold [&_h4]:text-slate-900 [&_p]:my-6 [&_p]:leading-8 [&_p]:text-slate-700 [&_ul]:my-6 [&_ul]:pl-6 [&_ul]:list-disc [&_ol]:my-6 [&_ol]:pl-6 [&_ol]:list-decimal [&_li]:my-3 [&_li>p]:my-0 [&_strong]:text-slate-950 [&_strong]:font-bold"
+          dangerouslySetInnerHTML={{ __html: formatContent(content) }}
         />
       </div>
     </section>
   )
 }
 
-function renderImageSection(title: string, content?: string | null, image?: string | null, reverse = false) {
-  if (!content && !image) return null
+function renderArticleSection(title: string, content: string | null, sidebarImage: string | null = null, bottomImage: string | null = null, reverse = false) {
+  if (!content && !sidebarImage && !bottomImage) return null
 
   return (
-    <section className="border-t border-slate-200 py-12 first:border-t-0 first:pt-0">
-      <div className={`grid gap-8 lg:grid-cols-2 lg:items-center ${reverse ? 'lg:[grid-template-columns:1fr_0.92fr]' : ''}`}>
-        <div className={reverse ? 'lg:order-2' : ''}>
-          <h2 className="text-2xl font-bold tracking-tight text-slate-950">
-            {title}
-          </h2>
-          {content ? (
-            <div
-              className="prose prose-slate mt-4 max-w-none prose-headings:font-bold prose-a:text-blue-600"
-              dangerouslySetInnerHTML={{ __html: content }}
-            />
-          ) : null}
-        </div>
-        <div className={reverse ? 'lg:order-1' : ''}>
-          {image ? (
-            <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] border border-slate-200 bg-slate-100 shadow-sm">
+    <section className="border-t border-slate-100 py-8 first:border-t-0 first:pt-0">
+      <h2 className="mb-10 text-center text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
+        {title}
+      </h2>
+      
+      <div className="mx-auto max-w-5xl overflow-hidden">
+        {sidebarImage && (
+          <div className={`mb-8 sm:mb-0 ${reverse ? 'sm:float-left sm:mr-10' : 'sm:float-right sm:ml-10'} relative w-full sm:w-[400px]`}>
+            <div className="absolute -inset-10 rounded-[4rem] bg-blue-50/50 opacity-50 blur-3xl" />
+            <div className="relative overflow-hidden rounded-[2rem] bg-white p-2 shadow-2xl shadow-slate-200/50">
               <Image
-                src={image}
-                alt={title}
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                unoptimized={image.startsWith('http')}
+                src={sidebarImage}
+                alt={`${title} view`}
+                width={500}
+                height={375}
+                className="h-auto w-full object-contain"
+                unoptimized={sidebarImage.startsWith('http')}
               />
             </div>
-          ) : (
-            <div className="rounded-[1.5rem] border border-dashed border-slate-300 bg-slate-50 p-8 text-sm text-slate-500">
-              Image not available for this section.
-            </div>
-          )}
-        </div>
+          </div>
+        )}
+
+        <div
+          className="text-slate-700 leading-relaxed [&_h2]:mt-10 [&_h2]:mb-4 [&_h2]:text-3xl [&_h2]:font-bold [&_h2]:text-blue-700 [&_h3]:mt-8 [&_h3]:mb-3 [&_h3]:text-2xl [&_h3]:font-bold [&_h3]:text-slate-900 [&_h4]:mt-6 [&_h4]:mb-2 [&_h4]:text-xl [&_h4]:font-bold [&_h4]:text-slate-900 [&_p]:my-6 [&_p]:leading-8 [&_p]:text-slate-700 [&_ul]:my-6 [&_ul]:pl-6 [&_ul]:list-disc [&_ol]:my-6 [&_ol]:pl-6 [&_ol]:list-decimal [&_li]:my-3 [&_li>p]:my-0 [&_strong]:text-slate-950 [&_strong]:font-bold"
+          dangerouslySetInnerHTML={{ __html: formatContent(content) }}
+        />
+
+        {/* Clear floats */}
+        <div className="clear-both" />
       </div>
+
+      {bottomImage && (
+        <div className="mt-20 relative group mx-auto max-w-5xl">
+          <div className="absolute -inset-10 rounded-[4rem] bg-slate-50/50 opacity-0 group-hover:opacity-100 blur-3xl transition-opacity duration-700" />
+          <div className="relative overflow-hidden rounded-[2.5rem] bg-white p-3 shadow-2xl shadow-slate-200/60">
+            <Image
+              src={bottomImage}
+              alt={`${title} wide view`}
+              width={1200}
+              height={675}
+              className="h-auto w-full object-contain max-h-[700px]"
+              unoptimized={bottomImage.startsWith('http')}
+            />
+          </div>
+        </div>
+      )}
     </section>
   )
 }
@@ -154,7 +180,7 @@ export default async function CaseStudyDetailPage({
 
   return (
     <main className="bg-white">
-      <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-sky-50 pt-28 pb-16">
+      <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-sky-50 pt-28 pb-4">
         <div className="absolute inset-0 [background-image:linear-gradient(to_right,rgba(15,23,42,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(15,23,42,0.04)_1px,transparent_1px)] [background-size:34px_34px]" />
         <div className="absolute -left-24 top-12 h-80 w-80 rounded-full bg-blue-400/20 blur-3xl" />
         <div className="absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-cyan-300/20 blur-3xl" />
@@ -175,41 +201,45 @@ export default async function CaseStudyDetailPage({
 
           <div className="mt-8 grid gap-10 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-[0.6875rem] font-bold uppercase tracking-[0.2em] text-blue-700 ring-1 ring-blue-100">
-                <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
-                Client Success Story
-              </div>
+            <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-[0.6875rem] font-bold uppercase tracking-[0.2em] text-blue-700 ring-1 ring-blue-100">
+              <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
+              Client Success Story
+            </div>
 
               <h1 className="mt-6 max-w-4xl text-4xl font-bold leading-[1.05] tracking-tight text-slate-950 md:text-5xl lg:text-6xl">
-                {title}
-              </h1>
+              {title}
+            </h1>
 
-              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 md:text-xl">
-                {caseStudy.metaDescription || caseStudy.shortPreviewDescription || caseStudy.projectOverview || 'A real client case study from Cogtix Solutions.'}
-              </p>
+            <div 
+                className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 md:text-xl whitespace-pre-line"
+              dangerouslySetInnerHTML={{ 
+                  __html: caseStudy.metaDescription || caseStudy.shortPreviewDescription || caseStudy.projectOverview || 'A real client case study from Cogtix Solutions.' 
+              }}
+            />
 
               <ul className="mt-8 flex flex-wrap gap-3">
                 {caseStudy.sector ? (
                   <li className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">
-                    Sector: {caseStudy.sector}
-                  </li>
+                  Sector: {caseStudy.sector}
+                </li>
                 ) : null}
                 {caseStudy.technology ? (
                   <li className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">
-                    Technology: {caseStudy.technology}
-                  </li>
+                  Technology: {caseStudy.technology}
+                </li>
                 ) : null}
-              </ul>
+            </ul>
             </div>
 
             <div className="lg:col-span-5">
               {heroImage ? (
-                <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_25px_80px_-35px_rgba(15,23,42,0.35)]">
+                <div className="mx-auto lg:ml-auto lg:mr-0 w-fit overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_25px_80px_-35px_rgba(15,23,42,0.35)]">
                   <Image
                     src={heroImage}
                     alt={title}
-                    fill
-                    className="object-cover"
+                    width={600}
+                    height={450}
+                    className="h-auto w-auto max-w-full max-h-[500px] object-contain"
                     sizes="(max-width: 1024px) 100vw, 40vw"
                     unoptimized={heroImage.startsWith('http')}
                   />
@@ -219,22 +249,43 @@ export default async function CaseStudyDetailPage({
                   <span className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
                     Case study image unavailable
                   </span>
-                </div>
-              )}
-            </div>
+              </div>
+            )}
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section className="bg-white py-10 md:py-14">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          {renderSection('Project Overview', caseStudy.projectOverview)}
-          {renderSection('Client Background', caseStudy.clientBackground)}
-          {renderImageSection('Business Needs', caseStudy.businessNeeds, null, false)}
-          {renderImageSection('The Challenge', caseStudy.theChallange, challengeImage, true)}
-          {renderImageSection('Our Solution', caseStudy.ourSolution, solutionImage, false)}
-          {renderImageSection('Key Outcomes', caseStudy.keyOutcomes, null, true)}
-        </div>
+      <section className="bg-white py-6">
+        <section className="container py-8">
+          {renderSection('Project Overview', caseStudy.projectOverview || null)}
+          {renderSection('Client Background', caseStudy.clientBackground || null)}
+          
+          {/* Magazine Style Sections */}
+          {renderArticleSection('Business Needs', caseStudy.businessNeeds || null)}
+          
+          {renderArticleSection(
+            'The Challenge', 
+            caseStudy.theChallange || null, 
+            challengeImage, 
+            null, 
+            true
+          )}
+          
+          {renderArticleSection(
+            'Our Solution', 
+            caseStudy.ourSolution || null, 
+            solutionImage
+          )}
+          
+          {renderArticleSection(
+            'Key Outcomes', 
+            caseStudy.keyOutcomes || null, 
+            null, 
+            null, 
+            true
+          )}
+        </section>
       </section>
 
       <section className="border-t border-slate-200 bg-slate-50 py-10 md:py-14">

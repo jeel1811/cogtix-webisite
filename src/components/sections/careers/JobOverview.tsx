@@ -421,8 +421,8 @@ function ApplyModal({
           </div>
 
           {status.kind === 'success' ? (
-            <div className="flex items-start gap-3 rounded-xl bg-emerald-50 p-3 text-sm text-emerald-800">
-              <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0" />
+            <div className="flex items-center gap-3 rounded-xl bg-emerald-50 p-3 text-sm text-emerald-800">
+              <CheckCircle2 className="h-4 w-4 shrink-0" />
               <span>{status.message}</span>
             </div>
           ) : null}
