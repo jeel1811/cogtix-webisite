@@ -226,7 +226,7 @@ export default function CaseStudiesGrid({ studies }: CaseStudiesGridProps) {
 
           {/* Results info */}
           <div className="mt-8 text-center text-sm text-slate-500">
-            Showing {startIdx + 1}–{Math.min(endIdx, studies.length)} of {studies.length} case studies
+            Showing {startIdx + 1}-{Math.min(endIdx, studies.length)} of {studies.length} case studies
           </div>
         </div>
       </Container>

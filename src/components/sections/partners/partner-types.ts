@@ -1,7 +1,7 @@
 export type PartnerVariant = 'microsoft' | 'aws' | 'google-cloud'
 
 export interface PartnerAccent {
-  // brand-tinted helpers (use sparingly — primary theme stays blue)
+  // brand-tinted helpers (use sparingly - primary theme stays blue)
   ring: string         // ring color class for the brand card border
   glow: string         // tinted glow blob
   chipBg: string       // soft tint for certification chips

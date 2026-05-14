@@ -124,7 +124,7 @@ export default function ServiceTechnologies({
                     {panelOutcomesTitle}
                   </div>
                   <ul className="mt-3 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
-                    {activeCategory.outcomes.map((outcome) => (
+                    {activeCategory.outcomes.slice(0, 2).map((outcome) => (
                       <li
                         key={outcome}
                         className="flex items-center gap-2.5 rounded-lg border border-slate-200 bg-slate-50 px-3.5 py-2.5"
@@ -156,9 +156,14 @@ export default function ServiceTechnologies({
                           <div className="flex items-center gap-2">
                             <span
                               className="flex h-4 w-4 shrink-0 items-center justify-center"
-                              style={{ color: logoData.color || '#0f172a' }}
+                              style={{ color: logoData.color || "#0f172a" }}
                             >
-                              {React.cloneElement(logoData.icon as React.ReactElement<Record<string, unknown>>, { size: 16 })}
+                              {React.cloneElement(
+                                logoData.icon as React.ReactElement<
+                                  Record<string, unknown>
+                                >,
+                                { size: 16 },
+                              )}
                             </span>
                             <span className="text-[0.6875rem] font-medium text-slate-700 whitespace-nowrap">
                               {item}
@@ -167,7 +172,9 @@ export default function ServiceTechnologies({
                         ) : (
                           <div className="inline-flex items-center gap-2">
                             <span className="h-1.5 w-1.5 rounded-full bg-slate-400" />
-                            <span className="text-[0.6875rem] font-medium text-slate-700 whitespace-nowrap">{item}</span>
+                            <span className="text-[0.6875rem] font-medium text-slate-700 whitespace-nowrap">
+                              {item}
+                            </span>
                           </div>
                         )}
                       </div>

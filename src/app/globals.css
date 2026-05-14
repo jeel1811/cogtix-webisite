@@ -342,12 +342,12 @@ html {
   font-size: 16px;
 }
 
-/* Wide laptops (≥1440px) — small bump so content feels balanced. */
+/* Wide laptops (≥1440px) - small bump so content feels balanced. */
 @media (min-width: 1440px) {
   html { font-size: 17px; }
 }
 
-/* Larger-than-normal displays (≥1536px / 2xl) — meaningful bump so body /
+/* Larger-than-normal displays (≥1536px / 2xl) - meaningful bump so body /
    description text and gaps grow proportionally with the screen. */
 @media (min-width: 1536px) {
   html { font-size: 18.5px; }

@@ -136,7 +136,7 @@ export default function ProcessFlow({
       </div>
 
       <div ref={containerRef} className="relative">
-        {/* SVG connector layer — measured from real DOM positions */}
+        {/* SVG connector layer - measured from real DOM positions */}
         <svg
           aria-hidden
           className="pointer-events-none absolute inset-0 h-full w-full overflow-visible"
@@ -212,7 +212,7 @@ export default function ProcessFlow({
                   )}
                 </div>
 
-                {/* Spine — node sits here, curves connect between nodes */}
+                {/* Spine - node sits here, curves connect between nodes */}
                 <div className="flex flex-col items-center pt-4">
                   <motion.div
                     ref={(el) => {

@@ -41,7 +41,7 @@ type OrbitIcon = {
   color: string
 }
 
-// Inner orbit – core development stack (4 icons, rotates 30s clockwise)
+// Inner orbit - core development stack (4 icons, rotates 30s clockwise)
 const innerOrbit: OrbitIcon[] = [
   { Icon: SiReact, color: '#61DAFB' },
   { Icon: SiNodedotjs, color: '#339933' },
@@ -49,7 +49,7 @@ const innerOrbit: OrbitIcon[] = [
   { Icon: SiDotnet, color: '#512BD4' },
 ]
 
-// Middle orbit – AI / ML platforms (6 icons, rotates 35s counter-clockwise)
+// Middle orbit - AI / ML platforms (6 icons, rotates 35s counter-clockwise)
 const aiOrbit: OrbitIcon[] = [
   { Icon: SiClaude, color: '#D97757' },
   { Icon: SiGooglegemini, color: '#1C69FF' },
@@ -59,7 +59,7 @@ const aiOrbit: OrbitIcon[] = [
   { Icon: SiTensorflow, color: '#FF6F00' },
 ]
 
-// Outer orbit – cloud / infrastructure (8 icons, rotates 50s clockwise)
+// Outer orbit - cloud / infrastructure (8 icons, rotates 50s clockwise)
 const cloudOrbit: OrbitIcon[] = [
   { Icon: SiGooglecloud, color: '#4285F4' },
   { Icon: Cloud, color: '#FF9900' }, // AWS placeholder
@@ -138,7 +138,7 @@ export default function Hero() {
 
       <Container className="relative z-10 pt-20 pb-12 lg:pt-24 lg:pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* ───────── Left: Copy ───────── */}
+          {/* --------- Left: Copy --------- */}
           <div className="text-center lg:text-left">
             <h3 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-navy-900 leading-[1.05] tracking-tight mb-6">
               <span className="block animate-fade-in-up">
@@ -210,7 +210,7 @@ export default function Hero() {
             </ul>
           </div>
 
-          {/* ───────── Right: Animated Tech Ecosystem ───────── */}
+          {/* --------- Right: Animated Tech Ecosystem --------- */}
           <div className="relative mx-auto w-full max-w-[360px] sm:max-w-[480px] lg:max-w-[560px] xl:max-w-[600px] 2xl:max-w-[680px] aspect-square animate-fade-in">
             {/* Animated grid backdrop (panning) */}
             <div
@@ -285,7 +285,7 @@ export default function Hero() {
               <div className="absolute w-[88%] aspect-square rounded-full border border-dashed border-blue-200/50" />
             </div>
 
-            {/* Inner orbit – Dev stack (30s clockwise; icons counter-rotate to stay upright) */}
+            {/* Inner orbit - Dev stack (30s clockwise; icons counter-rotate to stay upright) */}
             <div className="absolute w-[40%] aspect-square top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-spin-slow">
               {innerOrbit.map(({ Icon, color }, i) => {
                 const pos = polarPosition(i, innerOrbit.length)
@@ -305,7 +305,7 @@ export default function Hero() {
               })}
             </div>
 
-            {/* Middle orbit – AI / ML (35s counter-clockwise) */}
+            {/* Middle orbit - AI / ML (35s counter-clockwise) */}
             <div className="absolute w-[64%] aspect-square top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-spin-reverse-mid">
               {aiOrbit.map(({ Icon, color }, i) => {
                 const pos = polarPosition(i, aiOrbit.length)
@@ -325,7 +325,7 @@ export default function Hero() {
               })}
             </div>
 
-            {/* Outer orbit – Cloud / Infra (50s clockwise) */}
+            {/* Outer orbit - Cloud / Infra (50s clockwise) */}
             <div className="absolute w-[88%] aspect-square top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-spin-slower">
               {cloudOrbit.map(({ Icon, color }, i) => {
                 const pos = polarPosition(i, cloudOrbit.length)

@@ -48,7 +48,7 @@ export default function PartnerHero({
 
   return (
     <section className="relative overflow-hidden bg-slate-50 pt-28 pb-20">
-      {/* Background decor — matches existing service/industry hero language */}
+      {/* Background decor - matches existing service/industry hero language */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.04]"

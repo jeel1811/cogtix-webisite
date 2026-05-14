@@ -1,5 +1,5 @@
 /**
- * Partner page technical data — non-translatable values (icons, numeric stats,
+ * Partner page technical data - non-translatable values (icons, numeric stats,
  * certification levels, theme keys). Localized prose lives in
  * `src/i18n/partnerContent/`.
  */

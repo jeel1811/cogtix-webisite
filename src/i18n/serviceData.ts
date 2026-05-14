@@ -1,5 +1,5 @@
 /**
- * Service page tech data — kept here (not in messages.ts) because the values
+ * Service page tech data - kept here (not in messages.ts) because the values
  * are mostly brand and product names that should NOT be translated per locale
  * (e.g. "GPT-4", "TensorFlow", "Power BI", "99.9%", "5 PB+").
  *
