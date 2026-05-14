@@ -147,8 +147,8 @@ export default function AboutUs() {
         </div>
 
         {/* DESKTOP: 3-column overlapping collage
-            Left cluster container has extra paddingTop so the top image doesn't get clipped */}
-        <div className="hidden md:flex mt-6 items-end justify-center gap-6">
+            Wrapped in max-w-6xl to keep it tight on large screens */}
+        <div className="hidden md:flex mt-6 max-w-6xl mx-auto items-end justify-center gap-6 lg:gap-12">
 
           {/* ── Left cluster ── */}
           <motion.div
@@ -157,9 +157,9 @@ export default function AboutUs() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="relative flex-shrink-0"
-            style={{ width: 270, height: 360 }}   /* taller to expose top image */
+            style={{ width: 340, height: 360 }}
           >
-            {/* Front — landscape, pushed down from the very top so nothing clips */}
+            {/* Front — landscape top-left */}
             <div className="absolute top-4 left-0 w-52 h-40 rounded-2xl overflow-hidden shadow-2xl border-2 border-white z-20">
               <Image
                 src="/about/about-us-1.webp"
@@ -168,14 +168,16 @@ export default function AboutUs() {
                 className="object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
-            {/* Back — portrait, bottom-right */}
-            <div className="absolute bottom-0 right-0 w-44 h-60 rounded-2xl overflow-hidden shadow-xl border-2 border-white z-10">
-              <Image
-                src="/about/team2.png"
-                alt="Team Meeting"
-                fill
-                className="object-cover hover:scale-105 transition-transform duration-700"
-              />
+            {/* Back — square Cogtix Logo card bottom-right */}
+            <div className="absolute bottom-0 right-0 w-48 h-48 rounded-2xl overflow-hidden shadow-xl border-2 border-white z-10 bg-[#001D54] flex items-center justify-center p-8 group">
+              <div className="relative w-full h-full">
+                <Image
+                  src="/cogtix.svg"
+                  alt="Cogtix Logo"
+                  fill
+                  className="object-contain brightness-0 invert transition-transform duration-700 group-hover:scale-110"
+                />
+              </div>
             </div>
           </motion.div>
 
@@ -203,9 +205,9 @@ export default function AboutUs() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.25 }}
             className="relative flex-shrink-0"
-            style={{ width: 270, height: 360 }}
+            style={{ width: 340, height: 360 }}
           >
-            {/* Back — portrait, top-right */}
+            {/* Back — portrait top-right */}
             <div className="absolute top-4 right-0 w-44 h-60 rounded-2xl overflow-hidden shadow-xl border-2 border-white z-10">
               <Image
                 src="/about/about-us-2.webp"
@@ -214,10 +216,10 @@ export default function AboutUs() {
                 className="object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
-            {/* Front — landscape, bottom-left */}
+            {/* Front — landscape bottom-left */}
             <div className="absolute bottom-0 left-0 w-52 h-36 rounded-2xl overflow-hidden shadow-2xl border-2 border-white z-20">
               <Image
-                src="/about/about-us-1.webp"
+                src="/about/team2.png"
                 alt="Office Space"
                 fill
                 className="object-cover hover:scale-105 transition-transform duration-700"
