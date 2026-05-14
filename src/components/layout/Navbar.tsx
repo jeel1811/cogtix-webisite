@@ -183,10 +183,10 @@ function MegaMenuPanel({
   // Tiny menus (e.g. Company with only 3 items) get a tighter panel so the
   // left column does not balloon when a nested submenu (How We Work) opens.
   const expandedPanelClass = isTinyMenu
-    ? "max-w-[880px] px-4 sm:px-6"
+    ? "max-w-[66rem] px-4 sm:px-6"
     : isScrolled
-      ? "max-w-[1210px] px-4 sm:px-6"
-      : "max-w-[1280px] px-4 sm:px-6";
+      ? "max-w-[76rem] px-4 sm:px-6"
+      : "max-w-[80rem] px-4 sm:px-6";
 
   const hoveredChildObj = hoveredChild
     ? item.children.find((c) => c.label === hoveredChild) ?? null
@@ -199,11 +199,11 @@ function MegaMenuPanel({
   // For tiny menus, give the left column just enough room for its short labels
   // and let the right column (nested links + CTA) take the bulk of the width.
   const rightColSpanClass = hoveredChildObj && hoveredChildObj.children
-    ? (isTinyMenu ? "flex-[0_0_63%] p-5" : isCompactMenu ? "flex-[0_0_41.67%] p-6" : "flex-[0_0_33.33%] p-6")
+    ? (isTinyMenu ? "flex-[0_0_68%] p-5" : isCompactMenu ? "flex-[0_0_41.67%] p-6" : "flex-[0_0_33.33%] p-6")
     : (isTinyMenu ? "col-span-6" : isCompactMenu ? "col-span-5" : "col-span-4");
 
   const leftColSpanClass = hoveredChildObj && hoveredChildObj.children
-    ? (isTinyMenu ? "flex-[0_0_37%] p-6" : isCompactMenu ? "flex-[0_0_58.33%] p-8" : "flex-[0_0_66.67%] p-8")
+    ? (isTinyMenu ? "flex-[0_0_32%] p-6" : isCompactMenu ? "flex-[0_0_58.33%] p-8" : "flex-[0_0_66.67%] p-8")
     : (isTinyMenu ? "col-span-6 flex flex-col justify-center" : isCompactMenu ? "col-span-7" : "col-span-8");
 
   return (
@@ -287,7 +287,7 @@ function MegaMenuPanel({
             >
               {hoveredChildObj && hoveredChildObj.children ? (
                 <div
-                  className={`w-full grid gap-5 ${
+                  className={`w-full grid gap-8 ${
                     isTinyMenu
                       ? "grid-cols-[minmax(0,1fr)_16rem]"
                       : "grid-cols-[1fr_20rem]"
@@ -305,7 +305,7 @@ function MegaMenuPanel({
                           onClick={onClose}
                           className="group flex items-center justify-between gap-2 px-3 py-2.5 -mx-3 rounded-xl text-[0.9375rem] text-gray-600 hover:text-navy-900 hover:bg-blue-50/60 transition-all duration-200"
                         >
-                          <span className="whitespace-nowrap">{sub.label}</span>
+                          <span>{sub.label}</span>
                           <ArrowRight className="w-4 h-4 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 text-blue-500" />
                         </Link>
                       ))}

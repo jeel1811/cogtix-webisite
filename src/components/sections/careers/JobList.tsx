@@ -30,10 +30,10 @@ export default function JobList({ careers }: JobListProps) {
             <p className="mt-4 text-base leading-relaxed text-gray-600 md:text-lg">
               We&apos;re always looking for great people. Drop us a line at{' '}
               <a
-                href="mailto:hr@cogtix.com"
+                href="mailto:info@cogtix.com"
                 className="font-semibold text-blue-600 hover:text-blue-700"
               >
-                hr@cogtix.com
+                info@cogtix.com
               </a>{' '}
               and we&apos;ll keep you in mind for upcoming roles.
             </p>

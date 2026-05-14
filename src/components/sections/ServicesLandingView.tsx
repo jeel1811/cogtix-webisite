@@ -78,7 +78,7 @@ export default function ServicesLandingView() {
             </div>
           </div>
 
-          <div className="mt-8 flex gap-3 overflow-x-auto pb-2">
+          {/* <div className="mt-8 flex gap-3 overflow-x-auto pb-2">
             {services.map((service) => (
               <Link
                 key={service.title}
@@ -88,7 +88,7 @@ export default function ServicesLandingView() {
                 {service.title}
               </Link>
             ))}
-          </div>
+          </div> */}
 
           <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {services.map((service) => (

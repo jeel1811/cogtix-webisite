@@ -11,7 +11,7 @@ export default function AboutUs() {
   const title = m.aboutUs?.title || 'From Idea to Impact'
 
   return (
-    <section className="relative bg-white py-24 md:py-32 overflow-hidden">
+    <section className="relative bg-white py-12 md:py-12 overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 pointer-events-none opacity-30">
         <div className="absolute -left-24 top-12 h-96 w-96 rounded-full bg-blue-100/50 blur-3xl" />

@@ -101,10 +101,10 @@ export default function JobOverview({ data }: JobOverviewProps) {
         <p className="mt-4 text-center text-[0.6875rem] text-gray-500">
           Or email{' '}
           <a
-            href="mailto:hr@cogtix.com"
+            href="mailto:info@cogtix.com"
             className="font-semibold text-blue-600 hover:text-blue-700"
           >
-            hr@cogtix.com
+            info@cogtix.com
           </a>
         </p>
       </aside>

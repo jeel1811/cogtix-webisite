@@ -79,6 +79,11 @@ export interface Messages {
     googleCloud: string
     caseStudies: string
     blogs: string
+    aiEngineering: string
+    cloudDevOpsEngineering: string
+    dataEngineering: string
+    digitalExperienceEngineering: string
+    enterpriseServices: string
   }
   common: {
     contactUs: string
@@ -255,6 +260,11 @@ export const messages: Record<Locale, Messages> = {
       googleCloud: 'Google Cloud',
       caseStudies: 'Case Studies',
       blogs: 'Blogs',
+      aiEngineering: 'AI/ML Engineering',
+      cloudDevOpsEngineering: 'Cloud & DevOps Engineering',
+      dataEngineering: 'Data Engineering',
+      digitalExperienceEngineering: 'Digital & Experience Engineering',
+      enterpriseServices: 'Enterprise Services',
     },
     common: {
       contactUs: 'Contact Us',
@@ -285,7 +295,7 @@ export const messages: Record<Locale, Messages> = {
       badge: 'What We Do',
       title: 'Services We Offer',
       subtitle:
-        'From backend architecture to digital marketing, we provide end-to-end software development services tailored to your business needs.',
+        'From generative AI and cloud-native architecture to digital product engineering, we build scalable systems that drive innovation.',
       learnMore: 'Learn more',
     },
     industries: {
@@ -1233,6 +1243,11 @@ export const messages: Record<Locale, Messages> = {
       googleCloud: 'Google Cloud',
       caseStudies: 'Casos de Exito',
       blogs: 'Blogs',
+      aiEngineering: 'Ingenieria IA/ML',
+      cloudDevOpsEngineering: 'Ingenieria Cloud y DevOps',
+      dataEngineering: 'Ingenieria de Datos',
+      digitalExperienceEngineering: 'Ingenieria de Experiencia Digital',
+      enterpriseServices: 'Servicios Empresariales',
     },
     common: {
       contactUs: 'Contactanos',
@@ -1809,6 +1824,11 @@ export const messages: Record<Locale, Messages> = {
       googleCloud: 'Google Cloud',
       caseStudies: 'Etudes de Cas',
       blogs: 'Blogs',
+      aiEngineering: 'Ingenierie IA/ML',
+      cloudDevOpsEngineering: 'Ingenierie Cloud et DevOps',
+      dataEngineering: 'Ingenierie des Donnees',
+      digitalExperienceEngineering: 'Ingenierie Experience Numerique',
+      enterpriseServices: 'Services Entreprise',
     },
     common: {
       contactUs: 'Contactez-nous',
@@ -2386,6 +2406,11 @@ export const messages: Record<Locale, Messages> = {
       googleCloud: 'Google Cloud',
       caseStudies: 'Fallstudien',
       blogs: 'Blogs',
+      aiEngineering: 'KI/ML Engineering',
+      cloudDevOpsEngineering: 'Cloud und DevOps Engineering',
+      dataEngineering: 'Data Engineering',
+      digitalExperienceEngineering: 'Digital und Experience Engineering',
+      enterpriseServices: 'Enterprise Services',
     },
     common: {
       contactUs: 'Kontakt',
@@ -2961,7 +2986,12 @@ export const messages: Record<Locale, Messages> = {
       aws: 'AWS',
       googleCloud: 'Google Cloud',
       caseStudies: 'Case Studies',
-      blogs: 'Blogs',
+      blogs: 'Blog',
+      aiEngineering: 'AI/ML Engineering',
+      cloudDevOpsEngineering: 'Cloud & DevOps Engineering',
+      dataEngineering: 'Data Engineering',
+      digitalExperienceEngineering: 'Digitale & Experience Engineering',
+      enterpriseServices: 'Enterprise Services',
     },
     common: {
       contactUs: 'Contact Opnemen',
@@ -3544,6 +3574,11 @@ export const messages: Record<Locale, Messages> = {
       googleCloud: 'Google Cloud',
       caseStudies: 'Casi di Studio',
       blogs: 'Blog',
+      aiEngineering: 'Ingegneria AI/ML',
+      cloudDevOpsEngineering: 'Ingegneria Cloud & DevOps',
+      dataEngineering: 'Ingegneria Dati',
+      digitalExperienceEngineering: 'Ingegneria Esperienza Digitale',
+      enterpriseServices: 'Servizi Enterprise',
     },
     common: {
       contactUs: 'Contattaci',

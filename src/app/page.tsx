@@ -7,6 +7,7 @@ import ClutchWidget from "@/components/sections/ClutchWidget";
 import Offices from "@/components/sections/Offices";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import Testimonials from "@/components/sections/Testimonials";
+import EngineeringServices from "@/components/sections/EngineeringServices";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Hero />
       <HappyClients />
       <AboutUs />
+      <EngineeringServices />
       <WhyChooseUs />
       <Awards />
       <Testimonials />

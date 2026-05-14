@@ -59,7 +59,6 @@ export const NAV_ITEMS: NavItem[] = [
         label: 'Digital Experience Engineering',
         href: '/services/digital-experience-engineering',
       },
-      // { label: 'Digital Product Engineering', href: '/services/digital-product-engineering' },
       { label: 'Enterprise Services', href: '/services/enterprise-solutions' },
       {
         label: 'Microsoft Technologies',
@@ -67,17 +66,17 @@ export const NAV_ITEMS: NavItem[] = [
       },
     ],
   },
-  // {
-  //   label: 'Industries',
-  //   href: '/industries',
-  //   children: [
-  //     { label: 'Financial Services', href: '/industries/financial-services' },
-  //     { label: 'Healthcare and Life Sciences', href: '/industries/healthcare-and-life-sciences' },
-  //     { label: 'Retail and E-commerce', href: '/industries/retail-and-e-commerce' },
-  //     { label: 'Supply Chain and Logistics', href: '/industries/supply-chain-and-logistics' },
-  //     { label: 'Hi-Tech and Digital Natives', href: '/industries/hi-tech-and-digital-natives' },
-  //   ],
-  // },
+  {
+    label: 'Industries',
+    href: '/industries',
+    children: [
+      { label: 'Financial Services', href: '/industries/financial-services' },
+      { label: 'Healthcare and Life Sciences', href: '/industries/healthcare-and-life-sciences' },
+      { label: 'Retail and E-commerce', href: '/industries/retail-and-e-commerce' },
+      { label: 'Supply Chain and Logistics', href: '/industries/supply-chain-and-logistics' },
+      { label: 'Hi-Tech and Digital Natives', href: '/industries/hi-tech-and-digital-natives' },
+    ],
+  },
   {
     label: 'Partners',
     href: '/partners',

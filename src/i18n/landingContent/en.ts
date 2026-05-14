@@ -24,7 +24,7 @@ export const enServicesLanding: ServicesLandingCopy = {
     title: 'All engineering services in one place.',
     description:
       'Each card links to a focused capability page so users can go from a high-level overview to the exact service they need.',
-    exploreCta: 'Explore service',
+    exploreCta: 'Explore',
   },
   items: [
     {

@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { ChevronRight, Home } from 'lucide-react'
 import queryGraphql from '@/components/queryGraphql/index'
 import ContactForm from '@/components/sections/ContactForm'
+import Container from '@/components/ui/Container'
 import { GET_SINGLE_CASE_STUDY_BY_SLUG } from '@/graphql/case-studies/query'
 import type { CaseStudyNode } from '@/components/sections/case-studies/types'
 
@@ -51,7 +52,7 @@ function renderSection(title: string, content?: string | null) {
       <h2 className="mb-10 text-center text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
         {title}
       </h2>
-      <div className="mx-auto max-w-4xl text-center">
+      <div className="mx-auto max-w-4xl xl:max-w-5xl text-center">
         <div
           className="text-slate-700 leading-relaxed [&_h2]:mt-10 [&_h2]:mb-4 [&_h2]:text-3xl [&_h2]:font-bold [&_h2]:text-blue-700 [&_h3]:mt-8 [&_h3]:mb-3 [&_h3]:text-2xl [&_h3]:font-bold [&_h3]:text-slate-900 [&_h4]:mt-6 [&_h4]:mb-2 [&_h4]:text-xl [&_h4]:font-bold [&_h4]:text-slate-900 [&_p]:my-6 [&_p]:leading-8 [&_p]:text-slate-700 [&_ul]:my-6 [&_ul]:pl-6 [&_ul]:list-disc [&_ol]:my-6 [&_ol]:pl-6 [&_ol]:list-decimal [&_li]:my-3 [&_li>p]:my-0 [&_strong]:text-slate-950 [&_strong]:font-bold"
           dangerouslySetInnerHTML={{ __html: formatContent(content) }}
@@ -70,9 +71,9 @@ function renderArticleSection(title: string, content: string | null, sidebarImag
         {title}
       </h2>
       
-      <div className="mx-auto max-w-5xl overflow-hidden">
+      <div className="mx-auto max-w-5xl xl:max-w-6xl 2xl:max-w-7xl overflow-hidden px-4 sm:px-6">
         {sidebarImage && (
-          <div className={`mb-8 sm:mb-0 ${reverse ? 'sm:float-left sm:mr-10' : 'sm:float-right sm:ml-10'} relative w-full sm:w-[400px]`}>
+          <div className={`mb-8 sm:mb-0 ${reverse ? 'sm:float-left sm:mr-10' : 'sm:float-right sm:ml-10'} relative w-full sm:w-[400px] xl:sm:w-[520px] 2xl:sm:w-[600px]`}>
             <div className="absolute -inset-10 rounded-[4rem] bg-blue-50/50 opacity-50 blur-3xl" />
             <div className="relative overflow-hidden rounded-[2rem] bg-white p-2 shadow-2xl shadow-slate-200/50">
               <Image
@@ -97,7 +98,7 @@ function renderArticleSection(title: string, content: string | null, sidebarImag
       </div>
 
       {bottomImage && (
-        <div className="mt-20 relative group mx-auto max-w-5xl">
+        <div className="mt-20 relative group mx-auto max-w-6xl 2xl:max-w-7xl">
           <div className="absolute -inset-10 rounded-[4rem] bg-slate-50/50 opacity-0 group-hover:opacity-100 blur-3xl transition-opacity duration-700" />
           <div className="relative overflow-hidden rounded-[2.5rem] bg-white p-3 shadow-2xl shadow-slate-200/60">
             <Image
@@ -257,7 +258,7 @@ export default async function CaseStudyDetailPage({
     </section>
 
       <section className="bg-white py-6">
-        <section className="container py-8">
+        <Container className="py-8">
           {renderSection('Project Overview', caseStudy.projectOverview || null)}
           {renderSection('Client Background', caseStudy.clientBackground || null)}
           
@@ -285,7 +286,7 @@ export default async function CaseStudyDetailPage({
             null, 
             true
           )}
-        </section>
+        </Container>
       </section>
 
       <section className="border-t border-slate-200 bg-slate-50 py-10 md:py-14">
