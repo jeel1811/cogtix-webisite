@@ -6,208 +6,226 @@ import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { useI18n } from '@/i18n/provider'
 
+// ── Floating geometric shape config ──────────────────────────────────────────
+const shapes = [
+  // circles
+  { type: 'circle', x: '8%',  y: '12%', size: 44, color: '#3b82f620', duration: 6,  delay: 0   },
+  { type: 'circle', x: '88%', y: '18%', size: 28, color: '#06b6d420', duration: 8,  delay: 1.5 },
+  { type: 'circle', x: '75%', y: '78%', size: 56, color: '#818cf830', duration: 7,  delay: 0.5 },
+  { type: 'circle', x: '18%', y: '80%', size: 20, color: '#3b82f625', duration: 9,  delay: 2   },
+  // rings (circle with stroke only)
+  { type: 'ring',   x: '92%', y: '55%', size: 48, color: '#3b82f640', duration: 10, delay: 1   },
+  { type: 'ring',   x: '5%',  y: '50%', size: 36, color: '#06b6d440', duration: 7,  delay: 3   },
+  // triangles
+  { type: 'tri',    x: '15%', y: '22%', size: 30, color: '#f59e0b30', duration: 9,  delay: 0.8 },
+  { type: 'tri',    x: '82%', y: '70%', size: 22, color: '#818cf840', duration: 6,  delay: 2.5 },
+  // squares (rotated 45°)
+  { type: 'square', x: '60%', y: '8%',  size: 22, color: '#3b82f625', duration: 8,  delay: 1.2 },
+  { type: 'square', x: '30%', y: '90%', size: 18, color: '#06b6d425', duration: 11, delay: 0.3 },
+  // dots cluster
+  { type: 'dot',    x: '50%', y: '5%',  size: 8,  color: '#3b82f650', duration: 5,  delay: 0   },
+  { type: 'dot',    x: '52%', y: '5%',  size: 5,  color: '#818cf860', duration: 6,  delay: 0.4 },
+  { type: 'dot',    x: '48%', y: '7%',  size: 6,  color: '#06b6d450', duration: 7,  delay: 0.8 },
+  { type: 'dot',    x: '4%',  y: '38%', size: 7,  color: '#f59e0b50', duration: 8,  delay: 1   },
+  { type: 'dot',    x: '96%', y: '38%', size: 7,  color: '#f59e0b50', duration: 8,  delay: 1.4 },
+  // cross / plus
+  { type: 'cross',  x: '22%', y: '60%', size: 20, color: '#3b82f640', duration: 7,  delay: 2.2 },
+  { type: 'cross',  x: '78%', y: '35%', size: 16, color: '#818cf840', duration: 9,  delay: 0.6 },
+]
+
+function Shape({ type, x, y, size, color, duration, delay }: typeof shapes[0]) {
+
+  const style = { position: 'absolute' as const, left: x, top: y, pointerEvents: 'none' as const, zIndex: 1 }
+
+  if (type === 'circle')
+    return (
+      <motion.div style={{ ...style, width: size, height: size, borderRadius: '50%', background: color }}
+        animate={{ y: [0, -14, 0] }} transition={{ duration, repeat: Infinity, ease: 'easeInOut', delay }} />
+    )
+  if (type === 'ring')
+    return (
+      <motion.div style={{ ...style, width: size, height: size, borderRadius: '50%', border: `2.5px solid ${color}`, background: 'transparent' }}
+        animate={{ y: [0, -12, 0], rotate: [0, 180, 360] }} transition={{ duration, repeat: Infinity, ease: 'easeInOut', delay }} />
+    )
+  if (type === 'tri') {
+    const half = size / 2
+    return (
+      <motion.div style={style} animate={{ y: [0, -10, 0], rotate: [0, 15, 0, -15, 0] }} transition={{ duration, repeat: Infinity, ease: 'easeInOut', delay }}>
+        <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
+          <polygon points={`${half},2 ${size - 2},${size - 2} 2,${size - 2}`} fill={color} />
+        </svg>
+      </motion.div>
+    )
+  }
+  if (type === 'square')
+    return (
+      <motion.div style={{ ...style, width: size, height: size, background: color, borderRadius: 3 }}
+        animate={{ rotate: [45, 90, 45], y: [0, -10, 0] }} transition={{ duration, repeat: Infinity, ease: 'easeInOut', delay }} />
+    )
+  if (type === 'dot')
+    return (
+      <motion.div style={{ ...style, width: size, height: size, borderRadius: '50%', background: color }}
+        animate={{ scale: [1, 1.6, 1], opacity: [0.6, 1, 0.6] }} transition={{ duration, repeat: Infinity, ease: 'easeInOut', delay }} />
+    )
+  if (type === 'cross')
+    return (
+      <motion.div style={style} animate={{ rotate: [0, 90, 0], y: [0, -8, 0] }} transition={{ duration, repeat: Infinity, ease: 'easeInOut', delay }}>
+        <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
+          <rect x={size / 2 - 1.5} y={2} width={3} height={size - 4} rx={1.5} fill={color} />
+          <rect x={2} y={size / 2 - 1.5} width={size - 4} height={3} rx={1.5} fill={color} />
+        </svg>
+      </motion.div>
+    )
+  return null
+}
+
 export default function AboutUs() {
   const { m } = useI18n()
-  const title = m.aboutUs?.title || 'From Idea to Impact'
+  const title    = m.aboutUs?.title    || 'From Idea to Impact'
+  const subtitle = m.aboutUs?.subtitle || 'Assisting companies in leveraging modern technology for digital evolution.'
 
   return (
-    <section className="relative bg-white py-12 md:py-12 overflow-hidden">
-      {/* Background Decorative Elements */}
-      <div className="absolute inset-0 pointer-events-none opacity-30">
-        <div className="absolute -left-24 top-12 h-96 w-96 rounded-full bg-blue-100/50 blur-3xl" />
-        <div className="absolute -right-24 bottom-12 h-96 w-96 rounded-full bg-cyan-100/50 blur-3xl" />
+    <section className="relative bg-white py-14 md:py-20 overflow-hidden">
+      {/* Background blobs */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -left-24 top-8  h-80 w-80 rounded-full bg-blue-100/40 blur-3xl" />
+        <div className="absolute -right-24 bottom-8 h-80 w-80 rounded-full bg-cyan-100/40 blur-3xl" />
+      </div>
+
+      {/* ── Floating geometric shapes ── */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {shapes.map((s, i) => <Shape key={i} {...s} />)}
       </div>
 
       <div className="container relative z-20 mx-auto px-6">
-        <div className="min-h-[60vh] md:min-h-[70vh] flex flex-col justify-center items-center text-center relative">
-          {/* Centered Content Wrapper - Anchors images and text together */}
-          <div className="relative w-full max-w-[1400px] mx-auto min-h-[500px] flex items-center justify-center">
-            
-            {/* Side Images - Left (Anchored to inner container) */}
-            <div className="absolute left-0 top-0 bottom-0 w-[150px] lg:w-[280px] hidden md:flex flex-col justify-around pointer-events-none z-10">
-              <motion.div 
-                animate={{ y: [0, -15, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="relative w-full aspect-[7/5] rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20 -translate-x-4 lg:-translate-x-12"
-              >
-                <Image
-                  src="/about/about-us-1.webp"
-                  alt="Office Desk"
-                  fill
-                  className="object-cover"
-                />
-              </motion.div>
-              <motion.div 
-                animate={{ y: [0, 15, 0] }}
-                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="relative w-[80%] aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20 translate-x-4 lg:translate-x-8"
-              >
-                <Image
-                  src="/about/team2.png"
-                  alt="Team Meeting"
-                  fill
-                  className="object-cover"
-                />
-              </motion.div>
-            </div>
 
-            {/* Central Text Content */}
-            <div className="max-w-2xl mx-auto space-y-6 md:space-y-8 relative z-30 px-4">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-[0.625rem] font-extrabold uppercase tracking-[0.2em]">
-                {m.awards.badge}
-              </span>
+        {/* ── Centered Text Block ──────────────────────────────── */}
+        <div className="mx-auto max-w-4xl text-center space-y-4">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-[0.625rem] font-extrabold uppercase tracking-[0.2em]">
+            {m.awards.badge}
+          </span>
 
-              <h3 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-[#001D54]">
-                {title}
-              </h3>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#001D54] leading-tight">
+            {title}
+          </h2>
 
-              <p className="text-base md:text-lg lg:text-xl text-gray-500 leading-relaxed mx-auto">
-                {m.aboutUs?.subtitle ||
-                  'Assisting companies in leveraging modern technology for digital evolution.'}
-              </p>
+          <p className="text-sm md:text-base text-gray-500 leading-relaxed">
+            {subtitle}
+          </p>
 
-              <div className="pt-2 md:pt-4">
-                <Link
-                  href="/about-us"
-                  className="inline-flex items-center gap-2 text-xs font-bold text-blue-600 uppercase tracking-widest group"
-                >
-                  {m.services.learnMore} ABOUT US
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Side Images - Right (Anchored to inner container) */}
-            <div className="absolute right-0 top-0 bottom-0 w-[180px] lg:w-[320px] hidden md:flex flex-col justify-around items-end pointer-events-none z-10">
-              <motion.div 
-                animate={{ y: [0, -20, 0] }}
-                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20 translate-x-4 lg:translate-x-12"
-              >
-                <Image
-                  src="/about/coding.png"
-                  alt="Coding"
-                  fill
-                  className="object-cover"
-                />
-              </motion.div>
-              <motion.div 
-                animate={{ y: [0, 20, 0] }}
-                transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-                className="relative w-[85%] aspect-video rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20 -translate-x-4 lg:-translate-x-8"
-              >
-                <Image
-                  src="/about/about-us-2.webp"
-                  alt="Analytics"
-                  fill
-                  className="object-cover"
-                />
-              </motion.div>
-            </div>
-          </div>
-
-          {/* Mobile Images - Grid below text for smaller screens */}
-          <div className="grid grid-cols-2 gap-4 mt-12 md:hidden w-full max-w-sm">
-            <div className="relative aspect-[7/5] rounded-xl overflow-hidden shadow-lg border border-slate-100">
-               <Image src="/about/about-us-1.webp" alt="Office" fill className="object-cover" />
-            </div>
-            <div className="relative aspect-square rounded-xl overflow-hidden shadow-lg border border-slate-100">
-               <Image src="/about/coding.png" alt="Coding" fill className="object-cover" />
-            </div>
+          <div>
+            <Link
+              href="/about-us"
+              className="inline-flex items-center gap-2 text-xs font-bold text-blue-600 uppercase tracking-widest group"
+            >
+              {m.services.learnMore} ABOUT US
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </Link>
           </div>
         </div>
-      </div>
 
-      {/* Decorative Wave Lines - Top Left (Infinite Loop) */}
-      <div className="absolute hidden md:block top-8 left-8 lg:top-12 lg:left-12 z-5 pointer-events-none opacity-20">
-        <svg width="180" height="100" viewBox="0 0 180 100" fill="none">
-          <motion.path
-            d="M 10 20 Q 40 10, 70 20 T 130 20 T 190 20"
-            stroke="#60a5fa"
-            strokeWidth="2"
-            fill="none"
-            strokeLinecap="round"
-            animate={{ strokeDashoffset: [0, -100] }}
-            transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
-            strokeDasharray="10 5"
-          />
-          <motion.path
-            d="M 10 40 Q 40 30, 70 40 T 130 40 T 190 40"
-            stroke="#3b82f6"
-            strokeWidth="2"
-            fill="none"
-            strokeLinecap="round"
-            animate={{ strokeDashoffset: [0, 100] }}
-            transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
-            strokeDasharray="10 5"
-          />
-        </svg>
-      </div>
+        {/* ── Image Collage ───────────────────────────────────── */}
 
-      {/* Decorative Wave Lines - Bottom Right (Infinite Loop) */}
-      <div className="absolute hidden md:block bottom-8 right-8 lg:bottom-12 lg:right-12 z-5 pointer-events-none rotate-180 opacity-20">
-        <svg width="180" height="100" viewBox="0 0 180 100" fill="none">
-          <motion.path
-            d="M 10 20 Q 40 10, 70 20 T 130 20 T 190 20"
-            stroke="#60a5fa"
-            strokeWidth="2"
-            fill="none"
-            strokeLinecap="round"
-            animate={{ strokeDashoffset: [0, -100] }}
-            transition={{ duration: 11, repeat: Infinity, ease: 'linear' }}
-            strokeDasharray="10 5"
-          />
-          <motion.path
-            d="M 10 40 Q 40 30, 70 40 T 130 40 T 190 40"
-            stroke="#3b82f6"
-            strokeWidth="2"
-            fill="none"
-            strokeLinecap="round"
-            animate={{ strokeDashoffset: [0, 100] }}
-            transition={{ duration: 13, repeat: Infinity, ease: 'linear' }}
-            strokeDasharray="10 5"
-          />
-        </svg>
-      </div>
+        {/* MOBILE: 2×2 grid */}
+        <div className="mt-8 grid grid-cols-2 gap-3 md:hidden">
+          {[
+            { src: '/about/about-us-1.webp', alt: 'Office' },
+            { src: '/about/coding.png',      alt: 'Coding' },
+            { src: '/about/team2.png',        alt: 'Team'  },
+            { src: '/about/about-us-2.webp', alt: 'Work'   },
+          ].map((img, i) => (
+            <motion.div key={img.src}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-slate-100"
+            >
+              <Image src={img.src} alt={img.alt} fill className="object-cover" />
+            </motion.div>
+          ))}
+        </div>
 
-      {/* Diagonal Stripes - Top Right (Infinite Loop) */}
-      <div className="absolute hidden md:block top-12 right-12 z-5 pointer-events-none opacity-20">
-        <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-          <motion.line
-            x1="0" y1="0" x2="120" y2="120"
-            stroke="#60a5fa" strokeWidth="2"
-            animate={{ strokeDashoffset: [0, -40] }}
-            transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
-            strokeDasharray="8 8"
-          />
-          <motion.line
-            x1="20" y1="0" x2="140" y2="120"
-            stroke="#3b82f6" strokeWidth="2"
-            animate={{ strokeDashoffset: [0, 40] }}
-            transition={{ duration: 9, repeat: Infinity, ease: 'linear' }}
-            strokeDasharray="8 8"
-          />
-        </svg>
-      </div>
+        {/* DESKTOP: 3-column overlapping collage
+            Left cluster container has extra paddingTop so the top image doesn't get clipped */}
+        <div className="hidden md:flex mt-6 items-end justify-center gap-6">
 
-      {/* Zigzag Lines - Bottom Left (Infinite Loop) */}
-      <div className="absolute hidden md:block bottom-12 left-12 z-5 pointer-events-none opacity-20">
-        <svg width="180" height="100" viewBox="0 0 180 100" fill="none">
-          <motion.path
-            d="M 0 20 L 30 10 L 60 20 L 90 10 L 120 20 L 150 10 L 180 20"
-            stroke="#3b82f6" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"
-            animate={{ strokeDashoffset: [0, -100] }}
-            transition={{ duration: 14, repeat: Infinity, ease: 'linear' }}
-            strokeDasharray="10 10"
-          />
-          <motion.path
-            d="M 0 45 L 30 35 L 60 45 L 90 35 L 120 45 L 150 35 L 180 45"
-            stroke="#60a5fa" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"
-            animate={{ strokeDashoffset: [0, 100] }}
-            transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
-            strokeDasharray="10 10"
-          />
-        </svg>
+          {/* ── Left cluster ── */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative flex-shrink-0"
+            style={{ width: 270, height: 360 }}   /* taller to expose top image */
+          >
+            {/* Front — landscape, pushed down from the very top so nothing clips */}
+            <div className="absolute top-4 left-0 w-52 h-40 rounded-2xl overflow-hidden shadow-2xl border-2 border-white z-20">
+              <Image
+                src="/about/about-us-1.webp"
+                alt="Office Desk"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            {/* Back — portrait, bottom-right */}
+            <div className="absolute bottom-0 right-0 w-44 h-60 rounded-2xl overflow-hidden shadow-xl border-2 border-white z-10">
+              <Image
+                src="/about/team2.png"
+                alt="Team Meeting"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+          </motion.div>
+
+          {/* ── Centre tall image ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="relative flex-shrink-0 w-72 rounded-2xl overflow-hidden shadow-2xl border-2 border-white z-30"
+            style={{ height: 380 }}
+          >
+            <Image
+              src="/about/coding.png"
+              alt="Engineering at Work"
+              fill
+              className="object-cover hover:scale-105 transition-transform duration-700"
+            />
+          </motion.div>
+
+          {/* ── Right cluster ── */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="relative flex-shrink-0"
+            style={{ width: 270, height: 360 }}
+          >
+            {/* Back — portrait, top-right */}
+            <div className="absolute top-4 right-0 w-44 h-60 rounded-2xl overflow-hidden shadow-xl border-2 border-white z-10">
+              <Image
+                src="/about/about-us-2.webp"
+                alt="Analytics"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            {/* Front — landscape, bottom-left */}
+            <div className="absolute bottom-0 left-0 w-52 h-36 rounded-2xl overflow-hidden shadow-2xl border-2 border-white z-20">
+              <Image
+                src="/about/about-us-1.webp"
+                alt="Office Space"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+          </motion.div>
+        </div>
+
       </div>
     </section>
   )
