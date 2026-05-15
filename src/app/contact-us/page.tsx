@@ -25,7 +25,7 @@ export default function ContactUsPage() {
     {
       icon: SiWhatsapp,
       title: 'Live chat',
-      value: 'WhatsApp Support',
+      value: 'Chat Support',
       description: 'Our friendly team is here to help.',
       href: CONTACT_INFO.whatsapp,
     },
