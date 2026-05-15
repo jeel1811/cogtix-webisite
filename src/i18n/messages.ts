@@ -79,6 +79,7 @@ export interface Messages {
     googleCloud: string
     caseStudies: string
     blogs: string
+    hireTalent: string
     aiEngineering: string
     cloudDevOpsEngineering: string
     dataEngineering: string
@@ -153,6 +154,9 @@ export interface Messages {
     phoneNumber: string
     message: string
     sendMessage: string
+    sending: string
+    submitSuccess: string
+    submitError: string
   }
   aboutUs: {
     badge: string
@@ -260,6 +264,7 @@ export const messages: Record<Locale, Messages> = {
       googleCloud: 'Google Cloud',
       caseStudies: 'Case Studies',
       blogs: 'Blogs',
+      hireTalent: 'Hire Talent',
       aiEngineering: 'AI/ML Engineering',
       cloudDevOpsEngineering: 'Cloud & DevOps Engineering',
       dataEngineering: 'Data Engineering',
@@ -342,6 +347,9 @@ export const messages: Record<Locale, Messages> = {
       phoneNumber: 'Mobile Number *',
       message: 'Message *',
       sendMessage: 'Send Message',
+      sending: 'Sending…',
+      submitSuccess: 'Thank you. Your message was sent successfully. We will get back to you soon.',
+      submitError: 'Something went wrong. Please try again or email us directly.',
     },
     aboutUs: {
       badge: 'Our Company',
@@ -1243,6 +1251,7 @@ export const messages: Record<Locale, Messages> = {
       googleCloud: 'Google Cloud',
       caseStudies: 'Casos de Exito',
       blogs: 'Blogs',
+      hireTalent: 'Contratar talento',
       aiEngineering: 'Ingenieria IA/ML',
       cloudDevOpsEngineering: 'Ingenieria Cloud y DevOps',
       dataEngineering: 'Ingenieria de Datos',
@@ -1321,6 +1330,9 @@ export const messages: Record<Locale, Messages> = {
       phoneNumber: 'Numero de Movil *',
       message: 'Mensaje *',
       sendMessage: 'Enviar Mensaje',
+      sending: 'Enviando…',
+      submitSuccess: 'Gracias. Su mensaje se envió correctamente. Nos pondremos en contacto pronto.',
+      submitError: 'Algo salió mal. Inténtelo de nuevo o escríbanos directamente.',
     },
     aboutUs: {
       badge: 'Nuestra Empresa',
@@ -1824,6 +1836,7 @@ export const messages: Record<Locale, Messages> = {
       googleCloud: 'Google Cloud',
       caseStudies: 'Etudes de Cas',
       blogs: 'Blogs',
+      hireTalent: 'Recruter des talents',
       aiEngineering: 'Ingenierie IA/ML',
       cloudDevOpsEngineering: 'Ingenierie Cloud et DevOps',
       dataEngineering: 'Ingenierie des Donnees',
@@ -1902,6 +1915,9 @@ export const messages: Record<Locale, Messages> = {
       phoneNumber: 'Numero de Mobile *',
       message: 'Message *',
       sendMessage: 'Envoyer le Message',
+      sending: 'Envoi en cours…',
+      submitSuccess: 'Merci. Votre message a bien été envoyé. Nous vous répondrons bientôt.',
+      submitError: 'Une erreur est survenue. Réessayez ou contactez-nous par e-mail.',
     },
     aboutUs: {
       badge: 'Notre Entreprise',
@@ -2406,6 +2422,7 @@ export const messages: Record<Locale, Messages> = {
       googleCloud: 'Google Cloud',
       caseStudies: 'Fallstudien',
       blogs: 'Blogs',
+      hireTalent: 'Talent einstellen',
       aiEngineering: 'KI/ML Engineering',
       cloudDevOpsEngineering: 'Cloud und DevOps Engineering',
       dataEngineering: 'Data Engineering',
@@ -2484,6 +2501,9 @@ export const messages: Record<Locale, Messages> = {
       phoneNumber: 'Mobilnummer *',
       message: 'Nachricht *',
       sendMessage: 'Nachricht Senden',
+      sending: 'Wird gesendet…',
+      submitSuccess: 'Vielen Dank. Ihre Nachricht wurde erfolgreich gesendet. Wir melden uns in Kürze.',
+      submitError: 'Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt.',
     },
     aboutUs: {
       badge: 'Unser Unternehmen',
@@ -2987,6 +3007,7 @@ export const messages: Record<Locale, Messages> = {
       googleCloud: 'Google Cloud',
       caseStudies: 'Case Studies',
       blogs: 'Blog',
+      hireTalent: 'Talent inhuren',
       aiEngineering: 'AI/ML Engineering',
       cloudDevOpsEngineering: 'Cloud & DevOps Engineering',
       dataEngineering: 'Data Engineering',
@@ -3069,6 +3090,9 @@ export const messages: Record<Locale, Messages> = {
       phoneNumber: 'Mobiel Nummer *',
       message: 'Bericht *',
       sendMessage: 'Bericht Verzenden',
+      sending: 'Verzenden…',
+      submitSuccess: 'Bedankt. Uw bericht is succesvol verzonden. We nemen snel contact met u op.',
+      submitError: 'Er ging iets mis. Probeer het opnieuw of mail ons rechtstreeks.',
     },
     aboutUs: {
       badge: 'Ons Bedrijf',
@@ -3574,6 +3598,7 @@ export const messages: Record<Locale, Messages> = {
       googleCloud: 'Google Cloud',
       caseStudies: 'Casi di Studio',
       blogs: 'Blog',
+      hireTalent: 'Assumi talento',
       aiEngineering: 'Ingegneria AI/ML',
       cloudDevOpsEngineering: 'Ingegneria Cloud & DevOps',
       dataEngineering: 'Ingegneria Dati',
@@ -3656,6 +3681,9 @@ export const messages: Record<Locale, Messages> = {
       phoneNumber: 'Numero di Cellulare *',
       message: 'Messaggio *',
       sendMessage: 'Invia Messaggio',
+      sending: 'Invio in corso…',
+      submitSuccess: 'Grazie. Il messaggio è stato inviato con successo. Ti risponderemo presto.',
+      submitError: 'Qualcosa è andato storto. Riprova o scrivici direttamente.',
     },
     aboutUs: {
       badge: 'La Nostra Azienda',

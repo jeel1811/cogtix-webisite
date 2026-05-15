@@ -1,13 +1,28 @@
 'use client'
 
 import { useState } from 'react'
-import { Mail } from 'lucide-react'
+import { Mail, Loader2, CheckCircle2, AlertCircle } from 'lucide-react'
 import Container from '@/components/ui/Container'
 import Button from '@/components/ui/Button'
 import { CONTACT_INFO } from '@/lib/constants'
 import { useI18n } from '@/i18n/provider'
 
 const cleanFieldLabel = (label: string) => label.replace(/\s*\*+\s*$/, '')
+
+const EMAIL_VALIDATION = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+
+const initialFormData = {
+  firstName: '',
+  lastName: '',
+  email: '',
+  phone: '',
+  message: '',
+}
+
+type FormStatus =
+  | { kind: 'idle' }
+  | { kind: 'success'; message: string }
+  | { kind: 'error'; message: string }
 
 interface FormFieldProps {
   name: string
@@ -20,6 +35,7 @@ interface FormFieldProps {
   required?: boolean
   placeholder?: string
   rows?: number
+  disabled?: boolean
 }
 
 function FormInput({
@@ -30,6 +46,7 @@ function FormInput({
   type = 'text',
   required,
   placeholder,
+  disabled,
 }: FormFieldProps) {
   return (
     <div className="space-y-2">
@@ -47,8 +64,9 @@ function FormInput({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
+        disabled={disabled}
         autoComplete="off"
-        className="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-navy-900 placeholder:text-gray-400 focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all duration-200"
+        className="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-navy-900 placeholder:text-gray-400 focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-60"
       />
     </div>
   )
@@ -62,6 +80,7 @@ function FormTextarea({
   required,
   placeholder,
   rows = 5,
+  disabled,
 }: FormFieldProps) {
   return (
     <div className="space-y-2">
@@ -79,7 +98,8 @@ function FormTextarea({
         onChange={onChange}
         rows={rows}
         placeholder={placeholder}
-        className="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-navy-900 placeholder:text-gray-400 focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all duration-200 resize-none"
+        disabled={disabled}
+        className="block w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-navy-900 placeholder:text-gray-400 focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all duration-200 resize-none disabled:cursor-not-allowed disabled:opacity-60"
       />
     </div>
   )
@@ -136,24 +156,79 @@ function ContactItem({
 export default function ContactForm() {
   const { m } = useI18n()
 
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    message: '',
-  })
+  const [formData, setFormData] = useState(initialFormData)
+  const [isLoading, setIsLoading] = useState(false)
+  const [status, setStatus] = useState<FormStatus>({ kind: 'idle' })
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
+    if (status.kind !== 'idle') setStatus({ kind: 'idle' })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
+
+    const trimmed = {
+      firstName: formData.firstName.trim(),
+      lastName: formData.lastName.trim(),
+      email: formData.email.trim(),
+      phone: formData.phone.trim(),
+      message: formData.message.trim(),
+    }
+
+    if (
+      !trimmed.firstName ||
+      !trimmed.lastName ||
+      !trimmed.email ||
+      !trimmed.phone ||
+      !trimmed.message
+    ) {
+      setStatus({ kind: 'error', message: m.contact.submitError })
+      return
+    }
+
+    if (!EMAIL_VALIDATION.test(trimmed.email)) {
+      setStatus({ kind: 'error', message: 'Please enter a valid email address.' })
+      return
+    }
+
+    setIsLoading(true)
+    setStatus({ kind: 'idle' })
+
+    try {
+      const source =
+        typeof window !== 'undefined' ? window.location.pathname : undefined
+
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...trimmed, source }),
+      })
+
+      const body = await res.json().catch(() => null)
+
+      if (res.ok && body?.success) {
+        setStatus({ kind: 'success', message: m.contact.submitSuccess })
+        setFormData(initialFormData)
+      } else {
+        setStatus({
+          kind: 'error',
+          message: body?.message ?? m.contact.submitError,
+        })
+      }
+    } catch (err) {
+      setStatus({
+        kind: 'error',
+        message: err instanceof Error ? err.message : m.contact.submitError,
+      })
+    } finally {
+      setIsLoading(false)
+    }
   }
+
+  const fieldsDisabled = isLoading || status.kind === 'success'
 
   return (
     <section
@@ -212,6 +287,7 @@ export default function ContactForm() {
               <div className="hidden lg:block absolute left-[43.5%] top-10 bottom-10 w-px bg-gradient-to-b from-transparent via-blue-200/70 to-transparent" />
               <form
                 onSubmit={handleSubmit}
+                noValidate
                 className="relative overflow-hidden rounded-2xl border border-gray-200/80 bg-gradient-to-b from-blue-50/70 via-white to-white p-5 sm:p-7 space-y-5 shadow-xl shadow-blue-500/[0.08]"
               >
                 <div
@@ -226,6 +302,26 @@ export default function ContactForm() {
                   {m.common.contactUs}
                 </h3>
 
+                {status.kind === 'success' ? (
+                  <div
+                    role="status"
+                    className="relative z-10 flex items-start gap-3 rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-800"
+                  >
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
+                    <p>{status.message}</p>
+                  </div>
+                ) : null}
+
+                {status.kind === 'error' ? (
+                  <div
+                    role="alert"
+                    className="relative z-10 flex items-start gap-3 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800"
+                  >
+                    <AlertCircle className="mt-0.5 h-5 w-5 shrink-0 text-red-600" />
+                    <p>{status.message}</p>
+                  </div>
+                ) : null}
+
                 <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <FormInput
                     name="firstName"
@@ -234,6 +330,7 @@ export default function ContactForm() {
                     value={formData.firstName}
                     onChange={handleChange}
                     required
+                    disabled={fieldsDisabled}
                   />
                   <FormInput
                     name="lastName"
@@ -242,6 +339,7 @@ export default function ContactForm() {
                     value={formData.lastName}
                     onChange={handleChange}
                     required
+                    disabled={fieldsDisabled}
                   />
                 </div>
 
@@ -254,6 +352,7 @@ export default function ContactForm() {
                     value={formData.email}
                     onChange={handleChange}
                     required
+                    disabled={fieldsDisabled}
                   />
                   <FormInput
                     name="phone"
@@ -263,6 +362,7 @@ export default function ContactForm() {
                     value={formData.phone}
                     onChange={handleChange}
                     required
+                    disabled={fieldsDisabled}
                   />
                 </div>
 
@@ -275,6 +375,7 @@ export default function ContactForm() {
                     onChange={handleChange}
                     required
                     rows={5}
+                    disabled={fieldsDisabled}
                   />
                 </div>
 
@@ -283,10 +384,17 @@ export default function ContactForm() {
                     type="submit"
                     variant="primary"
                     size="lg"
-                    // icon={<Send className="w-4 h-4" />}
-                    className="w-full sm:w-auto"
+                    className="w-full sm:w-auto min-w-[10rem]"
+                    disabled={isLoading || status.kind === 'success'}
                   >
-                    {m.contact.sendMessage}
+                    {isLoading ? (
+                      <span className="inline-flex items-center gap-2">
+                        <Loader2 className="h-4 w-4 animate-spin" />
+                        {m.contact.sending}
+                      </span>
+                    ) : (
+                      m.contact.sendMessage
+                    )}
                   </Button>
                 </div>
               </form>

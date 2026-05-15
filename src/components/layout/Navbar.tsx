@@ -162,8 +162,8 @@ function MegaMenuPanel({
   const isCompactMenu = childCount > 3 && childCount <= 6;
   const isMediumMenu = childCount > 6 && childCount <= 10;
 
-  /* Split children into columns (balance columns). use 4 per column to reduce vertical wrapping */
-  const perCol = 4;
+  /* Split children into columns (balance columns). use 3 per column to reduce vertical wrapping */
+  const perCol = 3;
   const cols: (typeof item.children)[] = [];
   for (let i = 0; i < item.children.length; i += perCol) {
     cols.push(item.children.slice(i, i + perCol));
@@ -231,7 +231,9 @@ function MegaMenuPanel({
                     ? isTinyMenu
                       ? "grid-cols-1 max-w-56"
                       : "grid-cols-1 max-w-sm"
-                    : "grid-cols-2"
+                    : cols.length === 2
+                      ? "grid-cols-2"
+                      : "grid-cols-3"
                 } gap-x-12 gap-y-1`}
               >
                 {cols.map((col, ci) => (

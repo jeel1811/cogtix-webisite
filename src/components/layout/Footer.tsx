@@ -61,6 +61,7 @@ export default function Footer() {
       { label: m.footer.caseStudies, href: "/case-studies" },
       { label: m.footer.blog, href: "/blogs" },
       { label: m.footer.careers, href: "/careers" },
+      // { label: m.nav.hireTalent, href: "/hire-talent" },
       { label: m.footer.contactUsLink, href: "/contact-us" },
     ],
     [m.footer.engineering]: [

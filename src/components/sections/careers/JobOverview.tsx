@@ -265,7 +265,7 @@ function ApplyModal({
         const body = await res.json().catch(() => null)
         setStatus({
           kind: 'error',
-          message: body?.error || 'Something went wrong. Please try again.',
+          message: body?.message || 'Something went wrong. Please try again.',
         })
       }
     } catch (err) {

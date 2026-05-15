@@ -32,7 +32,7 @@ export const INDUSTRIES = [
 ] as const
 
 // ─── Navigation ────────────────────────────────────────────────────
-interface NavChild {
+export interface NavChild {
   label: string
   href?: string
   children?: NavChild[]
@@ -54,11 +54,11 @@ export const NAV_ITEMS: NavItem[] = [
         label: 'Cloud & DevOps Engineering',
         href: '/services/cloud-devops-engineering',
       },
-      { label: 'Data Engineering', href: '/services/data-engineering' },
       {
         label: 'Digital Experience Engineering',
         href: '/services/digital-experience-engineering',
       },
+      { label: 'Data Engineering', href: '/services/data-engineering' },
       { label: 'Enterprise Services', href: '/services/enterprise-solutions' },
       {
         label: 'Microsoft Technologies',
