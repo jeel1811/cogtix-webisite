@@ -334,7 +334,7 @@ export const messages: Record<Locale, Messages> = {
       heroSubtitle:
         "Have a project in mind? Let&apos;s discuss how we can help your business grow with our custom technology solutions.",
       badge: 'Get In Touch',
-      title: "Let&apos;s Build Something Great Together",
+      title: "Let's Build Something Great Together",
       subtitle:
         'Fill out the form below and our team will get back to you within 24 hours.',
       infoTitle: 'Contact Information',

@@ -326,14 +326,8 @@ function MegaMenuPanel({
                       discuss your requirements.
                     </p>
                     <Link
-                      href={CONTACT_INFO.calendlyContactPath}
-                      onClick={() => {
-                        if (typeof window !== 'undefined') {
-                          sessionStorage.setItem('shouldScrollToSchedule', 'true')
-                          window.dispatchEvent(new Event('triggerScheduleScroll'))
-                        }
-                        onClose()
-                      }}
+                      href="/contact-us"
+                      onClick={onClose}
                       className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-blue-500 text-white text-sm font-semibold hover:bg-blue-600 transition-colors w-fit shadow-lg shadow-blue-500/20"
                     >
                       {localeText.common.contactUs}
@@ -356,14 +350,8 @@ function MegaMenuPanel({
                     </p>
                   </div>
                   <Link
-                    href={CONTACT_INFO.calendlyContactPath}
-                    onClick={() => {
-                      if (typeof window !== 'undefined') {
-                        sessionStorage.setItem('shouldScrollToSchedule', 'true')
-                        window.dispatchEvent(new Event('triggerScheduleScroll'))
-                      }
-                      onClose()
-                    }}
+                    href="/contact-us"
+                    onClick={onClose}
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-blue-500 text-white text-sm font-semibold hover:bg-blue-600 transition-colors w-fit shadow-lg shadow-blue-500/20"
                   >
                     {localeText.common.contactUs}
@@ -657,13 +645,7 @@ export default function Navbar() {
                 <Button 
                   variant="primary" 
                   size="md" 
-                  href={CONTACT_INFO.calendlyContactPath}
-                  onClick={() => {
-                    if (typeof window !== 'undefined') {
-                      sessionStorage.setItem('shouldScrollToSchedule', 'true')
-                      window.dispatchEvent(new Event('triggerScheduleScroll'))
-                    }
-                  }}
+                  href="/contact-us"
                 >
                   {m.common.contactUs}
                 </Button>

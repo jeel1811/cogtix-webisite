@@ -12,37 +12,29 @@ export default function ContactCalendlySection() {
   useEffect(() => {
     if (typeof window === 'undefined') return
 
-    const performScroll = () => {
-      const el = document.getElementById('schedule')
-      if (el) {
-        setTimeout(() => {
-          el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-          sessionStorage.removeItem('shouldScrollToSchedule')
-          if (window.location.hash === '#schedule') {
-            window.history.replaceState(null, '', window.location.pathname)
-          }
-        }, 150)
-      }
-    }
-
     const checkScroll = () => {
       const hasHash = window.location.hash === '#schedule'
       const hasFlag = sessionStorage.getItem('shouldScrollToSchedule') === 'true'
+
       if (hasHash || hasFlag) {
-        performScroll()
+        const el = document.getElementById('schedule')
+        if (el) {
+          setTimeout(() => {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            if (hasFlag) sessionStorage.removeItem('shouldScrollToSchedule')
+            if (hasHash) window.history.replaceState(null, '', window.location.pathname)
+          }, 150)
+        }
       }
     }
 
     checkScroll()
-
-    window.addEventListener('triggerScheduleScroll', performScroll)
-    return () => window.removeEventListener('triggerScheduleScroll', performScroll)
   }, [])
 
   return (
     <section
       id="schedule"
-      className="scroll-mt-12 bg-white py-5 md:py-16"
+      className="scroll-mt-1 bg-white py-5 md:py-16"
     >
       <Container>
         <div className="mx-auto max-w-3xl text-center">
