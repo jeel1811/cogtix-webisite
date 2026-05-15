@@ -63,7 +63,7 @@ export default function Testimonials() {
 
   useEffect(() => {
     if (isPaused) return;
-    const timer = setInterval(() => rotate(1), 5000);
+    const timer = setInterval(() => rotate(1), 3500);
     return () => clearInterval(timer);
   }, [isPaused, rotate]);
 
@@ -77,8 +77,6 @@ export default function Testimonials() {
     <section 
       id="testimonials" 
       className="py-10 lg:py-14 relative overflow-hidden"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
     >
       {/* Background Decorative Layer */}
       <div className="absolute inset-0 pointer-events-none -z-10">
@@ -156,14 +154,18 @@ export default function Testimonials() {
 
           {/* Right: Carousel Area */}
           <div className="lg:col-span-7 relative">
-            <div className="overflow-hidden py-10 px-4 -mx-4">
+            <div 
+              className="overflow-hidden py-10 px-4 -mx-4"
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+            >
               <AnimatePresence mode="wait" initial={false}>
                 <motion.div
                   key={currentIndex}
                   initial={{ opacity: 0, x: direction > 0 ? 40 : -40 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: direction > 0 ? -40 : 40 }}
-                  transition={{ duration: 0.6, ease: [0.32, 0.72, 0, 1] }}
+                  transition={{ duration: 0.5, ease: [0.32, 0.72, 0, 1] }}
                   className="flex flex-col md:flex-row gap-6 w-full"
                 >
                   {visibleItems.map((item, i) => (

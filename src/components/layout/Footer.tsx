@@ -2,15 +2,18 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import Script from "next/script";
 import {
   SiX,
   SiFacebook,
   SiInstagram,
+  SiDribbble,
+  SiBehance,
 } from "@icons-pack/react-simple-icons";
 import {
   Mail,
   Phone,
-  // MessageCircle,
+  MessageCircle,
   ArrowUpRight,
 } from "lucide-react";
 import Container from "@/components/ui/Container";
@@ -47,7 +50,59 @@ const socialIcons = [
     href: SOCIAL_LINKS.instagram,
     label: "Instagram",
   },
+  {
+    icon: <SiDribbble size={14} color="currentColor" />,
+    href: SOCIAL_LINKS.dribble,
+    label: "Dribbble",
+  },
+  {
+    icon: <SiBehance size={14} color="currentColor" />,
+    href: SOCIAL_LINKS.behance,
+    label: "Behance",
+  },
 ];
+
+function DmcaBadge({ className }: { className?: string }) {
+  return (
+    <svg 
+      className={className} 
+      viewBox="0 0 200 40" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      {/* Background with subtle border */}
+      <rect x="0.5" y="0.5" width="199" height="39" rx="1.5" stroke="currentColor" strokeOpacity="0.2" />
+      <path d="M0 2C0 0.895431 0.895431 0 2 0H75V40H2C0.89543 40 0 39.1046 0 38V2Z" fill="currentColor" fillOpacity="0.1" />
+      
+      {/* Middle Lock Icon */}
+      <circle cx="75" cy="20" r="12" fill="white" />
+      <path 
+        d="M75 14.5C73.6193 14.5 72.5 15.6193 72.5 17V19H71.5V25.5H78.5V19H77.5V17C77.5 15.6193 76.3807 14.5 75 14.5ZM73.5 19V17C73.5 16.1716 74.1716 15.5 75 15.5C75.8284 15.5 76.5 16.1716 76.5 17V19H73.5Z" 
+        fill="#76C038" 
+      />
+      
+      {/* Text Elements */}
+      <text 
+        x="37.5" 
+        y="25" 
+        textAnchor="middle" 
+        fill="currentColor" 
+        style={{ font: "bold 15px Arial, sans-serif" }}
+      >
+        DMCA
+      </text>
+      <text 
+        x="137.5" 
+        y="25" 
+        textAnchor="middle" 
+        fill="currentColor" 
+        style={{ font: "bold 13px Arial, sans-serif", letterSpacing: "0.5px" }}
+      >
+        PROTECTED
+      </text>
+    </svg>
+  );
+}
 
 import { InFlag, UsFlag, UkFlag } from "@/components/icons/flags";
 
@@ -61,7 +116,7 @@ export default function Footer() {
       { label: m.footer.caseStudies, href: "/case-studies" },
       { label: m.footer.blog, href: "/blogs" },
       { label: m.footer.careers, href: "/careers" },
-      // { label: m.nav.hireTalent, href: "/hire-talent" },
+      { label: m.nav.hireTalent, href: "/hire-talent" },
       { label: m.footer.contactUsLink, href: "/contact-us" },
     ],
     [m.footer.engineering]: [
@@ -202,7 +257,69 @@ export default function Footer() {
                   </li>
                 );
               })}
+              <li>
+                <a
+                  href={CONTACT_INFO.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 text-gray-400 text-sm hover:text-white transition-colors group"
+                >
+                  <span className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-blue-500/20 transition-colors shrink-0">
+                    <MessageCircle className="w-4 h-4" />
+                  </span>
+                  <span className="font-medium">Chat with us</span>
+                </a>
+              </li>
             </ul>
+          </div>
+        </div>
+
+        {/* Company Logos section */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 py-8 border-b border-white/10">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 lg:gap-10">
+            <a
+              target="_blank"
+              href="https://www.dmca.com/r/1z3pw89"
+              title="DMCA.com Protection Status"
+              className="dmca-badge transition-opacity hover:opacity-80"
+              rel="noopener noreferrer"
+            >
+              <DmcaBadge className="h-6 w-auto text-gray-400 opacity-70 hover:opacity-100 transition-opacity" />
+            </a>
+            <Script
+              src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"
+              strategy="lazyOnload"
+            />
+            
+            <a
+              href="https://www.goodfirms.co/company/cogtix-solutions"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-opacity hover:opacity-80"
+            >
+              <Image
+                src="/good-firms.svg"
+                alt="goodFirms"
+                width={120}
+                height={20}
+                className="h-5 w-auto brightness-0 invert opacity-60 hover:opacity-100 transition-opacity"
+              />
+            </a>
+            
+            <a
+              href="https://clutch.co/profile/cogtix-solutions#highlights"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-opacity hover:opacity-80"
+            >
+              <Image
+                src="/clutch.svg"
+                alt="Clutch"
+                width={80}
+                height={24}
+                className="h-6 w-auto brightness-0 invert opacity-60 hover:opacity-100 transition-opacity"
+              />
+            </a>
           </div>
         </div>
 

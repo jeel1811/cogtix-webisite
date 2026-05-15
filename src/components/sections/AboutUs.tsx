@@ -9,70 +9,281 @@ import { useI18n } from '@/i18n/provider'
 // ── Floating geometric shape config ──────────────────────────────────────────
 const shapes = [
   // circles
-  { type: 'circle', x: '8%',  y: '12%', size: 44, color: '#3b82f620', duration: 6,  delay: 0   },
-  { type: 'circle', x: '88%', y: '18%', size: 28, color: '#06b6d420', duration: 8,  delay: 1.5 },
-  { type: 'circle', x: '75%', y: '78%', size: 56, color: '#818cf830', duration: 7,  delay: 0.5 },
-  { type: 'circle', x: '18%', y: '80%', size: 20, color: '#3b82f625', duration: 9,  delay: 2   },
+  {
+    type: 'circle',
+    x: '8%',
+    y: '12%',
+    size: 44,
+    color: '#3b82f620',
+    duration: 6,
+    delay: 0,
+  },
+  {
+    type: 'circle',
+    x: '88%',
+    y: '18%',
+    size: 28,
+    color: '#06b6d420',
+    duration: 8,
+    delay: 1.5,
+  },
+  {
+    type: 'circle',
+    x: '75%',
+    y: '78%',
+    size: 56,
+    color: '#818cf830',
+    duration: 7,
+    delay: 0.5,
+  },
+  {
+    type: 'circle',
+    x: '18%',
+    y: '80%',
+    size: 20,
+    color: '#3b82f625',
+    duration: 9,
+    delay: 2,
+  },
   // rings (circle with stroke only)
-  { type: 'ring',   x: '92%', y: '55%', size: 48, color: '#3b82f640', duration: 10, delay: 1   },
-  { type: 'ring',   x: '5%',  y: '50%', size: 36, color: '#06b6d440', duration: 7,  delay: 3   },
+  {
+    type: 'ring',
+    x: '92%',
+    y: '55%',
+    size: 48,
+    color: '#3b82f640',
+    duration: 10,
+    delay: 1,
+  },
+  {
+    type: 'ring',
+    x: '5%',
+    y: '50%',
+    size: 36,
+    color: '#06b6d440',
+    duration: 7,
+    delay: 3,
+  },
   // triangles
-  { type: 'tri',    x: '15%', y: '22%', size: 30, color: '#f59e0b30', duration: 9,  delay: 0.8 },
-  { type: 'tri',    x: '82%', y: '70%', size: 22, color: '#818cf840', duration: 6,  delay: 2.5 },
+  {
+    type: 'tri',
+    x: '15%',
+    y: '22%',
+    size: 30,
+    color: '#f59e0b30',
+    duration: 9,
+    delay: 0.8,
+  },
+  {
+    type: 'tri',
+    x: '82%',
+    y: '70%',
+    size: 22,
+    color: '#818cf840',
+    duration: 6,
+    delay: 2.5,
+  },
   // squares (rotated 45°)
-  { type: 'square', x: '60%', y: '8%',  size: 22, color: '#3b82f625', duration: 8,  delay: 1.2 },
-  { type: 'square', x: '30%', y: '90%', size: 18, color: '#06b6d425', duration: 11, delay: 0.3 },
+  {
+    type: 'square',
+    x: '60%',
+    y: '8%',
+    size: 22,
+    color: '#3b82f625',
+    duration: 8,
+    delay: 1.2,
+  },
+  {
+    type: 'square',
+    x: '30%',
+    y: '90%',
+    size: 18,
+    color: '#06b6d425',
+    duration: 11,
+    delay: 0.3,
+  },
   // dots cluster
-  { type: 'dot',    x: '50%', y: '5%',  size: 8,  color: '#3b82f650', duration: 5,  delay: 0   },
-  { type: 'dot',    x: '52%', y: '5%',  size: 5,  color: '#818cf860', duration: 6,  delay: 0.4 },
-  { type: 'dot',    x: '48%', y: '7%',  size: 6,  color: '#06b6d450', duration: 7,  delay: 0.8 },
-  { type: 'dot',    x: '4%',  y: '38%', size: 7,  color: '#f59e0b50', duration: 8,  delay: 1   },
-  { type: 'dot',    x: '96%', y: '38%', size: 7,  color: '#f59e0b50', duration: 8,  delay: 1.4 },
+  {
+    type: 'dot',
+    x: '50%',
+    y: '5%',
+    size: 8,
+    color: '#3b82f650',
+    duration: 5,
+    delay: 0,
+  },
+  {
+    type: 'dot',
+    x: '52%',
+    y: '5%',
+    size: 5,
+    color: '#818cf860',
+    duration: 6,
+    delay: 0.4,
+  },
+  {
+    type: 'dot',
+    x: '48%',
+    y: '7%',
+    size: 6,
+    color: '#06b6d450',
+    duration: 7,
+    delay: 0.8,
+  },
+  {
+    type: 'dot',
+    x: '4%',
+    y: '38%',
+    size: 7,
+    color: '#f59e0b50',
+    duration: 8,
+    delay: 1,
+  },
+  {
+    type: 'dot',
+    x: '96%',
+    y: '38%',
+    size: 7,
+    color: '#f59e0b50',
+    duration: 8,
+    delay: 1.4,
+  },
   // cross / plus
-  { type: 'cross',  x: '22%', y: '60%', size: 20, color: '#3b82f640', duration: 7,  delay: 2.2 },
-  { type: 'cross',  x: '78%', y: '35%', size: 16, color: '#818cf840', duration: 9,  delay: 0.6 },
+  {
+    type: 'cross',
+    x: '22%',
+    y: '60%',
+    size: 20,
+    color: '#3b82f640',
+    duration: 7,
+    delay: 2.2,
+  },
+  {
+    type: 'cross',
+    x: '78%',
+    y: '35%',
+    size: 16,
+    color: '#818cf840',
+    duration: 9,
+    delay: 0.6,
+  },
 ]
 
-function Shape({ type, x, y, size, color, duration, delay }: typeof shapes[0]) {
-
-  const style = { position: 'absolute' as const, left: x, top: y, pointerEvents: 'none' as const, zIndex: 1 }
+function Shape({
+  type,
+  x,
+  y,
+  size,
+  color,
+  duration,
+  delay,
+}: (typeof shapes)[0]) {
+  const style = {
+    position: 'absolute' as const,
+    left: x,
+    top: y,
+    pointerEvents: 'none' as const,
+    zIndex: 1,
+  }
 
   if (type === 'circle')
     return (
-      <motion.div style={{ ...style, width: size, height: size, borderRadius: '50%', background: color }}
-        animate={{ y: [0, -14, 0] }} transition={{ duration, repeat: Infinity, ease: 'easeInOut', delay }} />
+      <motion.div
+        style={{
+          ...style,
+          width: size,
+          height: size,
+          borderRadius: '50%',
+          background: color,
+        }}
+        animate={{ y: [0, -14, 0] }}
+        transition={{ duration, repeat: Infinity, ease: 'easeInOut', delay }}
+      />
     )
   if (type === 'ring')
     return (
-      <motion.div style={{ ...style, width: size, height: size, borderRadius: '50%', border: `2.5px solid ${color}`, background: 'transparent' }}
-        animate={{ y: [0, -12, 0], rotate: [0, 180, 360] }} transition={{ duration, repeat: Infinity, ease: 'easeInOut', delay }} />
+      <motion.div
+        style={{
+          ...style,
+          width: size,
+          height: size,
+          borderRadius: '50%',
+          border: `2.5px solid ${color}`,
+          background: 'transparent',
+        }}
+        animate={{ y: [0, -12, 0], rotate: [0, 180, 360] }}
+        transition={{ duration, repeat: Infinity, ease: 'easeInOut', delay }}
+      />
     )
   if (type === 'tri') {
     const half = size / 2
     return (
-      <motion.div style={style} animate={{ y: [0, -10, 0], rotate: [0, 15, 0, -15, 0] }} transition={{ duration, repeat: Infinity, ease: 'easeInOut', delay }}>
+      <motion.div
+        style={style}
+        animate={{ y: [0, -10, 0], rotate: [0, 15, 0, -15, 0] }}
+        transition={{ duration, repeat: Infinity, ease: 'easeInOut', delay }}
+      >
         <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
-          <polygon points={`${half},2 ${size - 2},${size - 2} 2,${size - 2}`} fill={color} />
+          <polygon
+            points={`${half},2 ${size - 2},${size - 2} 2,${size - 2}`}
+            fill={color}
+          />
         </svg>
       </motion.div>
     )
   }
   if (type === 'square')
     return (
-      <motion.div style={{ ...style, width: size, height: size, background: color, borderRadius: 3 }}
-        animate={{ rotate: [45, 90, 45], y: [0, -10, 0] }} transition={{ duration, repeat: Infinity, ease: 'easeInOut', delay }} />
+      <motion.div
+        style={{
+          ...style,
+          width: size,
+          height: size,
+          background: color,
+          borderRadius: 3,
+        }}
+        animate={{ rotate: [45, 90, 45], y: [0, -10, 0] }}
+        transition={{ duration, repeat: Infinity, ease: 'easeInOut', delay }}
+      />
     )
   if (type === 'dot')
     return (
-      <motion.div style={{ ...style, width: size, height: size, borderRadius: '50%', background: color }}
-        animate={{ scale: [1, 1.6, 1], opacity: [0.6, 1, 0.6] }} transition={{ duration, repeat: Infinity, ease: 'easeInOut', delay }} />
+      <motion.div
+        style={{
+          ...style,
+          width: size,
+          height: size,
+          borderRadius: '50%',
+          background: color,
+        }}
+        animate={{ scale: [1, 1.6, 1], opacity: [0.6, 1, 0.6] }}
+        transition={{ duration, repeat: Infinity, ease: 'easeInOut', delay }}
+      />
     )
   if (type === 'cross')
     return (
-      <motion.div style={style} animate={{ rotate: [0, 90, 0], y: [0, -8, 0] }} transition={{ duration, repeat: Infinity, ease: 'easeInOut', delay }}>
+      <motion.div
+        style={style}
+        animate={{ rotate: [0, 90, 0], y: [0, -8, 0] }}
+        transition={{ duration, repeat: Infinity, ease: 'easeInOut', delay }}
+      >
         <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
-          <rect x={size / 2 - 1.5} y={2} width={3} height={size - 4} rx={1.5} fill={color} />
-          <rect x={2} y={size / 2 - 1.5} width={size - 4} height={3} rx={1.5} fill={color} />
+          <rect
+            x={size / 2 - 1.5}
+            y={2}
+            width={3}
+            height={size - 4}
+            rx={1.5}
+            fill={color}
+          />
+          <rect
+            x={2}
+            y={size / 2 - 1.5}
+            width={size - 4}
+            height={3}
+            rx={1.5}
+            fill={color}
+          />
         </svg>
       </motion.div>
     )
@@ -81,8 +292,10 @@ function Shape({ type, x, y, size, color, duration, delay }: typeof shapes[0]) {
 
 export default function AboutUs() {
   const { m } = useI18n()
-  const title    = m.aboutUs?.title    || 'From Idea to Impact'
-  const subtitle = m.aboutUs?.subtitle || 'Assisting companies in leveraging modern technology for digital evolution.'
+  const title = m.aboutUs?.title || 'Driving Innovation Forward'
+  const subtitle =
+    m.aboutUs?.subtitle ||
+    'Cogtix helps businesses leverage modern technology to accelerate digital transformation and drive innovation. We specialize in AI solutions, Microsoft technologies, and custom software development tailored to unique business needs. Our mission is to build scalable, secure, and future-ready digital experiences that create lasting impact.'
 
   return (
     <section className="relative bg-white py-14 md:py-20 overflow-hidden">
@@ -94,11 +307,12 @@ export default function AboutUs() {
 
       {/* ── Floating geometric shapes ── */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {shapes.map((s, i) => <Shape key={i} {...s} />)}
+        {shapes.map((s, i) => (
+          <Shape key={i} {...s} />
+        ))}
       </div>
 
       <div className="container relative z-20 mx-auto px-6">
-
         {/* ── Centered Text Block ──────────────────────────────── */}
         <div className="mx-auto max-w-4xl text-center space-y-4">
           <span className="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-[0.625rem] font-extrabold uppercase tracking-[0.2em]">
@@ -130,18 +344,24 @@ export default function AboutUs() {
         <div className="mt-8 grid grid-cols-2 gap-3 md:hidden">
           {[
             { src: '/about/about-us-1.webp', alt: 'Office' },
-            { src: '/about/coding.png',      alt: 'Coding' },
-            { src: '/about/team2.png',        alt: 'Team'  },
-            { src: '/about/about-us-2.webp', alt: 'Work'   },
+            { src: '/about/coding.png', alt: 'Coding' },
+            { src: '/about/team2.png', alt: 'Team' },
+            { src: '/about/about-us-2.webp', alt: 'Work' },
           ].map((img, i) => (
-            <motion.div key={img.src}
+            <motion.div
+              key={img.src}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-slate-100"
             >
-              <Image src={img.src} alt={img.alt} fill className="object-cover" />
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                className="object-cover"
+              />
             </motion.div>
           ))}
         </div>
@@ -149,7 +369,6 @@ export default function AboutUs() {
         {/* DESKTOP: 3-column overlapping collage
             Wrapped in max-w-6xl to keep it tight on large screens */}
         <div className="hidden md:flex mt-6 max-w-6xl mx-auto items-end justify-center gap-6 lg:gap-12">
-
           {/* ── Left cluster ── */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -227,7 +446,6 @@ export default function AboutUs() {
             </div>
           </motion.div>
         </div>
-
       </div>
     </section>
   )

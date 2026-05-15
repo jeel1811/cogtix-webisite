@@ -20,37 +20,37 @@ export default function EngineeringServices() {
   const services = [
     {
       title: m.nav.aiEngineering,
-      description: 'End-to-end AI/ML systems for production environments.',
+      description: 'Scale your intelligence with production-grade AI/ML architectures. We build, train, and deploy sophisticated models that solve real-world complexities through Generative AI and predictive systems.',
       icon: AIEngineeringLogo,
       href: '/services/gen-ai-ml-development',
     },
     {
       title: m.nav.cloudDevOpsEngineering,
-      description: 'Cloud-native infrastructure and resilient DevOps ecosystems.',
+      description: 'Architecting high-availability, cloud-native infrastructures. Our DevOps ecosystems focus on security, scalability, and seamless continuous delivery to keep your platform at peak performance.',
       icon: CloudDevOpsLogo,
       href: '/services/cloud-devops-engineering',
     },
     {
       title: m.nav.dataEngineering,
-      description: 'Advanced data pipelines for real-time and batch processing.',
+      description: 'Transforming raw data into strategic assets with high-performance pipelines. We engineer resilient architectures for real-time streaming and large-scale batch processing.',
       icon: DataEngineeringLogo,
       href: '/services/data-engineering',
     },
     {
       title: m.nav.digitalExperienceEngineering,
-      description: 'Immersive digital products focused on user experience.',
+      description: 'Crafting immersive digital products where performance meets exceptional UX. We build pixel-perfect, responsive interfaces that bridge the gap between users and complex systems.',
       icon: ExperienceEngineeringLogo,
       href: '/services/digital-experience-engineering',
     },
     {
       title: m.nav.enterpriseServices,
-      description: 'Domain-driven solutions for complex enterprise ecosystems.',
+      description: 'Delivering domain-driven, robust solutions for intricate enterprise landscapes. We modernize legacy systems and build scalable architectures that drive global digital transformation.',
       icon: EnterpriseLogo,
       href: '/services/enterprise-solutions',
     },
     {
       title: m.nav.microsoftTechnologies,
-      description: 'Modern business applications powered by the Microsoft stack.',
+      description: 'Leveraging the full power of the Microsoft ecosystem for future-ready applications. From Azure cloud to .NET architectures, we deliver secure, enterprise-grade business tools.',
       icon: MicrosoftLogo,
       href: '/services/microsoft-technologies',
     }
@@ -120,7 +120,7 @@ export default function EngineeringServices() {
                 Engineering <span className="text-blue-600">Excellence</span>
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-slate-600">
-                {m.services.subtitle}
+                We bridge the gap between complex engineering challenges and transformative business value. Our specialized teams architect resilient, scalable, and high-performance digital ecosystems that empower modern enterprises to lead in an AI-first world.
               </p>
             </div>
           </div>

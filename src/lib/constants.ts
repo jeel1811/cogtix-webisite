@@ -184,6 +184,8 @@ export const SOCIAL_LINKS = {
   twitter: 'https://twitter.com/cogtix',
   facebook: 'https://facebook.com/cogtix',
   instagram: 'https://instagram.com/cogtix',
+  dribble:"https://dribbble.com/cogtix",
+  behance:"https://behance.net/cogtix"
 } as const
 
 // ─── Awards ────────────────────────────────────────────────────────
