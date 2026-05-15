@@ -18,6 +18,7 @@ import Container from '@/components/ui/Container'
 import Button from '@/components/ui/Button'
 import ContactForm from '@/components/sections/ContactForm'
 import Offices from '@/components/sections/Offices'
+import { CONTACT_INFO } from '@/lib/constants'
 import type { HireTalentRoleContent } from '@/data/hireTalentData'
 
 const WHY_ICONS: LucideIcon[] = [UserCheck, Layers3, Globe2]
@@ -138,7 +139,7 @@ export default function HireTalentRoleView({ content }: { content: HireTalentRol
               <Button variant="primary" size="lg" href="/contact-us" icon={<ArrowRight className="h-4 w-4" />}>
                 Talk to talent desk
               </Button>
-              <Button variant="outline" size="lg" href="https://calendly.com/cogtix/30min" target="_blank">
+              <Button variant="outline" size="lg" href={CONTACT_INFO.calendlyContactPath}>
                 Schedule a call
               </Button>
             </div>
@@ -267,7 +268,7 @@ export default function HireTalentRoleView({ content }: { content: HireTalentRol
             <Button variant="primary" size="lg" href="/contact-us">
               Request profiles
             </Button>
-            <Button variant="outline" size="lg" href="https://calendly.com/cogtix/30min" target="_blank">
+            <Button variant="outline" size="lg" href={CONTACT_INFO.calendlyContactPath}>
               Book 30 minutes
             </Button>
           </div>

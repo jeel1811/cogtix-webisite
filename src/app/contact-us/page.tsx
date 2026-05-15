@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import Container from '@/components/ui/Container'
 import ContactForm from '@/components/sections/ContactForm'
+import ContactCalendlySection from '@/components/sections/ContactCalendlySection'
 import Offices from '@/components/sections/Offices'
 import { Mail, Phone, Clock } from 'lucide-react'
 import { SiWhatsapp } from '@icons-pack/react-simple-icons'
@@ -32,7 +33,7 @@ export default function ContactUsPage() {
       icon: Phone,
       title: 'Phone',
       value: CONTACT_INFO.phones[0].number,
-      description: 'Mon-Fri from 9am to 6pm.',
+      description: 'Mon to Fri from 9am to 6pm.',
       href: `tel:${CONTACT_INFO.phones[0].number.replace(/\s|\(|\)|-/g, '')}`,
     },
     {
@@ -115,6 +116,8 @@ export default function ContactUsPage() {
       </section>
 
 
+
+      <ContactCalendlySection />
 
       {/* Main Form Section */}
       <ContactForm />

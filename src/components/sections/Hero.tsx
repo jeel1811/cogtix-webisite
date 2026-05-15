@@ -166,9 +166,13 @@ export default function Hero() {
               <Button
                 variant="primary"
                 size="lg"
-                href={CONTACT_INFO.calendly}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={CONTACT_INFO.calendlyContactPath}
+                onClick={() => {
+                  if (typeof window !== 'undefined') {
+                    sessionStorage.setItem('shouldScrollToSchedule', 'true')
+                    window.dispatchEvent(new Event('triggerScheduleScroll'))
+                  }
+                }}
                 icon={<ArrowRight className="w-4 h-4" />}
               >
                 {m.hero.scheduleMeeting}

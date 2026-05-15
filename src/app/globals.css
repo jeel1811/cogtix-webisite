@@ -438,3 +438,23 @@ p {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Calendly inline widget — parent + iframe need explicit height */
+.calendly-embed-root {
+  width: 100%;
+  overflow: visible;
+}
+
+.calendly-embed-root .calendly-embed-frame {
+  display: block;
+  min-height: 820px;
+}
+
+.calendly-embed-root .calendly-inline-widget iframe,
+.calendly-embed-root iframe {
+  display: block;
+  width: 100% !important;
+  min-height: 820px !important;
+  height: 820px !important;
+  border: 0;
+}

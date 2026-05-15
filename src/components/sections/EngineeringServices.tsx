@@ -20,37 +20,37 @@ export default function EngineeringServices() {
   const services = [
     {
       title: m.nav.aiEngineering,
-      description: 'Scale your intelligence with production-grade AI/ML architectures. We build, train, and deploy sophisticated models that solve real-world complexities through Generative AI and predictive systems.',
+      description: 'Scale your intelligence with production grade AI/ML architectures. We build, train, and deploy sophisticated models that solve real world complexities through Generative AI and predictive systems.',
       icon: AIEngineeringLogo,
       href: '/services/gen-ai-ml-development',
     },
     {
       title: m.nav.cloudDevOpsEngineering,
-      description: 'Architecting high-availability, cloud-native infrastructures. Our DevOps ecosystems focus on security, scalability, and seamless continuous delivery to keep your platform at peak performance.',
+      description: 'Architecting high availability, cloud native infrastructures. Our DevOps ecosystems focus on security, scalability, and seamless continuous delivery to keep your platform at peak performance.',
       icon: CloudDevOpsLogo,
       href: '/services/cloud-devops-engineering',
     },
     {
       title: m.nav.dataEngineering,
-      description: 'Transforming raw data into strategic assets with high-performance pipelines. We engineer resilient architectures for real-time streaming and large-scale batch processing.',
+      description: 'Transforming raw data into strategic assets with high performance pipelines. We engineer resilient architectures for real-time streaming and large-scale batch processing.',
       icon: DataEngineeringLogo,
       href: '/services/data-engineering',
     },
     {
       title: m.nav.digitalExperienceEngineering,
-      description: 'Crafting immersive digital products where performance meets exceptional UX. We build pixel-perfect, responsive interfaces that bridge the gap between users and complex systems.',
+      description: 'Crafting immersive digital products where performance meets exceptional UX. We build pixel perfect, responsive interfaces that bridge the gap between users and complex systems.',
       icon: ExperienceEngineeringLogo,
       href: '/services/digital-experience-engineering',
     },
     {
       title: m.nav.enterpriseServices,
-      description: 'Delivering domain-driven, robust solutions for intricate enterprise landscapes. We modernize legacy systems and build scalable architectures that drive global digital transformation.',
+      description: 'Delivering domain driven, robust solutions for intricate enterprise landscapes. We modernize legacy systems and build scalable architectures that drive global digital transformation.',
       icon: EnterpriseLogo,
       href: '/services/enterprise-solutions',
     },
     {
       title: m.nav.microsoftTechnologies,
-      description: 'Leveraging the full power of the Microsoft ecosystem for future-ready applications. From Azure cloud to .NET architectures, we deliver secure, enterprise-grade business tools.',
+      description: 'Leveraging the full power of the Microsoft ecosystem for future ready applications. From Azure cloud to .NET architectures, we deliver secure, enterprise grade business tools.',
       icon: MicrosoftLogo,
       href: '/services/microsoft-technologies',
     }
@@ -120,7 +120,7 @@ export default function EngineeringServices() {
                 Engineering <span className="text-blue-600">Excellence</span>
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-slate-600">
-                We bridge the gap between complex engineering challenges and transformative business value. Our specialized teams architect resilient, scalable, and high-performance digital ecosystems that empower modern enterprises to lead in an AI-first world.
+                We bridge the gap between complex engineering challenges and transformative business value. Our specialized teams architect resilient, scalable, and high performance digital ecosystems that empower modern enterprises to lead in an AI first world.
               </p>
             </div>
           </div>

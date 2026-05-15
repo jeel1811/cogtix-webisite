@@ -295,7 +295,7 @@ export default function AboutUs() {
   const title = m.aboutUs?.title || 'Driving Innovation Forward'
   const subtitle =
     m.aboutUs?.subtitle ||
-    'Cogtix helps businesses leverage modern technology to accelerate digital transformation and drive innovation. We specialize in AI solutions, Microsoft technologies, and custom software development tailored to unique business needs. Our mission is to build scalable, secure, and future-ready digital experiences that create lasting impact.'
+    'Cogtix helps businesses leverage modern technology to accelerate digital transformation and drive innovation. We specialize in AI solutions, Microsoft technologies, and custom software development tailored to unique business needs. Our mission is to build scalable, secure, and future ready digital experiences that create lasting impact.'
 
   return (
     <section className="relative bg-white py-14 md:py-20 overflow-hidden">

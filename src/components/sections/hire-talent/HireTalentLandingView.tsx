@@ -8,6 +8,7 @@ import * as LucideIcons from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import Container from '@/components/ui/Container'
 import Button from '@/components/ui/Button'
+import { CONTACT_INFO } from '@/lib/constants'
 import {
   getHireTalentCategoriesForLanding,
   getHireTalentCategoryOverview,
@@ -68,7 +69,7 @@ export default function HireTalentLandingView() {
               <Button variant="primary" size="lg" href="/contact-us" icon={<ArrowRight className="h-4 w-4" />}>
                 Talk to talent desk
               </Button>
-              <Button variant="outline" size="lg" href="https://calendly.com/cogtix/30min" target="_blank">
+              <Button variant="outline" size="lg" href={CONTACT_INFO.calendlyContactPath}>
                 Schedule a call
               </Button>
             </div>

@@ -175,7 +175,9 @@ export const CONTACT_INFO = {
     { label: 'UK', number: '+44 7442 185036' },
   ],
   whatsapp: 'https://wa.me/919327924201',
-  calendly: 'https://calendly.com/cogtix/30min',
+  calendly: 'https://calendly.com/akash-cogtix/30min',
+  /** Contact page anchor for inline Calendly widget */
+  calendlyContactPath: '/contact-us',
 } as const
 
 // ─── Social Links ──────────────────────────────────────────────────
