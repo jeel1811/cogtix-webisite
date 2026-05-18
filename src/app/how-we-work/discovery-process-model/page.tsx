@@ -4,6 +4,8 @@ import AnimatedCard from '@/components/sections/AnimatedCard'
 import ProcessFlow from '@/components/sections/ProcessFlow'
 import Container from '@/components/ui/Container'
 import Link from 'next/link'
+import { siteCtasContent } from '@/i18n/messages'
+import { CTA_LINKS } from '@/lib/cta'
 
 export const metadata = {
   title: 'Discovery Process Model - How We Work',
@@ -71,8 +73,8 @@ export default function DiscoveryProcessModelPage() {
                     <h4 className="mt-2 text-2xl font-semibold md:text-3xl">Schedule a short workshop to scope your goals and outcomes.</h4>
                     <p className="mt-3 text-sm leading-6 text-white/80 md:text-base">We’ll shape the problem, test assumptions, and give you a clear plan for the next phase.</p>
                   </div>
-                  <Link href="/contact-us" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 font-semibold text-sky-700 shadow-lg shadow-black/10 transition-transform duration-200 hover:-translate-y-0.5">
-                    Get in touch
+                  <Link href={CTA_LINKS.consultation} className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 font-semibold text-sky-700 shadow-lg shadow-black/10 transition-transform duration-200 hover:-translate-y-0.5">
+                    {siteCtasContent.bookConsultation}
                   </Link>
                 </div>
               </div>

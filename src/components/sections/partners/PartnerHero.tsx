@@ -33,7 +33,7 @@ export default function PartnerHero({
   tier,
   tierSubtitle,
   highlights,
-  cta = { text: 'Talk to a Partnership Expert', href: '#contact' },
+  cta = { text: 'Discuss Your Project', href: '#contact' },
   exploreCapabilitiesLabel = 'Explore capabilities',
   activePartnerLabel = 'Active Partner',
   stats,

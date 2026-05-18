@@ -29,7 +29,7 @@ import {
 import Container from '@/components/ui/Container'
 import Button from '@/components/ui/Button'
 // import ScrollIndicator from '@/components/ui/ScrollIndicator'
-import { CONTACT_INFO } from '@/lib/constants'
+import { CTA_LINKS } from '@/lib/cta'
 import { useI18n } from '@/i18n/provider'
 
 type OrbitIcon = {
@@ -160,13 +160,13 @@ export default function Hero() {
             </p>
 
             <div
-              className="flex flex-col sm:flex-row items-center lg:justify-start justify-center gap-4 mb-12 animate-fade-in-up"
+              className="mb-12 flex animate-fade-in-up flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start"
               style={{ animationDelay: '0.6s' }}
             >
               <Button
                 variant="primary"
                 size="lg"
-                href={CONTACT_INFO.calendlyContactPath}
+                href={CTA_LINKS.consultation}
                 onClick={() => {
                   if (typeof window !== 'undefined') {
                     sessionStorage.setItem('shouldScrollToSchedule', 'true')
@@ -175,7 +175,7 @@ export default function Hero() {
                 }}
                 icon={<ArrowRight className="w-4 h-4" />}
               >
-                {m.hero.scheduleMeeting}
+                {m.siteCtas.bookConsultation}
               </Button>
               <Button
                 variant="outline"

@@ -11,7 +11,7 @@ export const enServicesLanding: ServicesLandingCopy = {
       'Building engineering teams that ship faster and scale with confidence',
     description:
       'Explore the full engineering portfolio: product development, cloud, data, Microsoft, AI/ML, and experience design services built to cover the full delivery lifecycle.',
-    ctaPrimary: 'Talk to us',
+    ctaPrimary: 'Discuss Your Project',
     ctaSecondary: 'View services',
     highlights: [
       'Strategy-led engineering across modern product stacks',

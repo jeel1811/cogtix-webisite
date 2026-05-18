@@ -28,7 +28,10 @@ function resolveSlug(segments: string[] | undefined): string | null {
   return segments[segments.length - 1] ?? null
 }
 
-function resolveImageUrl(node: CaseStudyNode, key: 'firstImage' | 'secondImage' | 'thirdImage') {
+function resolveImageUrl(
+  node: CaseStudyNode,
+  key: 'firstImage' | 'secondImage' | 'thirdImage'
+) {
   return node.caseStudy?.projectImages?.[key]?.mediaItemUrl ?? null
 }
 
@@ -36,11 +39,11 @@ function formatContent(content: string | null | undefined) {
   if (!content) return ''
   // If it already looks like HTML, return as is
   if (content.includes('<p>') || content.includes('<br')) return content
-  
+
   // Otherwise split by double newlines or single newlines and wrap in paragraphs
   return content
     .split(/\n\n+/)
-    .map(p => `<p>${p.trim()}</p>`)
+    .map((p) => `<p>${p.trim()}</p>`)
     .join('')
 }
 
@@ -62,7 +65,13 @@ function renderSection(title: string, content?: string | null) {
   )
 }
 
-function renderArticleSection(title: string, content: string | null, sidebarImage: string | null = null, bottomImage: string | null = null, reverse = false) {
+function renderArticleSection(
+  title: string,
+  content: string | null,
+  sidebarImage: string | null = null,
+  bottomImage: string | null = null,
+  reverse = false
+) {
   if (!content && !sidebarImage && !bottomImage) return null
 
   return (
@@ -70,10 +79,12 @@ function renderArticleSection(title: string, content: string | null, sidebarImag
       <h2 className="mb-10 text-center text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
         {title}
       </h2>
-      
+
       <div className="mx-auto max-w-5xl xl:max-w-6xl 2xl:max-w-7xl overflow-hidden px-4 sm:px-6">
         {sidebarImage && (
-          <div className={`mb-8 sm:mb-0 ${reverse ? 'sm:float-left sm:mr-10' : 'sm:float-right sm:ml-10'} relative w-full sm:w-[400px] xl:sm:w-[520px] 2xl:sm:w-[600px]`}>
+          <div
+            className={`mb-8 sm:mb-0 ${reverse ? 'sm:float-left sm:mr-10' : 'sm:float-right sm:ml-10'} relative w-full sm:w-[400px] xl:sm:w-[520px] 2xl:sm:w-[600px]`}
+          >
             <div className="absolute -inset-10 rounded-[4rem] bg-blue-50/50 opacity-50 blur-3xl" />
             <div className="relative overflow-hidden rounded-[2rem] bg-white p-2 shadow-2xl shadow-slate-200/50">
               <Image
@@ -132,7 +143,11 @@ export async function generateMetadata({
     return { title: 'Case Studies | Cogtix Solutions' }
   }
 
-  const title = data.caseStudy?.metaTitle || data.caseStudy?.projectName || data.title || 'Case Study'
+  const title =
+    data.caseStudy?.metaTitle ||
+    data.caseStudy?.projectName ||
+    data.title ||
+    'Case Study'
   const description =
     data.caseStudy?.metaDescription ||
     data.caseStudy?.shortPreviewDescription ||
@@ -175,7 +190,10 @@ export default async function CaseStudyDetailPage({
 
   const caseStudy = data.caseStudy ?? {}
   const title = caseStudy.projectName || data.title || 'Case Study'
-  const heroImage = resolveImageUrl(data, 'firstImage') || data.featuredImage?.node?.mediaItemUrl || null
+  const heroImage =
+    resolveImageUrl(data, 'firstImage') ||
+    data.featuredImage?.node?.mediaItemUrl ||
+    null
   const challengeImage = resolveImageUrl(data, 'secondImage')
   const solutionImage = resolveImageUrl(data, 'thirdImage')
 
@@ -187,8 +205,14 @@ export default async function CaseStudyDetailPage({
         <div className="absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-cyan-300/20 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-1.5 text-[0.75rem] font-semibold text-slate-500">
-            <Link href="/" className="inline-flex items-center gap-1 hover:text-blue-600">
+          <nav
+            aria-label="Breadcrumb"
+            className="flex flex-wrap items-center gap-1.5 text-[0.75rem] font-semibold text-slate-500"
+          >
+            <Link
+              href="/"
+              className="inline-flex items-center gap-1 hover:text-blue-600"
+            >
               <Home className="h-3.5 w-3.5" />
               Home
             </Link>
@@ -202,34 +226,38 @@ export default async function CaseStudyDetailPage({
 
           <div className="mt-8 grid gap-10 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-7">
-            <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-[0.6875rem] font-bold uppercase tracking-[0.2em] text-blue-700 ring-1 ring-blue-100">
-              <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
-              Client Success Story
-            </div>
+              <div className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-[0.6875rem] font-bold uppercase tracking-[0.2em] text-blue-700 ring-1 ring-blue-100">
+                <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
+                Client Success Story
+              </div>
 
               <h1 className="mt-6 max-w-4xl text-4xl font-bold leading-[1.05] tracking-tight text-slate-950 md:text-5xl lg:text-6xl">
-              {title}
-            </h1>
+                {title}
+              </h1>
 
-            <div 
+              <div
                 className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 md:text-xl whitespace-pre-line"
-              dangerouslySetInnerHTML={{ 
-                  __html: caseStudy.metaDescription || caseStudy.shortPreviewDescription || caseStudy.projectOverview || 'A real client case study from Cogtix Solutions.' 
-              }}
-            />
+                dangerouslySetInnerHTML={{
+                  __html:
+                    caseStudy.metaDescription ||
+                    caseStudy.shortPreviewDescription ||
+                    caseStudy.projectOverview ||
+                    'A real client case study from Cogtix Solutions.',
+                }}
+              />
 
               <ul className="mt-8 flex flex-wrap gap-3">
                 {caseStudy.sector ? (
                   <li className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">
-                  Sector: {caseStudy.sector}
-                </li>
+                    Sector: {caseStudy.sector}
+                  </li>
                 ) : null}
                 {caseStudy.technology ? (
                   <li className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">
-                  Technology: {caseStudy.technology}
-                </li>
+                    Technology: {caseStudy.technology}
+                  </li>
                 ) : null}
-            </ul>
+              </ul>
             </div>
 
             <div className="lg:col-span-5">
@@ -250,40 +278,46 @@ export default async function CaseStudyDetailPage({
                   <span className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
                     Case study image unavailable
                   </span>
-              </div>
-            )}
+                </div>
+              )}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       <section className="bg-white py-6">
         <Container className="py-8">
           {renderSection('Project Overview', caseStudy.projectOverview || null)}
-          {renderSection('Client Background', caseStudy.clientBackground || null)}
-          
+          {renderSection(
+            'Client Background',
+            caseStudy.clientBackground || null
+          )}
+
           {/* Magazine Style Sections */}
-          {renderArticleSection('Business Needs', caseStudy.businessNeeds || null)}
-          
           {renderArticleSection(
-            'The Challenge', 
-            caseStudy.theChallange || null, 
-            challengeImage, 
-            null, 
+            'Business Needs',
+            caseStudy.businessNeeds || null
+          )}
+
+          {renderArticleSection(
+            'The Challenge',
+            caseStudy.theChallange || null,
+            challengeImage,
+            null,
             true
           )}
-          
+
           {renderArticleSection(
-            'Our Solution', 
-            caseStudy.ourSolution || null, 
+            'Our Solution',
+            caseStudy.ourSolution || null,
             solutionImage
           )}
-          
+
           {renderArticleSection(
-            'Key Outcomes', 
-            caseStudy.keyOutcomes || null, 
-            null, 
-            null, 
+            'Key Outcomes',
+            caseStudy.keyOutcomes || null,
+            null,
+            null,
             true
           )}
         </Container>

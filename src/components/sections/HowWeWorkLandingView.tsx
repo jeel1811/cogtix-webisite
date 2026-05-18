@@ -8,9 +8,10 @@ import Testimonials from '@/components/sections/Testimonials'
 import Offices from '@/components/sections/Offices'
 import { useI18n } from '@/i18n/provider'
 import { howWeWorkLanding, howWeWorkSlugs } from '@/i18n/landingContent'
+import { CTA_LINKS } from '@/lib/cta'
 
 export default function HowWeWorkLandingView() {
-  const { locale } = useI18n()
+  const { locale, m } = useI18n()
   const copy = howWeWorkLanding[locale]
 
   const steps = copy.items.map((item, idx) => ({
@@ -35,10 +36,10 @@ export default function HowWeWorkLandingView() {
 
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link
-                href="/contact-us"
+                href={CTA_LINKS.consultation}
                 className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition-transform duration-200 hover:-translate-y-0.5 hover:bg-slate-800"
               >
-                {copy.hero.ctaPrimary}
+                {m.siteCtas.bookConsultation}
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>

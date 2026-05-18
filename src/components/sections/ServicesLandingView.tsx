@@ -10,7 +10,7 @@ import { useI18n } from '@/i18n/provider'
 import { servicesLanding, serviceSlugs } from '@/i18n/landingContent'
 
 export default function ServicesLandingView() {
-  const { locale } = useI18n()
+  const { locale, m } = useI18n()
   const copy = servicesLanding[locale]
 
   const services = copy.items.map((item, idx) => ({
@@ -37,7 +37,7 @@ export default function ServicesLandingView() {
                 href="/contact-us"
                 className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition-transform duration-200 hover:-translate-y-0.5 hover:bg-slate-800"
               >
-                {copy.hero.ctaPrimary}
+                {m.siteCtas.discussProject}
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link

@@ -5,6 +5,8 @@ import ProcessFlow from '@/components/sections/ProcessFlow'
 import Container from '@/components/ui/Container'
 import Link from 'next/link'
 import { CheckCircle2, HandCoins } from 'lucide-react'
+import { siteCtasContent } from '@/i18n/messages'
+import { CTA_LINKS } from '@/lib/cta'
 
 export const metadata = {
   title: 'Fixed Cost Model - How We Work',
@@ -83,8 +85,8 @@ export default function FixedCostModelPage() {
                     <h4 className="mt-2 text-2xl font-semibold md:text-3xl">We can scope the work and give you a proposal that is easy to approve.</h4>
                     <p className="mt-3 text-sm leading-6 text-white/80 md:text-base">Contact us and we will run a short scoping exercise to turn your requirements into a clear delivery plan.</p>
                   </div>
-                  <Link href="/contact-us" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 font-semibold text-sky-700 shadow-lg shadow-black/10 transition-transform duration-200 hover:-translate-y-0.5">
-                    Get in touch
+                  <Link href={CTA_LINKS.estimate} className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 font-semibold text-sky-700 shadow-lg shadow-black/10 transition-transform duration-200 hover:-translate-y-0.5">
+                    {siteCtasContent.freeEstimate}
                     <CheckCircle2 className="h-4 w-4" />
                   </Link>
                 </div>

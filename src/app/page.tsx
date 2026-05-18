@@ -8,6 +8,8 @@ import Offices from "@/components/sections/Offices";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import Testimonials from "@/components/sections/Testimonials";
 import EngineeringServices from "@/components/sections/EngineeringServices";
+import WhoWeWorkWith from "@/components/sections/WhoWeWorkWith";
+import HomeCaseStudiesSection from "@/components/sections/HomeCaseStudiesSection";
 
 export default function Home() {
   return (
@@ -15,8 +17,10 @@ export default function Home() {
       <Hero />
       <HappyClients />
       <AboutUs />
+      <WhoWeWorkWith />
       <EngineeringServices />
       <WhyChooseUs />
+      <HomeCaseStudiesSection />
       <Awards />
       <Testimonials />
       <ClutchWidget />

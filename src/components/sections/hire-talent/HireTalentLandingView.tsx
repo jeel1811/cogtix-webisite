@@ -8,7 +8,8 @@ import * as LucideIcons from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import Container from '@/components/ui/Container'
 import Button from '@/components/ui/Button'
-import { CONTACT_INFO } from '@/lib/constants'
+import { useI18n } from '@/i18n/provider'
+import { CTA_LINKS } from '@/lib/cta'
 import {
   getHireTalentCategoriesForLanding,
   getHireTalentCategoryOverview,
@@ -23,6 +24,7 @@ function RoleIcon({ name, className }: { name: string; className?: string }) {
 }
 
 export default function HireTalentLandingView() {
+  const { m } = useI18n()
   const categories = getHireTalentCategoriesForLanding()
   const router = useRouter()
   const pathname = usePathname()
@@ -66,11 +68,11 @@ export default function HireTalentLandingView() {
               clear expectations and the same quality bar as our delivery teams.
             </p>
             <div className="mt-9 flex flex-wrap justify-center gap-3">
-              <Button variant="primary" size="lg" href="/contact-us" icon={<ArrowRight className="h-4 w-4" />}>
-                Talk to talent desk
+              <Button variant="primary" size="lg" href={CTA_LINKS.project} icon={<ArrowRight className="h-4 w-4" />}>
+                {m.siteCtas.discussProject}
               </Button>
-              <Button variant="outline" size="lg" href={CONTACT_INFO.calendlyContactPath}>
-                Schedule a call
+              <Button variant="outline" size="lg" href={CTA_LINKS.consultation}>
+                {m.siteCtas.bookConsultation}
               </Button>
             </div>
           </div>

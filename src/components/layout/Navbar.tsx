@@ -330,7 +330,7 @@ function MegaMenuPanel({
                       onClick={onClose}
                       className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-blue-500 text-white text-sm font-semibold hover:bg-blue-600 transition-colors w-fit shadow-lg shadow-blue-500/20"
                     >
-                      {localeText.common.contactUs}
+                      {localeText.siteCtas.bookConsultation}
                       <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>
@@ -354,7 +354,7 @@ function MegaMenuPanel({
                     onClick={onClose}
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-blue-500 text-white text-sm font-semibold hover:bg-blue-600 transition-colors w-fit shadow-lg shadow-blue-500/20"
                   >
-                    {localeText.common.contactUs}
+                    {localeText.siteCtas.bookConsultation}
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
@@ -647,7 +647,7 @@ export default function Navbar() {
                   size="md" 
                   href="/contact-us"
                 >
-                  {m.common.contactUs}
+                  {m.siteCtas.bookConsultation}
                 </Button>
               </div>
 
@@ -915,7 +915,7 @@ export default function Navbar() {
                   href="/contact-us"
                   className="w-full"
                 >
-                  {m.common.contactUs}
+                  {m.siteCtas.bookConsultation}
                 </Button>
               </div>
             </div>

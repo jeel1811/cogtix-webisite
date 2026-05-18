@@ -17,7 +17,7 @@ export const enPartnerContent: PartnerContentByVariant = {
       tier: 'Microsoft Solutions Partner',
       tierSubtitle:
         'Designations across Azure, Data & AI, and Business Applications',
-      cta: 'Talk to a Partnership Expert',
+      cta: 'Discuss Your Project',
       exploreCapabilities: 'Explore capabilities',
       activePartnerBadge: 'Active Partner',
       highlights: [
@@ -314,7 +314,7 @@ export const enPartnerContent: PartnerContentByVariant = {
       tier: 'AWS Partner Network (APN)',
       tierSubtitle:
         'Solutions and Services paths with Well-Architected aligned delivery',
-      cta: 'Talk to a Partnership Expert',
+      cta: 'Discuss Your Project',
       exploreCapabilities: 'Explore capabilities',
       activePartnerBadge: 'Active Partner',
       highlights: [
@@ -610,7 +610,7 @@ export const enPartnerContent: PartnerContentByVariant = {
         'As a Google Cloud Partner, we help data-led organizations build their analytics estate on BigQuery, productionize AI on Vertex AI, and modernize containers on GKE all under one governed, FinOps-aware platform.',
       tier: 'Google Cloud Partner',
       tierSubtitle: 'Data & Analytics and Cloud Infrastructure focus areas',
-      cta: 'Talk to a Partnership Expert',
+      cta: 'Discuss Your Project',
       exploreCapabilities: 'Explore capabilities',
       activePartnerBadge: 'Active Partner',
       highlights: [

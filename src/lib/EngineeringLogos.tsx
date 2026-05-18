@@ -122,6 +122,16 @@ export const ExperienceEngineeringLogo = ({ className }: Props) => (
   </svg>
 )
 
+// ─── Mobile App — smartphone frame ─────────────────────────────────────────
+export const MobileAppLogo = ({ className }: Props) => (
+  <svg viewBox="0 0 48 48" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="14" y="4" width="20" height="40" rx="4" fill="#0F172A" stroke="#3B82F6" strokeWidth="2" />
+    <rect x="18" y="8" width="12" height="28" rx="2" fill="#1E3A8A" />
+    <circle cx="24" cy="39" r="2" fill="#60A5FA" />
+    <rect x="20" y="5" width="8" height="2" rx="1" fill="#334155" />
+  </svg>
+)
+
 // ─── Enterprise Services — building with nodes (org chart) ─────────────────
 export const EnterpriseLogo = ({ className }: Props) => (
   <svg viewBox="0 0 48 48" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">

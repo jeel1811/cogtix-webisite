@@ -18,7 +18,8 @@ import Container from '@/components/ui/Container'
 import Button from '@/components/ui/Button'
 import ContactForm from '@/components/sections/ContactForm'
 import Offices from '@/components/sections/Offices'
-import { CONTACT_INFO } from '@/lib/constants'
+import { useI18n } from '@/i18n/provider'
+import { CTA_LINKS } from '@/lib/cta'
 import type { HireTalentRoleContent } from '@/data/hireTalentData'
 
 const WHY_ICONS: LucideIcon[] = [UserCheck, Layers3, Globe2]
@@ -116,6 +117,8 @@ function FaqBlock({
 }
 
 export default function HireTalentRoleView({ content }: { content: HireTalentRoleContent }) {
+  const { m } = useI18n()
+
   return (
     <>
       <section className="relative overflow-hidden border-b border-slate-200 bg-[radial-gradient(ellipse_at_50%_-30%,rgba(14,165,233,0.1),transparent_55%),linear-gradient(180deg,_#f8fafc_0%,_#ffffff_100%)] py-14 md:py-20">
@@ -136,11 +139,11 @@ export default function HireTalentRoleView({ content }: { content: HireTalentRol
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-slate-600 md:text-xl">{content.heroDescription}</p>
             <div className="mt-9 flex flex-wrap justify-center gap-3">
-              <Button variant="primary" size="lg" href="/contact-us" icon={<ArrowRight className="h-4 w-4" />}>
-                Talk to talent desk
+              <Button variant="primary" size="lg" href={CTA_LINKS.project} icon={<ArrowRight className="h-4 w-4" />}>
+                {m.siteCtas.discussProject}
               </Button>
-              <Button variant="outline" size="lg" href={CONTACT_INFO.calendlyContactPath}>
-                Schedule a call
+              <Button variant="outline" size="lg" href={CTA_LINKS.consultation}>
+                {m.siteCtas.bookConsultation}
               </Button>
             </div>
           </div>
@@ -265,11 +268,11 @@ export default function HireTalentRoleView({ content }: { content: HireTalentRol
           </div>
 
           <div className="mt-12 flex flex-wrap justify-center gap-3">
-            <Button variant="primary" size="lg" href="/contact-us">
-              Request profiles
+            <Button variant="primary" size="lg" href={CTA_LINKS.project}>
+              {m.siteCtas.discussProject}
             </Button>
-            <Button variant="outline" size="lg" href={CONTACT_INFO.calendlyContactPath}>
-              Book 30 minutes
+            <Button variant="outline" size="lg" href={CTA_LINKS.consultation}>
+              {m.siteCtas.bookConsultation}
             </Button>
           </div>
         </Container>

@@ -5,6 +5,8 @@ import ProcessFlow from '@/components/sections/ProcessFlow'
 import Container from '@/components/ui/Container'
 import Link from 'next/link'
 import { BrainCircuit, BriefcaseBusiness, Gauge, Users, Workflow } from 'lucide-react'
+import { siteCtasContent } from '@/i18n/messages'
+import { CTA_LINKS } from '@/lib/cta'
 
 export const metadata = {
   title: 'Dedicated Resource Model - How We Work',
@@ -147,8 +149,8 @@ export default function DedicatedResourceModelPage() {
                     <h4 className="mt-2 text-2xl font-semibold md:text-3xl">Talk to our staffing experts to design the right engagement model.</h4>
                     <p className="mt-3 text-sm leading-6 text-white/80 md:text-base">We can help define the right roles, cadence, and delivery model for your next phase of growth.</p>
                   </div>
-                  <Link href="/contact-us" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 font-semibold text-sky-700 shadow-lg shadow-black/10 transition-transform duration-200 hover:-translate-y-0.5">
-                    Get in touch
+                  <Link href={CTA_LINKS.project} className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 font-semibold text-sky-700 shadow-lg shadow-black/10 transition-transform duration-200 hover:-translate-y-0.5">
+                    {siteCtasContent.discussProject}
                     <Users className="h-4 w-4" />
                   </Link>
                 </div>

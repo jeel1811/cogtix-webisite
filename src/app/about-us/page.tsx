@@ -4,7 +4,10 @@ import Container from '@/components/ui/Container'
 import { motion } from 'framer-motion'
 import {
   ArrowRight,
+  Briefcase,
   CheckCircle2,
+  Cloud,
+  Globe2,
   Rocket,
   Shield,
   Target,
@@ -48,13 +51,6 @@ const values = [
   },
 ]
 
-const founder = {
-  name: 'Akash Limbani',
-  title: 'CEO & Co-Founder',
-  summary:
-    'Akash keeps the company focused on thoughtful delivery, practical innovation, and work that feels clear from first conversation to final handoff.',
-}
-
 const fadeUp = {
   initial: { opacity: 0, y: 18 },
   whileInView: { opacity: 1, y: 0 },
@@ -64,6 +60,13 @@ const fadeUp = {
 
 export default function AboutUsPage() {
   const { m } = useI18n()
+  const founder = m.founderProfile
+
+  const credibilityItems = [
+    { key: 'experience', icon: Briefcase, data: founder.experience, accent: 'bg-blue-50 text-blue-600' },
+    { key: 'tech', icon: Cloud, data: founder.techExpertise, accent: 'bg-indigo-50 text-indigo-600' },
+    { key: 'domain', icon: Globe2, data: founder.domainExposure, accent: 'bg-teal-50 text-teal-600' },
+  ] as const
 
   return (
     <div className="relative isolate min-h-[85vh] overflow-hidden bg-gradient-to-b from-blue-50/70 via-white to-white pt-20">
@@ -86,7 +89,7 @@ export default function AboutUsPage() {
                   href="/contact-us"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-navy-900 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-navy-900/10 transition-transform hover:-translate-y-0.5"
                 >
-                  Talk to our team
+                  {m.siteCtas.discussProject}
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
@@ -136,7 +139,7 @@ export default function AboutUsPage() {
           >
             <div className="relative">
               <span className="inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-1.5 text-[0.625rem] font-extrabold uppercase tracking-[0.22em] text-blue-600">
-                Leadership
+                {founder.badge}
               </span>
               <h2 className="mt-5 text-3xl font-bold tracking-tight text-navy-900 sm:text-4xl">
                 {founder.name}
@@ -148,10 +151,27 @@ export default function AboutUsPage() {
                 {founder.summary}
               </p>
 
+              <div className="mt-8 grid gap-4 md:grid-cols-3">
+                {credibilityItems.map((item) => (
+                  <div
+                    key={item.key}
+                    className="rounded-2xl border border-gray-100 bg-gradient-to-b from-slate-50/80 to-white p-5 shadow-sm transition-all duration-300 hover:border-blue-100 hover:shadow-md"
+                  >
+                    <div
+                      className={`mb-4 flex h-11 w-11 items-center justify-center rounded-xl ${item.accent}`}
+                    >
+                      <item.icon className="h-5 w-5" strokeWidth={1.75} />
+                    </div>
+                    <h3 className="text-sm font-bold uppercase tracking-[0.14em] text-navy-900">
+                      {item.data.label}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-gray-600">{item.data.description}</p>
+                  </div>
+                ))}
+              </div>
+
               <div className="mt-8 h-px w-full max-w-md bg-gradient-to-r from-blue-200 via-teal-200 to-transparent" />
-              <p className="mt-5 max-w-xl text-sm leading-6 text-gray-500">
-                Focused on simple delivery, long-term thinking, and strong client relationships.
-              </p>
+              <p className="mt-5 max-w-xl text-sm leading-6 text-gray-500">{founder.tagline}</p>
             </div>
 
             <div className="relative flex items-center justify-center">

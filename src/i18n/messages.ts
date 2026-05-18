@@ -92,6 +92,11 @@ export interface Messages {
     language: string
     quickContact: string
   }
+  siteCtas: {
+    bookConsultation: string
+    discussProject: string
+    freeEstimate: string
+  }
   hero: {
     trustedBy: string
     title: string
@@ -116,6 +121,62 @@ export interface Messages {
     subtitle: string
     learnMore: string
   }
+  engineeringServices: {
+    badge: string
+    title: string
+    titleHighlight: string
+    subtitle: string
+    explore: string
+    outcomesTitle: string
+    outcomeScalability: string
+    outcomePerformance: string
+    outcomeAutomation: string
+    outcomeCostOptimization: string
+    aiMl: { description: string }
+    cloudDevOps: { description: string }
+    digitalExperience: { description: string }
+    dataEngineering: { description: string }
+    enterprise: { description: string }
+    microsoft: { description: string }
+  }
+  whoWeWorkWith: {
+    badge: string
+    title: string
+    titleHighlight: string
+    subtitle: string
+    cta: string
+    startups: { title: string; tag: string; description: string }
+    saas: { title: string; tag: string; description: string }
+    enterprises: { title: string; tag: string; description: string }
+    aiFounders: { title: string; tag: string; description: string }
+  }
+  homeCaseStudies: {
+    badge: string
+    title: string
+    titleHighlight: string
+    subtitle: string
+    labels: {
+      problem: string
+      solution: string
+      impact: string
+      techStack: string
+    }
+    viewStudy: string
+    viewAll: string
+    items: {
+      id: string
+      title: string
+      sector: string
+      technology: string
+      description: string
+      problem: string
+      solution: string
+      impacts: { value: string; label: string }[]
+      techStack: string[]
+      slug?: string
+      imageUrl?: string
+    }[]
+  }
   industries: {
     badge: string
     title: string
@@ -136,6 +197,10 @@ export interface Messages {
     clientCentric: string
     innovativeSolutions: string
     endToEndSupport: string
+  }
+  whyCogtixPillars: {
+    badge: string
+    items: { title: string; description: string }[]
   }
   contact: {
     heroTitle: string
@@ -174,6 +239,16 @@ export interface Messages {
     visionContent: string
     valuesTitle: string
     valuesSubtitle: string
+  }
+  founderProfile: {
+    badge: string
+    name: string
+    title: string
+    summary: string
+    tagline: string
+    experience: { label: string; description: string }
+    techExpertise: { label: string; description: string }
+    domainExposure: { label: string; description: string }
   }
   awards: {
     badge: string
@@ -235,6 +310,211 @@ export interface Messages {
   serviceContent: Record<ServiceVariantKey, ServicePageMessages>
 }
 
+/** Home page engineering services (English; other locales use this until translated). */
+export const engineeringServicesContent: Messages['engineeringServices'] = {
+  badge: 'What We Deliver',
+  title: 'Solutions Built for',
+  titleHighlight: 'Business Impact',
+  subtitle:
+    'We help leaders launch and grow digital products with clear outcomes: stronger performance, smarter automation, scalable platforms, and cloud spend that stays under control.',
+  explore: 'Learn more',
+  outcomesTitle: 'Outcomes we focus on',
+  outcomeScalability: 'Scalability',
+  outcomePerformance: 'Performance',
+  outcomeAutomation: 'Automation',
+  outcomeCostOptimization: 'Cost optimization',
+  aiMl: {
+    description:
+      'Turn data into decisions with production-ready AI and automation that reduce manual work, improve accuracy, and scale with your business.',
+  },
+  cloudDevOps: {
+    description:
+      'Run reliable platforms with faster releases, stronger security, and cloud practices that improve uptime while keeping infrastructure spend predictable.',
+  },
+  digitalExperience: {
+    description:
+      'Launch web and mobile products customers enjoy, with clear UX, steady performance, and delivery rhythms that support adoption and retention.',
+  },
+  dataEngineering: {
+    description:
+      'Build trusted data pipelines and analytics foundations so teams get timely insights, better forecasting, and confidence in reporting.',
+  },
+  enterprise: {
+    description:
+      'Modernize core systems and integrations with software shaped to your processes, compliance needs, and long-term growth plans.',
+  },
+  microsoft: {
+    description:
+      'Get more from the Microsoft stack with secure cloud, modern applications, and delivery approaches aligned to enterprise governance.',
+  },
+}
+
+/** Primary site CTAs (English; other locales use this until translated). */
+export const siteCtasContent: Messages['siteCtas'] = {
+  bookConsultation: 'Book a Free Consultation',
+  discussProject: 'Discuss Your Project',
+  freeEstimate: 'Get Free Estimate',
+}
+
+/** Home page audience section (English; other locales use this until translated). */
+export const whoWeWorkWithContent: Messages['whoWeWorkWith'] = {
+  badge: 'Who we work with',
+  title: 'Partnerships for teams at',
+  titleHighlight: 'every stage of growth',
+  subtitle:
+    'We are not a one-size-fits-all vendor. We match how we engage, staff, and deliver to the pace, risk, and ambition of your business.',
+  cta: siteCtasContent.discussProject,
+  startups: {
+    title: 'Startups',
+    tag: 'MVP & early traction',
+    description:
+      'Validate ideas quickly with a focused MVP, clear milestones, and engineering that keeps burn low while you learn from real users.',
+  },
+  saas: {
+    title: 'SaaS companies',
+    tag: 'Scale & retention',
+    description:
+      'Grow subscription products with reliable releases, performance you can measure, and platforms that handle more customers without surprise rework.',
+  },
+  enterprises: {
+    title: 'Enterprises',
+    tag: 'Governed delivery',
+    description:
+      'Modernize safely inside your security, compliance, and integration requirements, with transparent communication and predictable delivery cadence.',
+  },
+  aiFounders: {
+    title: 'Founders building AI products',
+    tag: 'AI-first products',
+    description:
+      'Ship AI features responsibly with the right data, evaluation, and production path so demos become dependable products customers trust.',
+  },
+}
+
+/** About page founder / leadership block (English; other locales use this until translated). */
+export const founderProfileContent: Messages['founderProfile'] = {
+  badge: 'Leadership',
+  name: 'Akash Limbani',
+  title: 'CEO & Co-Founder',
+  summary:
+    'Akash keeps the company focused on thoughtful delivery, practical innovation, and work that feels clear from first conversation to final handoff.',
+  tagline: 'Focused on simple delivery, long-term thinking, and strong client relationships.',
+  experience: {
+    label: 'Experience',
+    description:
+      '10+ years leading software delivery across startups, SaaS, and enterprise programs, from MVP launches through scaled platforms.',
+  },
+  techExpertise: {
+    label: 'Tech expertise',
+    description:
+      'Deep hands-on background in backend systems, cloud architecture, APIs, data platforms, DevOps, and modern product engineering.',
+  },
+  domainExposure: {
+    label: 'Domain exposure',
+    description:
+      'Fintech, Logistics, Healthcare, Recruiting, Cybersecurity, and B2B SaaS, with teams and clients across the US, Europe, and APAC.',
+  },
+}
+
+/** Why Cogtix differentiation pillars (English; other locales use this until translated). */
+export const whyCogtixPillarsContent: Messages['whyCogtixPillars'] = {
+  badge: 'Why Cogtix',
+  items: [
+    {
+      title: '10+ years experience',
+      description:
+        'A decade of delivery across startups and enterprises, with teams that understand product, platform, and scale.',
+    },
+    {
+      title: 'Strong backend & cloud expertise',
+      description:
+        'Deep engineering in APIs, data, Azure, AWS, and DevOps so your foundations stay reliable as you grow.',
+    },
+    {
+      title: 'Startup-friendly execution',
+      description:
+        'Fast MVPs, clear milestones, and pragmatic scope so you ship without burning runway.',
+    },
+    {
+      title: 'Long-term partnership approach',
+      description:
+        'We align to your roadmap beyond launch with maintainable code and continuity you can count on.',
+    },
+  ],
+}
+
+/** Home page case studies (English; other locales use this until translated). */
+export const homeCaseStudiesContent: Messages['homeCaseStudies'] = {
+  badge: 'Case studies',
+  title: 'Proof that',
+  titleHighlight: 'delivery creates outcomes',
+  subtitle:
+    'Real engagements across SaaS, enterprise, and AI products. Each story shows the challenge, how we solved it, measurable impact, and the stack we used.',
+  labels: {
+    problem: 'Problem',
+    solution: 'Solution',
+    impact: 'Impact',
+    techStack: 'Tech stack',
+  },
+  viewStudy: 'Read full case study',
+  viewAll: 'View all case studies',
+  items: [
+    {
+      id: 'saas-analytics',
+      title: 'B2B analytics SaaS platform',
+      sector: 'SaaS',
+      technology: 'Node.js | React | AWS',
+      description:
+        'Dashboard load times exceeded 12 seconds at peak usage. We redesigned the data layer and rebuilt the customer app for faster releases and lower cloud spend.',
+      problem:
+        'Dashboard load times exceeded 12 seconds at peak usage, churn risk was rising, and the team could not ship features without breaking reporting jobs.',
+      solution:
+        'We redesigned the data layer, introduced caching and async pipelines, and rebuilt the customer-facing app on a modular front end with CI/CD and observability baked in.',
+      impacts: [
+        { value: '45%', label: 'faster report queries' },
+        { value: '2x', label: 'release cadence' },
+        { value: '30%', label: 'lower cloud spend' },
+      ],
+      techStack: ['React', 'Node.js', 'PostgreSQL', 'AWS', 'Kubernetes', 'Redis'],
+    },
+    {
+      id: 'enterprise-logistics',
+      title: 'Global logistics operations suite',
+      sector: 'Enterprise',
+      technology: '.NET | Azure | Kubernetes',
+      description:
+        'A monolithic legacy system blocked releases across regions. We phased delivery into domain services on Azure with governed, zero-downtime cutovers.',
+      problem:
+        'A monolithic legacy system blocked quarterly releases, integrations were brittle, and operations teams lacked a single view across regions.',
+      solution:
+        'We phased delivery into domain services on Azure, standardized APIs, and migrated critical workflows with zero-downtime cutovers and strong governance.',
+      impacts: [
+        { value: '60%', label: 'fewer production incidents' },
+        { value: '4', label: 'regions live on new stack' },
+        { value: '8 wks', label: 'first milestone shipped' },
+      ],
+      techStack: ['.NET', 'Azure', 'Kubernetes', 'SQL Server', 'Redis', 'API Management'],
+    },
+    {
+      id: 'ai-recruiting',
+      title: 'AI-powered recruiting assistant',
+      sector: 'AI product',
+      technology: 'Python | FastAPI | OpenAI',
+      description:
+        'Founders needed a credible MVP in weeks with strong privacy and model quality. We shipped a RAG assistant and production pipeline in eight weeks.',
+      problem:
+        'Founders needed a credible MVP in weeks, not months, with guardrails for data privacy, model quality, and a path from prototype to production.',
+      solution:
+        'We delivered a RAG-based assistant, admin tooling, evaluation harness, and a secure deployment pipeline so the team could iterate with real user feedback.',
+      impacts: [
+        { value: '8 wks', label: 'to production MVP' },
+        { value: '3.2x', label: 'candidate engagement' },
+        { value: '99.5%', label: 'uptime after launch' },
+      ],
+      techStack: ['Python', 'FastAPI', 'React', 'OpenAI', 'PostgreSQL', 'Docker'],
+    },
+  ],
+}
+
 export const messages: Record<Locale, Messages> = {
   en: {
     nav: {
@@ -279,13 +559,14 @@ export const messages: Record<Locale, Messages> = {
       language: 'Language',
       quickContact: 'Quick Contact',
     },
+    siteCtas: siteCtasContent,
     hero: {
       trustedBy: 'Trusted by forward-thinking companies worldwide',
-      title: 'Build Intelligent Systems That Scale',
-      titleHighlight: 'Your Business',
+      title: 'Custom SaaS, AI & Cloud Solutions',
+      titleHighlight: 'Built to Scale',
       subtitle:
-        'Cogtix Solutions designed to simplify complex problems and fuel global business growth.',
-      scheduleMeeting: 'Schedule Meeting',
+        'Cogtix Solutions helps startups and enterprises turn ideas into powerful, scalable products with modern engineering and AI-driven innovation',
+      scheduleMeeting: siteCtasContent.bookConsultation,
       viewCaseStudies: 'View Case Studies',
       projectsDelivered: 'Projects Delivered',
       happyClients: 'Happy Clients',
@@ -305,6 +586,9 @@ export const messages: Record<Locale, Messages> = {
         'From generative AI and cloud-native architecture to digital product engineering, we build scalable systems that drive innovation.',
       learnMore: 'Learn more',
     },
+    engineeringServices: engineeringServicesContent,
+    whoWeWorkWith: whoWeWorkWithContent,
+    homeCaseStudies: homeCaseStudiesContent,
     industries: {
       badge: 'Industries',
       title: 'Industries We Serve',
@@ -329,10 +613,11 @@ export const messages: Record<Locale, Messages> = {
       innovativeSolutions: 'Innovative Solutions',
       endToEndSupport: 'End-to-End Support',
     },
+    whyCogtixPillars: whyCogtixPillarsContent,
     contact: {
       heroTitle: 'Get in Touch',
       heroSubtitle:
-        "Have a project in mind? Let&apos;s discuss how we can help your business grow with our custom technology solutions.",
+        'Have a project in mind? Let&apos;s discuss how we can help your business grow with our custom technology solutions.',
       badge: 'Get In Touch',
       title: "Let's Build Something Great Together",
       subtitle:
@@ -379,6 +664,7 @@ export const messages: Record<Locale, Messages> = {
       valuesSubtitle:
         'The principles that guide everything we do, from our code to our client relationships.',
     },
+    founderProfile: founderProfileContent,
     awards: {
       badge: 'Recognition',
       title: 'Award-Winning Excellence',
@@ -389,7 +675,7 @@ export const messages: Record<Locale, Messages> = {
       badge: 'Our Offices',
       title: 'Located Around the World',
       subtitle:
-        "With offices across four continents, we&apos;re always close to our clients.",
+        'With offices across four continents, we&apos;re always close to our clients.',
     },
     clients: {
       trustedBy: 'Trusted by leading companies worldwide',
@@ -436,13 +722,13 @@ export const messages: Record<Locale, Messages> = {
           title: 'Founder at Lexik App',
           quoteTitle: 'The Best Template You Got to Have it!',
           description:
-            "Cogtix Solutions delivered a functional solution that aligned with the client&apos;s requirements. The efficient team delivered on time and swiftly responded to requests, issues, and concerns, allowing for a smooth workflow. Their remarkable flexibility and ability to adapt to scope changes stood out.",
+            'Cogtix Solutions delivered a functional solution that aligned with the client&apos;s requirements. The efficient team delivered on time and swiftly responded to requests, issues, and concerns, allowing for a smooth workflow. Their remarkable flexibility and ability to adapt to scope changes stood out.',
         },
         {
           name: 'Mr. Henry Kamya',
           title: 'Founder at Thrive Unity',
           quoteTitle:
-            "It&apos;s evident that the team is committed and ready to help.",
+            'It&apos;s evident that the team is committed and ready to help.',
           description:
             'The client has been satisfied with Cogtix Solutions’ work and performance. The team is highly professional and communicative; they maintain weekly alignment meetings and deliver everything they promise in each sprint. Overall, their quality and attention to detail are outstanding.',
         },
@@ -452,7 +738,7 @@ export const messages: Record<Locale, Messages> = {
           quoteTitle:
             'The team was very punctual about the deadline and timeline of the project.',
           description:
-            "Cogtix Solutions’ efforts have been met with positive acclaim, thanks to their technical and development prowess. The team strictly adhered to the project&apos;s timelines and requirements, and internal stakeholders were impressed with the service provider&apos;s solutions-focused approach.",
+            'Cogtix Solutions’ efforts have been met with positive acclaim, thanks to their technical and development prowess. The team strictly adhered to the project&apos;s timelines and requirements, and internal stakeholders were impressed with the service provider&apos;s solutions-focused approach.',
         },
         {
           name: 'Mr. Chetan',
@@ -467,14 +753,14 @@ export const messages: Record<Locale, Messages> = {
           quoteTitle:
             'They delivered the project on time and maintained excellent communication.',
           description:
-            "Cogtix Solutions successfully delivered the project on time and to the client&apos;s requirements. They also ensured exceptional communication via email and virtual meetings. Their intelligent team was a key element of their work.",
+            'Cogtix Solutions successfully delivered the project on time and to the client&apos;s requirements. They also ensured exceptional communication via email and virtual meetings. Their intelligent team was a key element of their work.',
         },
         {
           name: 'Mr. Forest',
           title: 'Founder at Software Development Company',
           quoteTitle: 'I was happy with the entire partnership.',
           description:
-            "Cogtix Solutions efficiently delivered their tasks, much to the client&apos;s delight. The team was highly receptive from a workflow standpoint, and internal stakeholders were particularly impressed with the service provider&apos;s technical expertise.",
+            'Cogtix Solutions efficiently delivered their tasks, much to the client&apos;s delight. The team was highly receptive from a workflow standpoint, and internal stakeholders were particularly impressed with the service provider&apos;s technical expertise.',
         },
       ],
     },
@@ -1773,6 +2059,7 @@ export const messages: Record<Locale, Messages> = {
       language: 'Idioma',
       quickContact: 'Contacto Rapido',
     },
+    siteCtas: siteCtasContent,
     hero: {
       trustedBy:
         'Con la confianza de empresas con visión de futuro en todo el mundo',
@@ -1799,6 +2086,9 @@ export const messages: Record<Locale, Messages> = {
       subtitle: 'Servicios de desarrollo integral adaptados a su negocio.',
       learnMore: 'Mas informacion',
     },
+    engineeringServices: engineeringServicesContent,
+    whoWeWorkWith: whoWeWorkWithContent,
+    homeCaseStudies: homeCaseStudiesContent,
     industries: {
       badge: 'Industrias',
       title: 'Industrias que Atendemos',
@@ -1821,6 +2111,7 @@ export const messages: Record<Locale, Messages> = {
       innovativeSolutions: 'Soluciones Innovadoras',
       endToEndSupport: 'Soporte de Extremo a Extremo',
     },
+    whyCogtixPillars: whyCogtixPillarsContent,
     contact: {
       heroTitle: 'Ponte en Contacto',
       heroSubtitle:
@@ -1869,6 +2160,7 @@ export const messages: Record<Locale, Messages> = {
       valuesSubtitle:
         'Los principios que guían todo lo que hacemos, desde nuestro código hasta nuestras relaciones con los clientes.',
     },
+    founderProfile: founderProfileContent,
     awards: {
       badge: 'Reconocimiento',
       title: 'Excelencia Premiada',
@@ -1924,13 +2216,13 @@ export const messages: Record<Locale, Messages> = {
           title: 'Founder at Lexik App',
           quoteTitle: 'The Best Template You Got to Have it!',
           description:
-            "Cogtix Solutions delivered a functional solution that aligned with the client&apos;s requirements. The efficient team delivered on time and swiftly responded to requests, issues, and concerns, allowing for a smooth workflow. Their remarkable flexibility and ability to adapt to scope changes stood out.",
+            'Cogtix Solutions delivered a functional solution that aligned with the client&apos;s requirements. The efficient team delivered on time and swiftly responded to requests, issues, and concerns, allowing for a smooth workflow. Their remarkable flexibility and ability to adapt to scope changes stood out.',
         },
         {
           name: 'Mr. Henry Kamya',
           title: 'Founder at Thrive Unity',
           quoteTitle:
-            "It&apos;s evident that the team is committed and ready to help.",
+            'It&apos;s evident that the team is committed and ready to help.',
           description:
             'The client has been satisfied with Cogtix Solutions’ work and performance. The team is highly professional and communicative; they maintain weekly alignment meetings and deliver everything they promise in each sprint. Overall, their quality and attention to detail are outstanding.',
         },
@@ -1940,7 +2232,7 @@ export const messages: Record<Locale, Messages> = {
           quoteTitle:
             'The team was very punctual about the deadline and timeline of the project.',
           description:
-            "Cogtix Solutions’ efforts have been met with positive acclaim, thanks to their technical and development prowess. The team strictly adhered to the project&apos;s timelines and requirements, and internal stakeholders were impressed with the service provider&apos;s solutions-focused approach.",
+            'Cogtix Solutions’ efforts have been met with positive acclaim, thanks to their technical and development prowess. The team strictly adhered to the project&apos;s timelines and requirements, and internal stakeholders were impressed with the service provider&apos;s solutions-focused approach.',
         },
         {
           name: 'Mr. Chetan',
@@ -1955,14 +2247,14 @@ export const messages: Record<Locale, Messages> = {
           quoteTitle:
             'They delivered the project on time and maintained excellent communication.',
           description:
-            "Cogtix Solutions successfully delivered the project on time and to the client&apos;s requirements. They also ensured exceptional communication via email and virtual meetings. Their intelligent team was a key element of their work.",
+            'Cogtix Solutions successfully delivered the project on time and to the client&apos;s requirements. They also ensured exceptional communication via email and virtual meetings. Their intelligent team was a key element of their work.',
         },
         {
           name: 'Mr. Forest',
           title: 'Founder at Software Development Company',
           quoteTitle: 'I was happy with the entire partnership.',
           description:
-            "Cogtix Solutions efficiently delivered their tasks, much to the client&apos;s delight. The team was highly receptive from a workflow standpoint, and internal stakeholders were particularly impressed with the service provider&apos;s technical expertise.",
+            'Cogtix Solutions efficiently delivered their tasks, much to the client&apos;s delight. The team was highly receptive from a workflow standpoint, and internal stakeholders were particularly impressed with the service provider&apos;s technical expertise.',
         },
       ],
     },
@@ -3273,6 +3565,7 @@ export const messages: Record<Locale, Messages> = {
       language: 'Langue',
       quickContact: 'Contact Rapide',
     },
+    siteCtas: siteCtasContent,
     hero: {
       trustedBy: 'Reconnu par les entreprises innovantes du monde entier',
       title: "Construisez des Systèmes Intelligents à l'Échelle",
@@ -3299,6 +3592,9 @@ export const messages: Record<Locale, Messages> = {
         'Des services de developpement de bout en bout adaptes a votre entreprise.',
       learnMore: 'En savoir plus',
     },
+    engineeringServices: engineeringServicesContent,
+    whoWeWorkWith: whoWeWorkWithContent,
+    homeCaseStudies: homeCaseStudiesContent,
     industries: {
       badge: 'Secteurs',
       title: 'Secteurs que Nous Servons',
@@ -3321,6 +3617,7 @@ export const messages: Record<Locale, Messages> = {
       innovativeSolutions: 'Solutions Innovantes',
       endToEndSupport: 'Support de Bout en Bout',
     },
+    whyCogtixPillars: whyCogtixPillarsContent,
     contact: {
       heroTitle: 'Contactez-nous',
       heroSubtitle:
@@ -3369,6 +3666,7 @@ export const messages: Record<Locale, Messages> = {
       valuesSubtitle:
         'Les principes qui guident tout ce que nous faisons, de notre code à nos relations avec nos clients.',
     },
+    founderProfile: founderProfileContent,
     awards: {
       badge: 'Reconnaissance',
       title: 'Excellence Primee',
@@ -3425,13 +3723,13 @@ export const messages: Record<Locale, Messages> = {
           title: 'Founder at Lexik App',
           quoteTitle: 'The Best Template You Got to Have it!',
           description:
-            "Cogtix Solutions delivered a functional solution that aligned with the client&apos;s requirements. The efficient team delivered on time and swiftly responded to requests, issues, and concerns, allowing for a smooth workflow. Their remarkable flexibility and ability to adapt to scope changes stood out.",
+            'Cogtix Solutions delivered a functional solution that aligned with the client&apos;s requirements. The efficient team delivered on time and swiftly responded to requests, issues, and concerns, allowing for a smooth workflow. Their remarkable flexibility and ability to adapt to scope changes stood out.',
         },
         {
           name: 'Mr. Henry Kamya',
           title: 'Founder at Thrive Unity',
           quoteTitle:
-            "It&apos;s evident that the team is committed and ready to help.",
+            'It&apos;s evident that the team is committed and ready to help.',
           description:
             'The client has been satisfied with Cogtix Solutions’ work and performance. The team is highly professional and communicative; they maintain weekly alignment meetings and deliver everything they promise in each sprint. Overall, their quality and attention to detail are outstanding.',
         },
@@ -3441,7 +3739,7 @@ export const messages: Record<Locale, Messages> = {
           quoteTitle:
             'The team was very punctual about the deadline and timeline of the project.',
           description:
-            "Cogtix Solutions’ efforts have been met with positive acclaim, thanks to their technical and development prowess. The team strictly adhered to the project&apos;s timelines and requirements, and internal stakeholders were impressed with the service provider&apos;s solutions-focused approach.",
+            'Cogtix Solutions’ efforts have been met with positive acclaim, thanks to their technical and development prowess. The team strictly adhered to the project&apos;s timelines and requirements, and internal stakeholders were impressed with the service provider&apos;s solutions-focused approach.',
         },
         {
           name: 'Mr. Chetan',
@@ -3456,14 +3754,14 @@ export const messages: Record<Locale, Messages> = {
           quoteTitle:
             'They delivered the project on time and maintained excellent communication.',
           description:
-            "Cogtix Solutions successfully delivered the project on time and to the client&apos;s requirements. They also ensured exceptional communication via email and virtual meetings. Their intelligent team was a key element of their work.",
+            'Cogtix Solutions successfully delivered the project on time and to the client&apos;s requirements. They also ensured exceptional communication via email and virtual meetings. Their intelligent team was a key element of their work.',
         },
         {
           name: 'Mr. Forest',
           title: 'Founder at Software Development Company',
           quoteTitle: 'I was happy with the entire partnership.',
           description:
-            "Cogtix Solutions efficiently delivered their tasks, much to the client&apos;s delight. The team was highly receptive from a workflow standpoint, and internal stakeholders were particularly impressed with the service provider&apos;s technical expertise.",
+            'Cogtix Solutions efficiently delivered their tasks, much to the client&apos;s delight. The team was highly receptive from a workflow standpoint, and internal stakeholders were particularly impressed with the service provider&apos;s technical expertise.',
         },
       ],
     },
@@ -4767,6 +5065,7 @@ export const messages: Record<Locale, Messages> = {
       language: 'Sprache',
       quickContact: 'Schnellkontakt',
     },
+    siteCtas: siteCtasContent,
     hero: {
       trustedBy: 'Vertrauen von zukunftsorientierten Unternehmen weltweit',
       title: 'Bauen Sie intelligente Systeme, die skalieren',
@@ -4792,6 +5091,9 @@ export const messages: Record<Locale, Messages> = {
       subtitle: 'End-to-End-Entwicklungsservices fur Ihr Unternehmen.',
       learnMore: 'Mehr erfahren',
     },
+    engineeringServices: engineeringServicesContent,
+    whoWeWorkWith: whoWeWorkWithContent,
+    homeCaseStudies: homeCaseStudiesContent,
     industries: {
       badge: 'Branchen',
       title: 'Branchen, die wir bedienen',
@@ -4814,6 +5116,7 @@ export const messages: Record<Locale, Messages> = {
       innovativeSolutions: 'Innovative Lösungen',
       endToEndSupport: 'End-to-End-Unterstützung',
     },
+    whyCogtixPillars: whyCogtixPillarsContent,
     contact: {
       heroTitle: 'Kontaktieren Sie uns',
       heroSubtitle:
@@ -4863,6 +5166,7 @@ export const messages: Record<Locale, Messages> = {
       valuesSubtitle:
         'Die Prinzipien, die unser gesamtes Handeln leiten, von unserem Code bis hin zu unseren Kundenbeziehungen.',
     },
+    founderProfile: founderProfileContent,
     awards: {
       badge: 'Auszeichnungen',
       title: 'Preisgekronte Exzellenz',
@@ -4918,13 +5222,13 @@ export const messages: Record<Locale, Messages> = {
           title: 'Founder at Lexik App',
           quoteTitle: 'The Best Template You Got to Have it!',
           description:
-            "Cogtix Solutions delivered a functional solution that aligned with the client&apos;s requirements. The efficient team delivered on time and swiftly responded to requests, issues, and concerns, allowing for a smooth workflow. Their remarkable flexibility and ability to adapt to scope changes stood out.",
+            'Cogtix Solutions delivered a functional solution that aligned with the client&apos;s requirements. The efficient team delivered on time and swiftly responded to requests, issues, and concerns, allowing for a smooth workflow. Their remarkable flexibility and ability to adapt to scope changes stood out.',
         },
         {
           name: 'Mr. Henry Kamya',
           title: 'Founder at Thrive Unity',
           quoteTitle:
-            "It&apos;s evident that the team is committed and ready to help.",
+            'It&apos;s evident that the team is committed and ready to help.',
           description:
             'The client has been satisfied with Cogtix Solutions’ work and performance. The team is highly professional and communicative; they maintain weekly alignment meetings and deliver everything they promise in each sprint. Overall, their quality and attention to detail are outstanding.',
         },
@@ -4934,7 +5238,7 @@ export const messages: Record<Locale, Messages> = {
           quoteTitle:
             'The team was very punctual about the deadline and timeline of the project.',
           description:
-            "Cogtix Solutions’ efforts have been met with positive acclaim, thanks to their technical and development prowess. The team strictly adhered to the project&apos;s timelines and requirements, and internal stakeholders were impressed with the service provider&apos;s solutions-focused approach.",
+            'Cogtix Solutions’ efforts have been met with positive acclaim, thanks to their technical and development prowess. The team strictly adhered to the project&apos;s timelines and requirements, and internal stakeholders were impressed with the service provider&apos;s solutions-focused approach.',
         },
         {
           name: 'Mr. Chetan',
@@ -4949,14 +5253,14 @@ export const messages: Record<Locale, Messages> = {
           quoteTitle:
             'They delivered the project on time and maintained excellent communication.',
           description:
-            "Cogtix Solutions successfully delivered the project on time and to the client&apos;s requirements. They also ensured exceptional communication via email and virtual meetings. Their intelligent team was a key element of their work.",
+            'Cogtix Solutions successfully delivered the project on time and to the client&apos;s requirements. They also ensured exceptional communication via email and virtual meetings. Their intelligent team was a key element of their work.',
         },
         {
           name: 'Mr. Forest',
           title: 'Founder at Software Development Company',
           quoteTitle: 'I was happy with the entire partnership.',
           description:
-            "Cogtix Solutions efficiently delivered their tasks, much to the client&apos;s delight. The team was highly receptive from a workflow standpoint, and internal stakeholders were particularly impressed with the service provider&apos;s technical expertise.",
+            'Cogtix Solutions efficiently delivered their tasks, much to the client&apos;s delight. The team was highly receptive from a workflow standpoint, and internal stakeholders were particularly impressed with the service provider&apos;s technical expertise.',
         },
       ],
     },
@@ -6264,6 +6568,7 @@ export const messages: Record<Locale, Messages> = {
       language: 'Taal',
       quickContact: 'Snel Contact',
     },
+    siteCtas: siteCtasContent,
     hero: {
       trustedBy: 'Vertrouwd door toekomstgerichte bedrijven wereldwijd',
       title: 'Bouw Intelligente Systemen die Schalen',
@@ -6290,6 +6595,9 @@ export const messages: Record<Locale, Messages> = {
         'Van backend-architectuur tot digitale marketing, wij bieden end-to-end softwareontwikkelingsdiensten op maat voor uw bedrijf.',
       learnMore: 'Meer informatie',
     },
+    engineeringServices: engineeringServicesContent,
+    whoWeWorkWith: whoWeWorkWithContent,
+    homeCaseStudies: homeCaseStudiesContent,
     industries: {
       badge: 'Sectoren',
       title: 'Sectoren Die We Bedienen',
@@ -6314,6 +6622,7 @@ export const messages: Record<Locale, Messages> = {
       innovativeSolutions: 'Innovatieve Oplossingen',
       endToEndSupport: 'End-to-End Ondersteuning',
     },
+    whyCogtixPillars: whyCogtixPillarsContent,
     contact: {
       heroTitle: 'Neem Contact Op',
       heroSubtitle:
@@ -6364,6 +6673,7 @@ export const messages: Record<Locale, Messages> = {
       valuesSubtitle:
         'De principes die alles wat we doen leiden, van onze code tot onze klantrelaties.',
     },
+    founderProfile: founderProfileContent,
     awards: {
       badge: 'Erkenning',
       title: 'Bekroonde Uitmuntendheid',
@@ -6421,13 +6731,13 @@ export const messages: Record<Locale, Messages> = {
           title: 'Founder at Lexik App',
           quoteTitle: 'The Best Template You Got to Have it!',
           description:
-            "Cogtix Solutions delivered a functional solution that aligned with the client&apos;s requirements. The efficient team delivered on time and swiftly responded to requests, issues, and concerns, allowing for a smooth workflow. Their remarkable flexibility and ability to adapt to scope changes stood out.",
+            'Cogtix Solutions delivered a functional solution that aligned with the client&apos;s requirements. The efficient team delivered on time and swiftly responded to requests, issues, and concerns, allowing for a smooth workflow. Their remarkable flexibility and ability to adapt to scope changes stood out.',
         },
         {
           name: 'Mr. Henry Kamya',
           title: 'Founder at Thrive Unity',
           quoteTitle:
-            "It&apos;s evident that the team is committed and ready to help.",
+            'It&apos;s evident that the team is committed and ready to help.',
           description:
             'The client has been satisfied with Cogtix Solutions’ work and performance. The team is highly professional and communicative; they maintain weekly alignment meetings and deliver everything they promise in each sprint. Overall, their quality and attention to detail are outstanding.',
         },
@@ -6437,7 +6747,7 @@ export const messages: Record<Locale, Messages> = {
           quoteTitle:
             'The team was very punctual about the deadline and timeline of the project.',
           description:
-            "Cogtix Solutions’ efforts have been met with positive acclaim, thanks to their technical and development prowess. The team strictly adhered to the project&apos;s timelines and requirements, and internal stakeholders were impressed with the service provider&apos;s solutions-focused approach.",
+            'Cogtix Solutions’ efforts have been met with positive acclaim, thanks to their technical and development prowess. The team strictly adhered to the project&apos;s timelines and requirements, and internal stakeholders were impressed with the service provider&apos;s solutions-focused approach.',
         },
         {
           name: 'Mr. Chetan',
@@ -6452,14 +6762,14 @@ export const messages: Record<Locale, Messages> = {
           quoteTitle:
             'They delivered the project on time and maintained excellent communication.',
           description:
-            "Cogtix Solutions successfully delivered the project on time and to the client&apos;s requirements. They also ensured exceptional communication via email and virtual meetings. Their intelligent team was a key element of their work.",
+            'Cogtix Solutions successfully delivered the project on time and to the client&apos;s requirements. They also ensured exceptional communication via email and virtual meetings. Their intelligent team was a key element of their work.',
         },
         {
           name: 'Mr. Forest',
           title: 'Founder at Software Development Company',
           quoteTitle: 'I was happy with the entire partnership.',
           description:
-            "Cogtix Solutions efficiently delivered their tasks, much to the client&apos;s delight. The team was highly receptive from a workflow standpoint, and internal stakeholders were particularly impressed with the service provider&apos;s technical expertise.",
+            'Cogtix Solutions efficiently delivered their tasks, much to the client&apos;s delight. The team was highly receptive from a workflow standpoint, and internal stakeholders were particularly impressed with the service provider&apos;s technical expertise.',
         },
       ],
     },
@@ -7763,6 +8073,7 @@ export const messages: Record<Locale, Messages> = {
       language: 'Lingua',
       quickContact: 'Contatto Rapido',
     },
+    siteCtas: siteCtasContent,
     hero: {
       trustedBy: 'Scelto da aziende lungimiranti in tutto il mondo',
       title: 'Costruisci Sistemi Intelligenti che Scalano',
@@ -7789,6 +8100,9 @@ export const messages: Record<Locale, Messages> = {
         "Dall'architettura backend al marketing digitale, forniamo servizi di sviluppo software end-to-end su misura per le tue esigenze aziendali.",
       learnMore: 'Scopri di più',
     },
+    engineeringServices: engineeringServicesContent,
+    whoWeWorkWith: whoWeWorkWithContent,
+    homeCaseStudies: homeCaseStudiesContent,
     industries: {
       badge: 'Settori',
       title: 'Settori Che Serviamo',
@@ -7813,6 +8127,7 @@ export const messages: Record<Locale, Messages> = {
       innovativeSolutions: 'Soluzioni Innovative',
       endToEndSupport: 'Supporto End-to-End',
     },
+    whyCogtixPillars: whyCogtixPillarsContent,
     contact: {
       heroTitle: 'Mettiti in Contatto',
       heroSubtitle:
@@ -7862,6 +8177,7 @@ export const messages: Record<Locale, Messages> = {
       valuesSubtitle:
         'I principi che guidano tutto ciò che facciamo, dal nostro codice alle nostre relazioni con i clienti.',
     },
+    founderProfile: founderProfileContent,
     awards: {
       badge: 'Riconoscimento',
       title: 'Eccellenza Premiata',
@@ -7919,13 +8235,13 @@ export const messages: Record<Locale, Messages> = {
           title: 'Founder at Lexik App',
           quoteTitle: 'The Best Template You Got to Have it!',
           description:
-            "Cogtix Solutions delivered a functional solution that aligned with the client&apos;s requirements. The efficient team delivered on time and swiftly responded to requests, issues, and concerns, allowing for a smooth workflow. Their remarkable flexibility and ability to adapt to scope changes stood out.",
+            'Cogtix Solutions delivered a functional solution that aligned with the client&apos;s requirements. The efficient team delivered on time and swiftly responded to requests, issues, and concerns, allowing for a smooth workflow. Their remarkable flexibility and ability to adapt to scope changes stood out.',
         },
         {
           name: 'Mr. Henry Kamya',
           title: 'Founder at Thrive Unity',
           quoteTitle:
-            "It&apos;s evident that the team is committed and ready to help.",
+            'It&apos;s evident that the team is committed and ready to help.',
           description:
             'The client has been satisfied with Cogtix Solutions’ work and performance. The team is highly professional and communicative; they maintain weekly alignment meetings and deliver everything they promise in each sprint. Overall, their quality and attention to detail are outstanding.',
         },
@@ -7935,7 +8251,7 @@ export const messages: Record<Locale, Messages> = {
           quoteTitle:
             'The team was very punctual about the deadline and timeline of the project.',
           description:
-            "Cogtix Solutions’ efforts have been met with positive acclaim, thanks to their technical and development prowess. The team strictly adhered to the project&apos;s timelines and requirements, and internal stakeholders were impressed with the service provider&apos;s solutions-focused approach.",
+            'Cogtix Solutions’ efforts have been met with positive acclaim, thanks to their technical and development prowess. The team strictly adhered to the project&apos;s timelines and requirements, and internal stakeholders were impressed with the service provider&apos;s solutions-focused approach.',
         },
         {
           name: 'Mr. Chetan',
@@ -7950,14 +8266,14 @@ export const messages: Record<Locale, Messages> = {
           quoteTitle:
             'They delivered the project on time and maintained excellent communication.',
           description:
-            "Cogtix Solutions successfully delivered the project on time and to the client&apos;s requirements. They also ensured exceptional communication via email and virtual meetings. Their intelligent team was a key element of their work.",
+            'Cogtix Solutions successfully delivered the project on time and to the client&apos;s requirements. They also ensured exceptional communication via email and virtual meetings. Their intelligent team was a key element of their work.',
         },
         {
           name: 'Mr. Forest',
           title: 'Founder at Software Development Company',
           quoteTitle: 'I was happy with the entire partnership.',
           description:
-            "Cogtix Solutions efficiently delivered their tasks, much to the client&apos;s delight. The team was highly receptive from a workflow standpoint, and internal stakeholders were particularly impressed with the service provider&apos;s technical expertise.",
+            'Cogtix Solutions efficiently delivered their tasks, much to the client&apos;s delight. The team was highly receptive from a workflow standpoint, and internal stakeholders were particularly impressed with the service provider&apos;s technical expertise.',
         },
       ],
     },

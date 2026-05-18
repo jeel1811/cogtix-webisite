@@ -57,7 +57,7 @@ export default function ServicePageView({ variant }: ServicePageViewProps) {
         title={content.hero.title}
         highlight={content.hero.highlight}
         description={content.hero.description}
-        cta={{ text: content.hero.cta, href: '#contact' }}
+        cta={{ text: m.siteCtas.discussProject, href: '#contact' }}
         stats={stats}
       />
 
