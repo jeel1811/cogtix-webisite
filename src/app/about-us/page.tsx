@@ -16,7 +16,9 @@ import {
 } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { SiX } from '@icons-pack/react-simple-icons'
 import { useI18n } from '@/i18n/provider'
+import { FOUNDER_SOCIAL_LINKS } from '@/lib/constants'
 import Awards from '@/components/sections/Awards'
 import Offices from '@/components/sections/Offices'
 
@@ -57,6 +59,27 @@ const fadeUp = {
   viewport: { once: true, amount: 0.35 },
   transition: { duration: 0.6 },
 }
+
+function LinkedInIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden>
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+    </svg>
+  )
+}
+
+const founderSocialLinks = [
+  {
+    href: FOUNDER_SOCIAL_LINKS.linkedin,
+    label: 'Akash Limbani on LinkedIn',
+    icon: <LinkedInIcon className="h-[1.125rem] w-[1.125rem]" />,
+  },
+  {
+    href: FOUNDER_SOCIAL_LINKS.x,
+    label: 'Akash Limbani on X',
+    icon: <SiX size={18} color="currentColor" />,
+  },
+] as const
 
 export default function AboutUsPage() {
   const { m } = useI18n()
@@ -185,11 +208,25 @@ export default function AboutUsPage() {
                     className="object-cover"
                   />
                 </div>
-                <div className="border-t border-gray-100 p-5">
+                <div className="border-t border-gray-100 p-5 text-center">
                   <div className="text-[0.625rem] font-extrabold uppercase tracking-[0.24em] text-blue-600">
                     {founder.title}
                   </div>
                   <div className="mt-2 text-lg font-bold text-navy-900">{founder.name}</div>
+                  <div className="mt-4 flex items-center justify-center gap-3">
+                    {founderSocialLinks.map(({ href, label, icon }) => (
+                      <a
+                        key={label}
+                        href={href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={label}
+                        className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-gray-50 text-gray-600 transition-all duration-300 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-600"
+                      >
+                        {icon}
+                      </a>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>

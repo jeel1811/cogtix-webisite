@@ -397,16 +397,17 @@ export const founderProfileContent: Messages['founderProfile'] = {
   title: 'CEO & Co-Founder',
   summary:
     'Akash keeps the company focused on thoughtful delivery, practical innovation, and work that feels clear from first conversation to final handoff.',
-  tagline: 'Focused on simple delivery, long-term thinking, and strong client relationships.',
+  tagline:
+    'Focused on simple delivery, long-term thinking, and strong client relationships.',
   experience: {
     label: 'Experience',
     description:
-      '10+ years leading software delivery across startups, SaaS, and enterprise programs, from MVP launches through scaled platforms.',
+      '10+ Years Leading Software Delivery Across Startups, SaaS, and Enterprise Programs, from MVP Launches Through Scaled Platforms.',
   },
   techExpertise: {
     label: 'Tech expertise',
     description:
-      'Deep hands-on background in backend systems, cloud architecture, APIs, data platforms, DevOps, and modern product engineering.',
+      'Deep hands-on background in Backend Systems, Cloud Architecture, APIs, Data Platforms, DevOps, and Modern Product Engineering.',
   },
   domainExposure: {
     label: 'Domain exposure',
@@ -474,7 +475,14 @@ export const homeCaseStudiesContent: Messages['homeCaseStudies'] = {
         { value: '2x', label: 'release cadence' },
         { value: '30%', label: 'lower cloud spend' },
       ],
-      techStack: ['React', 'Node.js', 'PostgreSQL', 'AWS', 'Kubernetes', 'Redis'],
+      techStack: [
+        'React',
+        'Node.js',
+        'PostgreSQL',
+        'AWS',
+        'Kubernetes',
+        'Redis',
+      ],
     },
     {
       id: 'enterprise-logistics',
@@ -492,7 +500,14 @@ export const homeCaseStudiesContent: Messages['homeCaseStudies'] = {
         { value: '4', label: 'regions live on new stack' },
         { value: '8 wks', label: 'first milestone shipped' },
       ],
-      techStack: ['.NET', 'Azure', 'Kubernetes', 'SQL Server', 'Redis', 'API Management'],
+      techStack: [
+        '.NET',
+        'Azure',
+        'Kubernetes',
+        'SQL Server',
+        'Redis',
+        'API Management',
+      ],
     },
     {
       id: 'ai-recruiting',
@@ -510,7 +525,14 @@ export const homeCaseStudiesContent: Messages['homeCaseStudies'] = {
         { value: '3.2x', label: 'candidate engagement' },
         { value: '99.5%', label: 'uptime after launch' },
       ],
-      techStack: ['Python', 'FastAPI', 'React', 'OpenAI', 'PostgreSQL', 'Docker'],
+      techStack: [
+        'Python',
+        'FastAPI',
+        'React',
+        'OpenAI',
+        'PostgreSQL',
+        'Docker',
+      ],
     },
   ],
 }
@@ -565,7 +587,7 @@ export const messages: Record<Locale, Messages> = {
       title: 'Custom SaaS, AI & Cloud Solutions',
       titleHighlight: 'Built to Scale',
       subtitle:
-        'Cogtix Solutions helps startups and enterprises turn ideas into powerful, scalable products with modern engineering and AI-driven innovation',
+        'Cogtix helps startups and enterprises turn ideas into powerful, scalable products with modern engineering and AI-driven innovation',
       scheduleMeeting: siteCtasContent.bookConsultation,
       viewCaseStudies: 'View Case Studies',
       projectsDelivered: 'Projects Delivered',
@@ -650,10 +672,10 @@ export const messages: Record<Locale, Messages> = {
         'Cogtix helps businesses leverage modern technology to accelerate digital transformation and drive innovation. We specialize in AI solutions, Microsoft technologies, and custom software development tailored to unique business needs. Our mission is to build scalable, secure, and future-ready digital experiences that create lasting impact.',
       heroTitle: 'Driving Innovation Through Technology',
       heroSubtitle:
-        'Cogtix Solutions is a premier technology partner helping businesses across the globe transform their digital landscape through intelligent software engineering.',
+        'Cogtix is a premier technology partner helping businesses across the globe transform their digital landscape through intelligent software engineering.',
       whoWeAreTitle: 'Who We Are',
       whoWeAreContent:
-        'Founded with a vision to simplify complex technology for businesses, Cogtix Solutions has grown into a multidisciplinary team of experts dedicated to building future-ready digital products.',
+        'Founded with a vision to simplify complex technology for businesses, Cogtix has grown into a multidisciplinary team of experts dedicated to building future-ready digital products.',
       missionTitle: 'Our Mission',
       missionContent:
         'To empower businesses worldwide by delivering cutting-edge, scalable, and secure technology solutions that drive growth, efficiency, and digital transformation.',
@@ -1206,11 +1228,11 @@ export const messages: Record<Locale, Messages> = {
             {
               title: 'Full-Stack .NET Development',
               description:
-                'Robust, high-performance web and desktop applications built using .NET 8, ASP.NET Core, and Entity Framework.',
+                'Robust, high-performance web and desktop applications built using .NET, ASP.NET, and Entity Framework.',
               details:
                 'We architect .NET solutions with microservices patterns, real-time capabilities via SignalR, Blazor WebAssembly SPAs, and API-first design. The result is enterprise-grade applications that handle millions of concurrent users with sub-100ms response times.',
               outcomes: [
-                'Reference .NET 8 microservices architecture',
+                'Reference .NET microservices architecture',
                 'API-first design with OpenAPI contracts',
                 'Real-time channels using SignalR',
                 'CI/CD pipelines on GitHub Actions or Azure DevOps',
@@ -1248,13 +1270,13 @@ export const messages: Record<Locale, Messages> = {
             {
               title: 'Modernization & Migration',
               description:
-                'Safely transform legacy .NET Framework applications into modern, cloud-optimized .NET Core or .NET 8 solutions.',
+                'Safely transform legacy .NET applications into modern, cloud-optimized .NET solutions.',
               details:
-                'Our modernization methodology covers legacy .NET Framework refactoring, on-premises to Azure migration using Azure Migrate, monolith decomposition into microservices, and performance optimization. The result reduces technical debt while preserving critical business logic.',
+                'Our modernization methodology covers legacy .NET refactoring, on-premises to Azure migration using Azure Migrate, monolith decomposition into microservices, and performance optimization. The result reduces technical debt while preserving critical business logic.',
               outcomes: [
                 'Application portfolio assessment and 6 R plan',
                 'Strangler-fig roadmap with quarterly milestones',
-                'New services running on .NET 8 in AKS or App Service',
+                'New services running on .NET in AKS or App Service',
                 'Performance baseline and post-migration uplift report',
                 'Knowledge transfer for your engineering team',
               ],
@@ -1303,7 +1325,7 @@ export const messages: Record<Locale, Messages> = {
             {
               title: '.NET Legacy Modernization',
               description:
-                'Modernize .NET Framework 4.x applications to .NET 8 and containerize them on Azure AKS for cloud-native scalability.',
+                'Modernize legacy .NET applications and containerize them on Azure AKS for cloud-native scalability.',
             },
             {
               title: 'Power Platform Low-Code Solutions',
@@ -1382,7 +1404,7 @@ export const messages: Record<Locale, Messages> = {
           description:
             'Our deep expertise in Microsoft technologies ensures we choose the right tools for your specific needs.',
           categories: [
-            '.NET Frameworks',
+            '.NET',
             'Azure Services',
             'Data & Storage',
             'Power Platform',
@@ -2705,11 +2727,11 @@ export const messages: Record<Locale, Messages> = {
             {
               title: 'Desarrollo Full-Stack .NET',
               description:
-                'Construye aplicaciones web y de escritorio robustas y de alto rendimiento usando .NET 8, ASP.NET Core y Entity Framework.',
+                'Construye aplicaciones web y de escritorio robustas y de alto rendimiento usando .NET, ASP.NET y Entity Framework.',
               details:
                 'Diseñamos soluciones .NET con patrones de microservicios, capacidades en tiempo real con SignalR, SPAs en Blazor WebAssembly y diseño API-first, entregando aplicaciones empresariales con tiempos de respuesta inferiores a 100 ms.',
               outcomes: [
-                'Arquitectura de microservicios .NET 8 de referencia',
+                'Arquitectura de microservicios .NET de referencia',
                 'Diseño API-first con contratos OpenAPI',
                 'Canales en tiempo real usando SignalR',
                 'Pipelines CI/CD en GitHub Actions o Azure DevOps',
@@ -2747,13 +2769,13 @@ export const messages: Record<Locale, Messages> = {
             {
               title: 'Modernización y migración',
               description:
-                'Transforma aplicaciones legacy de .NET Framework en soluciones modernas .NET Core/8 optimizadas para la nube.',
+                'Transforma aplicaciones legacy de .NET en soluciones modernas optimizadas para la nube.',
               details:
-                'Nuestra metodología cubre refactorización de .NET Framework, migración on-prem a Azure con Azure Migrate, descomposición de monolitos en microservicios y optimización de rendimiento.',
+                'Nuestra metodología cubre refactorización de .NET, migración on-prem a Azure con Azure Migrate, descomposición de monolitos en microservicios y optimización de rendimiento.',
               outcomes: [
                 'Evaluación del portafolio y plan de las 6 R',
                 'Roadmap strangler-fig con hitos trimestrales',
-                'Servicios nuevos en .NET 8 en AKS o App Service',
+                'Servicios nuevos en .NET en AKS o App Service',
                 'Baseline de rendimiento y reporte post-migración',
                 'Transferencia de conocimiento al equipo de ingeniería',
               ],
@@ -2802,7 +2824,7 @@ export const messages: Record<Locale, Messages> = {
             {
               title: 'Modernización de legacy .NET',
               description:
-                'Moderniza aplicaciones .NET Framework 4.x a .NET 8 y contenedorízalas en Azure AKS para escalabilidad cloud-native.',
+                'Moderniza aplicaciones .NET legacy y contenedorízalas en Azure AKS para escalabilidad cloud-native.',
             },
             {
               title: 'Soluciones low-code Power Platform',
@@ -2881,7 +2903,7 @@ export const messages: Record<Locale, Messages> = {
           description:
             'Nuestra experiencia profunda en tecnologías Microsoft garantiza que elegimos las herramientas adecuadas para tus necesidades específicas.',
           categories: [
-            'Frameworks .NET',
+            '.NET',
             'Servicios Azure',
             'Datos y almacenamiento',
             'Power Platform',
@@ -4211,11 +4233,11 @@ export const messages: Record<Locale, Messages> = {
             {
               title: 'Développement Full-Stack .NET',
               description:
-                'Applications web et bureautiques robustes et performantes avec .NET 8, ASP.NET Core et Entity Framework.',
+                'Applications web et bureautiques robustes et performantes avec .NET, ASP.NET et Entity Framework.',
               details:
                 'Nous architecturons des solutions .NET avec microservices, temps réel via SignalR, SPAs Blazor WebAssembly et conception API-first, livrant des applications avec des temps de réponse inférieurs à 100 ms.',
               outcomes: [
-                'Architecture microservices .NET 8 de référence',
+                'Architecture microservices .NET de référence',
                 'Conception API-first avec contrats OpenAPI',
                 'Canaux temps réel via SignalR',
                 'Pipelines CI/CD sur GitHub Actions ou Azure DevOps',
@@ -4253,13 +4275,13 @@ export const messages: Record<Locale, Messages> = {
             {
               title: 'Modernisation et migration',
               description:
-                'Transformez des applications .NET Framework legacy en solutions .NET Core/8 modernes et cloud-optimisées.',
+                'Transformez des applications .NET legacy en solutions modernes et cloud-optimisées.',
               details:
                 "Notre méthodologie couvre la refactorisation, la migration on-prem vers Azure avec Azure Migrate, la décomposition de monolithes en microservices et l'optimisation des performances.",
               outcomes: [
                 'Évaluation du portefeuille et plan en 6 R',
                 'Roadmap strangler-fig avec jalons trimestriels',
-                'Services neufs sur .NET 8 dans AKS ou App Service',
+                'Services neufs sur .NET dans AKS ou App Service',
                 'Baseline de performance et rapport post-migration',
                 'Transfert de compétences à votre équipe',
               ],
@@ -4308,7 +4330,7 @@ export const messages: Record<Locale, Messages> = {
             {
               title: 'Modernisation .NET legacy',
               description:
-                'Modernisez .NET Framework 4.x vers .NET 8 et conteneurisez sur Azure AKS pour la scalabilité cloud-native.',
+                'Modernisez les applications .NET legacy et conteneurisez sur Azure AKS pour la scalabilité cloud-native.',
             },
             {
               title: 'Solutions low-code Power Platform',
@@ -4387,7 +4409,7 @@ export const messages: Record<Locale, Messages> = {
           description:
             'Notre expertise approfondie en technologies Microsoft garantit le choix des bons outils pour vos besoins spécifiques.',
           categories: [
-            'Frameworks .NET',
+            '.NET',
             'Services Azure',
             'Données et stockage',
             'Power Platform',
@@ -5711,11 +5733,11 @@ export const messages: Record<Locale, Messages> = {
             {
               title: 'Full-Stack .NET-Entwicklung',
               description:
-                'Robuste, leistungsstarke Web- und Desktop-Anwendungen mit .NET 8, ASP.NET Core und Entity Framework.',
+                'Robuste, leistungsstarke Web- und Desktop-Anwendungen mit .NET, ASP.NET und Entity Framework.',
               details:
                 'Wir entwerfen .NET-Lösungen mit Microservices, Echtzeit über SignalR, Blazor-WebAssembly-SPAs und API-first-Design, mit Antwortzeiten unter 100 ms.',
               outcomes: [
-                'Referenz-.NET 8-Microservice-Architektur',
+                'Referenz-.NET-Microservice-Architektur',
                 'API-first-Design mit OpenAPI-Verträgen',
                 'Echtzeitkanäle über SignalR',
                 'CI/CD-Pipelines auf GitHub Actions oder Azure DevOps',
@@ -5753,13 +5775,13 @@ export const messages: Record<Locale, Messages> = {
             {
               title: 'Modernisierung und Migration',
               description:
-                'Verwandeln Sie Legacy-.NET-Framework-Anwendungen in moderne, cloud-optimierte .NET Core/8-Lösungen.',
+                'Verwandeln Sie Legacy-.NET-Anwendungen in moderne, cloud-optimierte .NET-Lösungen.',
               details:
-                'Unsere Methodik umfasst .NET-Framework-Refactoring, On-Prem-zu-Azure-Migration mit Azure Migrate, Monolith-Zerlegung in Microservices und Performance-Optimierung.',
+                'Unsere Methodik umfasst .NET-Refactoring, On-Prem-zu-Azure-Migration mit Azure Migrate, Monolith-Zerlegung in Microservices und Performance-Optimierung.',
               outcomes: [
                 'Portfolio-Assessment und 6-R-Plan',
                 'Strangler-Fig-Roadmap mit Quartalsmeilensteinen',
-                'Neue Services auf .NET 8 in AKS oder App Service',
+                'Neue Services auf .NET in AKS oder App Service',
                 'Performance-Baseline und Migrations-Report',
                 'Wissenstransfer für Ihr Engineering-Team',
               ],
@@ -5809,7 +5831,7 @@ export const messages: Record<Locale, Messages> = {
             {
               title: '.NET-Legacy-Modernisierung',
               description:
-                'Modernisieren Sie .NET Framework 4.x-Anwendungen auf .NET 8 und containerisieren Sie sie auf Azure AKS.',
+                'Modernisieren Sie Legacy-.NET-Anwendungen und containerisieren Sie sie auf Azure AKS.',
             },
             {
               title: 'Power Platform Low-Code-Lösungen',
@@ -5888,7 +5910,7 @@ export const messages: Record<Locale, Messages> = {
           description:
             'Unsere tiefe Expertise in Microsoft-Technologien sichert die richtigen Werkzeuge für Ihre spezifischen Anforderungen.',
           categories: [
-            '.NET-Frameworks',
+            '.NET',
             'Azure-Services',
             'Daten und Speicher',
             'Power Platform',
@@ -7220,11 +7242,11 @@ export const messages: Record<Locale, Messages> = {
             {
               title: 'Full-Stack .NET-ontwikkeling',
               description:
-                'Robuuste, hoogwaardige web- en desktopapplicaties met .NET 8, ASP.NET Core en Entity Framework.',
+                'Robuuste, hoogwaardige web- en desktopapplicaties met .NET, ASP.NET en Entity Framework.',
               details:
                 'We architecten .NET-oplossingen met microservices, realtime via SignalR, Blazor WebAssembly SPAs en API-first design, met responsetijden onder 100 ms.',
               outcomes: [
-                'Referentie-microservicearchitectuur op .NET 8',
+                'Referentie-microservicearchitectuur op .NET',
                 'API-first ontwerp met OpenAPI-contracten',
                 'Realtime-kanalen via SignalR',
                 'CI/CD-pipelines op GitHub Actions of Azure DevOps',
@@ -7262,13 +7284,13 @@ export const messages: Record<Locale, Messages> = {
             {
               title: 'Modernisering en migratie',
               description:
-                'Transformeer legacy .NET Framework-applicaties naar moderne, cloud-geoptimaliseerde .NET Core/8-oplossingen.',
+                'Transformeer legacy .NET-applicaties naar moderne, cloud-geoptimaliseerde .NET-oplossingen.',
               details:
-                'Onze methodiek dekt .NET Framework refactoring, on-prem naar Azure migratie met Azure Migrate, monoliet-splitsing en performance-optimalisatie.',
+                'Onze methodiek dekt .NET refactoring, on-prem naar Azure migratie met Azure Migrate, monoliet-splitsing en performance-optimalisatie.',
               outcomes: [
                 'Portfolio-assessment en 6 R-plan',
                 'Strangler-fig roadmap met kwartaalmijlpalen',
-                'Nieuwe services op .NET 8 in AKS of App Service',
+                'Nieuwe services op .NET in AKS of App Service',
                 'Performance-baseline en post-migratierapport',
                 'Kennisoverdracht aan uw engineeringteam',
               ],
@@ -7317,7 +7339,7 @@ export const messages: Record<Locale, Messages> = {
             {
               title: '.NET legacy modernisering',
               description:
-                'Moderniseer .NET Framework 4.x naar .NET 8 en containerize op Azure AKS voor cloud-native schaalbaarheid.',
+                'Moderniseer legacy .NET-applicaties en containerize op Azure AKS voor cloud-native schaalbaarheid.',
             },
             {
               title: 'Power Platform low-code oplossingen',
@@ -8724,11 +8746,11 @@ export const messages: Record<Locale, Messages> = {
             {
               title: 'Sviluppo Full-Stack .NET',
               description:
-                'Applicazioni web e desktop robuste e ad alte prestazioni con .NET 8, ASP.NET Core ed Entity Framework.',
+                'Applicazioni web e desktop robuste e ad alte prestazioni con .NET, ASP.NET ed Entity Framework.',
               details:
                 'Architettiamo soluzioni .NET con microservizi, capacità in tempo reale via SignalR, SPA Blazor WebAssembly e design API-first, con tempi di risposta sotto i 100 ms.',
               outcomes: [
-                'Architettura microservizi .NET 8 di riferimento',
+                'Architettura microservizi .NET di riferimento',
                 'Progettazione API-first con contratti OpenAPI',
                 'Canali real-time tramite SignalR',
                 'Pipeline CI/CD su GitHub Actions o Azure DevOps',
@@ -8766,13 +8788,13 @@ export const messages: Record<Locale, Messages> = {
             {
               title: 'Modernizzazione e migrazione',
               description:
-                'Trasforma le applicazioni legacy .NET Framework in soluzioni .NET Core/8 moderne e ottimizzate per il cloud.',
+                'Trasforma le applicazioni legacy .NET in soluzioni moderne e ottimizzate per il cloud.',
               details:
-                'La nostra metodologia copre refactoring di .NET Framework, migrazione on-prem ad Azure con Azure Migrate, decomposizione di monoliti e ottimizzazione delle prestazioni.',
+                'La nostra metodologia copre refactoring di .NET, migrazione on-prem ad Azure con Azure Migrate, decomposizione di monoliti e ottimizzazione delle prestazioni.',
               outcomes: [
                 'Assessment del portafoglio e piano in 6 R',
                 'Roadmap strangler-fig con milestone trimestrali',
-                'Nuovi servizi su .NET 8 in AKS o App Service',
+                'Nuovi servizi su .NET in AKS o App Service',
                 'Baseline di performance e report post-migrazione',
                 'Trasferimento di competenze al team di ingegneria',
               ],
@@ -8822,7 +8844,7 @@ export const messages: Record<Locale, Messages> = {
             {
               title: 'Modernizzazione legacy .NET',
               description:
-                'Moderna applicazioni .NET Framework 4.x verso .NET 8 e containerizzale su Azure AKS per scalabilità cloud-native.',
+                'Moderna applicazioni .NET legacy e containerizzale su Azure AKS per scalabilità cloud-native.',
             },
             {
               title: 'Soluzioni low-code Power Platform',
@@ -8901,7 +8923,7 @@ export const messages: Record<Locale, Messages> = {
           description:
             'La nostra esperienza approfondita sulle tecnologie Microsoft garantisce la scelta degli strumenti giusti per le tue esigenze.',
           categories: [
-            'Framework .NET',
+            '.NET',
             'Servizi Azure',
             'Dati e archiviazione',
             'Power Platform',

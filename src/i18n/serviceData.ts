@@ -104,7 +104,7 @@ export const serviceData: Record<ServiceVariant, ServicePageData> = {
       { tags: ['Synapse', 'Data Factory', 'Databricks', 'Cosmos DB'] },
     ],
     technologies: [
-      { items: ['.NET 8 / .NET Core', 'ASP.NET Core MVC', 'Entity Framework Core', 'Blazor / WebAssembly', 'WPF / WinForms', 'MAUI (Mobile & Desktop)'] },
+      { items: ['.NET', 'ASP.NET', 'Entity Framework', 'Blazor', 'WPF / WinForms', 'MAUI (Mobile & Desktop)'] },
       { items: ['Azure App Service', 'Azure Functions', 'Azure Kubernetes (AKS)', 'Azure Service Bus', 'Azure Key Vault', 'Azure Active Directory'] },
       { items: ['SQL Server / Azure SQL', 'Azure Cosmos DB', 'Azure Blob Storage', 'Redis Cache', 'Synapse Analytics', 'Data Factory'] },
       { items: ['Power Apps (Canvas & Model)', 'Power Automate', 'Power BI', 'Power Pages', 'Microsoft Dataverse', 'AI Builder'] },
@@ -134,7 +134,7 @@ export const serviceData: Record<ServiceVariant, ServicePageData> = {
     technologies: [
       { items: ['SAP', 'Oracle', 'Salesforce', 'Dynamics 365'] },
       { items: ['UiPath', 'Automation Anywhere', 'Blue Prism', 'WorkflowAI'] },
-      { items: ['Java Enterprise', '.NET Core', 'Node.js', 'Python'] },
+      { items: ['Java Enterprise', '.NET', 'Node.js', 'Python'] },
       { items: ['Oracle DB', 'SQL Server', 'PostgreSQL', 'Cassandra'] },
       { items: ['MuleSoft', 'Apache Kafka', 'Spring Cloud', 'AWS Lambda'] },
       { items: ['Jira', 'Confluence', 'Azure DevOps', 'ServiceNow'] },

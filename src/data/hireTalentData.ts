@@ -1,3 +1,5 @@
+import { getHireTalentTechStack, type HireTalentTechStack } from './hireTalentTechStacks'
+
 type RoleDef = { slug: string; label: string }
 
 type CatDef = { label: string; roles: RoleDef[] }
@@ -289,14 +291,97 @@ export interface HireTalentRoleContent {
   heroHighlight: string
   heroDescription: string
   introTitle: string
-  introBody: string
+  introLead: string
+  introParagraphs: string[]
   whyTitle: string
   whyPoints: string[]
   skillTags: string[]
+  techStack: HireTalentTechStack
   engagementTitle: string
   engagementCards: { title: string; body: string }[]
   faqTitle: string
-  faqs: { q: string; a: string }[]
+  faqs: { q: string; paragraphs: string[] }[]
+}
+
+export type HireTalentFaqItem = HireTalentRoleContent['faqs'][number]
+
+function getIntroLead(label: string, category: string): string {
+  const role = label
+    .replace(/\s+Developer$/i, '')
+    .replace(/\s+Engineer$/i, '')
+    .replace(/\s+Expert$/i, '')
+    .replace(/\s+Consultant$/i, '')
+  const byCat: Record<string, string> = {
+    Frontend: `We match ${label}s who care about performance, accessibility, and maintainable UI architecture, not just pixel-perfect screens. Before anyone joins your sprint, we align on design systems, testing expectations, and how ${role} work integrates with your backend and release process.`,
+    Backend: `Our ${label}s are screened for API design, data modeling, security, and operational discipline. We clarify ownership boundaries, deployment standards, and how your ${role} stack fits your roadmap so engineers contribute from week one without slowing the team down.`,
+    Software: `Offshore and distributed engineers succeed when communication is explicit. We set cadence, documentation norms, and delivery checkpoints up front so your extended team feels embedded, not disconnected from product decisions.`,
+    'Mobile App': `Mobile delivery needs store readiness, device coverage, and reliable releases. We place ${label}s who understand release trains, analytics, offline behavior, and the trade-offs between native and cross-platform approaches for your product goals.`,
+    'Data Science': `Analytics and data roles fail when stakeholders cannot trust the numbers. We staff ${label}s who pair technical depth with clear storytelling, reproducible pipelines, and governance your business teams can rely on.`,
+    Automation: `Automation only pays off when workflows are stable and owned. We match ${label}s who design for exceptions, monitoring, and handoff to operations, not one-off scripts that break on the next UI change.`,
+    'Machine Learning': `ML in production requires more than notebooks. We provide ${label}s who think in evaluation, deployment, monitoring, and cost, so models move from experiment to value without surprises in production.`,
+    Cloud: `Cloud work is never just provisioning. We align ${label}s on identity, networking, cost, resilience, and IaC practices before they touch your environments, so every change stays auditable and reversible.`,
+    DevOps: `Platform and DevOps talent should shorten feedback loops, not add process. We place ${label}s who improve pipelines, environments, and runbooks while keeping security and reliability as shared defaults.`,
+  }
+  return (
+    byCat[category] ??
+    `We help you hire ${label}s with clear expectations on skills, communication, and delivery standards, so your team gains capacity without taking on hidden coordination overhead.`
+  )
+}
+
+function getIntroParagraphs(label: string, category: string): string[] {
+  const role = label.replace(/\s+Developer$/i, '').replace(/\s+Engineer$/i, '')
+  return [
+    `Whether you are launching a new product, modernizing a legacy platform, or need experienced ${label.toLowerCase()}s for a time-bound initiative, Cogtix focuses on outcomes, not ticket volume. We shortlist engineers who have shipped in comparable stacks, can explain trade-offs clearly, and are comfortable working inside your ceremonies, tools, and definition of done.`,
+    `Every engagement starts with alignment: scope boundaries, tech standards, code review expectations, and how progress is reported to stakeholders. That means your ${role} contributors integrate with product and engineering leads instead of working in isolation. You get predictable velocity, transparent status, and practices aligned to enterprise-grade quality: documentation, testing, security awareness, and maintainable code.`,
+    `From staff augmentation to dedicated squads, we stay involved after onboarding. If priorities shift or the fit needs adjustment, we respond quickly so delivery momentum is protected. That is how teams across the USA, UK, India, and Australia scale ${category.toLowerCase()} capability without compromising on communication or accountability.`,
+  ]
+}
+
+function getRoleFaqs(label: string, category: string): { q: string; paragraphs: string[] }[] {
+  return [
+    {
+      q: `How fast can a ${label} start on my project?`,
+      paragraphs: [
+        `Most ${label.toLowerCase()}s can begin within two to four weeks after you approve a profile. Timing depends on notice periods, security clearance, and how quickly your onboarding checklist is completed. We confirm realistic start dates before you commit.`,
+        `We coordinate repository access, environment setup, and communication channels ahead of day one so your engineer can join standups, pick up the first ticket, and align with your tech lead without a long ramp-up period.`,
+      ],
+    },
+    {
+      q: 'Can engineers work in our time zone and overlap with our core hours?',
+      paragraphs: [
+        `Yes. We routinely staff for overlap with teams in North America, Europe, APAC, and Australia. During discovery we document your preferred working window, ceremony schedule, and escalation paths in the statement of work.`,
+        `Engineers are expected to attend agreed meetings, respond within defined SLAs, and surface blockers early. That keeps distributed collaboration predictable for product owners and engineering managers who need reliable touchpoints.`,
+      ],
+    },
+    {
+      q: 'What if the engineer is not the right fit after we start?',
+      paragraphs: [
+        `We treat fit as a shared responsibility. If communication, pace, or technical depth is not meeting expectations, we review specific feedback with you and agree on next steps: additional context, pairing, or a replacement profile.`,
+        `Our priority is delivery continuity. Replacement timelines depend on role rarity and notice periods, but we act quickly on critical workstreams so your roadmap does not stall while a better match is onboarded.`,
+      ],
+    },
+    {
+      q: 'Do you sign NDAs, follow our security policies, and work under our agreements?',
+      paragraphs: [
+        `Yes. We regularly work under customer MSAs, NDAs, data-processing terms, and security questionnaires. Engineers can use your SSO, VPN, and approved tooling where required.`,
+        `We support background checks and compliance steps when your industry requires them. Intellectual property, source code access, and confidentiality expectations are agreed in writing before work begins so legal and security teams have clear guardrails.`,
+      ],
+    },
+    {
+      q: `What ${category.toLowerCase()} skills and experience do you screen for?`,
+      paragraphs: [
+        `We evaluate hands-on experience with the technologies on this page, production delivery history, code quality habits, and how candidates explain trade-offs in technical interviews.`,
+        `For ${label.toLowerCase()} roles we also assess ownership: tests, code review participation, documentation, and collaboration with product and design. You receive profiles matched to your stack and seniority, not generic resumes sent without vetting.`,
+      ],
+    },
+    {
+      q: 'How do you price engagements and what models are available?',
+      paragraphs: [
+        `We offer dedicated resources (typically monthly), time-and-materials hourly arrangements, and fixed-scope delivery when requirements are stable enough to estimate. Pricing reflects seniority, stack, and engagement length.`,
+        `After a short discovery call we share a transparent proposal with scope assumptions, reporting cadence, and change-management approach so finance and engineering leads can plan with confidence.`,
+      ],
+    },
+  ]
 }
 
 function buildRoleContent(cat: CatDef, role: RoleDef): HireTalentRoleContent {
@@ -314,7 +399,8 @@ function buildRoleContent(cat: CatDef, role: RoleDef): HireTalentRoleContent {
     heroHighlight: '',
     heroDescription: `Add senior ${label}s who align to your roadmap, engineering standards, and ways of working. We screen for depth, ownership, and communication, and we stay engaged so the match stays strong as priorities shift.`,
     introTitle: `Why teams hire ${label}s through Cogtix`,
-    introBody: `Whether you are shipping a new product, modernizing a legacy system, or need surge capacity, we provide engineers who own outcomes, not just tickets. You get clear communication, transparent reporting, and engineering practices aligned to enterprise standards.`,
+    introLead: getIntroLead(label, cat.label),
+    introParagraphs: getIntroParagraphs(label, cat.label),
     whyTitle: 'What you get',
     whyPoints: [
       'Pre-vetted engineers interviewed for communication, depth, and ownership.',
@@ -322,6 +408,7 @@ function buildRoleContent(cat: CatDef, role: RoleDef): HireTalentRoleContent {
       'Global presence with overlap-friendly hours across USA, UK, India, and Australia.',
     ],
     skillTags: skills,
+    techStack: getHireTalentTechStack(slug, cat.label),
     engagementTitle: 'Engagement options',
     engagementCards: [
       {
@@ -338,24 +425,7 @@ function buildRoleContent(cat: CatDef, role: RoleDef): HireTalentRoleContent {
       },
     ],
     faqTitle: 'Frequently asked questions',
-    faqs: [
-      {
-        q: `How fast can a ${label} start?`,
-        a: 'Most roles begin within two to four weeks after fit confirmation, depending on notice periods and security onboarding.',
-      },
-      {
-        q: 'Can engineers work in our time zone?',
-        a: 'Yes. We staff for overlap with your core hours and set expectations up front in the statement of work.',
-      },
-      {
-        q: 'What if the match is not right?',
-        a: 'We work with you on feedback and replacement options so delivery stays on track.',
-      },
-      {
-        q: 'Do you sign NDAs and follow our security policies?',
-        a: 'We routinely work under customer MSAs, NDAs, and background checks where required.',
-      },
-    ],
+    faqs: getRoleFaqs(label, cat.label),
   }
 }
 

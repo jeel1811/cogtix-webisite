@@ -20,8 +20,9 @@ import {
   MapPin,
 } from "lucide-react";
 import Button from "@/components/ui/Button";
-import { NAV_ITEMS, CONTACT_INFO, type NavItem } from "@/lib/constants";
+import { NAV_ITEMS, CONTACT_INFO, type NavChild, type NavItem } from "@/lib/constants";
 import { useI18n } from "@/i18n/provider";
+import { NavDropdownItemContent } from "@/components/icons/NavDropdownIcon";
 import { type Locale, LOCALE_LABELS } from "@/i18n/config";
 import {
   EnFlag,
@@ -138,6 +139,17 @@ function localizeNavChildLabel(
   }
 }
 
+type LocalizedNavGrandchild = NavChild & { iconKey: string }
+type LocalizedNavChild = Omit<NavChild, 'children'> & {
+  iconKey: string
+  children?: LocalizedNavGrandchild[]
+}
+type LocalizedNavItem = Omit<NavItem, 'children'> & {
+  id: string
+  label: string
+  children?: LocalizedNavChild[]
+}
+
 /* ──────────────────────────────────────────────────────────────────── */
 /*  Mega Menu Panel                                                    */
 /* ──────────────────────────────────────────────────────────────────── */
@@ -148,13 +160,13 @@ function MegaMenuPanel({
   isScrolled,
   localeText,
 }: {
-  item: NavItem;
+  item: LocalizedNavItem;
   onClose: () => void;
   onMouseEnter: () => void;
   isScrolled: boolean;
   localeText: ReturnType<typeof useI18n>["m"];
 }) {
-  const [hoveredChild, setHoveredChild] = useState<string | null>(null);
+  const [hoveredChildKey, setHoveredChildKey] = useState<string | null>(null);
 
   if (!item.children) return null;
   const childCount = item.children.length;
@@ -164,7 +176,7 @@ function MegaMenuPanel({
 
   /* Split children into columns (balance columns). use 3 per column to reduce vertical wrapping */
   const perCol = 3;
-  const cols: (typeof item.children)[] = [];
+  const cols: LocalizedNavChild[][] = [];
   for (let i = 0; i < item.children.length; i += perCol) {
     cols.push(item.children.slice(i, i + perCol));
   }
@@ -172,7 +184,7 @@ function MegaMenuPanel({
   const panelWidthClass = isTinyMenu
     ? "max-w-3xl px-4 sm:px-6"
     : isCompactMenu
-      ? "max-w-[64rem] px-4 sm:px-6"
+      ? "max-w-[72rem] px-4 sm:px-6"
       : isMediumMenu
         ? "max-w-[80rem] px-4 sm:px-6"
         : isScrolled
@@ -188,8 +200,8 @@ function MegaMenuPanel({
       ? "max-w-[76rem] px-4 sm:px-6"
       : "max-w-[80rem] px-4 sm:px-6";
 
-  const hoveredChildObj = hoveredChild
-    ? item.children.find((c) => c.label === hoveredChild) ?? null
+  const hoveredChildObj = hoveredChildKey
+    ? item.children?.find((c) => c.iconKey === hoveredChildKey) ?? null
     : null;
 
   // Expand panel width only when nested child is hovered, so right side extends more
@@ -228,22 +240,20 @@ function MegaMenuPanel({
               <div
                 className={`grid ${
                   cols.length === 1
-                    ? isTinyMenu
-                      ? "grid-cols-1 max-w-56"
-                      : "grid-cols-1 max-w-sm"
+                    ? "grid-cols-1"
                     : cols.length === 2
-                      ? "grid-cols-2"
-                      : "grid-cols-3"
-                } gap-x-12 gap-y-1`}
+                      ? "grid-cols-1 min-[1100px]:grid-cols-2"
+                      : "grid-cols-1 min-[1100px]:grid-cols-2 min-[1400px]:grid-cols-3"
+                } gap-x-8 min-[1100px]:gap-x-12 gap-y-1`}
               >
                 {cols.map((col, ci) => (
                   <div key={ci} className="space-y-1">
                     {col.map((child) => (
-                      <div key={child.label} className="relative">
+                      <div key={child.iconKey} className="relative">
                         {child.children ? (
                           <div
                             className="group/parent"
-                            onMouseEnter={() => setHoveredChild(child.label)}
+                            onMouseEnter={() => setHoveredChildKey(child.iconKey)}
                           >
                             {child.href ? (
                               <Link
@@ -251,13 +261,19 @@ function MegaMenuPanel({
                                 onClick={onClose}
                                 className="group flex items-center justify-between gap-3 rounded-xl px-3 py-2.5 -mx-3 text-[0.9375rem] font-semibold text-gray-700 hover:text-navy-900 hover:bg-blue-50/60 transition-all duration-200"
                               >
-                                <span>{child.label}</span>
-                                <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition-colors" />
+                                <NavDropdownItemContent
+                                  iconKey={child.iconKey}
+                                  label={child.label}
+                                />
+                                <ChevronRight className="h-4 w-4 shrink-0 text-gray-400 group-hover:text-blue-500 transition-colors" />
                               </Link>
                             ) : (
-                              <div className="flex items-center justify-between gap-3 rounded-xl px-3 py-2.5 -mx-3 text-[0.9375rem] font-semibold text-gray-700 hover:text-navy-900 hover:bg-blue-50/60 transition-all duration-200 cursor-pointer">
-                                <span>{child.label}</span>
-                                <ChevronRight className="w-4 h-4 text-gray-400 group-hover/parent:text-blue-500 transition-colors" />
+                              <div className="flex cursor-pointer items-center justify-between gap-3 rounded-xl px-3 py-2.5 -mx-3 text-[0.9375rem] font-semibold text-gray-700 hover:text-navy-900 hover:bg-blue-50/60 transition-all duration-200">
+                                <NavDropdownItemContent
+                                  iconKey={child.iconKey}
+                                  label={child.label}
+                                />
+                                <ChevronRight className="h-4 w-4 shrink-0 text-gray-400 group-hover/parent:text-blue-500 transition-colors" />
                               </div>
                             )}
 
@@ -267,10 +283,13 @@ function MegaMenuPanel({
                           <Link
                             href={child.href ?? "#"}
                             onClick={onClose}
-                            className="group flex items-center gap-2 px-3 py-2.5 -mx-3 rounded-xl text-[0.9375rem] text-gray-600 hover:text-navy-900 hover:bg-blue-50/60 transition-all duration-200"
+                            className="group flex items-center justify-between gap-3 px-3 py-2.5 -mx-3 rounded-xl text-[0.9375rem] text-gray-600 hover:text-navy-900 hover:bg-blue-50/60 transition-all duration-200"
                           >
-                            <span>{child.label}</span>
-                            <ArrowRight className="w-3.5 h-3.5 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 text-blue-500" />
+                            <NavDropdownItemContent
+                              iconKey={child.iconKey}
+                              label={child.label}
+                            />
+                            <ArrowRight className="h-3.5 w-3.5 shrink-0 opacity-0 -translate-x-1 text-blue-500 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100" />
                           </Link>
                         )}
                       </div>
@@ -284,31 +303,34 @@ function MegaMenuPanel({
             <div
               className={`${rightColSpanClass} bg-gray-50/60 ${!(hoveredChildObj?.children) && (isTinyMenu ? "p-4" : "p-6")} flex flex-col justify-between`}
               onMouseEnter={() =>
-                setHoveredChild(hoveredChildObj?.label ?? null)
+                setHoveredChildKey(hoveredChildObj?.iconKey ?? null)
               }
             >
               {hoveredChildObj && hoveredChildObj.children ? (
                 <div
-                  className={`w-full grid gap-8 ${
+                  className={`w-full grid gap-6 ${
                     isTinyMenu
-                      ? "grid-cols-[minmax(0,1fr)_16rem]"
-                      : "grid-cols-[1fr_20rem]"
+                      ? "grid-cols-1 min-[1100px]:grid-cols-[minmax(12rem,1fr)_16rem]"
+                      : "grid-cols-1 min-[1100px]:grid-cols-[minmax(12rem,1fr)_20rem]"
                   }`}
                 >
-                  <div className="w-full min-w-0">
-                    <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.15em] text-gray-400 mb-4">
+                  <div className="w-full">
+                    <p className="mb-4 text-[0.6875rem] font-semibold uppercase tracking-[0.15em] text-gray-400">
                       {hoveredChildObj.label}
                     </p>
                     <div className="space-y-1">
                       {hoveredChildObj.children.map((sub) => (
                         <Link
-                          key={sub.label}
+                          key={sub.iconKey}
                           href={sub.href ?? "#"}
                           onClick={onClose}
-                          className="group flex items-center justify-between gap-2 px-3 py-2.5 -mx-3 rounded-xl text-[0.9375rem] text-gray-600 hover:text-navy-900 hover:bg-blue-50/60 transition-all duration-200"
+                          className="group flex items-center justify-between gap-3 px-3 py-2.5 -mx-3 rounded-xl text-[0.9375rem] text-gray-600 hover:text-navy-900 hover:bg-blue-50/60 transition-all duration-200"
                         >
-                          <span>{sub.label}</span>
-                          <ArrowRight className="w-4 h-4 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 text-blue-500" />
+                          <NavDropdownItemContent
+                            iconKey={sub.iconKey}
+                            label={sub.label}
+                          />
+                          <ArrowRight className="h-4 w-4 shrink-0 opacity-0 -translate-x-1 text-blue-500 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100" />
                         </Link>
                       ))}
                     </div>
@@ -413,16 +435,18 @@ export default function Navbar() {
   const navRef = useRef<HTMLElement | null>(null);
 
   const localizedNavItems = useMemo(
-    () =>
+    (): LocalizedNavItem[] =>
       NAV_ITEMS.map((item) => ({
         ...item,
         id: item.label,
         label: localizeNavLabel(item.label, m),
         children: item.children?.map((child) => ({
           ...child,
+          iconKey: child.label,
           label: localizeNavChildLabel(child.label, m),
           children: child.children?.map((grand) => ({
             ...grand,
+            iconKey: grand.label,
             label: localizeNavChildLabel(grand.label, m),
           })),
         })),
@@ -733,25 +757,28 @@ export default function Navbar() {
                             className={`pl-4 pr-2 pb-2 space-y-0.5 ${item.id === "Engineering" ? "pt-2" : ""}`}
                           >
                             {item.children.map((child) => (
-                              <div key={child.label}>
+                              <div key={child.iconKey}>
                                 {child.children ? (
                                   <>
                                     <button
                                       onClick={() =>
                                         setMobileNestedDropdown(
                                           mobileNestedDropdown ===
-                                            `${item.id}:${child.label}`
+                                            `${item.id}:${child.iconKey}`
                                             ? null
-                                            : `${item.id}:${child.label}`,
+                                            : `${item.id}:${child.iconKey}`,
                                         )
                                       }
-                                      className="flex items-center justify-between w-full px-4 py-3 text-sm font-semibold text-gray-700 rounded-xl hover:bg-gray-50 transition-colors"
+                                      className="flex w-full items-center justify-between gap-3 rounded-xl px-4 py-3 text-sm font-semibold text-gray-700 transition-colors hover:bg-gray-50"
                                     >
-                                      <span>{child.label}</span>
+                                      <NavDropdownItemContent
+                                        iconKey={child.iconKey}
+                                        label={child.label}
+                                      />
                                       <ChevronDown
-                                        className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${
+                                        className={`h-4 w-4 shrink-0 text-gray-400 transition-transform duration-200 ${
                                           mobileNestedDropdown ===
-                                          `${item.id}:${child.label}`
+                                          `${item.id}:${child.iconKey}`
                                             ? "rotate-180 text-blue-500"
                                             : ""
                                         }`}
@@ -761,7 +788,7 @@ export default function Navbar() {
                                     <div
                                       className={`overflow-hidden transition-all duration-300 ease-out ${
                                         mobileNestedDropdown ===
-                                        `${item.id}:${child.label}`
+                                        `${item.id}:${child.iconKey}`
                                           ? "max-h-[500px] opacity-100"
                                           : "max-h-0 opacity-0"
                                       }`}
@@ -769,15 +796,17 @@ export default function Navbar() {
                                       <div className="pl-6 pr-2 pb-2 space-y-0.5">
                                         {child.children.map((sub) => (
                                           <Link
-                                            key={sub.label}
+                                            key={sub.iconKey}
                                             href={sub.href ?? "#"}
-                                            className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-500 hover:text-navy-900 rounded-xl hover:bg-blue-50/60 transition-all duration-200"
+                                            className="flex rounded-xl px-4 py-2.5 text-sm text-gray-500 transition-all duration-200 hover:bg-blue-50/60 hover:text-navy-900"
                                             onClick={() =>
                                               setIsMobileOpen(false)
                                             }
                                           >
-                                            <span className="w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0" />
-                                            {sub.label}
+                                            <NavDropdownItemContent
+                                              iconKey={sub.iconKey}
+                                              label={sub.label}
+                                            />
                                           </Link>
                                         ))}
                                       </div>
@@ -785,25 +814,28 @@ export default function Navbar() {
                                   </>
                                 ) : (
                                   <Link
-                                    key={child.label}
                                     href={child.href ?? "#"}
                                     className={
                                       item.id === "Engineering"
                                         ? "flex items-center justify-between gap-3 rounded-xl border border-blue-200 bg-blue-500 px-4 py-3.5 text-base font-semibold text-blue-50 transition-all duration-200 hover:border-blue-300 hover:bg-blue-600 hover:text-white"
-                                        : "flex items-center gap-2 px-4 py-2.5 text-sm text-gray-500 hover:text-navy-900 rounded-xl hover:bg-blue-50/60 transition-all duration-200"
+                                        : "flex items-center gap-3 rounded-xl px-4 py-2.5 text-sm text-gray-500 transition-all duration-200 hover:bg-blue-50/60 hover:text-navy-900"
                                     }
                                     onClick={() => setIsMobileOpen(false)}
                                   >
                                     {item.id === "Engineering" ? (
                                       <>
-                                        <span>{child.label}</span>
-                                        <ChevronRight className="h-5 w-5 text-blue-100/90" />
+                                        <NavDropdownItemContent
+                                          iconKey={child.iconKey}
+                                          label={child.label}
+                                          variant="onDark"
+                                        />
+                                        <ChevronRight className="h-5 w-5 shrink-0 text-blue-100/90" />
                                       </>
                                     ) : (
-                                      <>
-                                        <span className="w-1.5 h-1.5 rounded-full bg-gray-300 flex-shrink-0" />
-                                        {child.label}
-                                      </>
+                                      <NavDropdownItemContent
+                                        iconKey={child.iconKey}
+                                        label={child.label}
+                                      />
                                     )}
                                   </Link>
                                 )}

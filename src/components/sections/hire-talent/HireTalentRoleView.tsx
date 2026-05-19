@@ -1,18 +1,6 @@
 'use client'
 
-import { useCallback, useState } from 'react'
-import {
-  ArrowRight,
-  ChevronDown,
-  Compass,
-  FileCheck2,
-  Globe2,
-  HelpCircle,
-  Layers3,
-  Sparkles,
-  UserCheck,
-  Users,
-} from 'lucide-react'
+import { ArrowRight, Compass, FileCheck2, Globe2, Layers3, UserCheck, Users } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import Container from '@/components/ui/Container'
 import Button from '@/components/ui/Button'
@@ -21,100 +9,12 @@ import Offices from '@/components/sections/Offices'
 import { useI18n } from '@/i18n/provider'
 import { CTA_LINKS } from '@/lib/cta'
 import type { HireTalentRoleContent } from '@/data/hireTalentData'
+import HireTalentTechStack from '@/components/sections/hire-talent/HireTalentTechStack'
+import HireTalentWhySection from '@/components/sections/hire-talent/HireTalentWhySection'
+import HireTalentFaqSection from '@/components/sections/hire-talent/HireTalentFaqSection'
 
 const WHY_ICONS: LucideIcon[] = [UserCheck, Layers3, Globe2]
 const ENGAGEMENT_ICONS: LucideIcon[] = [Users, Compass, FileCheck2]
-
-function FaqBlock({
-  title,
-  items,
-}: {
-  title: string
-  items: { q: string; a: string }[]
-}) {
-  const [open, setOpen] = useState<Set<number>>(() => new Set([0]))
-
-  const toggle = useCallback((i: number) => {
-    setOpen((prev) => {
-      const next = new Set(prev)
-      if (next.has(i)) next.delete(i)
-      else next.add(i)
-      return next
-    })
-  }, [])
-
-  return (
-    <section className="relative overflow-hidden border-t border-slate-200 bg-[linear-gradient(180deg,#f1f5f9_0%,#f8fafc_35%,#ffffff_100%)] py-14 md:py-20">
-      <div className="pointer-events-none absolute -right-24 top-20 h-72 w-72 rounded-full bg-sky-200/25 blur-3xl" />
-      <div className="pointer-events-none absolute -left-20 bottom-10 h-64 w-64 rounded-full bg-blue-200/20 blur-3xl" />
-      <Container className="relative">
-        <div className="mx-auto max-w-3xl text-center md:mx-0 md:max-w-none md:text-left">
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-sky-600">Support</p>
-          <h2 className="mt-2 text-2xl font-bold tracking-tight text-navy-900 md:text-3xl lg:text-4xl">
-            {title}
-          </h2>
-          <p className="mx-auto mt-3 max-w-xl text-sm text-slate-600 md:mx-0 md:text-base">
-            Straight answers on how we staff, onboard, and stand behind every match.
-          </p>
-        </div>
-
-        <div className="mt-10 grid gap-4 md:gap-5">
-          {items.map((item, i) => {
-            const isOpen = open.has(i)
-            return (
-              <div
-                key={item.q}
-                className={`overflow-hidden rounded-2xl border bg-white shadow-sm transition-all duration-300 md:rounded-3xl ${
-                  isOpen
-                    ? 'border-blue-200/90 shadow-md shadow-blue-500/5 ring-1 ring-blue-100/80'
-                    : 'border-slate-200/90 hover:border-slate-300 hover:shadow-md'
-                }`}
-              >
-                <button
-                  type="button"
-                  onClick={() => toggle(i)}
-                  className="flex w-full items-start gap-4 px-5 py-4 text-left md:gap-5 md:px-7 md:py-5"
-                  aria-expanded={isOpen}
-                >
-                  <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-sky-500 text-white shadow-sm shadow-blue-500/25 md:h-11 md:w-11">
-                    <HelpCircle className="h-5 w-5 md:h-5 md:w-5" strokeWidth={2} />
-                  </span>
-                  <span className="min-w-0 flex-1 pt-1">
-                    <span className="block text-sm font-bold leading-snug text-navy-900 md:text-base">
-                      {item.q}
-                    </span>
-                  </span>
-                  <span
-                    className={`mt-1.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-colors ${
-                      isOpen
-                        ? 'border-blue-200 bg-blue-50 text-blue-700'
-                        : 'border-slate-200 bg-slate-50 text-slate-500'
-                    }`}
-                  >
-                    <ChevronDown
-                      className={`h-4 w-4 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
-                    />
-                  </span>
-                </button>
-                <div
-                  className={`grid transition-[grid-template-rows] duration-300 ease-out ${
-                    isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
-                  }`}
-                >
-                  <div className="min-h-0 overflow-hidden">
-                    <div className="border-t border-slate-100 px-5 pb-5 pl-[4.25rem] pr-5 pt-1 md:px-7 md:pb-6 md:pl-[4.75rem]">
-                      <p className="text-sm leading-relaxed text-slate-600 md:text-base">{item.a}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )
-          })}
-        </div>
-      </Container>
-    </section>
-  )
-}
 
 export default function HireTalentRoleView({ content }: { content: HireTalentRoleContent }) {
   const { m } = useI18n()
@@ -150,29 +50,11 @@ export default function HireTalentRoleView({ content }: { content: HireTalentRol
         </Container>
       </section>
 
-      <section id="capabilities" className="relative bg-white py-14 md:py-20">
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-200/60 to-transparent" />
-        <Container>
-          <div className="grid items-stretch gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-14">
-            <div className="flex flex-col justify-center">
-              <span className="inline-flex w-fit items-center gap-2 rounded-full border border-blue-100 bg-blue-50/90 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
-                <Sparkles className="h-3.5 w-3.5" aria-hidden />
-                Why Cogtix
-              </span>
-              <h2 className="mt-5 text-2xl font-bold leading-tight tracking-tight text-navy-900 md:text-3xl lg:text-[2rem]">
-                {content.introTitle}
-              </h2>
-              <p className="mt-4 text-sm font-medium leading-relaxed text-slate-600 md:text-base">
-                Expectations, cadence, and quality bar are clear before anyone joins your backlog.
-              </p>
-            </div>
-            <div className="relative rounded-3xl border border-slate-200/90 bg-gradient-to-br from-white via-slate-50/40 to-blue-50/30 p-8 shadow-[0_20px_50px_-24px_rgba(15,23,42,0.18)] md:p-10">
-              <div className="pointer-events-none absolute right-6 top-6 h-24 w-24 rounded-full bg-sky-400/10 blur-2xl" />
-              <p className="relative text-base leading-relaxed text-slate-700 md:text-lg">{content.introBody}</p>
-            </div>
-          </div>
-        </Container>
-      </section>
+      <HireTalentWhySection
+        title={content.introTitle}
+        lead={content.introLead}
+        paragraphs={content.introParagraphs}
+      />
 
       <section className="border-y border-slate-200 bg-slate-50 py-14 md:py-20">
         <Container>
@@ -205,34 +87,7 @@ export default function HireTalentRoleView({ content }: { content: HireTalentRol
         </Container>
       </section>
 
-      <section className="relative bg-white py-14 md:py-20">
-        <Container>
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-            <div className="max-w-xl">
-              <h2 className="text-2xl font-bold text-navy-900 md:text-3xl lg:text-4xl">Core skills &amp; stack</h2>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600 md:text-base">
-                Tags reflect how we staff and evaluate {content.label}s for client work. Your exact stack is matched
-                during onboarding.
-              </p>
-            </div>
-            <div className="hidden h-px flex-1 bg-gradient-to-r from-transparent via-slate-200 to-transparent lg:block lg:translate-y-[-0.5rem]" />
-          </div>
-
-          <div className="mt-10 rounded-3xl border border-slate-200/90 bg-gradient-to-br from-slate-50/90 via-white to-blue-50/40 p-6 shadow-inner shadow-slate-200/40 md:p-9">
-            <div className="flex flex-wrap gap-2.5 md:gap-3">
-              {content.skillTags.map((tag) => (
-                <span
-                  key={tag}
-                  className="inline-flex items-center gap-2 rounded-full border border-blue-100/90 bg-white/90 px-4 py-2 text-xs font-semibold text-blue-900 shadow-sm backdrop-blur-sm transition-colors hover:border-blue-200 hover:bg-blue-50/90 md:text-sm"
-                >
-                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-sky-500" aria-hidden />
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </section>
+      <HireTalentTechStack roleLabel={content.label} categories={content.techStack} />
 
       <section className="relative border-t border-slate-200 bg-gradient-to-b from-slate-50 to-white py-14 md:py-20">
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent" />
@@ -278,7 +133,7 @@ export default function HireTalentRoleView({ content }: { content: HireTalentRol
         </Container>
       </section>
 
-      <FaqBlock title={content.faqTitle} items={content.faqs} />
+      <HireTalentFaqSection title={content.faqTitle} items={content.faqs} />
 
       <ContactForm />
 

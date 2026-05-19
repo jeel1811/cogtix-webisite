@@ -181,6 +181,11 @@ export const CONTACT_INFO = {
 } as const
 
 // ─── Social Links ──────────────────────────────────────────────────
+export const FOUNDER_SOCIAL_LINKS = {
+  linkedin: 'https://www.linkedin.com/in/akash--limbani/',
+  x: 'https://x.com/limbani_akash',
+} as const
+
 export const SOCIAL_LINKS = {
   linkedin: 'https://www.linkedin.com/company/cogtix',
   twitter: 'https://twitter.com/cogtix',

@@ -8,7 +8,7 @@ import {
   SiJenkins, SiGitlab, SiGithubactions, SiCircleci,
   SiDatadog, SiPrometheus, SiElasticsearch, SiSplunk, SiCloudflare,
   SiApachekafka, SiApacheflink, SiApachespark, SiApacheairflow,
-  SiApache, SiApachecassandra,
+  SiApache, SiApachecassandra, SiApachejmeter,
   SiSnowflake, SiDatabricks,
   SiPostgresql, SiMongodb, SiMysql,
   SiRedis, SiFastapi, SiMlflow,
@@ -17,9 +17,12 @@ import {
   SiFigma, SiSketch, SiFramer,
   SiReact, SiVuedotjs, SiAngular, SiNextdotjs, SiSvelte,
   SiTailwindcss, SiBootstrap, SiMui, SiAntdesign,
-  SiHtml5, SiJavascript,
+  SiHtml5, SiCss, SiJavascript, SiTypescript,
   SiNodedotjs, SiExpress, SiPython, SiGo, SiRuby,
-  SiDotnet, SiOpenjdk,
+  SiDotnet, SiOpenjdk, SiSpringboot, SiDjango,
+  SiBlazor, SiFlutter, SiApple, SiAndroid, SiSwift, SiKotlin,
+  SiGraphql, SiJest, SiCypress, SiSelenium,
+  SiN8N, SiHelm,
   SiMiro, SiConfluence, SiJira,
   SiHuggingface, SiMeta,
   SiAlibabacloud,
@@ -139,16 +142,19 @@ export const techLogoMap: Record<string, TechLogo> = {
   'Redis Cache': { name: 'Redis',       icon: <SiRedis />,           color: '#DC382D' },
 
   // ── .NET ──────────────────────────────────────────────────────────────────
-  '.NET 8 / .NET Core':    { name: '.NET',      icon: <SiDotnet />, color: '#512BD4' },
-  'ASP.NET Core MVC':      { name: '.NET',      icon: <SiDotnet />, color: '#512BD4' },
-  'Entity Framework Core': { name: '.NET',      icon: <SiDotnet />, color: '#512BD4' },
-  'Blazor / WebAssembly':  { name: 'Blazor',    icon: <SiDotnet />, color: '#512BD4' },
+  '.NET':                  { name: '.NET',              icon: <SiDotnet />, color: '#512BD4' },
+  'ASP.NET':               { name: 'ASP.NET',           icon: <SiDotnet />, color: '#512BD4' },
+  'Entity Framework':      { name: 'Entity Framework',  icon: <SiDotnet />, color: '#512BD4' },
+  'Blazor':                { name: 'Blazor',            icon: <SiBlazor />, color: '#512BD4' },
+  '.NET 8 / .NET Core':    { name: '.NET',              icon: <SiDotnet />, color: '#512BD4' },
+  'ASP.NET Core MVC':      { name: 'ASP.NET',           icon: <SiDotnet />, color: '#512BD4' },
+  'Entity Framework Core': { name: 'Entity Framework',  icon: <SiDotnet />, color: '#512BD4' },
+  'Blazor / WebAssembly':  { name: 'Blazor',            icon: <SiBlazor />, color: '#512BD4' },
   'WPF / WinForms':        { name: '.NET',      icon: <SiDotnet />, color: '#512BD4' },
   'MAUI (Mobile & Desktop)':{ name: '.NET MAUI',icon: <SiDotnet />, color: '#512BD4' },
-  '.NET Core':             { name: '.NET',      icon: <SiDotnet />, color: '#512BD4' },
-  '.NET':                  { name: '.NET',      icon: <SiDotnet />, color: '#512BD4' },
-  '.NET Framework':        { name: '.NET',      icon: <SiDotnet />, color: '#512BD4' },
-  'ASP.NET Core':          { name: '.NET',      icon: <SiDotnet />, color: '#512BD4' },
+  '.NET Core':             { name: '.NET',              icon: <SiDotnet />, color: '#512BD4' },
+  '.NET Framework':        { name: '.NET',              icon: <SiDotnet />, color: '#512BD4' },
+  'ASP.NET Core':          { name: 'ASP.NET',           icon: <SiDotnet />, color: '#512BD4' },
   'NuGet / MSBuild':       { name: '.NET',      icon: <SiDotnet />, color: '#512BD4' },
 
   // ── Containers & Orchestration ────────────────────────────────────────────
@@ -265,8 +271,106 @@ export const techLogoMap: Record<string, TechLogo> = {
   'Confluence': { name: 'Confluence', icon: <SiConfluence />, color: '#172B4D' },
   'Jira':       { name: 'Jira',       icon: <SiJira />,       color: '#0052CC' },
   'Slack':      { name: 'Slack',      icon: <FaSlack />,      color: '#E01E5A' },
+
+  // ── Hire Talent (additional mappings) ─────────────────────────────────────
+  'C#':                    { name: 'C#',              icon: <SiDotnet />,        color: '#512BD4' },
+  'ASP.NET MVC':           { name: 'ASP.NET',         icon: <SiDotnet />,        color: '#512BD4' },
+  'SignalR':               { name: 'SignalR',         icon: <SiDotnet />,        color: '#512BD4' },
+  'Web API':               { name: 'Web API',         icon: <SiDotnet />,        color: '#512BD4' },
+  'WCF':                   { name: 'WCF',             icon: <SiDotnet />,        color: '#512BD4' },
+  'LINQ':                  { name: 'LINQ',            icon: <SiDotnet />,        color: '#512BD4' },
+  'ADO.NET':               { name: 'ADO.NET',         icon: <SiDotnet />,        color: '#512BD4' },
+  'NHibernate':            { name: 'NHibernate',      icon: <SiDotnet />,        color: '#512BD4' },
+  '.NET MAUI':             { name: '.NET MAUI',       icon: <SiDotnet />,        color: '#512BD4' },
+  'WPF':                   { name: 'WPF',             icon: <SiDotnet />,        color: '#512BD4' },
+  'Windows Forms':         { name: 'Windows Forms',   icon: <SiDotnet />,        color: '#512BD4' },
+  'Windows Services':      { name: 'Windows Services',icon: <SiDotnet />,        color: '#512BD4' },
+  'HTML5':                 { name: 'HTML5',           icon: <SiHtml5 />,         color: '#E34F26' },
+  'CSS3':                  { name: 'CSS3',            icon: <SiCss />,           color: '#1572B6' },
+  'TypeScript':            { name: 'TypeScript',      icon: <SiTypescript />,    color: '#3178C6' },
+  'GraphQL':               { name: 'GraphQL',         icon: <SiGraphql />,       color: '#E10098' },
+  'REST APIs':             { name: 'REST',            icon: <DiCode />,          color: '#0f172a' },
+  'Spring Boot':           { name: 'Spring Boot',     icon: <SiSpringboot />,    color: '#6DB33F' },
+  'Django':                { name: 'Django',          icon: <SiDjango />,        color: '#092E20' },
+  'Flutter':               { name: 'Flutter',         icon: <SiFlutter />,       color: '#02569B' },
+  'iOS':                   { name: 'iOS',             icon: <SiApple />,         color: '#000000' },
+  'Android':               { name: 'Android',         icon: <SiAndroid />,       color: '#3DDC84' },
+  'Swift':                 { name: 'Swift',           icon: <SiSwift />,         color: '#F05138' },
+  'Kotlin':                { name: 'Kotlin',          icon: <SiKotlin />,        color: '#7F52FF' },
+  'React Native':          { name: 'React Native',    icon: <SiReact />,         color: '#61DAFB' },
+  'Jest':                  { name: 'Jest',            icon: <SiJest />,          color: '#C21325' },
+  'Cypress':               { name: 'Cypress',         icon: <SiCypress />,       color: '#17202C' },
+  'Playwright':            { name: 'Playwright',      icon: <DiCode />,          color: '#2EAD33' },
+  'Selenium':              { name: 'Selenium',        icon: <SiSelenium />,      color: '#43B02A' },
+  'Tableau':               { name: 'Tableau',         icon: <DiCode />,          color: '#E97627' },
+  'Qlik':                  { name: 'Qlik',            icon: <DiCode />,          color: '#009845' },
+  'D3.js':                 { name: 'D3.js',           icon: <DiCode />,          color: '#F9A03C' },
+  'n8n':                   { name: 'n8n',             icon: <SiN8N />,           color: '#EA4B71' },
+  'Helm':                  { name: 'Helm',            icon: <SiHelm />,          color: '#0F1689' },
+  'Apache JMeter':         { name: 'Apache JMeter',   icon: <SiApachejmeter />,  color: '#D22128' },
+  'Visual Studio Test Tools': { name: 'Visual Studio', icon: <BiLogoVisualStudio />, color: '#007ACC' },
+  'Azure SQL Database':    { name: 'Azure SQL',       icon: <DiDatabase />,      color: '#0078D4' },
+  'Azure Application Insights': { name: 'Azure',      icon: <FaMicrosoft />,     color: '#0078D4' },
+  'CI/CD Pipelines':       { name: 'CI/CD',           icon: <SiGithubactions />, color: '#2088FF' },
+  'Infrastructure as Code': { name: 'IaC',            icon: <SiTerraform />,     color: '#7B42BC' },
+  'Microservices':         { name: 'Microservices',   icon: <SiDocker />,        color: '#2496ED' },
+  'OAuth 2.0':             { name: 'OAuth',           icon: <DiCode />,          color: '#EB5424' },
+  'JWT':                   { name: 'JWT',             icon: <DiCode />,          color: '#000000' },
+  'IAM':                   { name: 'IAM',             icon: <FaAws />,           color: '#FF9900' },
+  'DevSecOps':             { name: 'DevSecOps',       icon: <SiGitlab />,        color: '#FC6D26' },
+  'Agile':                 { name: 'Agile',           icon: <SiJira />,          color: '#0052CC' },
+  'Scrum':                 { name: 'Scrum',           icon: <SiJira />,          color: '#0052CC' },
+  'ETL':                   { name: 'ETL',             icon: <SiApacheairflow />, color: '#017CEE' },
+  'SQL':                   { name: 'SQL',             icon: <DiDatabase />,      color: '#336791' },
+  'Accessibility':         { name: 'Accessibility',   icon: <DiCode />,          color: '#005A9C' },
+  'Unit testing':          { name: 'Testing',         icon: <SiJest />,          color: '#C21325' },
+  'CI/CD':                 { name: 'CI/CD',           icon: <SiGithubactions />, color: '#2088FF' },
+  'Firebase':              { name: 'Firebase',        icon: <DiCode />,          color: '#FFCA28' },
+  'App Store release':     { name: 'App Store',       icon: <SiApple />,         color: '#000000' },
+  'Google Play':           { name: 'Google Play',     icon: <SiAndroid />,       color: '#3DDC84' },
+  'Push notifications':  { name: 'Push',            icon: <DiCode />,          color: '#0f172a' },
+  'Workflow design':       { name: 'Workflow',        icon: <DiCode />,          color: '#0f172a' },
+  'Monitoring':            { name: 'Monitoring',      icon: <SiDatadog />,       color: '#632CA6' },
+  'Documentation':         { name: 'Documentation',   icon: <SiConfluence />,    color: '#172B4D' },
+  'Code review':           { name: 'Code review',     icon: <SiGithubactions />, color: '#2088FF' },
+  'Remote collaboration':  { name: 'Remote',          icon: <FaSlack />,         color: '#E01E5A' },
+}
+
+/** Alternate names used on hire-talent pages → techLogoMap keys */
+const TECH_LOGO_ALIASES: Record<string, string> = {
+  'Microsoft Azure': 'Azure',
+  'Google Cloud Platform': 'Google Cloud',
+  'Google Cloud': 'GCP',
+  'Azure SQL Database': 'Azure SQL Database',
+  'Azure Cosmos DB': 'Azure Cosmos DB',
+  'ASP.NET Core': 'ASP.NET',
+  'ASP.NET Core MVC': 'ASP.NET',
+  'MVC': 'ASP.NET',
+  'Entity Framework Core': 'Entity Framework',
+  'Blazor / WebAssembly': 'Blazor',
+  '.NET 8 / .NET Core': '.NET',
+  'Vue.js': 'Vue',
+  'Node': 'Node.js',
+  'Express.js': 'Express',
+  'Scikit-learn': 'Scikit-learn',
+  'GCP Vertex': 'Google Vertex AI',
 }
 
 export function getTechLogo(techName: string): TechLogo | null {
-  return techLogoMap[techName] || null
+  const trimmed = techName.trim()
+  if (techLogoMap[trimmed]) return techLogoMap[trimmed]
+  const alias = TECH_LOGO_ALIASES[trimmed]
+  if (alias && techLogoMap[alias]) return techLogoMap[alias]
+  return null
+}
+
+export function resolveTechLogo(techName: string): TechLogo {
+  const found = getTechLogo(techName)
+  if (found) return found
+  const letter = techName.trim().charAt(0).toUpperCase() || '?'
+  return {
+    name: techName,
+    icon: <span className="text-[0.625rem] font-bold">{letter}</span>,
+    color: '#64748b',
+  }
 }
