@@ -192,8 +192,8 @@ export default function EngineeringServices() {
                 className="group relative flex h-full flex-col rounded-2xl border border-blue-100 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-blue-600 hover:bg-blue-600 hover:shadow-xl"
               >
                 <div className="mb-6 flex items-center gap-4">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 transition-all duration-300 group-hover:bg-white group-hover:text-blue-600">
-                    <service.icon className="h-7 w-7" />
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-blue-50 transition-all duration-300 group-hover:bg-white">
+                    <service.icon className="h-9 w-9 shrink-0" />
                   </div>
                   <h3 className="text-xl font-bold text-slate-950 transition-colors duration-300 group-hover:text-white">
                     {service.title}
