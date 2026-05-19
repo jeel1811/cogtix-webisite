@@ -24,12 +24,12 @@ interface ServiceHeroProps {
 }
 
 const serviceImages: Record<ServiceVariant, string> = {
-  ai: '/images/services/ai_graphic.png',
-  cloud: '/images/services/cloud_graphic.png',
-  microsoft: '/images/services/microsoft_graphic.png',
-  enterprise: '/images/services/enterprise_graphic.png',
-  data: '/images/services/data_graphic.png',
-  experience: '/images/services/experience_graphic.png',
+  ai: '/images/services/ai_graphic_v2.png',
+  cloud: '/images/services/cloud_graphic_v2.png',
+  microsoft: '/images/services/microsoft_graphic_v2.png',
+  enterprise: '/images/services/enterprise_graphic_v2.png',
+  data: '/images/services/data_graphic_v2.png',
+  experience: '/images/services/experience_graphic_v2.png',
 }
 
 export default function ServiceHero({
