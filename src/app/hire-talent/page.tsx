@@ -11,7 +11,9 @@ export const metadata: Metadata = {
 function HireTalentLandingFallback() {
   return (
     <main className="min-h-[40vh] bg-white">
-      <div className="mx-auto max-w-6xl px-4 py-16 text-center text-slate-500">Loading…</div>
+      <div className="mx-auto max-w-6xl px-4 py-16 text-center text-slate-500">
+        Loading…
+      </div>
     </main>
   )
 }

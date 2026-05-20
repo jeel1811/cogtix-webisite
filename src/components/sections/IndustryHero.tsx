@@ -150,24 +150,20 @@ export default function IndustryHero({
 
           <div className="relative lg:col-span-5 flex justify-center mt-8 lg:mt-0">
             {image && (
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.4 }}
                 className="relative aspect-[4/3] w-full max-w-lg animate-[float-y-soft_8s_ease-in-out_infinite]"
               >
-                <div className="absolute inset-0 bg-gradient-to-tr from-white/40 to-white/10 rounded-[2rem] shadow-2xl backdrop-blur-sm -rotate-3 z-0" />
-                <div className="absolute inset-0 bg-white/40 rounded-[2rem] shadow-xl backdrop-blur-md rotate-3 z-0" />
-                <div className="relative z-10 h-full w-full overflow-hidden rounded-[2rem] shadow-2xl ring-1 ring-white/50 bg-white">
-                  <Image
-                    src={image}
-                    alt={title}
-                    fill
-                    className="object-cover transition-transform duration-700 hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    priority
-                  />
-                </div>
+                <Image
+                  src={image}
+                  alt={title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
               </motion.div>
             )}
           </div>
