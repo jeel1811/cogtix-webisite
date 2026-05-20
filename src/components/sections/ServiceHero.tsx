@@ -24,12 +24,12 @@ interface ServiceHeroProps {
 }
 
 const serviceImages: Record<ServiceVariant, string> = {
-  ai: '/images/services/ai_graphic_v2.png',
-  cloud: '/images/services/cloud_graphic_v2.png',
-  microsoft: '/images/services/microsoft_graphic_v2.png',
-  enterprise: '/images/services/enterprise_graphic_v2.png',
-  data: '/images/services/data_graphic_v2.png',
-  experience: '/images/services/experience_graphic_v2.png',
+  ai: '/images/services/ai_graphic_v3_transparent.png',
+  cloud: '/images/services/cloud_graphic_v3_transparent.png',
+  microsoft: '/images/services/microsoft_graphic_v3_transparent.png',
+  enterprise: '/images/services/enterprise_graphic_v3_transparent.png',
+  data: '/images/services/data_graphic_v3_transparent.png',
+  experience: '/images/services/experience_graphic_v3_transparent.png',
 }
 
 export default function ServiceHero({
@@ -112,20 +112,16 @@ export default function ServiceHero({
               </div>
             )}
           </div>
-          <div className="relative lg:col-span-5 flex justify-center">
-            <div className="relative aspect-[4/3] w-full max-w-lg animate-[float-y-soft_8s_ease-in-out_infinite]">
-              <div className="absolute inset-0 bg-gradient-to-tr from-white/40 to-white/10 rounded-[2rem] shadow-2xl backdrop-blur-sm -rotate-3 z-0" />
-              <div className="absolute inset-0 bg-white/40 rounded-[2rem] shadow-xl backdrop-blur-md rotate-3 z-0" />
-              <div className="relative z-10 h-full w-full overflow-hidden rounded-[2rem] shadow-2xl ring-1 ring-white/50">
-                <Image
-                  src={serviceImages[variant]}
-                  alt={`${variant} graphic`}
-                  fill
-                  className="object-cover transition-transform duration-700 hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  priority
-                />
-              </div>
+          <div className="relative lg:col-span-5 flex justify-center items-center">
+            <div className="relative aspect-square w-full max-w-xl animate-[float-y-soft_8s_ease-in-out_infinite]">
+              <Image
+                src={serviceImages[variant]}
+                alt={`${variant} graphic`}
+                fill
+                className="object-contain transition-transform duration-700 hover:scale-105 drop-shadow-2xl"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
+              />
             </div>
           </div>
         </div>
