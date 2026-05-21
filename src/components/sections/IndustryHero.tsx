@@ -152,14 +152,9 @@ export default function IndustryHero({
 
           <div className="relative lg:col-span-5 flex justify-center mt-8 lg:mt-0">
             {image && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.4 }}
-                className="relative aspect-[4/3] w-full max-w-lg animate-[float-y-soft_8s_ease-in-out_infinite]"
-              >
+              <div className="relative aspect-[4/3] w-full max-w-lg animate-[float-y-soft_8s_ease-in-out_infinite]">
                 {!isLoaded && (
-                  <div className="absolute inset-0 z-0 rounded-3xl bg-slate-200/50 animate-pulse" />
+                  <div className="absolute inset-0 z-0 rounded-3xl bg-slate-200 animate-pulse" />
                 )}
                 <Image
                   src={image}
@@ -170,7 +165,7 @@ export default function IndustryHero({
                   sizes="(max-width: 768px) 100vw, 50vw"
                   priority
                 />
-              </motion.div>
+              </div>
             )}
           </div>
         </div>
