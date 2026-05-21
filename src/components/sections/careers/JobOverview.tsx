@@ -283,7 +283,7 @@ function ApplyModal({
       role="dialog"
       aria-modal="true"
       aria-labelledby="apply-modal-title"
-      className="fixed inset-0 z-[1000] flex items-center justify-center px-4 py-6"
+      className="fixed inset-0 z-[1000] flex items-center justify-center px-4 py-10"
     >
       <button
         type="button"
@@ -293,7 +293,7 @@ function ApplyModal({
       />
       <div
         ref={dialogRef}
-        className="relative z-10 max-h-[90vh] w-full max-w-2xl overflow-hidden rounded-3xl bg-white shadow-2xl"
+        className="relative z-10 max-h-[100vh] w-full max-w-2xl overflow-hidden rounded-3xl bg-white shadow-2xl"
       >
         <div className="flex items-start justify-between gap-4 border-b border-gray-200 bg-gradient-to-r from-blue-50 to-teal-50 px-6 py-5">
           <div>
@@ -409,9 +409,8 @@ function ApplyModal({
               type="file"
               accept=".pdf,.doc,.docx"
               onChange={handleFile}
-              className={`block w-full cursor-pointer rounded-xl border bg-gray-50 p-2.5 text-sm text-gray-600 file:mr-4 file:rounded-lg file:border-0 file:bg-blue-600 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white hover:file:bg-blue-700 ${
-                errors.file ? 'border-red-400' : 'border-gray-200'
-              }`}
+              className={`block w-full cursor-pointer rounded-xl border bg-gray-50 p-2.5 text-sm text-gray-600 file:mr-4 file:rounded-lg file:border-0 file:bg-blue-600 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white hover:file:bg-blue-700 ${errors.file ? 'border-red-400' : 'border-gray-200'
+                }`}
             />
             {errors.file ? (
               <p className="mt-1 text-xs font-semibold text-red-600">{errors.file}</p>
@@ -490,9 +489,8 @@ function Field({
         type={type}
         value={value}
         onChange={onChange}
-        className={`w-full rounded-xl border bg-white px-4 py-2.5 text-sm text-navy-900 placeholder-gray-400 outline-none transition-colors focus:border-blue-500 focus:ring-2 focus:ring-blue-100 ${
-          error ? 'border-red-400' : 'border-gray-200'
-        }`}
+        className={`w-full rounded-xl border bg-white px-4 py-2.5 text-sm text-navy-900 placeholder-gray-400 outline-none transition-colors focus:border-blue-500 focus:ring-2 focus:ring-blue-100 ${error ? 'border-red-400' : 'border-gray-200'
+          }`}
       />
       {error ? (
         <p className="mt-1 text-xs font-semibold text-red-600">{error}</p>
