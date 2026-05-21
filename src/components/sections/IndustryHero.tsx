@@ -160,7 +160,7 @@ export default function IndustryHero({
                   src={image}
                   alt={title}
                   fill
-                  className="object-cover"
+                  className="object-contain transition-transform duration-700 hover:scale-105 drop-shadow-2xl"
                   sizes="(max-width: 768px) 100vw, 50vw"
                   priority
                 />

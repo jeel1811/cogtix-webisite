@@ -59,7 +59,7 @@ const icon = (Comp: React.ComponentType<{ className?: string }>): ReactNode =>
 export const industryData: Record<IndustryVariant, IndustryPageData> = {
   financial: {
     theme: 'enterprise',
-    image: '/images/industries/finance_graphic.png',
+    image: '/images/industries/finance_graphic_v2_transparent.png',
     statValues: ['15+', '99.99%', 'PCI-DSS'],
     features: [
       { highlights: ['Omnichannel experience', 'Mobile-first design', 'Real-time processing', 'Core banking API integration'] },
@@ -81,7 +81,7 @@ export const industryData: Record<IndustryVariant, IndustryPageData> = {
   },
   healthcare: {
     theme: 'ai',
-    image: '/images/industries/healthcare_graphic.png',
+    image: '/images/industries/healthcare_graphic_v2_transparent.png',
     statValues: ['20+', 'HIPAA', '1M+'],
     features: [
       { highlights: ['WebRTC video', 'HIPAA compliant', 'e-Prescription integration', 'Secure messaging'] },
@@ -103,7 +103,7 @@ export const industryData: Record<IndustryVariant, IndustryPageData> = {
   },
   retail: {
     theme: 'experience',
-    image: '/images/industries/retail_graphic.png',
+    image: '/images/industries/retail_graphic_v2_transparent.png',
     statValues: ['30+', '$500M+', 'Sub-second'],
     features: [
       { highlights: ['Headless commerce', 'PWA storefronts', 'Unified cart', 'Social commerce'] },
@@ -125,7 +125,7 @@ export const industryData: Record<IndustryVariant, IndustryPageData> = {
   },
   supplyChain: {
     theme: 'cloud',
-    image: '/images/industries/logistics_graphic.png',
+    image: '/images/industries/logistics_graphic_v2_transparent.png',
     statValues: ['25+', '10M+', '30%'],
     features: [
       { highlights: ['Real-time GPS tracking', 'Telematics integration', 'Fuel optimization', 'Driver analytics'] },
@@ -147,7 +147,7 @@ export const industryData: Record<IndustryVariant, IndustryPageData> = {
   },
   hiTech: {
     theme: 'microsoft',
-    image: '/images/industries/tech_graphic.png',
+    image: '/images/industries/tech_graphic_v2_transparent.png',
     statValues: ['50+', 'Millions', '< 3 mo'],
     features: [
       { highlights: ['Multi-tenant architecture', 'Subscription billing', 'Automated provisioning', 'SaaS dashboards'] },
