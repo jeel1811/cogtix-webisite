@@ -639,7 +639,7 @@ export const messages: Record<Locale, Messages> = {
     contact: {
       heroTitle: 'Get in Touch',
       heroSubtitle:
-        'Have a project in mind? Lets&apos; discuss how we can help your business grow with our custom technology solutions.',
+        'Have a project in mind? Let\'s discuss how we can help your business grow with our custom technology solutions.',
       badge: 'Get In Touch',
       title: "Let's Build Something Great Together",
       subtitle:
