@@ -4,7 +4,7 @@ export const nlServicesLanding: ServicesLandingCopy = {
   metadata: {
     title: 'Engineering-diensten | Cogtix Solutions',
     description:
-      'Verken de engineering-diensten van Cogtix: AI/ML, cloud en DevOps, data engineering, digitale experience, enterprise services en Microsoft-technologieën.',
+      'Verken de engineering-diensten van  AI/ML, cloud en DevOps, data engineering, digitale experience, enterprise services en Microsoft-technologieën.',
   },
   hero: {
     title:

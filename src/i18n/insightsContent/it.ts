@@ -4,7 +4,7 @@ export const itInsightsLanding: InsightsLandingCopy = {
   metadata: {
     title: 'Approfondimenti | Cogtix Solutions',
     description:
-      'Esplora gli approfondimenti Cogtix: articoli, case study e prospettive ingegneristiche su cloud, IA, trasformazione digitale e delivery di prodotto.',
+      'Esplora gli approfondimenti articoli, case study e prospettive ingegneristiche su cloud, IA, trasformazione digitale e delivery di prodotto.',
   },
   hero: {
     badge: 'Approfondimenti',

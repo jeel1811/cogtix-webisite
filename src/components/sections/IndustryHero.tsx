@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Container from '@/components/ui/Container';
 import ScrollIndicator from '@/components/ui/ScrollIndicator';
 // import Button from '@/components/ui/Button';
+import { useState } from 'react';
 import { ServiceVariant, serviceThemes } from './service-themes';
 import Image from 'next/image';
 
@@ -29,6 +30,7 @@ export default function IndustryHero({
   stats,
 }: IndustryHeroProps) {
   const theme = serviceThemes[variant];
+  const [isLoaded, setIsLoaded] = useState(false);
 
   // Split title if highlight exists
   let titleParts = [title];
@@ -156,11 +158,15 @@ export default function IndustryHero({
                 transition={{ duration: 0.7, delay: 0.4 }}
                 className="relative aspect-[4/3] w-full max-w-lg animate-[float-y-soft_8s_ease-in-out_infinite]"
               >
+                {!isLoaded && (
+                  <div className="absolute inset-0 z-0 rounded-3xl bg-slate-200/50 animate-pulse" />
+                )}
                 <Image
                   src={image}
                   alt={title}
                   fill
-                  className="object-contain transition-transform duration-700 hover:scale-105 drop-shadow-2xl"
+                  onLoad={() => setIsLoaded(true)}
+                  className={`relative z-10 object-contain transition-all duration-700 hover:scale-105 drop-shadow-2xl ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
                   sizes="(max-width: 768px) 100vw, 50vw"
                   priority
                 />

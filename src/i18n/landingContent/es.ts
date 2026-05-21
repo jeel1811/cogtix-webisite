@@ -4,7 +4,7 @@ export const esServicesLanding: ServicesLandingCopy = {
   metadata: {
     title: 'Servicios de Ingeniería | Cogtix Solutions',
     description:
-      'Explora los servicios de ingeniería de Cogtix: IA/ML, cloud y DevOps, ingeniería de datos, experiencia digital, servicios empresariales y tecnologías Microsoft.',
+      'Explora los servicios de ingeniería de  IA/ML, cloud y DevOps, ingeniería de datos, experiencia digital, servicios empresariales y tecnologías Microsoft.',
   },
   hero: {
     title:
@@ -64,7 +64,7 @@ export const esIndustriesLanding: IndustriesLandingCopy = {
   metadata: {
     title: 'Sectores en los que trabajamos | Cogtix Solutions',
     description:
-      'Explora los sectores que atiende Cogtix: servicios financieros, salud, retail, supply chain y negocios digitales de alta tecnología.',
+      'Explora los sectores que atiende  servicios financieros, salud, retail, supply chain y negocios digitales de alta tecnología.',
   },
   hero: {
     title:

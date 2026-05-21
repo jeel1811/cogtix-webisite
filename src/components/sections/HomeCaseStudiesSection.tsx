@@ -2,7 +2,7 @@ import queryGraphql from '@/components/queryGraphql/index'
 import type { CaseStudyEdge } from '@/components/sections/case-studies/types'
 import HomeCaseStudies from '@/components/sections/HomeCaseStudies'
 import { WORDPRESS_CASE_STUDIES_CATEGORY } from '@/constants/index'
-import { CASE_STUDIES_LIST } from '@/graphql/case-studies/query'
+import { HOME_CASE_STUDIES_LIST } from '@/graphql/case-studies/query'
 import { homeCaseStudiesContent } from '@/i18n/messages'
 import {
   mapCaseStudyEdgeToHomeItem,
@@ -11,9 +11,8 @@ import {
 
 async function getCaseStudiesForHome(): Promise<CaseStudyEdge[]> {
   try {
-    const { data } = await queryGraphql(CASE_STUDIES_LIST, {
+    const { data } = await queryGraphql(HOME_CASE_STUDIES_LIST, {
       where: { categoryIn: WORDPRESS_CASE_STUDIES_CATEGORY.id },
-      first: 3,
     })
 
     return (data?.posts?.edges as CaseStudyEdge[]) ?? []

@@ -3,6 +3,7 @@
 import Container from '@/components/ui/Container'
 // import Button from '@/components/ui/Button'
 import ScrollIndicator from '@/components/ui/ScrollIndicator'
+import { useState } from 'react'
 import Image from 'next/image'
 // import { ArrowRight, Sparkles } from 'lucide-react'
 import {
@@ -41,6 +42,7 @@ export default function ServiceHero({
   stats,
 }: ServiceHeroProps) {
   const theme = serviceThemes[variant]
+  const [isLoaded, setIsLoaded] = useState(false)
 
   const renderTitle = () => {
     if (!highlight || !title.includes(highlight)) {
@@ -114,11 +116,15 @@ export default function ServiceHero({
           </div>
           <div className="relative lg:col-span-5 flex justify-center items-center">
             <div className="relative aspect-square w-full max-w-xl animate-[float-y-soft_8s_ease-in-out_infinite]">
+              {!isLoaded && (
+                <div className="absolute inset-0 z-0 rounded-3xl bg-slate-200/50 animate-pulse" />
+              )}
               <Image
                 src={serviceImages[variant]}
                 alt={`${variant} graphic`}
                 fill
-                className="object-contain transition-transform duration-700 hover:scale-105 drop-shadow-2xl"
+                onLoad={() => setIsLoaded(true)}
+                className={`relative z-10 object-contain transition-all duration-700 hover:scale-105 drop-shadow-2xl ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
                 sizes="(max-width: 768px) 100vw, 50vw"
                 priority
               />
