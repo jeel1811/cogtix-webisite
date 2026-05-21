@@ -462,7 +462,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 1024) setIsMobileOpen(false);
+      if (window.innerWidth >= 1280) setIsMobileOpen(false);
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -542,11 +542,11 @@ export default function Navbar() {
           }}
         >
           <nav
-            className="mx-auto will-change-[max-width,background-color,border-radius,box-shadow] transition-[max-width,background-color,border-radius,box-shadow,border-color] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+            className="mx-auto w-full will-change-[max-width,background-color,border-radius,box-shadow] transition-[max-width,background-color,border-radius,box-shadow,border-color] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
             style={{
               maxWidth: isScrolled
-                ? "min(92vw, 1400px)"
-                : "min(95vw, 1600px)",
+                ? "min(96vw, 1536px)"
+                : "min(98vw, 1800px)",
               backgroundColor: isScrolled
                 ? "rgba(255,255,255,0.92)"
                 : "rgba(255,255,255,0)",
@@ -581,7 +581,7 @@ export default function Navbar() {
               </Link>
 
               {/* Desktop Navigation */}
-              <div className="hidden lg:flex items-center gap-0.5">
+              <div className="hidden xl:flex items-center gap-0.5">
                 {localizedNavItems.map((item) => (
                   <div
                     key={item.id}
@@ -627,7 +627,7 @@ export default function Navbar() {
               </div>
 
               {/* Desktop CTA */}
-              <div className="hidden lg:flex items-center gap-3">
+              <div className="hidden xl:flex items-center gap-3">
                 <div ref={langMenuRef} className="relative">
                   <button
                     type="button"
@@ -678,7 +678,7 @@ export default function Navbar() {
               {/* Mobile Menu Button :  animated hamburger */}
               <button
                 onClick={() => setIsMobileOpen(!isMobileOpen)}
-                className="lg:hidden w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer"
+                className="xl:hidden w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer"
                 aria-label="Toggle menu"
               >
                 <HamburgerIcon isOpen={isMobileOpen} />
@@ -701,7 +701,7 @@ export default function Navbar() {
 
       {/* ── Mobile Full-screen Menu ── */}
       <div
-        className={`lg:hidden fixed inset-0 z-[55] transition-opacity duration-300 ${
+        className={`xl:hidden fixed inset-0 z-[55] transition-opacity duration-300 ${
           isMobileOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
