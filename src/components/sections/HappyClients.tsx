@@ -17,6 +17,7 @@ const CLIENT_LOGOS = [
   { name: "Beekeeper", logo: "/clients/beekeeper.webp" },
   { name: "Cattle Food", logo: "/clients/cattle-food.webp" },
   { name: "Emerson", logo: "/clients/emerson.webp" },
+  // { name: "New Business AI", logo: "/clients/newbusiness-ai.webp"},
   { name: "Funding Souq", logo: "/clients/funding-souq.webp" },
   { name: "IronConnect", logo: "/clients/ironconnect.webp" },
   { name: "Lancesoft", logo: "/clients/lancesoft.webp" },
