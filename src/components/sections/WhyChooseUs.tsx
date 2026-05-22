@@ -41,11 +41,11 @@ export default function WhyChooseUs() {
   ]
 
   return (
-    <section className="relative overflow-hidden bg-blue-50/60 py-10 md:py-14">
+    <section className="relative overflow-hidden bg-[#FEFEFE] py-10 md:py-14">
       <div
         className="pointer-events-none absolute inset-0 z-0 opacity-[0.03]"
         style={{
-          backgroundImage: 'radial-gradient(#1e293b 0.5px, transparent 0.5px)',
+          backgroundImage: '',
           backgroundSize: '24px 24px',
         }}
       />
@@ -63,9 +63,6 @@ export default function WhyChooseUs() {
             className="relative w-full lg:w-1/2"
           >
             <div className="relative mx-auto aspect-square max-w-[500px]">
-              <div className="absolute -top-10 -left-10 h-40 w-40 animate-pulse rounded-full bg-blue-50 opacity-60 blur-3xl" />
-              <div className="absolute -bottom-10 -right-10 h-60 w-60 animate-pulse rounded-full bg-pink-50 opacity-60 blur-3xl delay-700" />
-
               <Image
                 src="/why-choose-us.png"
                 alt="Why Choose Cogtix"
