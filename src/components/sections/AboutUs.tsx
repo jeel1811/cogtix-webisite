@@ -366,85 +366,204 @@ export default function AboutUs() {
           ))}
         </div>
 
-        {/* DESKTOP: 3-column overlapping collage
-            Wrapped in max-w-6xl to keep it tight on large screens */}
-        <div className="hidden md:flex mt-6 max-w-6xl mx-auto items-end justify-center gap-6 lg:gap-12">
-          {/* ── Left cluster ── */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative flex-shrink-0"
-            style={{ width: 340, height: 360 }}
+        {/* DESKTOP: Three image clusters with decorative props */}
+        <div className="hidden md:block mt-12 max-w-6xl mx-auto relative">
+          {/* ── Decorative wave (top-left) ── */}
+          <svg
+            aria-hidden
+            className="absolute -left-4 -top-6 w-32 h-12 text-blue-400/70 pointer-events-none"
+            viewBox="0 0 120 36"
+            fill="none"
           >
-            {/* Front — landscape top-left */}
-            <div className="absolute top-4 left-0 w-52 h-40 rounded-2xl overflow-hidden shadow-2xl border-2 border-white z-20">
-              <Image
-                src="/about/about-us-1.webp"
-                alt="Office Desk"
-                fill
-                className="object-cover hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-            {/* Back — square Cogtix Logo card bottom-right */}
-            <div className="absolute bottom-0 right-0 w-48 h-48 rounded-2xl overflow-hidden shadow-xl border-2 border-white z-10 bg-[#001D54] flex items-center justify-center p-8 group">
-              <div className="relative w-full h-full">
+            <path
+              d="M2 18 Q 12 4, 22 18 T 42 18 T 62 18 T 82 18 T 102 18 T 122 18"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+            <path
+              d="M2 28 Q 12 14, 22 28 T 42 28 T 62 28 T 82 28 T 102 28 T 122 28"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              opacity="0.55"
+            />
+          </svg>
+
+          {/* ── Decorative wave (right) ── */}
+          <svg
+            aria-hidden
+            className="absolute -right-2 top-32 w-36 h-14 text-cyan-400/70 pointer-events-none"
+            viewBox="0 0 140 40"
+            fill="none"
+          >
+            <path
+              d="M2 20 Q 13 4, 24 20 T 46 20 T 68 20 T 90 20 T 112 20 T 138 20"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+            <path
+              d="M2 32 Q 13 16, 24 32 T 46 32 T 68 32 T 90 32 T 112 32 T 138 32"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              opacity="0.55"
+            />
+          </svg>
+
+          <div className="flex items-end justify-center gap-8 lg:gap-12 relative z-10">
+            {/* ── Left cluster ── */}
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative flex-shrink-0"
+              style={{ width: 320, height: 380 }}
+            >
+              {/* Decorative quarter-arc behind cluster */}
+              <svg
+                aria-hidden
+                className="absolute -top-4 -left-6 w-24 h-24 text-cyan-300/70 pointer-events-none"
+                viewBox="0 0 80 80"
+                fill="none"
+              >
+                <path
+                  d="M4 76 A 72 72 0 0 1 76 4"
+                  stroke="currentColor"
+                  strokeWidth="10"
+                  strokeLinecap="round"
+                />
+              </svg>
+
+              {/* Front — landscape top-left, slight left tilt */}
+              <div
+                className="absolute top-2 left-2 w-56 h-44 rounded-xl overflow-hidden shadow-2xl border-4 border-white z-20"
+                style={{ transform: 'rotate(-4deg)' }}
+              >
                 <Image
-                  src="/cogtix.svg"
-                  alt="Cogtix Logo"
+                  src="/about/about-us-1.webp"
+                  alt="Office Desk"
                   fill
-                  className="object-contain brightness-0 invert transition-transform duration-700 group-hover:scale-110"
+                  sizes="(min-width: 1024px) 224px, 200px"
+                  className="object-cover hover:scale-105 transition-transform duration-700"
                 />
               </div>
-            </div>
-          </motion.div>
 
-          {/* ── Centre tall image ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="relative flex-shrink-0 w-72 rounded-2xl overflow-hidden shadow-2xl border-2 border-white z-30"
-            style={{ height: 380 }}
-          >
-            <Image
-              src="/about/coding.png"
-              alt="Engineering at Work"
-              fill
-              className="object-cover hover:scale-105 transition-transform duration-700"
-            />
-          </motion.div>
+              {/* Back — square Cogtix Logo card bottom-right, slight right tilt */}
+              <div
+                className="absolute bottom-2 right-0 w-48 h-48 rounded-xl overflow-hidden shadow-xl border-4 border-white z-10 bg-[#001D54] flex items-center justify-center p-8 group"
+                style={{ transform: 'rotate(5deg)' }}
+              >
+                <div className="relative w-full h-full">
+                  <Image
+                    src="/cogtix.svg"
+                    alt="Cogtix Logo"
+                    fill
+                    sizes="192px"
+                    className="object-contain brightness-0 invert transition-transform duration-700 group-hover:scale-110"
+                  />
+                </div>
+              </div>
 
-          {/* ── Right cluster ── */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.25 }}
-            className="relative flex-shrink-0"
-            style={{ width: 340, height: 360 }}
-          >
-            {/* Back — portrait top-right */}
-            <div className="absolute top-4 right-0 w-44 h-60 rounded-2xl overflow-hidden shadow-xl border-2 border-white z-10">
-              <Image
-                src="/about/about-us-2.webp"
-                alt="Analytics"
-                fill
-                className="object-cover hover:scale-105 transition-transform duration-700"
+              {/* Small floating dot accent */}
+              <span className="absolute bottom-6 left-2 w-3 h-3 rounded-full bg-blue-500/70 z-30" />
+            </motion.div>
+
+            {/* ── Centre cluster ── */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="relative flex-shrink-0"
+              style={{ width: 300, height: 420 }}
+            >
+              {/* Decorative blob behind */}
+              <div
+                aria-hidden
+                className="absolute -top-6 -right-8 w-28 h-28 rounded-full bg-gradient-to-br from-blue-400/40 to-cyan-300/40 blur-sm pointer-events-none"
               />
-            </div>
-            {/* Front — landscape bottom-left */}
-            <div className="absolute bottom-0 left-0 w-52 h-36 rounded-2xl overflow-hidden shadow-2xl border-2 border-white z-20">
-              <Image
-                src="/about/team2.png"
-                alt="Office Space"
-                fill
-                className="object-cover hover:scale-105 transition-transform duration-700"
+
+              {/* Main centre tall image (slight tilt) */}
+              <div
+                className="relative w-full rounded-xl overflow-hidden shadow-2xl border-4 border-white z-30"
+                style={{ height: 400, transform: 'rotate(-2deg)' }}
+              >
+                <Image
+                  src="/about/coding.png"
+                  alt="Engineering at Work"
+                  fill
+                  sizes="300px"
+                  className="object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+
+              {/* Small triangle accent bottom-left */}
+              <svg
+                aria-hidden
+                className="absolute -bottom-2 -left-4 w-12 h-12 text-blue-500/80 pointer-events-none z-40"
+                viewBox="0 0 40 40"
+              >
+                <polygon points="4,36 36,36 20,6" fill="currentColor" />
+              </svg>
+            </motion.div>
+
+            {/* ── Right cluster ── */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.25 }}
+              className="relative flex-shrink-0"
+              style={{ width: 320, height: 380 }}
+            >
+              {/* Decorative ring behind */}
+              <div
+                aria-hidden
+                className="absolute -top-2 -right-4 w-20 h-20 rounded-full border-[4px] border-blue-300/70 pointer-events-none"
               />
-            </div>
-          </motion.div>
+
+              {/* Back — portrait top-right, slight tilt */}
+              <div
+                className="absolute top-2 right-2 w-44 h-60 rounded-xl overflow-hidden shadow-xl border-4 border-white z-10"
+                style={{ transform: 'rotate(4deg)' }}
+              >
+                <Image
+                  src="/about/about-us-2.webp"
+                  alt="Analytics"
+                  fill
+                  sizes="176px"
+                  className="object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+
+              {/* Front — landscape bottom-left, opposite tilt */}
+              <div
+                className="absolute bottom-2 left-0 w-56 h-40 rounded-xl overflow-hidden shadow-2xl border-4 border-white z-20"
+                style={{ transform: 'rotate(-5deg)' }}
+              >
+                <Image
+                  src="/about/team2.png"
+                  alt="Office Space"
+                  fill
+                  sizes="(min-width: 1024px) 224px, 200px"
+                  className="object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+
+              {/* Tiny cross accent */}
+              <svg
+                aria-hidden
+                className="absolute top-0 right-20 w-5 h-5 text-cyan-500/80 pointer-events-none z-30"
+                viewBox="0 0 20 20"
+              >
+                <rect x="8.5" y="2" width="3" height="16" rx="1.5" fill="currentColor" />
+                <rect x="2" y="8.5" width="16" height="3" rx="1.5" fill="currentColor" />
+              </svg>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>
