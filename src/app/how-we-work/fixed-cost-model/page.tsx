@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import HowWeWorkHero from '@/components/sections/HowWeWorkHero'
 import AnimatedSection from '@/components/sections/AnimatedSection'
 import AnimatedCard from '@/components/sections/AnimatedCard'
@@ -7,10 +8,24 @@ import Link from 'next/link'
 import { CheckCircle2, HandCoins } from 'lucide-react'
 import { siteCtasContent } from '@/i18n/messages'
 import { CTA_LINKS } from '@/lib/cta'
+import { buildMetadata } from '@/lib/seo'
 
-export const metadata = {
-  title: 'Fixed Cost Model - How We Work',
-}
+export const metadata: Metadata = buildMetadata({
+  title:
+    'Fixed Cost Engagement Model | Milestone-Based Software Development',
+  description:
+    'Predictable, milestone-based software delivery from Cogtix Solutions. Choose a fixed-price engagement when scope is clear and you need budget certainty for MVPs and defined builds.',
+  path: '/how-we-work/fixed-cost-model',
+  keywords: [
+    'fixed cost software development',
+    'fixed price project model',
+    'milestone based software development',
+    'MVP fixed cost development',
+    'fixed scope software project',
+    'fixed price software contract',
+    'software development pricing model',
+  ],
+})
 
 export default function FixedCostModelPage() {
 

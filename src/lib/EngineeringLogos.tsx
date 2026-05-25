@@ -17,7 +17,7 @@ export const MicrosoftLogo = ({ className }: Props) => (
   </svg>
 );
 
-// ─── AI/ML Engineering — neural network brain ─────────────────────────────
+// ─── AI/ML Engineering : neural network brain ─────────────────────────────
 export const AIEngineeringLogo = ({ className }: Props) => (
   <svg
     viewBox="0 0 48 48"
@@ -112,7 +112,7 @@ export const AIEngineeringLogo = ({ className }: Props) => (
   </svg>
 );
 
-// ─── Cloud & DevOps Engineering — solid fills (no shared gradient IDs) ─────
+// ─── Cloud & DevOps Engineering : solid fills (no shared gradient IDs) ─────
 export const CloudDevOpsLogo = ({ className }: Props) => (
   <svg
     viewBox="0 0 48 48"
@@ -186,7 +186,7 @@ export const CloudDevOpsLogo = ({ className }: Props) => (
   </svg>
 );
 
-// ─── Data Engineering — database cylinders + flow ─────────────────────────
+// ─── Data Engineering : database cylinders + flow ─────────────────────────
 export const DataEngineeringLogo = ({ className }: Props) => (
   <svg
     viewBox="0 0 48 48"
@@ -225,7 +225,7 @@ export const DataEngineeringLogo = ({ className }: Props) => (
   </svg>
 );
 
-// ─── Digital Experience Engineering — browser / UX frame ─────────────────
+// ─── Digital Experience Engineering : browser / UX frame ─────────────────
 export const ExperienceEngineeringLogo = ({ className }: Props) => (
   <svg
     viewBox="0 0 48 48"
@@ -297,7 +297,7 @@ export const ExperienceEngineeringLogo = ({ className }: Props) => (
   </svg>
 );
 
-// ─── Mobile App — smartphone frame ─────────────────────────────────────────
+// ─── Mobile App : smartphone frame ─────────────────────────────────────────
 export const MobileAppLogo = ({ className }: Props) => (
   <svg
     viewBox="0 0 48 48"
@@ -322,7 +322,7 @@ export const MobileAppLogo = ({ className }: Props) => (
   </svg>
 );
 
-// ─── Enterprise Services — solid fills (no shared gradient IDs) ────────────
+// ─── Enterprise Services : solid fills (no shared gradient IDs) ────────────
 export const EnterpriseLogo = ({ className }: Props) => (
   <svg
     viewBox="0 0 48 48"

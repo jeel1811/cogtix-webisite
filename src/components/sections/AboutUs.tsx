@@ -437,7 +437,7 @@ export default function AboutUs() {
                 />
               </svg>
 
-              {/* Front — landscape top-left, slight left tilt */}
+              {/* Front : landscape top-left, slight left tilt */}
               <div
                 className="absolute top-2 left-2 w-56 h-44 rounded-xl overflow-hidden shadow-2xl border-4 border-white z-20"
                 style={{ transform: 'rotate(-4deg)' }}
@@ -451,7 +451,7 @@ export default function AboutUs() {
                 />
               </div>
 
-              {/* Back — square Cogtix Logo card bottom-right, slight right tilt */}
+              {/* Back : square Cogtix Logo card bottom-right, slight right tilt */}
               <div
                 className="absolute bottom-2 right-0 w-48 h-48 rounded-xl overflow-hidden shadow-xl border-4 border-white z-10 bg-[#001D54] flex items-center justify-center p-8 group"
                 style={{ transform: 'rotate(5deg)' }}
@@ -525,7 +525,7 @@ export default function AboutUs() {
                 className="absolute -top-2 -right-4 w-20 h-20 rounded-full border-[4px] border-blue-300/70 pointer-events-none"
               />
 
-              {/* Back — portrait top-right, slight tilt */}
+              {/* Back : portrait top-right, slight tilt */}
               <div
                 className="absolute top-2 right-2 w-44 h-60 rounded-xl overflow-hidden shadow-xl border-4 border-white z-10"
                 style={{ transform: 'rotate(4deg)' }}
@@ -539,7 +539,7 @@ export default function AboutUs() {
                 />
               </div>
 
-              {/* Front — landscape bottom-left, opposite tilt */}
+              {/* Front : landscape bottom-left, opposite tilt */}
               <div
                 className="absolute bottom-2 left-0 w-56 h-40 rounded-xl overflow-hidden shadow-2xl border-4 border-white z-20"
                 style={{ transform: 'rotate(-5deg)' }}

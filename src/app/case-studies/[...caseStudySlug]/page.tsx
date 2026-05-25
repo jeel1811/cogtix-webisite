@@ -8,6 +8,7 @@ import ContactForm from '@/components/sections/ContactForm'
 import Container from '@/components/ui/Container'
 import { GET_SINGLE_CASE_STUDY_BY_SLUG } from '@/graphql/case-studies/query'
 import type { CaseStudyNode } from '@/components/sections/case-studies/types'
+import { buildMetadata } from '@/lib/seo'
 
 interface PageParams {
   caseStudySlug: string[]
@@ -135,45 +136,53 @@ export async function generateMetadata({
   const { caseStudySlug } = await params
   const slug = resolveSlug(caseStudySlug)
   if (!slug) {
-    return { title: 'Case Studies | Cogtix Solutions' }
+    return buildMetadata({
+      title: 'Case Study Not Found',
+      description: 'The case study you are looking for could not be found.',
+      path: '/case-studies',
+      noIndex: true,
+    })
   }
 
   const data = await getCaseStudy(slug)
   if (!data) {
-    return { title: 'Case Studies | Cogtix Solutions' }
+    return buildMetadata({
+      title: 'Case Study Not Found',
+      description: 'The case study you are looking for could not be found.',
+      path: `/case-studies/${slug}`,
+      noIndex: true,
+    })
   }
 
+  const projectName =
+    data.caseStudy?.projectName || data.title || 'Case Study'
   const title =
     data.caseStudy?.metaTitle ||
-    data.caseStudy?.projectName ||
-    data.title ||
-    'Case Study'
+    `${projectName} Case Study`
   const description =
     data.caseStudy?.metaDescription ||
     data.caseStudy?.shortPreviewDescription ||
     data.caseStudy?.projectOverview ||
-    'Case study from Cogtix Solutions.'
-  const url = `https://www.cogtix.com/case-studies/${data.slug}`
+    `Read how Cogtix Solutions delivered the ${projectName} project.`
+  const image =
+    data.caseStudy?.projectImages?.firstImage?.mediaItemUrl || undefined
 
-  return {
-    title: `${title} | Cogtix Solutions`,
+  const keywords = [
+    `${projectName} case study`,
+    projectName,
+    'Cogtix case study',
+    'software development case study',
+    'product engineering success story',
+  ]
+
+  return buildMetadata({
+    title,
     description,
-    alternates: { canonical: url },
-    openGraph: {
-      title: `${title} | Cogtix Solutions`,
-      description,
-      url,
-      type: 'article',
-      siteName: 'Cogtix Solutions',
-      images: ['https://www.cogtix.com/twitterimg.webp'],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: `${title} | Cogtix Solutions`,
-      description,
-      images: ['https://www.cogtix.com/twitterimg.webp'],
-    },
-  }
+    path: `/case-studies/${data.slug}`,
+    image,
+    ogType: 'article',
+    keywords,
+  })
 }
 
 export default async function CaseStudyDetailPage({

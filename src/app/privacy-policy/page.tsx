@@ -1,11 +1,22 @@
+import type { Metadata } from 'next'
 import Container from '@/components/ui/Container'
 import Awards from '@/components/sections/Awards'
 import Offices from '@/components/sections/Offices'
+import { buildMetadata } from '@/lib/seo'
 
-export const metadata = {
-  title: 'Privacy Policy | Cogtix Solutions',
-  description: 'At Cogtix Solutions, we prioritize your privacy. Learn about the types of information we collect, record, and how we use it in our Privacy Policy.',
-}
+export const metadata: Metadata = buildMetadata({
+  title: 'Privacy Policy | How Cogtix Solutions Handles Your Data',
+  description:
+    'Read the Cogtix Solutions Privacy Policy. Learn what data we collect, how we use it, how it is stored and shared, and what choices and rights you have as a visitor and client.',
+  path: '/privacy-policy',
+  keywords: [
+    'Cogtix privacy policy',
+    'Cogtix data protection',
+    'GDPR privacy policy',
+    'cookies policy Cogtix',
+    'data handling Cogtix',
+  ],
+})
 
 export default function PrivacyPolicy() {
   return (

@@ -6,29 +6,26 @@ import queryGraphql from '@/components/queryGraphql/index';
 import { WORDPRESS_BLOG_CATEGORY } from '@/constants/index';
 import { BLOGS_LIST } from '@/graphql/blogs/query';
 import type { BlogEdge } from '@/components/sections/blogs/types';
+import { buildMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Blogs & Articles | Cogtix',
+export const metadata: Metadata = buildMetadata({
+  title:
+    'Engineering Blogs & Articles | Cloud, AI, Data, .NET & Product Delivery',
   description:
-    'Explore insights and trends in software development, cloud technologies, digital transformation, and enterprise solutions from Cogtix experts.',
-  alternates: { canonical: 'https://www.cogtix.com/blogs' },
-  openGraph: {
-    title: 'Blogs & Articles | Cogtix',
-    description:
-      'Explore insights and trends in software development, cloud technologies, digital transformation, and enterprise solutions from Cogtix experts.',
-    url: 'https://www.cogtix.com/blogs',
-    type: 'website',
-    siteName: 'Cogtix Solutions',
-    images: ['https://www.cogtix.com/twitterimg.webp'],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Blogs & Articles | Cogtix',
-    description:
-      'Explore insights and trends in software development, cloud technologies, digital transformation, and enterprise solutions from Cogtix experts.',
-    images: ['https://www.cogtix.com/twitterimg.webp'],
-  },
-};
+    'Read Cogtix Solutions engineering blogs on software development, cloud, AI/ML, data engineering, .NET, Microsoft technologies, DevOps, and modern product delivery.',
+  path: '/blogs',
+  keywords: [
+    'software development blog',
+    'cloud engineering blog',
+    'AI ML blog articles',
+    'data engineering blog',
+    'DevOps articles',
+    '.NET development blog',
+    'Microsoft technologies blog',
+    'product engineering insights',
+    'Cogtix blog',
+  ],
+});
 
 async function getBlogs(): Promise<BlogEdge[]> {
   try {

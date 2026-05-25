@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Hero from "@/components/sections/Hero";
 import HappyClients from "@/components/sections/HappyClients";
 import AboutUs from "@/components/sections/AboutUs";
@@ -10,6 +11,28 @@ import Testimonials from "@/components/sections/Testimonials";
 import EngineeringServices from "@/components/sections/EngineeringServices";
 import WhoWeWorkWith from "@/components/sections/WhoWeWorkWith";
 import HomeCaseStudiesSection from "@/components/sections/HomeCaseStudiesSection";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildMetadata({
+  title:
+    "Custom Software, Cloud & AI Engineering Partner | Cogtix Solutions",
+  description:
+    "Cogtix Solutions builds custom software, cloud platforms, AI/ML systems, and data products for clients in the USA, UK, India, and Australia. Get an engineering partner that ships.",
+  path: "/",
+  keywords: [
+    "custom software development company",
+    "cloud transformation services",
+    "AI ML development company",
+    "data engineering services",
+    "Microsoft technology partner",
+    "product engineering company",
+    "software development USA",
+    "software development India",
+    "Cogtix Solutions",
+    "dedicated development team",
+    "offshore software development",
+  ],
+});
 
 export default function Home() {
   return (

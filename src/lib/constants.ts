@@ -49,7 +49,7 @@ export const NAV_ITEMS: NavItem[] = [
     label: 'Engineering',
     href: '/services',
     children: [
-      { label: 'AI/ML Engineering', href: '/services/gen-ai-ml-development' },
+      { label: 'AI/ML Engineering', href: '/services/ai-ml-development' },
       {
         label: 'Cloud & DevOps Engineering',
         href: '/services/cloud-devops-engineering',
@@ -59,7 +59,7 @@ export const NAV_ITEMS: NavItem[] = [
         href: '/services/digital-experience-engineering',
       },
       { label: 'Data Engineering', href: '/services/data-engineering' },
-      { label: 'Enterprise Services', href: '/services/enterprise-solutions' },
+      { label: 'Enterprise Solutions', href: '/services/enterprise-solutions' },
       {
         label: 'Microsoft Technologies',
         href: '/services/microsoft-technologies',

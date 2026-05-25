@@ -7,29 +7,32 @@ import JobList from '@/components/sections/careers/JobList'
 import WhyJoinUs from '@/components/sections/careers/WhyJoinUs'
 import ContactForm from '@/components/sections/ContactForm'
 import type { CareerEdge } from '@/components/sections/careers/types'
+import { buildMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Careers at Cogtix Solutions | Join Our Team',
+export const metadata: Metadata = buildMetadata({
+  title:
+    'Careers at Cogtix Solutions | Software Engineering, Design & PM Jobs',
   description:
-    'Explore career opportunities at Cogtix Solutions! Discover our open positions, learn about our company culture, employee benefits, and find out how to join our talented team.',
-  alternates: { canonical: 'https://www.cogtix.com/careers' },
-  openGraph: {
-    title: 'Careers at Cogtix Solutions | Join Our Team',
-    description:
-      'Explore open roles at Cogtix Solutions. Build software for clients across the globe.',
-    url: 'https://www.cogtix.com/careers',
-    type: 'website',
-    siteName: 'Cogtix Solutions',
-    images: ['https://www.cogtix.com/twitterimg.webp'],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Careers at Cogtix Solutions | Join Our Team',
-    description:
-      'Explore open roles at Cogtix Solutions. Build software for clients across the globe.',
-    images: ['https://www.cogtix.com/twitterimg.webp'],
-  },
-}
+    'Build the next generation of software with Cogtix Solutions. Browse open roles for engineers, designers, PMs, and operations across the USA, UK, India, and Australia.',
+  path: '/careers',
+  keywords: [
+    'careers at Cogtix',
+    'software engineering jobs',
+    'remote software jobs India',
+    'frontend developer jobs',
+    'backend developer jobs',
+    'full stack developer jobs',
+    'mobile app developer jobs',
+    'DevOps engineer jobs',
+    'data engineer jobs',
+    'AI ML engineer jobs',
+    'UX designer jobs',
+    'project manager jobs',
+    'tech jobs Ahmedabad',
+    'cogtix jobs',
+    'careers in software company',
+  ],
+})
 
 async function getCareers(): Promise<CareerEdge[]> {
   try {

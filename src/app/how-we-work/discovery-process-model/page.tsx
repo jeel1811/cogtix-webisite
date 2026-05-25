@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import HowWeWorkHero from '@/components/sections/HowWeWorkHero'
 import AnimatedSection from '@/components/sections/AnimatedSection'
 import AnimatedCard from '@/components/sections/AnimatedCard'
@@ -6,10 +7,25 @@ import Container from '@/components/ui/Container'
 import Link from 'next/link'
 import { siteCtasContent } from '@/i18n/messages'
 import { CTA_LINKS } from '@/lib/cta'
+import { buildMetadata } from '@/lib/seo'
 
-export const metadata = {
-  title: 'Discovery Process Model - How We Work',
-}
+export const metadata: Metadata = buildMetadata({
+  title:
+    'Discovery Process Model | Product Discovery, Architecture & Prototyping',
+  description:
+    'Lower delivery risk with a structured product discovery from Cogtix Solutions. Research, technical architecture, UX prototypes, and an executable roadmap before a line of code is shipped.',
+  path: '/how-we-work/discovery-process-model',
+  keywords: [
+    'product discovery process',
+    'software discovery phase',
+    'technical discovery services',
+    'product roadmap consulting',
+    'software architecture discovery',
+    'UX research and prototyping',
+    'pre-development discovery',
+    'discovery and delivery model',
+  ],
+})
 
 export default function DiscoveryProcessModelPage() {
 

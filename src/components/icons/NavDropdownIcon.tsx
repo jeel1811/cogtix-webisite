@@ -36,7 +36,7 @@ const AwsLogo = ({ className }: IconProps) => (
   <FaAws className={className} color="#FF9900" aria-hidden />
 )
 
-/** English nav labels from NAV_ITEMS — used as stable icon lookup keys. */
+/** English nav labels from NAV_ITEMS : used as stable icon lookup keys. */
 const NAV_DROPDOWN_ICONS: Record<string, ComponentType<IconProps>> = {
   // Engineering
   'AI/ML Engineering': BrainCircuit,

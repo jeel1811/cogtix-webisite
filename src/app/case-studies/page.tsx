@@ -7,29 +7,26 @@ import { WORDPRESS_CASE_STUDIES_CATEGORY } from '@/constants/index'
 import { CASE_STUDIES_LIST } from '@/graphql/case-studies/query'
 import type { CaseStudyEdge } from '@/components/sections/case-studies/types'
 import HappyClients from '@/components/sections/HappyClients'
+import { buildMetadata } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Case Studies & Success Stories | Cogtix',
+export const metadata: Metadata = buildMetadata({
+  title:
+    'Case Studies | Cloud, AI, Data & Product Engineering Success Stories',
   description:
-    'Explore how Cogtix has partnered with leading enterprises and startups to deliver transformative digital solutions and measurable business impact.',
-  alternates: { canonical: 'https://www.cogtix.com/case-studies' },
-  openGraph: {
-    title: 'Case Studies & Success Stories | Cogtix',
-    description:
-      'Explore how Cogtix has partnered with leading enterprises and startups to deliver transformative digital solutions and measurable business impact.',
-    url: 'https://www.cogtix.com/case-studies',
-    type: 'website',
-    siteName: 'Cogtix Solutions',
-    images: ['https://www.cogtix.com/twitterimg.webp'],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Case Studies & Success Stories | Cogtix',
-    description:
-      'Explore how Cogtix has partnered with leading enterprises and startups to deliver transformative digital solutions and measurable business impact.',
-    images: ['https://www.cogtix.com/twitterimg.webp'],
-  },
-}
+    'See how Cogtix Solutions partners with enterprises and startups to ship cloud, AI, data, and product engineering wins. Browse case studies and measurable business outcomes.',
+  path: '/case-studies',
+  keywords: [
+    'case studies',
+    'software development case studies',
+    'cloud migration case studies',
+    'AI ML case studies',
+    'data engineering case studies',
+    'product engineering success stories',
+    'Cogtix client work',
+    'enterprise software case studies',
+    'SaaS development case studies',
+  ],
+})
 
 async function getCaseStudies(): Promise<CaseStudyEdge[]> {
   try {

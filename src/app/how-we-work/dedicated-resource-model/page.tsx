@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import HowWeWorkHero from '@/components/sections/HowWeWorkHero'
 import AnimatedSection from '@/components/sections/AnimatedSection'
 import AnimatedCard from '@/components/sections/AnimatedCard'
@@ -7,10 +8,26 @@ import Link from 'next/link'
 import { BrainCircuit, BriefcaseBusiness, Gauge, Users, Workflow } from 'lucide-react'
 import { siteCtasContent } from '@/i18n/messages'
 import { CTA_LINKS } from '@/lib/cta'
+import { buildMetadata } from '@/lib/seo'
 
-export const metadata = {
-  title: 'Dedicated Resource Model - How We Work',
-}
+export const metadata: Metadata = buildMetadata({
+  title:
+    'Dedicated Resource Model | Hire Dedicated Software Development Teams',
+  description:
+    'Hire a dedicated software development team from Cogtix Solutions. Full-time, part-time, or hourly engineers, designers, and PMs that integrate with your in-house processes.',
+  path: '/how-we-work/dedicated-resource-model',
+  keywords: [
+    'dedicated development team',
+    'dedicated software developers',
+    'hire dedicated team',
+    'staff augmentation services',
+    'team augmentation company',
+    'extended development team',
+    'offshore dedicated team',
+    'dedicated remote developers',
+    'engineering team as a service',
+  ],
+})
 
 export default function DedicatedResourceModelPage() {
   const benefits = [

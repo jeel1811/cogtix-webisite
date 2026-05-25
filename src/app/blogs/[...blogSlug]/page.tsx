@@ -8,6 +8,7 @@ import Image from 'next/image';
 import Link from "next/link";
 import { Calendar, User, ChevronLeft } from "lucide-react";
 import ContactForm from "@/components/sections/ContactForm";
+import { DEFAULT_OG_IMAGE, buildMetadata } from "@/lib/seo";
 
 interface BlogDetailPageProps {
   params: Promise<{
@@ -25,6 +26,40 @@ async function getBlog(slug: string): Promise<BlogNode | null> {
   }
 }
 
+function stripHtml(value: string) {
+  return value
+    .replace(/<[^>]*>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function deriveKeywords(title: string, category?: string | null): string[] {
+  const baseTokens = title
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}\s-]/gu, "")
+    .split(/\s+/)
+    .filter((word) => word.length > 3)
+    .slice(0, 6);
+
+  const tokenKeywords = baseTokens.length
+    ? [baseTokens.join(" "), ...baseTokens]
+    : [];
+
+  const categoryKeywords = category
+    ? [`${category} blog`, `${category} article`, `${category} insights`]
+    : [];
+
+  return Array.from(
+    new Set([
+      title,
+      ...tokenKeywords,
+      ...categoryKeywords,
+      "Cogtix blog",
+      "software engineering blog",
+    ]),
+  );
+}
+
 export async function generateMetadata(
   props: BlogDetailPageProps,
 ): Promise<Metadata> {
@@ -32,53 +67,47 @@ export async function generateMetadata(
   const slug = params.blogSlug?.[0];
 
   if (!slug) {
-    return {
-      title: "Blog Not Found | Cogtix",
+    return buildMetadata({
+      title: "Blog Not Found",
       description: "The blog post you are looking for could not be found.",
-    };
+      path: "/blogs",
+      noIndex: true,
+    });
   }
 
   const blog = await getBlog(slug);
 
   if (!blog) {
-    return {
-      title: "Blog Not Found | Cogtix",
+    return buildMetadata({
+      title: "Blog Not Found",
       description: "The blog post you are looking for could not be found.",
-    };
+      path: `/blogs/${slug}`,
+      noIndex: true,
+    });
   }
 
   const title = blog.blogs?.blogTitle || blog.title || "Blog Post";
   const description =
-    blog.blogs?.previewDesc ||
-    blog.blogs?.blogDescription ||
-    "Read this article on Cogtix";
+    stripHtml(
+      blog.blogs?.previewDesc ||
+        blog.blogs?.blogDescription ||
+        "Read this article on Cogtix Solutions.",
+    ).slice(0, 200);
   const image =
-    blog.featuredImage?.node?.mediaItemUrl ||
-    "https://www.cogtix.com/twitterimg.webp";
-  const url = `https://www.cogtix.com/blogs/${slug}`;
+    blog.featuredImage?.node?.mediaItemUrl || DEFAULT_OG_IMAGE;
+  const category = blog.blogs?.blogCategory ?? null;
 
-  return {
-    title: `${title} | Cogtix`,
+  return buildMetadata({
+    title,
     description,
-    alternates: { canonical: url },
-    openGraph: {
-      title,
-      description,
-      url,
-      type: "article",
-      siteName: "Cogtix Solutions",
-      publishedTime: blog.date,
-      modifiedTime: blog.modified,
-      authors: ["Akash Limbani"],
-      images: [image],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [image],
-    },
-  };
+    path: `/blogs/${slug}`,
+    image,
+    ogType: "article",
+    publishedTime: blog.date,
+    modifiedTime: blog.modified,
+    authors: ["Cogtix Solutions"],
+    keywords: deriveKeywords(title, category),
+  });
 }
 
 function formatDate(dateString: string) {
@@ -87,13 +116,6 @@ function formatDate(dateString: string) {
     month: "long",
     day: "numeric",
   });
-}
-
-function stripHtml(value: string) {
-  return value
-    .replace(/<[^>]*>/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
 }
 
 export default async function BlogDetailPage(props: BlogDetailPageProps) {

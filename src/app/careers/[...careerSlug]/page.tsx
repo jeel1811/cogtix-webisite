@@ -6,6 +6,7 @@ import CareerDetailHero from '@/components/sections/careers/CareerDetailHero'
 import JobDetails from '@/components/sections/careers/JobDetails'
 import ContactForm from '@/components/sections/ContactForm'
 import type { CareerNode } from '@/components/sections/careers/types'
+import { buildMetadata } from '@/lib/seo'
 
 interface PageParams {
   careerSlug: string[]
@@ -34,36 +35,50 @@ export async function generateMetadata({
   const { careerSlug } = await params
   const slug = resolveSlug(careerSlug)
   if (!slug) {
-    return { title: 'Careers | Cogtix Solutions' }
+    return buildMetadata({
+      title: 'Job Not Found',
+      description: 'The role you are looking for is no longer open.',
+      path: '/careers',
+      noIndex: true,
+    })
   }
 
   const data = await getCareer(slug)
   if (!data) {
-    return { title: 'Careers | Cogtix Solutions' }
+    return buildMetadata({
+      title: 'Job Not Found',
+      description: 'The role you are looking for is no longer open.',
+      path: `/careers/${slug}`,
+      noIndex: true,
+    })
   }
 
-  const url = `https://www.cogtix.com/careers/${data.slug}`
-  return {
-    title: `${data.title} | Cogtix Solutions Careers`,
-    description: `Apply for ${data.title} at Cogtix Solutions. ${
-      data.careers?.jobLocation ?? ''
-    } ${data.careers?.jobType ?? ''}`.trim(),
-    alternates: { canonical: url },
-    openGraph: {
-      title: `${data.title} | Cogtix Solutions Careers`,
-      description: `Open role at Cogtix Solutions :  ${data.title}.`,
-      url,
-      type: 'website',
-      siteName: 'Cogtix Solutions',
-      images: ['https://www.cogtix.com/twitterimg.webp'],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: `${data.title} | Cogtix Solutions Careers`,
-      description: `Open role at Cogtix Solutions :  ${data.title}.`,
-      images: ['https://www.cogtix.com/twitterimg.webp'],
-    },
-  }
+  const location = data.careers?.jobLocation ?? ''
+  const jobType = data.careers?.jobType ?? ''
+  const detailsLine = [location, jobType].filter(Boolean).join(' · ')
+
+  const title = `${data.title} | Apply for this Role`
+  const description = detailsLine
+    ? `Apply for ${data.title} at Cogtix Solutions (${detailsLine}). Join a global product engineering team building cloud, AI, data, and Microsoft technology solutions.`
+    : `Apply for ${data.title} at Cogtix Solutions. Join a global product engineering team building cloud, AI, data, and Microsoft technology solutions.`
+
+  const keywords = [
+    data.title,
+    `${data.title} jobs`,
+    `${data.title} role`,
+    `${data.title} hiring`,
+    location ? `${data.title} in ${location}` : '',
+    jobType ? `${jobType} ${data.title}` : '',
+    'Cogtix careers',
+    'software engineering jobs',
+  ].filter(Boolean) as string[]
+
+  return buildMetadata({
+    title,
+    description,
+    path: `/careers/${data.slug}`,
+    keywords,
+  })
 }
 
 export default async function CareerDetailPage({

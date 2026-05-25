@@ -439,7 +439,7 @@ p {
   scrollbar-width: none;
 }
 
-/* Calendly inline widget — parent + iframe need explicit height */
+/* Calendly inline widget : parent + iframe need explicit height */
 .calendly-embed-root {
   width: 100%;
   overflow: visible;
