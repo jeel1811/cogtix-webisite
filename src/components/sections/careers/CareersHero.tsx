@@ -92,7 +92,7 @@ function CareersVisual() {
       <div className="relative aspect-[16/9] w-full max-w-lg animate-[float-y-soft_8s_ease-in-out_infinite]">
         <div className="relative z-10 h-full w-full overflow-hidden rounded-2xl shadow-xl ring-1 ring-black/5 bg-white">
           <Image
-            src="/images/careers/careers_hero_real.webp"
+            src="/images/careers/careers_hero_real.png"
             alt="Careers at Cogtix"
             fill
             className="object-cover object-center transition-transform duration-700 hover:scale-105"
