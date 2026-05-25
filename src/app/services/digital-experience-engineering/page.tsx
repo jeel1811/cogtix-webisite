@@ -2,9 +2,7 @@ import type { Metadata } from 'next'
 import JsonLd from '@/components/seo/JsonLd'
 import ServicePageView from '@/components/sections/ServicePageView'
 import {
-  PRIMARY_PHONE_DISPLAY,
   buildBreadcrumbJsonLd,
-  buildFaqJsonLd,
   buildMetadata,
   buildServiceJsonLd,
 } from '@/lib/seo'
@@ -80,45 +78,6 @@ const SERVICE_OFFERS = [
   },
 ]
 
-const FAQS = [
-  {
-    question:
-      'What digital experience engineering services does Cogtix Solutions offer?',
-    answer:
-      'Cogtix designs and builds digital products end to end. Our practice covers UX research, product design, design systems, React and Next.js frontends, Vue and Angular apps, mobile apps on Flutter and React Native, headless commerce, and Core Web Vitals plus accessibility engineering.',
-  },
-  {
-    question:
-      'How do I hire frontend developers or UX designers from Cogtix?',
-    answer:
-      'Call ' +
-      PRIMARY_PHONE_DISPLAY +
-      ' or email info@cogtix.com. We share vetted designer and engineer profiles within five business days. Engagement models include dedicated team, time and materials, and fixed scope delivery.',
-  },
-  {
-    question: 'Can Cogtix Solutions design and ship a SaaS product from scratch?',
-    answer:
-      'Yes. We pair product designers, frontend engineers, backend engineers, and a delivery lead to ship MVPs in eight to twelve weeks. Discovery, design, and engineering happen in overlapping tracks so you reach a usable product faster.',
-  },
-  {
-    question:
-      'Do you build accessible and WCAG 2.2 compliant web applications?',
-    answer:
-      'Yes. We follow WCAG 2.2 AA as a default. Every release runs through automated axe core checks, manual keyboard and screen reader audits, and a remediation backlog. We also help teams reach AAA where regulated industries require it.',
-  },
-  {
-    question:
-      'How do you support Core Web Vitals and Lighthouse performance scores?',
-    answer:
-      'We treat Core Web Vitals as engineering acceptance criteria, not afterthoughts. We tune images, fonts, bundle splitting, server side rendering, and caching to land LCP, INP, and CLS scores in the green and we report Real User Monitoring numbers monthly.',
-  },
-  {
-    question:
-      'Do you build mobile apps on Flutter, React Native, or native iOS and Android?',
-    answer:
-      'All four. We pick the stack based on team size, performance needs, and store strategy. Flutter and React Native suit shared codebase builds, while native Swift or Kotlin wins for advanced device features and graphics heavy experiences.',
-  },
-]
 
 export default function DigitalExperienceEngineeringPage() {
   const serviceJsonLd = buildServiceJsonLd({
@@ -135,13 +94,10 @@ export default function DigitalExperienceEngineeringPage() {
     { name: 'Digital and Experience Engineering', path: PAGE_PATH },
   ])
 
-  const faqJsonLd = buildFaqJsonLd(FAQS)
-
   return (
     <>
       <JsonLd id="service-jsonld-experience" data={serviceJsonLd} />
       <JsonLd id="breadcrumb-jsonld-experience" data={breadcrumbJsonLd} />
-      <JsonLd id="faq-jsonld-experience" data={faqJsonLd} />
       <ServicePageView variant="experience" />
     </>
   )

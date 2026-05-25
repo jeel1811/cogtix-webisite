@@ -2,9 +2,7 @@ import type { Metadata } from 'next'
 import JsonLd from '@/components/seo/JsonLd'
 import ServicePageView from '@/components/sections/ServicePageView'
 import {
-  PRIMARY_PHONE_DISPLAY,
   buildBreadcrumbJsonLd,
-  buildFaqJsonLd,
   buildMetadata,
   buildServiceJsonLd,
 } from '@/lib/seo'
@@ -79,45 +77,6 @@ const SERVICE_OFFERS = [
   },
 ]
 
-const FAQS = [
-  {
-    question:
-      'Which cloud platforms does Cogtix Solutions deliver DevOps and migration work on?',
-    answer:
-      'Cogtix delivers production cloud and DevOps engineering on AWS, Microsoft Azure, and Google Cloud. We hold the certifications and partner standings needed to lead migrations, Kubernetes platforms, serverless modernization, and FinOps programs on all three providers.',
-  },
-  {
-    question:
-      'How do I hire Cogtix Solutions for cloud and DevOps consulting?',
-    answer:
-      'Call ' +
-      PRIMARY_PHONE_DISPLAY +
-      ' or email info@cogtix.com. We start with a free discovery call, then propose a dedicated team or fixed scope engagement. Most cloud programs kick off within two to four weeks of contract signature.',
-  },
-  {
-    question:
-      'What does a typical cloud migration to AWS or Azure look like?',
-    answer:
-      'We baseline workloads with Migration Hub or Azure Migrate, design a landing zone in week one, then migrate in two week waves. A mid market estate typically completes core migration in eight to fourteen weeks, with FinOps and observability baked in before cutover.',
-  },
-  {
-    question: 'Can Cogtix manage a production Kubernetes cluster for us?',
-    answer:
-      'Yes. We run managed Kubernetes engagements on EKS, AKS, and GKE with on call coverage, upgrade runbooks, GitOps delivery, policy enforcement, and capacity planning. SLAs and on call windows are agreed up front.',
-  },
-  {
-    question:
-      'How quickly can Cogtix Solutions place a dedicated DevOps engineer?',
-    answer:
-      'Most DevOps engineers can start within two to four weeks after profile approval. We coordinate access to your cloud accounts, SSO, and tooling so the engineer can deploy infrastructure changes and improve pipelines from week one.',
-  },
-  {
-    question:
-      'Does Cogtix Solutions help reduce cloud bills with FinOps practices?',
-    answer:
-      'Yes. Our FinOps program typically drives twenty to forty percent savings within ninety days by combining tagging governance, commitment plans, right sizing, lifecycle policies, and a monthly review with engineering and finance leads.',
-  },
-]
 
 export default function CloudDevOpsPage() {
   const serviceJsonLd = buildServiceJsonLd({
@@ -134,13 +93,10 @@ export default function CloudDevOpsPage() {
     { name: 'Cloud and DevOps Engineering', path: PAGE_PATH },
   ])
 
-  const faqJsonLd = buildFaqJsonLd(FAQS)
-
   return (
     <>
       <JsonLd id="service-jsonld-cloud" data={serviceJsonLd} />
       <JsonLd id="breadcrumb-jsonld-cloud" data={breadcrumbJsonLd} />
-      <JsonLd id="faq-jsonld-cloud" data={faqJsonLd} />
       <ServicePageView variant="cloud" />
     </>
   )

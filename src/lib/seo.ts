@@ -123,17 +123,6 @@ export function buildMetadata(input: PageSeoInput): Metadata {
             'max-video-preview': -1,
           },
         },
-    other: {
-      'contact:phone_number': PRIMARY_PHONE_DISPLAY,
-      'contact:email': PRIMARY_EMAIL,
-      'business:contact_data:phone_number': PRIMARY_PHONE_DISPLAY,
-      'business:contact_data:email': PRIMARY_EMAIL,
-      'business:contact_data:country_name': 'India',
-      'business:contact_data:locality': 'Ahmedabad',
-      'business:contact_data:region': 'Gujarat',
-      'geo.region': 'IN-GJ',
-      'geo.placename': 'Ahmedabad',
-    },
   }
 
   if (ogType === 'article') {
@@ -227,9 +216,11 @@ export function buildLocalBusinessJsonLd() {
     '@type': 'ProfessionalService',
     '@id': `${SITE_URL}/#organization`,
     name: SITE_NAME,
+    description:
+      'Cogtix Solutions is a product engineering services company providing custom software, cloud, AI/ML, data, and Microsoft technology delivery from Ahmedabad, India to clients across the USA, UK, India, and Australia.',
     url: SITE_URL,
     logo: `${SITE_URL}/cogtix.svg`,
-    image: DEFAULT_OG_IMAGE,
+    image: [DEFAULT_OG_IMAGE, `${SITE_URL}/cogtix.svg`],
     priceRange: '$$',
     telephone: PRIMARY_PHONE_E164,
     email: PRIMARY_EMAIL,
@@ -248,10 +239,12 @@ export function buildLocalBusinessJsonLd() {
       postalCode: '380058',
       addressCountry: 'IN',
     },
+    // Google requires geo precision of at least 5 decimal places. Strings
+    // are used so trailing zeros are preserved in the emitted JSON.
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: '23.0395',
-      longitude: '72.4796',
+      latitude: '23.03950',
+      longitude: '72.47960',
     },
     openingHoursSpecification: [
       {
@@ -338,20 +331,47 @@ export function buildServiceJsonLd(input: {
 }
 
 /**
- * Build a FAQPage JSON-LD payload from a list of Q+A pairs.
- * Lets Google show expandable FAQ rich-results under service / industry pages.
+ * Build an `Article` JSON-LD payload for blog / insights detail pages.
+ *
+ * Per Google Search Central, an Article is eligible for the Article rich
+ * result when it carries headline, image, author, publisher, datePublished,
+ * and dateModified.
+ *
+ * Reference: https://developers.google.com/search/docs/appearance/structured-data/article
  */
-export function buildFaqJsonLd(items: Array<{ question: string; answer: string }>) {
+export function buildArticleJsonLd(input: {
+  headline: string
+  description: string
+  path: string
+  image: string
+  authorName?: string
+  datePublished?: string
+  dateModified?: string
+}) {
+  const url = absoluteUrl(input.path)
   return {
     '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: items.map((item) => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer,
+    '@type': 'Article',
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    headline: input.headline,
+    description: input.description,
+    image: [input.image],
+    url,
+    author: {
+      '@type': input.authorName ? 'Person' : 'Organization',
+      name: input.authorName ?? SITE_NAME,
+      ...(input.authorName ? {} : { url: SITE_URL }),
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      url: SITE_URL,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE_URL}/cogtix.svg`,
       },
-    })),
+    },
+    datePublished: input.datePublished,
+    dateModified: input.dateModified ?? input.datePublished,
   }
 }

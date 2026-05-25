@@ -2,9 +2,7 @@ import type { Metadata } from 'next'
 import JsonLd from '@/components/seo/JsonLd'
 import ServicePageView from '@/components/sections/ServicePageView'
 import {
-  PRIMARY_PHONE_DISPLAY,
   buildBreadcrumbJsonLd,
-  buildFaqJsonLd,
   buildMetadata,
   buildServiceJsonLd,
 } from '@/lib/seo'
@@ -77,45 +75,6 @@ const SERVICE_OFFERS = [
   },
 ]
 
-const FAQS = [
-  {
-    question:
-      'What enterprise software services does Cogtix Solutions provide?',
-    answer:
-      'Cogtix delivers enterprise software services across legacy modernization, ERP and CRM customization, enterprise integration on MuleSoft and iPaaS platforms, BPM and workflow automation, custom application engineering, and enterprise security and compliance programs.',
-  },
-  {
-    question:
-      'How do I engage Cogtix Solutions for an enterprise modernization program?',
-    answer:
-      'Call ' +
-      PRIMARY_PHONE_DISPLAY +
-      ' or email info@cogtix.com. We start with a current state assessment, share an executive summary with risk and ROI, and propose a wave based modernization plan that fits your budget cycle.',
-  },
-  {
-    question: 'Do you customize Dynamics 365 and Salesforce platforms?',
-    answer:
-      'Yes. We build PCF controls, plugins, Power Pages portals, and Dataverse integrations on Dynamics 365 and Apex, Lightning Web Components, and managed packages on Salesforce. Each engagement ships with ALM, test automation, and ongoing release support.',
-  },
-  {
-    question:
-      'How long does a legacy modernization or ERP rollout typically take?',
-    answer:
-      'A focused modernization wave usually completes in twelve to sixteen weeks. Full estate modernizations and global ERP rollouts run in three to six month phases with parallel pilots, change management, and a measurable cutover plan.',
-  },
-  {
-    question:
-      'Does Cogtix support SOC 2, ISO 27001, HIPAA, and GDPR for enterprise builds?',
-    answer:
-      'Yes. Our enterprise engagements ship with audit ready logging, identity hardening, encryption, and policy as code. We work under customer MSAs, NDAs, and security questionnaires and we map controls to SOC 2, ISO 27001, HIPAA, and GDPR.',
-  },
-  {
-    question:
-      'Can Cogtix provide a dedicated enterprise application team?',
-    answer:
-      'Yes. We assemble dedicated pods that combine enterprise architects, backend engineers, integration specialists, QA engineers, and a delivery lead. Pods integrate with your in house ceremonies and reporting expectations from week one.',
-  },
-]
 
 export default function EnterpriseSolutionsPage() {
   const serviceJsonLd = buildServiceJsonLd({
@@ -132,13 +91,10 @@ export default function EnterpriseSolutionsPage() {
     { name: 'Enterprise Services', path: PAGE_PATH },
   ])
 
-  const faqJsonLd = buildFaqJsonLd(FAQS)
-
   return (
     <>
       <JsonLd id="service-jsonld-enterprise" data={serviceJsonLd} />
       <JsonLd id="breadcrumb-jsonld-enterprise" data={breadcrumbJsonLd} />
-      <JsonLd id="faq-jsonld-enterprise" data={faqJsonLd} />
       <ServicePageView variant="enterprise" />
     </>
   )

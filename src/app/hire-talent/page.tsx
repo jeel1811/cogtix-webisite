@@ -30,8 +30,11 @@ export const metadata: Metadata = buildMetadata({
 function HireTalentLandingFallback() {
   return (
     <main className="min-h-[40vh] bg-white">
-      <div className="mx-auto max-w-6xl px-4 py-16 text-center text-slate-500">
-        Loading…
+      <div className="mx-auto max-w-6xl px-4 py-16 text-center">
+        <h1 className="text-3xl font-bold tracking-tight text-navy-900 md:text-4xl">
+          Hire vetted developers and engineering teams
+        </h1>
+        <p className="mt-3 text-slate-500">Loading roles and rates…</p>
       </div>
     </main>
   )

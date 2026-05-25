@@ -2,9 +2,7 @@ import type { Metadata } from 'next'
 import JsonLd from '@/components/seo/JsonLd'
 import ServicePageView from '@/components/sections/ServicePageView'
 import {
-  PRIMARY_PHONE_DISPLAY,
   buildBreadcrumbJsonLd,
-  buildFaqJsonLd,
   buildMetadata,
   buildServiceJsonLd,
 } from '@/lib/seo'
@@ -73,39 +71,6 @@ const SERVICE_OFFERS = [
   },
 ]
 
-const FAQS = [
-  {
-    question:
-      'What is included in a Cogtix experience design engagement?',
-    answer:
-      'A typical engagement covers UX research, journey design, information architecture, UI design, prototyping, design system work, and usability testing. We can also include design ops setup and handoff documentation for in house teams.',
-  },
-  {
-    question: 'How do I hire experience designers from Cogtix Solutions?',
-    answer:
-      'Call ' +
-      PRIMARY_PHONE_DISPLAY +
-      ' or email info@cogtix.com to start a discovery call. We share vetted designer profiles within five business days. Designers can be embedded into your team or work as a self contained design pod.',
-  },
-  {
-    question:
-      'Can Cogtix build a design system that engineers can actually use?',
-    answer:
-      'Yes. Our design systems ship as Figma libraries paired with engineered React, Vue, or Web Component packages, Storybook docs, accessibility guidance, and a contribution model. Designers and engineers maintain the system from the same source of truth.',
-  },
-  {
-    question:
-      'How long does a typical product redesign or MVP design phase take?',
-    answer:
-      'A focused product redesign or MVP design phase typically runs six to ten weeks, depending on scope. We work in two week design sprints with weekly stakeholder reviews and we hand off designs to engineering with annotated specs and component tokens.',
-  },
-  {
-    question:
-      'Do you provide design ops support for in house design teams?',
-    answer:
-      'Yes. We help in house teams set up Figma library governance, design QA processes, component contribution workflows, and onboarding playbooks. The goal is to leave your team able to scale design without us.',
-  },
-]
 
 export default function ExperienceDesignPage() {
   const serviceJsonLd = buildServiceJsonLd({
@@ -122,13 +87,10 @@ export default function ExperienceDesignPage() {
     { name: 'Experience Design', path: PAGE_PATH },
   ])
 
-  const faqJsonLd = buildFaqJsonLd(FAQS)
-
   return (
     <>
       <JsonLd id="service-jsonld-experience-design" data={serviceJsonLd} />
       <JsonLd id="breadcrumb-jsonld-experience-design" data={breadcrumbJsonLd} />
-      <JsonLd id="faq-jsonld-experience-design" data={faqJsonLd} />
       <ServicePageView variant="experience" />
     </>
   )

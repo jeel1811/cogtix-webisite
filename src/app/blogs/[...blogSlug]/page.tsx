@@ -8,7 +8,13 @@ import Image from 'next/image';
 import Link from "next/link";
 import { Calendar, User, ChevronLeft } from "lucide-react";
 import ContactForm from "@/components/sections/ContactForm";
-import { DEFAULT_OG_IMAGE, buildMetadata } from "@/lib/seo";
+import JsonLd from "@/components/seo/JsonLd";
+import {
+  DEFAULT_OG_IMAGE,
+  buildArticleJsonLd,
+  buildBreadcrumbJsonLd,
+  buildMetadata,
+} from "@/lib/seo";
 
 interface BlogDetailPageProps {
   params: Promise<{
@@ -158,8 +164,26 @@ export default async function BlogDetailPage(props: BlogDetailPageProps) {
   const date = formatDate(blog.date);
   const cleanedDescription = stripHtml(description);
 
+  const articleJsonLd = buildArticleJsonLd({
+    headline: title,
+    description: cleanedDescription || description || title,
+    path: `/blogs/${slug}`,
+    image: image || DEFAULT_OG_IMAGE,
+    authorName: "Cogtix Solutions",
+    datePublished: blog.date,
+    dateModified: blog.modified,
+  });
+
+  const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+    { name: "Home", path: "/" },
+    { name: "Blogs", path: "/blogs" },
+    { name: title, path: `/blogs/${slug}` },
+  ]);
+
   return (
     <div className="min-h-screen bg-white">
+      <JsonLd id="article-jsonld" data={articleJsonLd} />
+      <JsonLd id="breadcrumb-jsonld" data={breadcrumbJsonLd} />
       <section className="relative min-h-[calc(100svh-5rem)] overflow-hidden bg-slate-50 pt-16 pb-10 md:pt-20 md:pb-14">
         <Container className="relative z-10 flex min-h-[calc(100svh-5rem)] items-center">
           <div className="w-full">

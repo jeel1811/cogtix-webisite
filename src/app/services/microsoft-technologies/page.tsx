@@ -2,9 +2,7 @@ import type { Metadata } from 'next'
 import JsonLd from '@/components/seo/JsonLd'
 import ServicePageView from '@/components/sections/ServicePageView'
 import {
-  PRIMARY_PHONE_DISPLAY,
   buildBreadcrumbJsonLd,
-  buildFaqJsonLd,
   buildMetadata,
   buildServiceJsonLd,
 } from '@/lib/seo'
@@ -82,45 +80,6 @@ const SERVICE_OFFERS = [
   },
 ]
 
-const FAQS = [
-  {
-    question:
-      'Is Cogtix Solutions a certified Microsoft Solutions Partner?',
-    answer:
-      'Yes. Cogtix is a Microsoft Solutions Partner with designations across Azure, Data and AI, and Business Applications. Our engineers and architects hold active certifications across Azure, Power Platform, Dynamics 365, and Microsoft 365 disciplines.',
-  },
-  {
-    question: 'How do I hire .NET or Azure engineers from Cogtix Solutions?',
-    answer:
-      'Call ' +
-      PRIMARY_PHONE_DISPLAY +
-      ' or email info@cogtix.com. We share vetted .NET, Azure, Power Platform, and Dynamics 365 profiles within five business days and engineers can start in two to four weeks.',
-  },
-  {
-    question:
-      'Can Cogtix modernize a legacy .NET Framework application to .NET 8?',
-    answer:
-      'Yes. We use the strangler fig pattern to migrate legacy ASP.NET Framework monoliths to .NET 8 services on AKS or Azure Container Apps. Each wave ships with OpenTelemetry, Application Insights, and CI CD on Azure DevOps or GitHub.',
-  },
-  {
-    question:
-      'Do you stand up a Power Platform Center of Excellence for governance?',
-    answer:
-      'Yes. We deploy the official CoE Starter Kit, define an environment strategy, set DLP policies, build a Dataverse domain model, and ship an ALM pipeline on Power Platform Pipelines so citizen development scales safely.',
-  },
-  {
-    question:
-      'Can Cogtix migrate workloads from on premises to Microsoft Azure?',
-    answer:
-      'Yes. We follow the Cloud Adoption Framework and Azure Well Architected. Engagements include a portfolio assessment in Azure Migrate, a Bicep based landing zone, wave based migration, and a FinOps baseline with tagging and budgets.',
-  },
-  {
-    question:
-      'Do you build Azure OpenAI copilots that are safe for the enterprise?',
-    answer:
-      'Yes. Our copilots run on Azure OpenAI with private endpoints, managed identity, content safety filters, and Prompt Flow evaluation. We pair every rollout with Application Insights dashboards for tokens, latency, and grounding rate.',
-  },
-]
 
 export default function MicrosoftTechnologiesPage() {
   const serviceJsonLd = buildServiceJsonLd({
@@ -137,13 +96,10 @@ export default function MicrosoftTechnologiesPage() {
     { name: 'Microsoft Technologies', path: PAGE_PATH },
   ])
 
-  const faqJsonLd = buildFaqJsonLd(FAQS)
-
   return (
     <>
       <JsonLd id="service-jsonld-microsoft" data={serviceJsonLd} />
       <JsonLd id="breadcrumb-jsonld-microsoft" data={breadcrumbJsonLd} />
-      <JsonLd id="faq-jsonld-microsoft" data={faqJsonLd} />
       <ServicePageView variant="microsoft" />
     </>
   )

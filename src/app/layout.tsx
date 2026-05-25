@@ -6,8 +6,6 @@ import Footer from "@/components/layout/Footer";
 import { I18nProvider } from "@/i18n/provider";
 import {
   DEFAULT_OG_IMAGE,
-  PRIMARY_EMAIL,
-  PRIMARY_PHONE_DISPLAY,
   SITE_NAME,
   SITE_TAGLINE,
   SITE_URL,
@@ -87,19 +85,6 @@ export const metadata: Metadata = {
     email: false,
     address: false,
     telephone: false,
-  },
-  other: {
-    "contact:phone_number": PRIMARY_PHONE_DISPLAY,
-    "contact:email": PRIMARY_EMAIL,
-    "business:contact_data:phone_number": PRIMARY_PHONE_DISPLAY,
-    "business:contact_data:email": PRIMARY_EMAIL,
-    "business:contact_data:country_name": "India",
-    "business:contact_data:locality": "Ahmedabad",
-    "business:contact_data:region": "Gujarat",
-    "geo.region": "IN-GJ",
-    "geo.placename": "Ahmedabad",
-    "geo.position": "23.0395;72.4796",
-    ICBM: "23.0395, 72.4796",
   },
 };
 
