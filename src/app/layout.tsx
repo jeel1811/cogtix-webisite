@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.svg",
     apple: "/favicon.svg",
-    shortcut: "/favicon.ico",
+    shortcut: "/favicon.svg",
   },
   openGraph: {
     title: `${SITE_TAGLINE} | ${SITE_NAME}`,
