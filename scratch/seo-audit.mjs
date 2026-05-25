@@ -11,7 +11,7 @@ const ROUTES = [
   '/about-us',
   '/contact-us',
   '/services',
-  '/services/gen-ai-ml-development',
+  '/services/ai-ml-development',
   '/services/cloud-devops-engineering',
   '/services/data-engineering',
   '/services/digital-experience-engineering',
@@ -147,15 +147,8 @@ function inspect(path, status, html) {
   const viewport = extract(html, /<meta name="viewport" content="([^"]+)"/)
   const charset = !!html.match(/<meta\s+charset="utf-8"/i)
 
-  const phone = extract(
-    html,
-    /<meta name="contact:phone_number" content="([^"]+)"/
-  )
-  const geoRegion = extract(html, /<meta name="geo.region" content="([^"]+)"/)
-  const geoPosition = extract(
-    html,
-    /<meta name="geo.position" content="([^"]+)"/
-  )
+  // Phone + geo coords are now stored in Organization / LocalBusiness JSON-LD
+  // (which Google actually consumes) instead of legacy non-standard meta tags.
 
   // Extract all H1 tags (also handle attributes inside <h1 ...>)
   const h1Re = /<h1\b[^>]*>([\s\S]*?)<\/h1>/g
@@ -259,15 +252,30 @@ function inspect(path, status, html) {
   if (!viewport) warn.push('Missing meta viewport')
   if (!charset) warn.push('Missing UTF-8 charset')
 
-  // Phone
-  if (!phone) warn.push('Missing contact:phone_number meta')
-  else if (!phone.includes('91'))
-    warn.push('Contact phone meta is not Indian (' + phone + ')')
-  else ok.push('Indian phone meta ' + phone)
+  // Phone presence in JSON-LD (Google reads telephone from Organization /
+  // LocalBusiness, not from non-standard meta tags).
+  const jsonLdRaw = JSON.stringify(jsonLd)
+  const hasIndianPhone =
+    jsonLdRaw.includes('+919327924201') || jsonLdRaw.includes('+91 93279 24201')
+  if (!hasIndianPhone) warn.push('Indian phone not found in JSON-LD')
+  else ok.push('Indian phone in JSON-LD')
 
-  // Geo
-  if (!geoRegion) warn.push('Missing geo.region')
-  else ok.push('Geo region ' + geoRegion)
+  // Geo precision in LocalBusiness (Google asks for >=5 decimal places)
+  const localBusiness = jsonLd.find(
+    (d) =>
+      d['@type'] === 'ProfessionalService' || d['@type'] === 'LocalBusiness'
+  )
+  if (localBusiness?.geo) {
+    const lat = String(localBusiness.geo.latitude || '')
+    const lng = String(localBusiness.geo.longitude || '')
+    const latDecimals = (lat.split('.')[1] || '').length
+    const lngDecimals = (lng.split('.')[1] || '').length
+    if (latDecimals < 5 || lngDecimals < 5)
+      warn.push(
+        `Geo precision below 5 decimals (lat ${latDecimals}, lng ${lngDecimals})`
+      )
+    else ok.push(`Geo precision ${latDecimals}/${lngDecimals} decimals`)
+  }
 
   // H1
   if (h1Matches.length === 0) fail.push('No <h1> found')
@@ -314,9 +322,6 @@ function inspect(path, status, html) {
     googlebot,
     viewport,
     charset,
-    phone,
-    geoRegion,
-    geoPosition,
     h1Matches,
     imageCount: imgs.length,
     imagesMissingAlt,

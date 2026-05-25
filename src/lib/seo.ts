@@ -16,7 +16,7 @@ export const SITE_TAGLINE =
   'Product Engineering & Cloud Transformation'
 
 /** Used as the OG / Twitter image fallback when a page does not provide one. */
-export const DEFAULT_OG_IMAGE = `${SITE_URL}/twitterimg.webp`
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/cogtix-twitter-card.webp`
 
 export const TWITTER_HANDLE = '@cogtix'
 
