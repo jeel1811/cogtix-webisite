@@ -17,32 +17,32 @@ export default function ContactUsPage() {
   const contactMethods = [
     {
       icon: Mail,
-      title: 'Email',
+      title: "Email",
       value: CONTACT_INFO.email,
-      description: 'Our friendly team is here to help.',
+      description: "Our friendly team is here to help.",
       href: `mailto:${CONTACT_INFO.email}`,
     },
     {
       icon: SiWhatsapp,
-      title: 'Live chat',
-      value: 'Chat Support',
-      description: 'Our friendly team is here to help.',
+      title: "Live chat",
+      value: "Lets discuss",
+      description: "Our friendly team is here to help.",
       href: CONTACT_INFO.whatsapp,
     },
     {
       icon: Phone,
-      title: 'Phone',
+      title: "Phone",
       value: CONTACT_INFO.phones[0].number,
-      description: 'Mon to Fri from 9am to 6pm.',
-      href: `tel:${CONTACT_INFO.phones[0].number.replace(/\s|\(|\)|-/g, '')}`,
+      description: "Give Us Call.",
+      href: `tel:${CONTACT_INFO.phones[0].number.replace(/\s|\(|\)|-/g, "")}`,
     },
     {
       icon: Clock,
-      title: 'Response Time',
-      value: 'Within 24 Hours',
-      description: 'We strive to respond as quickly as possible.',
+      title: "Response Time",
+      value: "Within 24 Hours",
+      description: "We strive to respond as quickly as possible.",
     },
-  ]
+  ];
 
   return (
     <div className="min-h-screen bg-white">

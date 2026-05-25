@@ -89,15 +89,13 @@ import Image from 'next/image'
 function CareersVisual() {
   return (
     <div className="relative flex justify-center w-full">
-      <div className="relative aspect-[4/3] w-full max-w-lg animate-[float-y-soft_8s_ease-in-out_infinite]">
-        <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-blue-400/10 rounded-[2rem] shadow-2xl backdrop-blur-sm -rotate-3 z-0" />
-        <div className="absolute inset-0 bg-white/40 rounded-[2rem] shadow-xl backdrop-blur-md rotate-3 z-0" />
-        <div className="relative z-10 h-full w-full overflow-hidden rounded-[2rem] shadow-2xl ring-1 ring-white/50 bg-white">
+      <div className="relative aspect-[16/9] w-full max-w-lg animate-[float-y-soft_8s_ease-in-out_infinite]">
+        <div className="relative z-10 h-full w-full overflow-hidden rounded-2xl shadow-xl ring-1 ring-black/5 bg-white">
           <Image
-            src="/images/careers/careers_graphic.png"
+            src="/images/careers/careers_hero_real.webp"
             alt="Careers at Cogtix"
             fill
-            className="object-cover transition-transform duration-700 hover:scale-105"
+            className="object-cover object-center transition-transform duration-700 hover:scale-105"
             sizes="(max-width: 768px) 100vw, 50vw"
             priority
           />
