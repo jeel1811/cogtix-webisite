@@ -14,7 +14,7 @@ export const WORDPRESS_CASE_STUDIES_CATEGORY = {
 } as const
 
 export const WORDPRESS_BLOG_CATEGORY = {
-  id: 'dGVybTox',
+  id: 'dGVybToz',
   name: 'blogs',
   slug: 'blogs',
 } as const
