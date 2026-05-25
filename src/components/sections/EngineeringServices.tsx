@@ -18,7 +18,7 @@ import {
 const ENGINEERING_SERVICE_CARDS = [
   {
     id: 'aiMl',
-    href: '/services/gen-ai-ml-development',
+    href: '/services/ai-ml-development',
     icon: AIEngineeringLogo,
     navTitleKey: 'aiEngineering' as const,
   },

@@ -10,10 +10,9 @@ import HappyClients from '@/components/sections/HappyClients'
 import { buildMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = buildMetadata({
-  title:
-    'Case Studies | Cloud, AI, Data & Product Engineering Success Stories',
+  title: 'Case Studies | Cloud, AI & Product Engineering',
   description:
-    'See how Cogtix Solutions partners with enterprises and startups to ship cloud, AI, data, and product engineering wins. Browse case studies and measurable business outcomes.',
+    'See how Cogtix Solutions partners with enterprises and startups to ship cloud, AI, data, and product engineering wins with measurable outcomes.',
   path: '/case-studies',
   keywords: [
     'case studies',

@@ -13,7 +13,7 @@ export const SITE_URL = 'https://www.cogtix.com'
 export const SITE_NAME = 'Cogtix Solutions'
 
 export const SITE_TAGLINE =
-  'Product Development & Cloud Transformation Solutions'
+  'Product Engineering & Cloud Transformation'
 
 /** Used as the OG / Twitter image fallback when a page does not provide one. */
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/twitterimg.webp`

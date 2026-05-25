@@ -10,10 +10,9 @@ import type { CareerEdge } from '@/components/sections/careers/types'
 import { buildMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = buildMetadata({
-  title:
-    'Careers at Cogtix Solutions | Software Engineering, Design & PM Jobs',
+  title: 'Careers at Cogtix | Engineering, Design & PM Jobs',
   description:
-    'Build the next generation of software with Cogtix Solutions. Browse open roles for engineers, designers, PMs, and operations across the USA, UK, India, and Australia.',
+    'Build the next generation of software with Cogtix Solutions. Browse open roles for engineers, designers, PMs, and operations across four offices.',
   path: '/careers',
   keywords: [
     'careers at Cogtix',

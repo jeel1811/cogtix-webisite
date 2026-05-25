@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import { buildMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = buildMetadata({
-  title: 'About Cogtix Solutions | Our Story, Mission, Leadership & Values',
+  title: 'About Cogtix Solutions, Mission, Team & Values',
   description:
-    'Meet the team behind Cogtix Solutions. Learn about our story, mission, vision, and the founders building a global product engineering company across the USA, UK, India, and Australia.',
+    'Meet the team behind Cogtix Solutions. Learn our story, mission, vision, leadership, and what drives a global product engineering company.',
   path: '/about-us',
   keywords: [
     'about Cogtix Solutions',

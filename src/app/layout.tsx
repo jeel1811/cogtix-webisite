@@ -25,12 +25,14 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   applicationName: SITE_NAME,
+  // Short brand suffix (` | Cogtix`) keeps every rendered title inside the
+  // 60-character window Google shows in SERPs while still anchoring the brand.
   title: {
-    default: `${SITE_TAGLINE} | ${SITE_NAME}`,
-    template: `%s | ${SITE_NAME}`,
+    default: `${SITE_TAGLINE} | Cogtix`,
+    template: `%s | Cogtix`,
   },
   description:
-    "Cogtix Solutions is a product engineering partner for custom software, cloud transformation, AI/ML, data, and Microsoft technology programs across the USA, UK, India, and Australia.",
+    "Cogtix Solutions is a product engineering partner for custom software, cloud, AI/ML, data, and Microsoft technology programs.",
   authors: [{ name: SITE_NAME, url: SITE_URL }],
   creator: SITE_NAME,
   publisher: SITE_NAME,
@@ -45,9 +47,9 @@ export const metadata: Metadata = {
     shortcut: "/favicon.svg",
   },
   openGraph: {
-    title: `${SITE_TAGLINE} | ${SITE_NAME}`,
+    title: `${SITE_TAGLINE} | Cogtix`,
     description:
-      "Cogtix Solutions delivers product engineering, cloud transformation, AI/ML, and data services for businesses in the USA, UK, India, and Australia.",
+      "Cogtix Solutions delivers product engineering, cloud, AI/ML, and data services worldwide.",
     url: SITE_URL,
     siteName: SITE_NAME,
     type: "website",
@@ -65,7 +67,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: TWITTER_HANDLE,
     creator: TWITTER_HANDLE,
-    title: `${SITE_TAGLINE} | ${SITE_NAME}`,
+    title: `${SITE_TAGLINE} | Cogtix`,
     description:
       "Custom software, cloud, AI/ML, data, and Microsoft technology services from Cogtix Solutions.",
     images: [DEFAULT_OG_IMAGE],

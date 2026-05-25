@@ -9,10 +9,9 @@ import type { BlogEdge } from '@/components/sections/blogs/types';
 import { buildMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
-  title:
-    'Engineering Blogs & Articles | Cloud, AI, Data, .NET & Product Delivery',
+  title: 'Engineering Blogs | Cloud, AI, Data & .NET',
   description:
-    'Read Cogtix Solutions engineering blogs on software development, cloud, AI/ML, data engineering, .NET, Microsoft technologies, DevOps, and modern product delivery.',
+    'Read Cogtix Solutions engineering blogs on software development, cloud, AI/ML, data, .NET, Microsoft technologies, DevOps, and product delivery.',
   path: '/blogs',
   keywords: [
     'software development blog',

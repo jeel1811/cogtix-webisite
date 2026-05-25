@@ -10,12 +10,9 @@ import {
 } from '@/lib/seo'
 
 const PAGE_PATH = '/services/data-engineering'
-const TITLE =
-  'Data Engineering Services | Snowflake, Databricks, BigQuery, dbt and Lakehouse'
+const TITLE = 'Data Engineering | Snowflake, Databricks, dbt'
 const DESCRIPTION =
-  'Scalable data engineering services from Cogtix Solutions. Build modern pipelines, lakehouses, warehouses, dbt models, and analytics platforms. Call ' +
-  PRIMARY_PHONE_DISPLAY +
-  ' to discuss.'
+  'Scalable data engineering from Cogtix Solutions: modern pipelines, lakehouses, warehouses, dbt models, and analytics platforms for AI-ready data.'
 
 export const metadata: Metadata = buildMetadata({
   title: TITLE,

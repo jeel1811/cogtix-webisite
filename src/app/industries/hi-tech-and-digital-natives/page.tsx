@@ -8,10 +8,9 @@ import {
 } from '@/lib/seo'
 
 const PAGE_PATH = '/industries/hi-tech-and-digital-natives'
-const TITLE =
-  'Hi-Tech & SaaS Software Development | MVPs, Multi-Tenant & Cloud-Native'
+const TITLE = 'Hi-Tech & SaaS Software | MVPs & Multi-Tenant'
 const DESCRIPTION =
-  'MVP development, multi-tenant SaaS engineering, and cloud-native architecture for high-tech and digital native companies. Cogtix ships product features fast without losing scale.'
+  'MVP development, multi-tenant SaaS engineering, and cloud-native architecture for high-tech and digital-native companies. Built to scale fast.'
 
 export const metadata: Metadata = buildMetadata({
   title: TITLE,

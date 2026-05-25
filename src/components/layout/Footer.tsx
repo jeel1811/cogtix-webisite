@@ -120,7 +120,7 @@ export default function Footer() {
       { label: m.footer.contactUsLink, href: "/contact-us" },
     ],
     [m.footer.engineering]: [
-      { label: m.footer.aiEngineering, href: "/services/gen-ai-ml-development" },
+      { label: m.footer.aiEngineering, href: "/services/ai-ml-development" },
       { label: m.footer.cloudDevOpsEngineering, href: "/services/cloud-devops-engineering" },
       { label: m.footer.dataEngineering, href: "/services/data-engineering" },
       { label: m.footer.experienceEngineering, href: "/services/digital-experience-engineering" },

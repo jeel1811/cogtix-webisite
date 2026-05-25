@@ -5,9 +5,9 @@ import Offices from '@/components/sections/Offices'
 import { buildMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Privacy Policy | How Cogtix Solutions Handles Your Data',
+  title: 'Privacy Policy | How We Handle Your Data',
   description:
-    'Read the Cogtix Solutions Privacy Policy. Learn what data we collect, how we use it, how it is stored and shared, and what choices and rights you have as a visitor and client.',
+    'Read the Cogtix Solutions Privacy Policy: what data we collect, how we use and store it, and what choices and rights you have as a visitor or client.',
   path: '/privacy-policy',
   keywords: [
     'Cogtix privacy policy',

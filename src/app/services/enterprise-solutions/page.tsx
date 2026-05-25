@@ -10,12 +10,9 @@ import {
 } from '@/lib/seo'
 
 const PAGE_PATH = '/services/enterprise-solutions'
-const TITLE =
-  'Enterprise Software Services | ERP, CRM, Modernization, BPM and Integration'
+const TITLE = 'Enterprise Software Services | ERP, CRM, BPM'
 const DESCRIPTION =
-  'Enterprise software services from Cogtix Solutions. Modernize legacy systems, integrate ERP and CRM, and automate business processes. Call ' +
-  PRIMARY_PHONE_DISPLAY +
-  ' to plan your program.'
+  'Enterprise software services from Cogtix Solutions. Modernize legacy systems, integrate ERP and CRM, automate workflows, ship governed software.'
 
 export const metadata: Metadata = buildMetadata({
   title: TITLE,

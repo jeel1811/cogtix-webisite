@@ -10,12 +10,9 @@ import {
 } from '@/lib/seo'
 
 const PAGE_PATH = '/services/cloud-devops-engineering'
-const TITLE =
-  'Cloud and DevOps Engineering Services | AWS, Azure, GCP, Kubernetes, CI CD'
+const TITLE = 'Cloud & DevOps Engineering | AWS, Azure, GCP'
 const DESCRIPTION =
-  'Cloud migration, Kubernetes, CI CD, Terraform, FinOps, and SRE services on AWS, Azure, and Google Cloud from Cogtix Solutions. Call ' +
-  PRIMARY_PHONE_DISPLAY +
-  ' to plan your cloud roadmap.'
+  'Cloud migration, Kubernetes, CI/CD, Terraform, FinOps, and SRE services on AWS, Azure, and Google Cloud from Cogtix Solutions for modern teams.'
 
 export const metadata: Metadata = buildMetadata({
   title: TITLE,

@@ -61,7 +61,7 @@ export interface HowWeWorkLandingCopy {
  * Keep aligned with the order of `items` in the localized copy.
  */
 export const serviceSlugs: { href: string }[] = [
-  { href: '/services/gen-ai-ml-development' },
+  { href: '/services/ai-ml-development' },
   { href: '/services/cloud-devops-engineering' },
   { href: '/services/data-engineering' },
   { href: '/services/digital-experience-engineering' },

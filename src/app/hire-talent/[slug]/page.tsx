@@ -38,15 +38,30 @@ export async function generateMetadata({
   ]
 
   // The seed metaTitle already includes the brand suffix; strip it so the
-  // root layout title template does not double up the brand name.
-  const cleanedTitle = role.metaTitle.replace(/\s*\|\s*Cogtix Solutions\s*$/i, '')
+  // root layout title template does not double up the brand name. Then clamp
+  // both title and description to fit Google's SERP budgets.
+  const cleanedTitle = role.metaTitle.replace(
+    /\s*\|\s*Cogtix Solutions\s*$/i,
+    '',
+  )
+  const title = truncateAtWord(cleanedTitle, 50)
+  const description = truncateAtWord(role.metaDescription, 155)
 
   return buildMetadata({
-    title: cleanedTitle,
-    description: role.metaDescription,
+    title,
+    description,
     path: `/hire-talent/${slug}`,
     keywords,
   })
+}
+
+function truncateAtWord(value: string, max: number): string {
+  if (value.length <= max) return value
+  const slice = value.slice(0, max)
+  const lastSpace = slice.lastIndexOf(' ')
+  const cut =
+    lastSpace > Math.floor(max * 0.6) ? slice.slice(0, lastSpace) : slice
+  return `${cut.replace(/[\s.,;:!?-]+$/u, '')}…`
 }
 
 export default async function HireTalentRolePage({

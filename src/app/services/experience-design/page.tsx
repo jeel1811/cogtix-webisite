@@ -10,12 +10,9 @@ import {
 } from '@/lib/seo'
 
 const PAGE_PATH = '/services/experience-design'
-const TITLE =
-  'Experience Design Services | UX Research, UI Design and Design Systems'
+const TITLE = 'Experience Design Services | UX, UI & Design Ops'
 const DESCRIPTION =
-  'Human centered product design from research to launch. Cogtix designs UX flows, UI systems, mobile, and SaaS experiences. Call ' +
-  PRIMARY_PHONE_DISPLAY +
-  ' to start your design engagement.'
+  'Human-centered product design from research to launch. Cogtix designs UX flows, UI systems, mobile, and SaaS experiences that ship fast.'
 
 export const metadata: Metadata = buildMetadata({
   title: TITLE,

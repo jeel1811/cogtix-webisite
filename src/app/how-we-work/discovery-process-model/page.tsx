@@ -10,10 +10,9 @@ import { CTA_LINKS } from '@/lib/cta'
 import { buildMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = buildMetadata({
-  title:
-    'Discovery Process Model | Product Discovery, Architecture & Prototyping',
+  title: 'Discovery Process Model | Product & Architecture',
   description:
-    'Lower delivery risk with a structured product discovery from Cogtix Solutions. Research, technical architecture, UX prototypes, and an executable roadmap before a line of code is shipped.',
+    'Lower delivery risk with a structured product discovery from Cogtix Solutions: research, technical architecture, UX prototypes, and a roadmap.',
   path: '/how-we-work/discovery-process-model',
   keywords: [
     'product discovery process',

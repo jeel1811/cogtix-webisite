@@ -8,10 +8,9 @@ import {
 } from '@/lib/seo'
 
 const PAGE_PATH = '/partners/microsoft'
-const TITLE =
-  'Microsoft Solutions Partner | Azure, .NET, Power Platform, M365 & Dynamics 365'
+const TITLE = 'Microsoft Solutions Partner | Azure & .NET'
 const DESCRIPTION =
-  'Cogtix is a Microsoft Solutions Partner delivering Azure migrations, .NET 8 modernization, Power Platform CoE, Microsoft 365, Dynamics 365, and Azure OpenAI copilots for the enterprise.'
+  'Cogtix is a Microsoft Solutions Partner delivering Azure migrations, .NET 8 modernization, Power Platform CoE, Dynamics 365, and Azure OpenAI.'
 
 export const metadata: Metadata = buildMetadata({
   title: TITLE,

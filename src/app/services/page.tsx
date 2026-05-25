@@ -1,19 +1,12 @@
 import type { Metadata } from 'next'
 import JsonLd from '@/components/seo/JsonLd'
 import ServicesLandingView from '@/components/sections/ServicesLandingView'
-import {
-  PRIMARY_PHONE_DISPLAY,
-  buildBreadcrumbJsonLd,
-  buildMetadata,
-} from '@/lib/seo'
+import { buildBreadcrumbJsonLd, buildMetadata } from '@/lib/seo'
 
 const PAGE_PATH = '/services'
-const TITLE =
-  'Engineering Services | Custom Software, Cloud, AI ML, Data and Microsoft'
+const TITLE = 'Software Engineering Services | Custom, Cloud, AI'
 const DESCRIPTION =
-  'Explore the full Cogtix Solutions engineering portfolio. AI and ML, cloud and DevOps, data engineering, digital experience, enterprise services, and Microsoft technologies. Call ' +
-  PRIMARY_PHONE_DISPLAY +
-  '.'
+  'Explore the full Cogtix Solutions engineering portfolio: AI/ML, cloud & DevOps, data, digital experience, enterprise, and Microsoft technologies.'
 
 export const metadata: Metadata = buildMetadata({
   title: TITLE,

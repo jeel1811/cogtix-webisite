@@ -2,10 +2,9 @@ import type { Metadata } from 'next'
 import { buildMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = buildMetadata({
-  title:
-    'Contact Cogtix Solutions | Talk to Engineers in USA, UK, India & Australia',
+  title: 'Contact Cogtix | Book a Free Engineering Call',
   description:
-    'Reach the Cogtix Solutions team. Book a call, start a project, or get a free engineering consultation. Offices in New York, Ahmedabad, Perth, and Bridgwater.',
+    'Reach the Cogtix Solutions team. Book a discovery call, start a project, or get a free engineering consultation. Offices in the USA, UK, India, and AU.',
   path: '/contact-us',
   keywords: [
     'contact Cogtix Solutions',

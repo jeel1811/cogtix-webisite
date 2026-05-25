@@ -10,12 +10,9 @@ import {
 } from '@/lib/seo'
 
 const PAGE_PATH = '/services/digital-experience-engineering'
-const TITLE =
-  'Digital and Experience Engineering | Web, Mobile, UX UI Design Services'
+const TITLE = 'Digital Experience Engineering | Web, Mobile, UX'
 const DESCRIPTION =
-  'Design and ship responsive web, mobile, and SaaS products. Cogtix Solutions delivers UX, UI, design systems, React, Next.js, and Flutter builds. Call ' +
-  PRIMARY_PHONE_DISPLAY +
-  ' to start.'
+  'Design and ship responsive web, mobile, and SaaS products. Cogtix Solutions delivers UX, UI, design systems, React, Next.js, and Flutter builds.'
 
 export const metadata: Metadata = buildMetadata({
   title: TITLE,

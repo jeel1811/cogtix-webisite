@@ -29,6 +29,24 @@ function resolveSlug(segments: string[] | undefined): string | null {
   return segments[segments.length - 1] ?? null
 }
 
+/**
+ * Trim a string at the nearest word boundary so the result is at most `max`
+ * characters. Keeps CMS-generated case study titles and descriptions inside
+ * the SEO budgets (50 chars for titles, 155 chars for descriptions).
+ */
+function truncateAtWord(value: string, max: number): string {
+  if (value.length <= max) return value
+  const slice = value.slice(0, max)
+  const lastSpace = slice.lastIndexOf(' ')
+  const cut =
+    lastSpace > Math.floor(max * 0.6) ? slice.slice(0, lastSpace) : slice
+  return `${cut.replace(/[\s.,;:!?-]+$/u, '')}…`
+}
+
+function stripHtml(value: string): string {
+  return value.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim()
+}
+
 function resolveImageUrl(
   node: CaseStudyNode,
   key: 'firstImage' | 'secondImage' | 'thirdImage'
@@ -156,14 +174,22 @@ export async function generateMetadata({
 
   const projectName =
     data.caseStudy?.projectName || data.title || 'Case Study'
-  const title =
+  const rawTitle =
     data.caseStudy?.metaTitle ||
     `${projectName} Case Study`
-  const description =
+  // CMS metaTitle often already carries the brand suffix or is overlong; strip
+  // it and clamp so the rendered title with " | Cogtix" stays under 60 chars.
+  const cleanedRawTitle = rawTitle.replace(
+    /\s*\|\s*Cogtix\s*Solutions\s*$/i,
+    '',
+  )
+  const title = truncateAtWord(cleanedRawTitle, 50)
+  const rawDescription =
     data.caseStudy?.metaDescription ||
     data.caseStudy?.shortPreviewDescription ||
     data.caseStudy?.projectOverview ||
     `Read how Cogtix Solutions delivered the ${projectName} project.`
+  const description = truncateAtWord(stripHtml(rawDescription), 155)
   const image =
     data.caseStudy?.projectImages?.firstImage?.mediaItemUrl || undefined
 

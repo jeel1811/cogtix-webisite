@@ -4,10 +4,9 @@ import HireTalentLandingView from '@/components/sections/hire-talent/HireTalentL
 import { buildMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = buildMetadata({
-  title:
-    'Hire Vetted Software Developers | Remote Engineers, Designers & QA',
+  title: 'Hire Vetted Developers | Remote Engineers & QA',
   description:
-    'Hire vetted frontend, backend, mobile, data, automation, ML, cloud, and DevOps engineers from Cogtix Solutions. Flexible engagement models and global delivery from day one.',
+    'Hire vetted frontend, backend, mobile, data, ML, cloud, and DevOps engineers from Cogtix Solutions. Flexible engagements, global delivery from day one.',
   path: '/hire-talent',
   keywords: [
     'hire software developers',

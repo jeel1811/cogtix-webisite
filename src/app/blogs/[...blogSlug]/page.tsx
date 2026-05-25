@@ -33,6 +33,19 @@ function stripHtml(value: string) {
     .trim();
 }
 
+/**
+ * Trim a string at the nearest word boundary so the result is at most `max`
+ * characters. Used to keep CMS-generated titles and descriptions inside the
+ * SEO budgets (50 chars for page-level titles, 155 chars for descriptions).
+ */
+function truncateAtWord(value: string, max: number): string {
+  if (value.length <= max) return value;
+  const slice = value.slice(0, max);
+  const lastSpace = slice.lastIndexOf(" ");
+  const cut = lastSpace > Math.floor(max * 0.6) ? slice.slice(0, lastSpace) : slice;
+  return `${cut.replace(/[\s.,;:!?-]+$/u, "")}…`;
+}
+
 function deriveKeywords(title: string, category?: string | null): string[] {
   const baseTokens = title
     .toLowerCase()
@@ -86,13 +99,16 @@ export async function generateMetadata(
     });
   }
 
-  const title = blog.blogs?.blogTitle || blog.title || "Blog Post";
-  const description =
-    stripHtml(
-      blog.blogs?.previewDesc ||
-        blog.blogs?.blogDescription ||
-        "Read this article on Cogtix Solutions.",
-    ).slice(0, 200);
+  const rawTitle = blog.blogs?.blogTitle || blog.title || "Blog Post";
+  // Keep the page-level title at most 50 chars so the layout's " | Cogtix"
+  // suffix still fits inside Google's 60 char SERP window.
+  const title = truncateAtWord(rawTitle, 50);
+  const rawDescription = stripHtml(
+    blog.blogs?.previewDesc ||
+      blog.blogs?.blogDescription ||
+      "Read this article on Cogtix Solutions.",
+  );
+  const description = truncateAtWord(rawDescription, 155);
   const image =
     blog.featuredImage?.node?.mediaItemUrl || DEFAULT_OG_IMAGE;
   const category = blog.blogs?.blogCategory ?? null;

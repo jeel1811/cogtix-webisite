@@ -8,10 +8,9 @@ import {
 } from '@/lib/seo'
 
 const PAGE_PATH = '/industries/supply-chain-and-logistics'
-const TITLE =
-  'Supply Chain & Logistics Software | TMS, WMS, Fleet & Visibility'
+const TITLE = 'Supply Chain Software | TMS, WMS & Fleet Tracking'
 const DESCRIPTION =
-  'Fleet management, WMS, TMS, last-mile delivery, real-time tracking, and supply chain visibility software built by Cogtix. Modernize logistics operations with engineering you can trust.'
+  'Fleet management, WMS, TMS, last-mile delivery, real-time tracking, and supply chain visibility software built by Cogtix to modernize logistics.'
 
 export const metadata: Metadata = buildMetadata({
   title: TITLE,

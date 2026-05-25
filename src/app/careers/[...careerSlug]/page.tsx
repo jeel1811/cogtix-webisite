@@ -27,6 +27,20 @@ function resolveSlug(segments: string[] | undefined): string | null {
   return segments[segments.length - 1] ?? null
 }
 
+/**
+ * Trim a string at the nearest word boundary so the result is at most `max`
+ * characters. Keeps CMS-driven career titles and descriptions inside the SEO
+ * budgets (50 chars for page titles, 155 chars for descriptions).
+ */
+function truncateAtWord(value: string, max: number): string {
+  if (value.length <= max) return value
+  const slice = value.slice(0, max)
+  const lastSpace = slice.lastIndexOf(' ')
+  const cut =
+    lastSpace > Math.floor(max * 0.6) ? slice.slice(0, lastSpace) : slice
+  return `${cut.replace(/[\s.,;:!?-]+$/u, '')}…`
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -57,10 +71,12 @@ export async function generateMetadata({
   const jobType = data.careers?.jobType ?? ''
   const detailsLine = [location, jobType].filter(Boolean).join(' · ')
 
-  const title = `${data.title} | Apply for this Role`
-  const description = detailsLine
-    ? `Apply for ${data.title} at Cogtix Solutions (${detailsLine}). Join a global product engineering team building cloud, AI, data, and Microsoft technology solutions.`
-    : `Apply for ${data.title} at Cogtix Solutions. Join a global product engineering team building cloud, AI, data, and Microsoft technology solutions.`
+  const rawTitle = `${data.title} | Apply Now`
+  const title = truncateAtWord(rawTitle, 50)
+  const rawDescription = detailsLine
+    ? `Apply for ${data.title} at Cogtix Solutions (${detailsLine}). Join a global product engineering team building cloud, AI, and data solutions.`
+    : `Apply for ${data.title} at Cogtix Solutions. Join a global product engineering team building cloud, AI, data, and Microsoft technology software.`
+  const description = truncateAtWord(rawDescription, 155)
 
   const keywords = [
     data.title,

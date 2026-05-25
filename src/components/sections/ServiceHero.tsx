@@ -33,6 +33,21 @@ const serviceImages: Record<ServiceVariant, string> = {
   experience: '/images/services/experience_graphic_v3_transparent.png',
 }
 
+// Descriptive alt text per service variant so the hero image carries real
+// keyword weight for image search and screen readers, instead of "ai graphic".
+const serviceImageAlts: Record<ServiceVariant, string> = {
+  ai: 'AI and machine learning development workflow diagram with generative AI, LLM, and MLOps elements',
+  cloud:
+    'Cloud and DevOps engineering platform illustration covering AWS, Azure, and Google Cloud, Kubernetes, and CI CD',
+  microsoft:
+    'Microsoft technology stack illustration with Azure, .NET, Power Platform, Microsoft 365, and Dynamics 365',
+  enterprise:
+    'Enterprise software modernization illustration showing ERP, CRM, integration, and BPM components',
+  data: 'Data engineering and analytics pipeline illustration with lakehouse, warehouse, dbt, and BI elements',
+  experience:
+    'Digital experience and product design illustration showing UX, UI, design systems, and mobile experiences',
+}
+
 export default function ServiceHero({
   title,
   subtitle,
@@ -121,7 +136,7 @@ export default function ServiceHero({
               )}
               <Image
                 src={serviceImages[variant]}
-                alt={`${variant} graphic`}
+                alt={serviceImageAlts[variant]}
                 fill
                 onLoad={() => setIsLoaded(true)}
                 className={`relative z-10 object-contain transition-all duration-700 hover:scale-105 drop-shadow-2xl ${isLoaded ? 'opacity-100' : 'opacity-0'}`}

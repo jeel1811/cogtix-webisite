@@ -8,10 +8,9 @@ import {
 } from '@/lib/seo'
 
 const PAGE_PATH = '/industries/retail-and-e-commerce'
-const TITLE =
-  'Retail & E-commerce Software Development | Omnichannel, POS & Composable'
+const TITLE = 'Retail & E-commerce Software | Omnichannel & POS'
 const DESCRIPTION =
-  'Composable commerce, headless storefronts, POS integration, and personalization for retail. Cogtix builds omnichannel platforms on Shopify, Magento, Salesforce, and custom stacks.'
+  'Composable commerce, headless storefronts, POS integration, and personalization for retail. Cogtix builds omnichannel platforms that convert.'
 
 export const metadata: Metadata = buildMetadata({
   title: TITLE,

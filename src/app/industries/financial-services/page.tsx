@@ -8,10 +8,9 @@ import {
 } from '@/lib/seo'
 
 const PAGE_PATH = '/industries/financial-services'
-const TITLE =
-  'Financial Services Software Development | Fintech, Banking & Insurance'
+const TITLE = 'Financial Services Software | Fintech & Banking'
 const DESCRIPTION =
-  'Secure, compliant software for banks, lenders, payments, capital markets, and insurance. Cogtix builds PCI DSS, SOC 2, and PSD2-ready fintech platforms that scale.'
+  'Secure, compliant software for banks, lenders, payments, capital markets, and insurance. Cogtix builds PCI DSS, SOC 2, and PSD2 fintech platforms.'
 
 export const metadata: Metadata = buildMetadata({
   title: TITLE,

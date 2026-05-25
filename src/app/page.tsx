@@ -14,10 +14,11 @@ import HomeCaseStudiesSection from "@/components/sections/HomeCaseStudiesSection
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title:
-    "Custom Software, Cloud & AI Engineering Partner | Cogtix Solutions",
+  // Page-level title is left short on purpose so the root layout template
+  // can append " | Cogtix" and still land inside Google's 60 char window.
+  title: "Custom Software, Cloud & AI Engineering Partner",
   description:
-    "Cogtix Solutions builds custom software, cloud platforms, AI/ML systems, and data products for clients in the USA, UK, India, and Australia. Get an engineering partner that ships.",
+    "Cogtix Solutions builds custom software, cloud platforms, AI/ML systems, and data products for global teams. Get an engineering partner that ships.",
   path: "/",
   keywords: [
     "custom software development company",

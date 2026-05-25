@@ -24,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     { path: '/services', changeFrequency: 'monthly', priority: 0.9 },
     {
-      path: '/services/gen-ai-ml-development',
+      path: '/services/ai-ml-development',
       changeFrequency: 'monthly',
       priority: 0.9,
     },

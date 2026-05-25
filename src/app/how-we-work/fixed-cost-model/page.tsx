@@ -11,10 +11,9 @@ import { CTA_LINKS } from '@/lib/cta'
 import { buildMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = buildMetadata({
-  title:
-    'Fixed Cost Engagement Model | Milestone-Based Software Development',
+  title: 'Fixed Cost Model | Milestone-Based Delivery',
   description:
-    'Predictable, milestone-based software delivery from Cogtix Solutions. Choose a fixed-price engagement when scope is clear and you need budget certainty for MVPs and defined builds.',
+    'Predictable, milestone-based software delivery from Cogtix Solutions. Pick fixed-price engagements when scope is clear and budget certainty matters.',
   path: '/how-we-work/fixed-cost-model',
   keywords: [
     'fixed cost software development',

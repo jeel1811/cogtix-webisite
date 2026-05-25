@@ -10,12 +10,9 @@ import {
 } from '@/lib/seo'
 
 const PAGE_PATH = '/services/microsoft-technologies'
-const TITLE =
-  'Microsoft Technology Services | .NET, Azure, Power Platform, M365 and Dynamics 365'
+const TITLE = 'Microsoft Technology Services | Azure & .NET'
 const DESCRIPTION =
-  'Cogtix Solutions is a Microsoft Solutions Partner. Build on .NET 8, Azure, Power Platform, Microsoft 365, and Dynamics 365. Call ' +
-  PRIMARY_PHONE_DISPLAY +
-  ' to plan your roadmap.'
+  'Cogtix Solutions is a Microsoft Solutions Partner. Build on .NET 8, Azure, Power Platform, Microsoft 365, and Dynamics 365 with confidence.'
 
 export const metadata: Metadata = buildMetadata({
   title: TITLE,

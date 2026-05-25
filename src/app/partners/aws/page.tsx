@@ -8,10 +8,9 @@ import {
 } from '@/lib/seo'
 
 const PAGE_PATH = '/partners/aws'
-const TITLE =
-  'AWS Partner | Cloud Migration, EKS, Serverless, Bedrock & FinOps Services'
+const TITLE = 'AWS Partner | Migration, EKS, Serverless, Bedrock'
 const DESCRIPTION =
-  'Cogtix is an AWS Partner Network member building Well-Architected workloads on AWS: MAP migrations, EKS platforms, serverless, Bedrock copilots, and FinOps-driven cost engineering.'
+  'Cogtix is an AWS Partner Network member building Well-Architected workloads: MAP migrations, EKS platforms, serverless, and Bedrock copilots.'
 
 export const metadata: Metadata = buildMetadata({
   title: TITLE,

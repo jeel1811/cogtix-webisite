@@ -11,7 +11,7 @@ const SERVICES = [
     title: 'AI/ML Engineering',
     description:
       'Custom AI solutions, generative AI systems, machine learning pipelines, and model deployment.',
-    href: '/services/gen-ai-ml-development',
+    href: '/services/ai-ml-development',
   },
   {
     title: 'Cloud & DevOps Engineering',

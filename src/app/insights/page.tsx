@@ -3,10 +3,9 @@ import InsightsLandingView from '@/components/sections/InsightsLandingView'
 import { buildMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = buildMetadata({
-  title:
-    'Insights | Blogs, Case Studies & Engineering Perspectives from Cogtix',
+  title: 'Insights | Engineering Blogs & Case Studies',
   description:
-    'Explore Cogtix Solutions insights: blogs, case studies, and practical engineering perspectives on cloud, AI, data, digital transformation, and product delivery.',
+    'Explore Cogtix Solutions insights: blogs, case studies, and engineering perspectives on cloud, AI, data, digital transformation, and delivery.',
   path: '/insights',
   keywords: [
     'Cogtix insights',

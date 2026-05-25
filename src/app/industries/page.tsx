@@ -1,19 +1,12 @@
 import type { Metadata } from 'next'
 import IndustriesLandingView from '@/components/sections/IndustriesLandingView'
 import JsonLd from '@/components/seo/JsonLd'
-import {
-  PRIMARY_PHONE_DISPLAY,
-  buildBreadcrumbJsonLd,
-  buildMetadata,
-} from '@/lib/seo'
+import { buildBreadcrumbJsonLd, buildMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = buildMetadata({
-  title:
-    'Industries We Serve | Financial Services, Healthcare, Retail, Logistics and Hi-Tech',
+  title: 'Industries We Serve | Software for 5 Verticals',
   description:
-    'Cogtix Solutions delivers industry specific software for fintech, healthcare, retail, supply chain, and high tech digital native businesses. Call ' +
-    PRIMARY_PHONE_DISPLAY +
-    ' to discuss.',
+    'Cogtix Solutions delivers industry-specific software for fintech, healthcare, retail, supply chain, and high-tech digital-native businesses.',
   path: '/industries',
   keywords: [
     'industries we serve',

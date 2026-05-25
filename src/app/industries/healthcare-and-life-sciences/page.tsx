@@ -8,10 +8,9 @@ import {
 } from '@/lib/seo'
 
 const PAGE_PATH = '/industries/healthcare-and-life-sciences'
-const TITLE =
-  'Healthcare & Life Sciences Software | HIPAA, EHR, Telemedicine, FHIR'
+const TITLE = 'Healthcare Software | HIPAA, EHR & Telehealth'
 const DESCRIPTION =
-  'HIPAA-compliant software for hospitals, payers, providers, and life sciences. Build EHR integrations, telehealth platforms, FHIR APIs, patient portals, and clinical analytics with Cogtix.'
+  'HIPAA-compliant software for hospitals, payers, and life sciences. Build EHR integrations, telehealth, FHIR APIs, and patient portals with Cogtix.'
 
 export const metadata: Metadata = buildMetadata({
   title: TITLE,

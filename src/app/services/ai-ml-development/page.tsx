@@ -9,13 +9,10 @@ import {
   buildServiceJsonLd,
 } from '@/lib/seo'
 
-const PAGE_PATH = '/services/gen-ai-ml-development'
-const TITLE =
-  'AI ML Development Services in India and USA | Generative AI, LLM and RAG Solutions'
+const PAGE_PATH = '/services/ai-ml-development'
+const TITLE = 'AI ML Development Services | Generative AI & LLM'
 const DESCRIPTION =
-  'Hire Cogtix Solutions for AI and machine learning development services. Build generative AI, LLM copilots, RAG, computer vision, and MLOps platforms. Call ' +
-  PRIMARY_PHONE_DISPLAY +
-  ' to start.'
+  'Cogtix Solutions builds AI/ML systems, generative AI, LLM copilots, RAG pipelines, computer vision, and MLOps platforms for global enterprises.'
 
 export const metadata: Metadata = buildMetadata({
   title: TITLE,

@@ -11,10 +11,9 @@ import { CTA_LINKS } from '@/lib/cta'
 import { buildMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = buildMetadata({
-  title:
-    'Dedicated Resource Model | Hire Dedicated Software Development Teams',
+  title: 'Dedicated Resource Model | Hire Dev Teams',
   description:
-    'Hire a dedicated software development team from Cogtix Solutions. Full-time, part-time, or hourly engineers, designers, and PMs that integrate with your in-house processes.',
+    'Hire a dedicated software development team from Cogtix Solutions: full-time, part-time, or hourly engineers, designers, and PMs that integrate fast.',
   path: '/how-we-work/dedicated-resource-model',
   keywords: [
     'dedicated development team',

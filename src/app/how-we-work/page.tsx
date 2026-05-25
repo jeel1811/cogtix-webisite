@@ -3,10 +3,9 @@ import HowWeWorkLandingView from '@/components/sections/HowWeWorkLandingView'
 import { buildMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = buildMetadata({
-  title:
-    'How We Work | Agile Delivery, Engagement Models & Process at Cogtix',
+  title: 'How We Work | Agile Process & Engagement Models',
   description:
-    'See how Cogtix Solutions delivers software. Agile process, three engagement models, transparent delivery cadence, and direct access to engineering for every project.',
+    'See how Cogtix Solutions delivers software: agile process, three engagement models, transparent cadence, and direct access to engineering teams.',
   path: '/how-we-work',
   keywords: [
     'how we work Cogtix',

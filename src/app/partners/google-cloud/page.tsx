@@ -8,10 +8,9 @@ import {
 } from '@/lib/seo'
 
 const PAGE_PATH = '/partners/google-cloud'
-const TITLE =
-  'Google Cloud Partner | BigQuery, Vertex AI, GKE & Anthos Services'
+const TITLE = 'Google Cloud Partner | BigQuery, Vertex AI & GKE'
 const DESCRIPTION =
-  'Cogtix is a Google Cloud Partner delivering BigQuery data platforms, Vertex AI productionization, GKE Autopilot, and Anthos modernization for data-led, regulated organizations.'
+  'Cogtix is a Google Cloud Partner delivering BigQuery data platforms, Vertex AI productionization, GKE Autopilot, and Anthos modernization.'
 
 export const metadata: Metadata = buildMetadata({
   title: TITLE,
